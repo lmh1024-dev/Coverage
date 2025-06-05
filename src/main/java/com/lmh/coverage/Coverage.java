@@ -2,11 +2,6 @@ package com.lmh.coverage;
 
 import dk.brics.automaton.Automaton;
 import dk.brics.automaton.RegExp;
-import dk.brics.automaton.State;
-
-import java.util.LinkedList;
-
-import static com.lmh.coverage.utils.myBasicOperations.myComplement;
 
 public class Coverage {
 
