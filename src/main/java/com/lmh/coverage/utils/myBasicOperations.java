@@ -12,11 +12,11 @@ import java.util.*;
 import static dk.brics.automaton.Transition.appendCharString;
 
 public class myBasicOperations {
-    public static Automaton myComplement(Automaton automaton, Automaton attemptAutomaton){
+    public static Automaton myComplement(Automaton attemptAutomaton){
 
         State dead = new State();
         Set<State> attemptAutomatonStates = attemptAutomaton.getStates();
-        Set<State> states = automaton.getStates();
+        Set<State> states = attemptAutomaton.getStates();
         Iterator<State> stateIterator = states.iterator();
 
         Set<transitionDefine> transitions = new HashSet<>();

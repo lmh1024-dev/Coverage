@@ -154,7 +154,7 @@ public class transitionDefine implements Serializable, Cloneable {
 				}
 			}
 		}
-		//defines中可能存在这样的情况<‘-’，‘.','--.'>此步骤为消除重复，消除后仅存在<'--.'>
+
 		Iterator<transitionDefine> transitionDefineIterator = defines.iterator();
 		while (transitionDefineIterator.hasNext()){
 			transitionDefine transitionDefine = transitionDefineIterator.next();

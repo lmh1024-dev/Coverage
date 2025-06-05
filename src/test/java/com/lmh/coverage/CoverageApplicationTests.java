@@ -10,41 +10,40 @@ class CoverageApplicationTests {
 
     @Test
     void edgePairCoverage() {
-        String regex = "(a(a*|b+a)*)|(b(b*|a+b)*)";
-        String attemptRegex = "a*a?|(a|b)bb*";
+        String regex = "a*|(a|bb)*";
         edgePairCoverage edgePairCoverage = new edgePairCoverage();
-        edgePairCoverage.generate(regex, attemptRegex);
+        edgePairCoverage.generate(regex);
 
         edgePairCoverage.generate();
 
+        System.out.println("Regex:" + regex +"EPC:");
         System.out.println("Positive Strings:" + edgePairCoverage.getPositiveStrings());
-
         System.out.println("Negative Strings:" + edgePairCoverage.getNegativeStrings());
 
     }
 
     @Test
     void primeCoverage(){
-        String regex = "001|1010|110";
-        String attemptRegex = "(001)(10101)(110)";
+        String regex = "(001)(10101)(110)";
         primePathCoverage primePathCoverage = new primePathCoverage();
-        primePathCoverage.generate(regex, attemptRegex);
+        primePathCoverage.generate(regex);
 
         primePathCoverage.generate();
 
+        System.out.println("Regex:" + regex +"PPC:");
         System.out.println("Positive Strings:" + primePathCoverage.getPositiveStrings());
         System.out.println("Negative Strings:" + primePathCoverage.getNegativeStrings());
     }
 
     @Test
     void nodeCoverage(){
-        String regex = "(a(a*|b+a)*)|(b(b*|a+b)*)";
-        String attemptRegex = "(a((a|b)(a|b))*)|(b(a|b)((a|b)(a|b))*)";
+        String regex = "(a((a|b)(a|b))*)|(b(a|b)((a|b)(a|b))*)";
         nodeCoverage nodeCoverage = new nodeCoverage();
-        nodeCoverage.generate(regex, attemptRegex);
+        nodeCoverage.generate(regex);
 
         nodeCoverage.generate();
 
+        System.out.println("Regex:" + regex +"NC:");
         System.out.println("Positive Strings:" + nodeCoverage.getPositiveStrings());
         System.out.println("Negative Strings:" + nodeCoverage.getNegativeStrings());
     }
@@ -52,12 +51,12 @@ class CoverageApplicationTests {
     @Test
     void edgeCoverage(){
         String regex = "(a(a*|b+a)*)|(b(b*|a+b)*)";
-        String attemptRegex = "((a|b)*((aa)|(ba)|(bb)))|((a|b)?)";
         edgeCoverage edgeCoverage = new edgeCoverage();
-        edgeCoverage.generate(regex, attemptRegex);
+        edgeCoverage.generate(regex);
 
         edgeCoverage.generate();
 
+        System.out.println("Regex:" + regex +"EC:");
         System.out.println("Positive Strings:" + edgeCoverage.getPositiveStrings());
         System.out.println("Negative Strings:" + edgeCoverage.getNegativeStrings());
     }

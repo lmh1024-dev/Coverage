@@ -22,7 +22,7 @@ public class edgeCoverage extends Coverage{
         LinkedList<String> stringsList;
 
         if(!isPositive)
-            this.setAttemptAutomaton(myComplement(this.getAutomaton(),this.getAttemptAutomaton()));
+            this.setAttemptAutomaton(myComplement(this.getAttemptAutomaton()));
 
 
         Map<State, LinkedList<Edge>> form = generateEdgeMap(this.getAttemptAutomaton());

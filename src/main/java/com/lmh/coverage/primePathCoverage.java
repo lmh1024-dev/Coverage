@@ -25,7 +25,7 @@ public class primePathCoverage extends Coverage{
         LinkedList<String> stringsList = new LinkedList<>();
 
         if(!isPositive)
-            this.setAttemptAutomaton(myComplement(this.getAutomaton(),this.getAttemptAutomaton()));
+            this.setAttemptAutomaton(myComplement(this.getAttemptAutomaton()));
 
         if (!(this.getAttemptAutomaton().getStates().size() <= 1 && !this.getAttemptAutomaton().getInitialState().isAccept())) {
             LinkedList<Path> EPC = generatePath(this.getAttemptAutomaton());

@@ -9,23 +9,12 @@ import java.util.LinkedList;
 import static com.lmh.coverage.utils.myBasicOperations.myComplement;
 
 public class Coverage {
-    private Automaton automaton;
 
     private Automaton attemptAutomaton;
 
     private String positiveStrings;
 
     private String negativeStrings;
-
-
-
-    public Automaton getAutomaton() {
-        return automaton;
-    }
-
-    public void setAutomaton(Automaton automaton) {
-        this.automaton = automaton;
-    }
 
     public Automaton getAttemptAutomaton() {
         return attemptAutomaton;
@@ -52,18 +41,13 @@ public class Coverage {
     }
 
 
-    public void generate(String regex,String attemptRegex){
-        RegExp regexp = new RegExp(regex);
-        Automaton automaton = regexp.toAutomaton();
-        automaton.determinize();
-        automaton.minimize();
+    public void generate(String attemptRegex){
 
         RegExp attemptRegexp = new RegExp(attemptRegex);
         Automaton attemptAutomaton = attemptRegexp.toAutomaton();
         attemptAutomaton.determinize();
         attemptAutomaton.minimize();
 
-        this.setAutomaton(automaton);
         this.setAttemptAutomaton(attemptAutomaton);
 
     }
