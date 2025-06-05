@@ -17,9 +17,9 @@ class CoverageApplicationTests {
 
         edgePairCoverage.generate();
 
-        System.out.println(edgePairCoverage.getPositiveStrings());
+        System.out.println("Positive Strings:" + edgePairCoverage.getPositiveStrings());
 
-        System.out.println(edgePairCoverage.getNegativeStrings());
+        System.out.println("Negative Strings:" + edgePairCoverage.getNegativeStrings());
 
     }
 
@@ -32,8 +32,8 @@ class CoverageApplicationTests {
 
         primePathCoverage.generate();
 
-        System.out.println(primePathCoverage.getPositiveStrings());
-        System.out.println(primePathCoverage.getNegativeStrings());
+        System.out.println("Positive Strings:" + primePathCoverage.getPositiveStrings());
+        System.out.println("Negative Strings:" + primePathCoverage.getNegativeStrings());
     }
 
     @Test
@@ -45,8 +45,8 @@ class CoverageApplicationTests {
 
         nodeCoverage.generate();
 
-        System.out.println(nodeCoverage.getPositiveStrings());
-        System.out.println(nodeCoverage.getNegativeStrings());
+        System.out.println("Positive Strings:" + nodeCoverage.getPositiveStrings());
+        System.out.println("Negative Strings:" + nodeCoverage.getNegativeStrings());
     }
 
     @Test
@@ -58,8 +58,8 @@ class CoverageApplicationTests {
 
         edgeCoverage.generate();
 
-        System.out.println(edgeCoverage.getPositiveStrings());
-        System.out.println(edgeCoverage.getNegativeStrings());
+        System.out.println("Positive Strings:" + edgeCoverage.getPositiveStrings());
+        System.out.println("Negative Strings:" + edgeCoverage.getNegativeStrings());
     }
 
 

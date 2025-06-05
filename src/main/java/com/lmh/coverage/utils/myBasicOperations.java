@@ -13,14 +13,14 @@ import static dk.brics.automaton.Transition.appendCharString;
 
 public class myBasicOperations {
     public static Automaton myComplement(Automaton automaton, Automaton attemptAutomaton){
-        //定义死状态
+
         State dead = new State();
         Set<State> attemptAutomatonStates = attemptAutomaton.getStates();
         Set<State> states = automaton.getStates();
         Iterator<State> stateIterator = states.iterator();
 
         Set<transitionDefine> transitions = new HashSet<>();
-        //获取边的转换
+
         while (stateIterator.hasNext()){
             State nextState = stateIterator.next();
             for (Transition transition : nextState.getTransitions()) {
@@ -28,14 +28,13 @@ public class myBasicOperations {
                 transitions.add(transitionDefine);
             }
         }
-        //System.out.println(transitions);
+
         Set<transitionDefine> unionDefine = transitionDefine.getUnionDefine(transitions);
-        //System.out.println(unionDefine);
 
         stateIterator = attemptAutomatonStates.iterator();
         while (stateIterator.hasNext()){
             State nextState = stateIterator.next();
-            //Set<Transition> deadTransitions = new HashSet<>();
+
             for (transitionDefine next : unionDefine) {
 
                 char minChar = '\u0000';
@@ -82,15 +81,15 @@ public class myBasicOperations {
 
         int numNodes = adjMatrix.length;
 
-        // 记录每个节点到 begin 节点的最短距离
+
         int[] distances = new int[numNodes];
-        // 初始化距离为无穷大
+
         for (int i = 0; i < numNodes; i++) {
             distances[i] = Integer.MAX_VALUE;
         }
         distances[begin] = 0;
 
-        // 记录已确定最短距离的节点
+
         boolean[] visited = new boolean[numNodes];
 
         Map<Integer, List<Integer>> paths = new HashMap<>();
@@ -134,15 +133,14 @@ public class myBasicOperations {
     public static List<Integer> dijkstraToAccept(int[][] adjMatrix, boolean[] isAcceptState, int source) {
         int numNodes = adjMatrix.length;
 
-        // 记录每个节点到源节点的最短距离
+
         int[] distances = new int[numNodes];
-        // 初始化距离为无穷大
+
         for (int i = 0; i < numNodes; i++) {
             distances[i] = Integer.MAX_VALUE;
         }
         distances[source] = 0;
 
-        // 记录已确定最短距离的节点
         boolean[] visited = new boolean[numNodes];
 
         Map<Integer, List<Integer>> paths = new HashMap<>();
@@ -247,7 +245,6 @@ public class myBasicOperations {
         for(Path p:coverList){
             LinkedList<Transition> transitions = p.getTransitions();
             if(transitions.isEmpty()){
-                strings.add("ε");
                 continue;
             }
             StringBuilder stringBuilder = new StringBuilder();
@@ -265,9 +262,8 @@ public class myBasicOperations {
 
     public static void extendEPC(LinkedList<Path> EPC, Automaton automaton) {
         int[][] G = automatonToG(automaton);
-        //获取isAcceptState，是否是接受状态
+
         boolean[] isAcceptState = getAcceptState(automaton);
-        LinkedList<Integer> removeIndexes = new LinkedList<>();
         Iterator<Path> iterator = EPC.iterator();
         while(iterator.hasNext()){
             Path path = iterator.next();
@@ -278,7 +274,7 @@ public class myBasicOperations {
             int initial = automaton.getInitialState().getNumber();
             int end = transitions.getLast().getDest().getNumber();
             if(path.getInitial() != initial){
-                //路径不从初始状态开始，要延申到初始状态
+
                 Path newPath = new Path(initial);
                 List<Integer> shortestPath = dijkstraToSource(initial, path.getInitial(), G);
                 shortestPath.add(path.getInitial());
@@ -288,37 +284,34 @@ public class myBasicOperations {
                     if(transition != null)
                         newPath.push(transition);
                     else
-                        throw new RuntimeException("延申出现错误");
+                        throw new RuntimeException("error");
                 }
                 newPath.add(path);
                 EPC.set(j, newPath);
             }
             if(!isAcceptState[end]){
-                //路径不在接受状态结束，要延申到最近的接受状态
                 Path newPath = EPC.get(j).deepClone();
                 List<Integer> pathToAccept = dijkstraToAccept(G, isAcceptState, end);
                 if(!pathToAccept.isEmpty()){
-                    //此状态能够延申到接受状态
                     Integer lastNumber = pathToAccept.get(0);
                     pathToAccept.remove(0);
-                    //StringBuilder s = new StringBuilder();
                     for(Integer dest:pathToAccept){
                         State lastState = automaton.getStateByNumber(lastNumber);
                         if(lastState == null) {
-                            throw new RuntimeException("延申路径出现错误，找不到下一状态！");
+                            throw new RuntimeException("error");
                         }
                         else {
                             Transition transition = lastState.getTransitionByDest(dest);
                             if(transition != null)
                                 newPath.push(transition);
                             else
-                                throw new RuntimeException("延申出现错误");
+                                throw new RuntimeException("error");
                             lastNumber = dest;
                         }
                     }
                     EPC.set(j,newPath);
                 }else{
-                    //不能延申到接受状态，依次减少一条边，直到达到终态
+
                     LinkedList<Transition> newPathTransitions = newPath.getTransitions();
                     while (!isAcceptState[end]){
                         newPath.pop();
@@ -345,7 +338,6 @@ public class myBasicOperations {
         for (State acceptState : acceptStates)
             acceptStatesNumber.add(acceptState.getNumber());
 
-        //已经覆盖的终态集合
         Set<Integer> acceptedStatesNumber = new HashSet<>();
         for(Path path:EPC){
             LinkedList<Transition> transitions = path.getTransitions();
@@ -354,8 +346,7 @@ public class myBasicOperations {
             State dest = transitions.getLast().getDest();
             acceptedStatesNumber.add(dest.getNumber());
         }
-        /*if(acceptedStatesNumber.equals(acceptStatesNumber))
-            return;*/
+
         LinkedList<Path> addList = new LinkedList<>();
         for(Path p:EPC){
             LinkedList<Transition> transitions = p.getTransitions();
@@ -363,7 +354,7 @@ public class myBasicOperations {
             for(int j = transitions.size()-1;j>=0;j--){
                 Transition t = transitions.get(j);
                 int number = t.getDest().getNumber();
-                if(/*!acceptedStatesNumber.contains(number) &&*/ acceptStatesNumber.contains(number)){
+                if(acceptStatesNumber.contains(number)){
                     acceptedStatesNumber.add(number);
                     addList.add(clone.deepClone());
                 }
@@ -401,7 +392,6 @@ public class myBasicOperations {
         for(int i = 0;i<charArray.length;i++){
             if(charArray[i] == '~'){
                 if(flag == 0){
-                    //flag=0表示字符范围取最小
                     ++i;
                 }else {
                     if(!stack.isEmpty()){
