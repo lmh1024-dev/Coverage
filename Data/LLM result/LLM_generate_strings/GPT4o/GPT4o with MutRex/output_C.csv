@@ -1,0 +1,165 @@
+Regex,Attempt Regex,ChatGPT Output
+0*(10*1)*0*,0*1(10*10*)*,"positive example:[1, 011, 010110, 0110, 0010], negative example:[111111, 101010, 000, 1111]"
+a+b,(a*|b),"positive example:[, a, aa, aaa, b], negative example:[ab, ba, bb, c]"
+0*10*(10*10*)*,-1,"positive example:[], negative example:[]"
+(a*ba*b)*a*ba*,(a|ba*b)*,"positive example:[, abb, a, aba, bab, ababab, baab],negative example:[b, bb, abba, baba, bba]"
+0(0|1)*0,0(0|1)*1,"positive example: [01, 0011, 011, 001, 0001, 0111]  
+negative example: [0, 1, 10, 110, 111, 101]"
+(0*10*10*)*|0*,0*10*1(1)0*,"positive example: [1011, 0111, 00010110]  
+negative example: [100, 0110, 1110]"
+0*10*(10*10*)*,(1)(111),"positive example:[1111], negative example:[1, 111, 11111]"
+(a*ba*b)*a*ba*,a*ba*b,"Positive example: [ab, aab, baab, aaab, aabb, abab, baaab, ababb]  
+Negative example: [bb, babbb, aaabb, bba, abba, aaaa, a]"
+(a*ba*b)*a*ba*,a*ba*(bb)*a*b(bb)*,"positive example: [babb, ababbb, aabbabba, aabbbb]
+negative example: [bba, aaabbb, babbabb]"
+b*a*,a(a)*b,"positive example:[ab, aab, aaab, aaaab], negative example:[b, ba, aba, aaba]"
+(a|b)*baa(a|b)*b,"(ba{2,})*","positive example: [baaa, baaabaa, baabaaa, baaaabaa, baabaa]
+negative example: [b, a, bab, baa, aaaa]"
+a(a|b)*b,b(a|b)a,"positive example: [baa, bba]  
+negative example: [aba, bbb, aaa]"
+b*a*,(a*b*)*baa(a*b*)*b,"positive example: [baab, babaaab, aabaaab, aaabab, baaabab, baaaab]
+negative example: [a, ba, aaa, bbb, aab, ab]"
+(a|baa)*,"(a)b{2,}","positive example:[abb, abbb, abbbb, abbbbb, abbbbbb], negative example:[a, ab, b, bb, abbab]"
+(a|b)*baa(a|b)*b,a|b*[baa]b,"positive example: [a, ab, bab, bbab, baab, bb, bbaaab], negative example: [b, abab, aa, bbbba]"
+001|1010|110,(001)(10101)(110),"positive example: [00110101110], negative example: [001110, 10101001, 101110]"
+(0*10*10*)*|0*,1,"Sure, let's generate some examples based on your request.
+
+Positive example: `[""[]"", ""[][]"", ""[[]]"", ""[[[]]]""]`
+
+Negative example: `[""["", ""]"", ""[["", ""]]"", ""[[]"", ""[["", ""[]]""]`"
+(0|1)(0|1)|(0|1)(0|1)(0|1),0|1,"positive example:[0, 1], negative example:[00, 11, 01, 10, a, b, 2]"
+(ab|ba)*,(aa|bb|ab|ba)*bb,"Positive example: [bbaabb, abbaabb, aabbba]
+Negative example: [abab, aaabab, ba]"
+(ab|ba)*,aabb(a|b)*,"positive example: [aabb, aabbab, aabbaa, aabbabbba, aabba]
+negative example: [a, ab, aabba, aa, abb]"
+(a|b)*baa(a|b)*b,(a*)(b*|aa*)b,"positive example:[abb, ab, b, aab, aabb, aabbb, aaab, aaabb, aaabbb]  
+negative example:[aaa, baaa, baba, aa, a, bb, bbb]"
+a+b,(a|b),"positive example: [a, b], negative example: [aa, bb, ab, ba]"
+a+b,a|b,"positive example: [a, b]  
+negative example: [ab, ba, aa]"
+(a|b)*baa(a|b)*b,(a*|b*|aa*)b,"positive example: [bbb, aab, ab, aaab, aaaaab]  
+negative example: [baa, bab, baab, aabaa, aba]"
+0*10*(10*10*)*,0*|1(111)0*,"positive example: [00, 0, , 11110, 111100, 1111, 1110, 000, 11110000, 1111100, 1111010000, 1111110]  
+negative example: [1, 111, 01, 1011, 11111, 121, 201]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0(0*1*)*1)|(1(0*1*)*0),"positive example:[0101, 100, 1100, 001, 011, 1010, 110, 0001, 1110]  
+negative example:[1, 0, 111, 000, 10, 01, 010, 101]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)?,"positive example: [0, 1, """"], negative example: [00, 11, 01]"
+b*a*,(b|a)*(baa)+(a|b)*b,"positive example: [baab, babaaabb, baa, baaabb, abaab]
+negative example: [b, ab, aab, ba, baaa]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)|(0|1)|(0|1),"positive example: [0, 1, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111]  
+negative example: ['']"
+b*a*,(a)(a)*(bb)(b)*(a)(a*),"positive example: [aaabbba, abbaaa, abbbba, aaaabbba, aaabbaaa]  
+negative example: [abba, aabb, bbba, abaaaa, bbbba]"
+(a*ba*b)*a*ba*,([a]*[b][a]*[b][a]*)+,"positive example: [babab, babababa, bababababab, abababababa, ababababababab]
+negative example: [bb, ba, abb, abab, aaa]"
+001|1010|110,1+0+11+0+,"Positive example: [10011100, 10110, 110011100, 1011100, 1001110]  
+Negative example: [1010, 0110, 1110, 1011, 1100]"
+(a*ba*b)*a*ba*,b(a*ba*ba*)*a*ba,"positive example: [baaba, bbbbbba, bababa, baaababa, baba]
+negative example: [bbba, bab, bba, aa, ab]"
+(a|b)(a|b)+aaa+,aa||bbaaa+,"positive example:[aa, |bbaaa, |bbaaaa, |bbaaaaa, |bbaaaaaa], negative example:[a, aaa, bba, aaab]"
+a+b,b+a,"positive example: [ba, bba, bbba]  
+negative example: [a, aa, aba]"
+a(a|b)a(a|b)*,((a|b)aba(a|b)*),"positive example: [aabaab, aabaaa, babab, bababa, aababb]  
+negative example: [aa, aba, abbaa, aaaa, bba]"
+(a*ba*b)*a*ba*,(a*ba*ba*)*,"positive example:[, bba, bbbb, abba, aabbaa, aabaa], negative example:[b, ba, abb]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)(0|1)+(0|1)(0|1)(0|1),"positive example:[01011, 11000, 00011, 11111, 10100],negative example:[100, 111, 000, 001]"
+(a|(b*bb))*,b(ab+ba+b)*,"positive example: [b, bab, babab, babba, babbab, babbababa, babbababbab]  
+negative example: [a, ba, ab, bb, baa, abab, babbb, abbababa]"
+(0*10*10*)*|0*,0*1(0*10*10*)+,"positive example:[010101, 0001101010, 101010, 01101010, 00101010], negative example:[0, 10, 1110, 000, 010]"
+001|1010|110,1+0+011+0+,"positive example: [1000111, 10110110, 11000110], negative example: [1101100, 001011, 111010]"
+b*a*,(a)(a)*(b)(b)*(a)(a*),"positive example:[aabbaa, abbbbaaa, aaabba, abbbaa]
+negative example:[abaab, bababa, aaabbb]"
+b*a*,[ab]*baa[ab]*b,"positive example: [baab, abaab, abbaaab, baaab, ababaabb], negative example: [b, abb, bb, aa, a]"
+(ab|ba)*,aaa*bbb*(a|b)*,"positive example:[aaabbb, aaaabbb, aaabbbaa, aaabbba, aaaabbaa, aaaabbbb], negative example:[aabb, ab, aaab, aabaa, bb]"
+(a|b)(a|b)+aaa+,(a|b(aaa)),"positive example:[a, baaa], negative example:[b, aa, baa, aaa]"
+a+b,a*|b,"positive example:[, a, aa, aaa, b]
+
+negative example:[ab, ba, bb, aab, aba]"
+(a|b)(a|b)+aaa+,(ab|aaa),"positive example: [aaa, ab]  
+negative example: [a, aa, abab, aaaa]"
+a+b,a*,"positive example:[, a, aa, aaa],negative example:[b, ab, ba]"
+001|1010|110,(0+1)*01(0+1)*,"positive example: [01, 001, 0101, 1001, 010101]
+negative example: [0, 1, 0010, 100, 1011]"
+(0*10*10*)*|0*,0*1(0|11)*,"positive example:[101, 001, 1100, 111, 10011], negative example:[010, 000, 0111, 1010, 110]"
+(a*ba*b)*a*ba*,(a|bb)*(a|bb)*,"positive example: [a, bb, abb, bba, aa, bbbb, abba, abbb, bbaaa]
+negative example: [b, ab, ba, bab, bbaa, aaaa, bbbbb, aba, aabb]"
+001|1010|110,(0|01),"positive example:[0, 01]  
+negative example:[1, 11, 10]"
+(ab|ba)*,(aa)*b,"positive example: [b, aab, aaaab, aaaaaaab, aaab]  
+negative example: [a, aa, ab, ba, aabaa, aabaaa]"
+001|1010|110,0|0|1,"positive example:[0,1,0],negative example:[]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)+bbb+,"positive example: [aabbbb, abbbbbb, bababbb, bbbbbbb]
+negative example: [bbb, aabb, abb, aabab]"
+a(a|b)a(a|b)*,(a(a|b)b)(a|b)*,"positive example: [aab, abab, abba, aabbb, abbab]
+
+negative example: [aaa, baa, ab, a, bba]"
+(a*ba*b)*a*ba*,[a]{1}([a]{2})*,"positive example:[a, aaa, aaaaa, aaaaaaa],negative example:[aa, aaaa, aaaaaa, aaaaaaaa]"
+a(a|b)a(a|b)*,a(a|b)b(a|b)*,"positive example: [aab, abb, aabab, aabba, abba]
+negative example: [aba, baa, bab, bbb, aa]"
+(ab|ba)*,a,"To generate positive and negative examples for the regular expression `a`, here are some suitable examples:
+
+Positive examples: [`a`, `aaa`, `aaaa`, `aaaaaaaa`, `aaaaaa`]
+
+Negative examples: [`b`, `aaab`, `baa`, `c`, `d`]"
+(a|(b*bb))*,(a+b)b(a+b),"positive example: [abab, babb, abba]  
+negative example: [aaaa, baaa, aabb]"
+001|1010|110,0,"I'm sorry, but I need the regular expression itself to generate examples. Please provide the regular expression you are referring to."
+001|1010|110,1,"Please provide the regular expression you would like examples for, and I will generate positive and negative examples accordingly."
+a(a|b)a(a|b)*,a(a|b)b(a+b)*,"positive example:[aababab, aab, aabaaa, aabab, aaba, aabba, aabbaba, aabaaab]
+negative example:[aa, ab, aba, abb, aaaa, abab, baa, bbab, bab]"
+001|1010|110,(1|0)(001|10101|110)*,"positive example:[1, 00101, 0110001, 110110, 010101110], negative example:[101, 1100, 010, 0001, 110101]"
+001|1010|110,(0|1)*0101(0|1)*,"positive example:[0101, 1010101, 000101000, 111010111, 0000101]
+negative example:[01, 1011, 001110, 1010, 110011]"
+a+b,(a*)ba,"positive example:[ba, aaba, aba, aaaba, aaaaaaba]  
+negative example:[bba, abba, abb, baba, baa]"
+(a*ba*b)*a*ba*,(a)*b(a)*b,"positive example:[bb, ab, aabb, abb, baab, aabaabb], negative example:[b, aab, bab, aaabbb, aba]"
+0+1*,1,Please provide the regular expression you'd like me to generate examples for.
+(0*10*10*)*|0*,0*10*11,"positive example:[01011, 001011, 0001011],negative example:[0101, 10011, 0110]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),-1,"I'm sorry, but there's no specific regular expression provided in your request. If you share the regular expression, I can generate positive and negative examples based on it."
+001|1010|110,[001]|[10101]|[110],"Positive example: [001, 10101, 110]  
+Negative example: [011, 111, 101]"
+001|1010|110,11010110,"positive example:[11010110], negative example:[1101011, 011010110, 110101101, 1010110, 110101, 11011010]"
+0*10*(10*10*)*,0*(10*1),"positive example: [101, 1001, 0010011, 000110001]
+negative example: [000, 111, 1010101, 11011]"
+a+b,ba+,"positive example:[ba, baa, baaa, baaaa], negative example:[b, bb, a, ab]"
+(a|b)*baa(a|b)*b,a(a*)b,"positive example: [aab, aaab, ab]  
+negative example: [abb, ba, aa]"
+a(a|b)a(a|b)*,abba,"Positive example: [abba]  
+Negative example: [abab, aabb, baab, abbb]"
+001|1010|110,(0|1)*0101(0|1),"positive example: [01011, 0101010, 1101011, 00101010, 1010101, 0001010, 11101010]  
+negative example: [0101, 1001, 1110, 0101101, 10101, 011, 0000]"
+(a*ba*b)*a*ba*,(bb)+,"positive example:[bb, bbbb, bbbbbb],negative example:[b, bbb, bbbbb]"
+0*10*(10*10*)*,0*|1(1)0*,"positive example: [00, 11, , 110, 1100, 0, 10, 1110]  
+negative example: [1, 01, 111, 101, 100]"
+b*a*,a(a*)b,"positive example: [aaab, ab, aab, aaaab, aaaaaab]
+
+negative example: [b, a, aa, ba, bb]"
+(ab|ba)*,(a+a(b+aa)*b)*a(b+aa)*a,"positive example: [aa, aabaaababaabaaa, aababaaa, aaa, aaabaa, aaaaa]  
+negative example: [a, ab, baa, abab, aaaab, baab]"
+b*a*,(b|a)*(baa)+(a|b)*b+,"Positive examples: [baabb, abaab, abaabab]
+
+Negative examples: [bbaa, aaba, abb]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0(0|1)*1)|(1(1|0)*0),"positive example: [10, 0101, 1100, 0011, 01, 100, 001, 1110, 011, 1100]
+negative example: [1, 11, 00, 0, 111, 010, 101, 000, 0110, 0010]"
+(a|baa)*,a*b(a*ba*b)*a,"positive example: [ba, aabbbbba, aba, aabab, ababa]
+negative example: [ab, aa, bb, baa, aaa]"
+0*10*(10*10*)*,0*,"positive example:[0, 00, 000], negative example:[1, 01, 0001]"
+a+b,(a*b)*a,"positive example:[a, bba, aba, aa, ba], negative example:[bb, ab, b]"
+001|1010|110,((0|01)(1|10)),"positive example:[011, 0110, 0111, 01, 010, 0101],negative example:[11, 00, 10, 001, 100, 110]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),((0|1)(0|1))+((0|1)(0|1)(0|1)),"positive example:[01010, 1010111, 1100110],negative example:[001, 0000, 111]"
+0*10*(10*10*)*,(0*10*10*10*10*)*,"positive example:[, 10101, 0110101010],
+negative example:[1111, 1110, 0001110]"
+001|1010|110,(1|0)(001|1010|110)*,"positive example: [0, 10011010, 01010001110, 1010, 001110, 011010001]
+negative example: [00, 111, 100, 010011, 001001]"
+(a*ba*b)*a*ba*,a*b(a*ba*b)*b,"positive example: [aabbbbbb, bb, abb, abbaabb, aaabbabbbb, abbbbb]
+negative example: [bbbbb, ab, aaa, bba, abbbbbbb]"
+(a|baa)*,abb*,"positive example:[ab, abb, abbb, abbbb],negative example:[a, b, aa, bb, ba, abba]"
+(a*ba*b)*a*ba*,a*b(a|(ba*b))b,"positive example:[ab, aba, aabab, bbab, abbbb]  
+negative example:[b, bbb, aab, bab, baab]"
+(a|b)*baa(a|b)*b,(a)*(baa)*((a)*(baa)*)*,"Positive example: [ '', 'baaabaaa', 'baa', 'aaaa', 'baabaa', 'baabaaabaa', 'a', 'baaa' ]
+
+Negative example: [ 'b', 'abab', 'aaaaabaaaa', 'baaabaa', 'baba', 'aabaa', 'bb', 'ba' ]"
+(a|b)*baa(a|b)*b,a+|b*a*,"positive example:[a, aa, aaa, b, bb, bba, bbaa], negative example:[ba, ab, aba, bbab]"
+0*10*(10*10*)*,(0*(10*1)*0*10*(10*1)*1),"positive example: [11, 1110101, 1001101, 01010101, 00110101]
+
+negative example: [110110101, 100111, 0101011, 111, 000111]"

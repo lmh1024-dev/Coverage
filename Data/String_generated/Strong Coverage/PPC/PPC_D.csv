@@ -1,0 +1,640 @@
+Regex,Attempt Regex,Positive Strings,Negative Strings
+(a*ba*b)*a*ba*,a*b*(a*ba*b)*a*,"[, ba]",[]
+001|1010|110,001|10101|110|1010,"[110, 001, 10101]","[01, 100, 111, 00010, 101010, 0011, 101011, 1101, 1100, 1011, 0010, 10100]"
+(a|b)(a|b)+aaa+,((a|b)(a|b)+aa+),"[baaa, bbbabaabaa, aaaababaa, aaaabaaa, bbaababaa, abaa, bbaa, aababaabaa]","[aababaab, aaaabaaaba, baaaba, bbaaba, aaaababaaba, bbaababaaba, abaaba, bbbabaab]"
+(0*10*10*)*|0*,(0*|1*)*,"[, 10]",[]
+(a|b)*(bab)(a|b)*,((a|b)*(bab)*(a|b)*)*,"[, ba]",[]
+(ab|ba)*,((ab|ba)*|(aabb|bbaa)*)*(aa|ab|ba|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(a|baa)*,[a]*|[baa]*,"[, ba]",[]
+0*10*(10*10*)*,(0|1)*1(0|1)*1*0*,"[11, 010]","[0, ]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0*1*)*0*)|((1*0*)*1*),"[, 10]",[]
+(0*10*10*)*|0*,0*(0*1+0*1+0*)*,"[1010111, , 101010010, 101010110, 10100]","[1010100, 1010010, 101010, 10101]"
+(ab|ba)*,(ab|ba)*(aa+bb+ab+ab)*,"[, abaabbababaabbabab, aabbababaabbabab, abbabaaabbabab, baaabbababaabbababaabbabab, aabbbababaabbabab, aabbabbabaabbabab, aabbababaaabbabab]","[abaabbabaa, baaaba, baaabbababb, baaabbaa, baaabbabaa, aabbababaabbababb, abaabbababab, abbb, aabbabbabaabbab, babb, aabbababaa, aabbababaabbaab, aabbababaabbababab, aabbababaabbabaa, abaaba, abaabbababb, aabbbababaabb, aabbababaabaa, baaabbababab, abaabbaa]"
+(a|(b*bb))*,(ab|ba|b|a)*(a)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a|b*a|b*)*aaa,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[aabaaaba, babaabaaab, aaabaabaaaba, abaaabaaaaba]"
+b*a*,a+[ba]*|(b*a*),"[bb, aa, , ab, baa]","[baba, babb, baab, bbab]"
+(a|(b*bb))*,(a|b)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a+|b+)+aaa,"[baaa, babaaa, aabaaa, bbabaabaaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, aaaabaabaaabaaaa, aaaa, baaabaabaaabaaaa]","[baabaaaba, bbabaabaaab, aaabaaaba, aaaabaa, babaaabaa, baaabaabaaabaaaabaa, ababaabaaab, aaaabaabaaabaaaabaa, aabaaabaa, baaabaa]"
+(a|b)(a|b)+aaa+,((a|b)|(aa|bb))+aaa,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[aaaabaabaaab, baabaaaba, babaaaab, baaab, bbabaabaaab, baaabaabaaab, aaabaaaba, aaaabaaab, ababaabaaab, aabaaaab]"
+(a|b)(a|b)+aaa+,(aa+|bb+|ab+|ba+|a*|b*)+aaa,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[aabaaaba, babaabaaab, aaabaabaaabaa, abaaabaaaabaa]"
+(a|b)*(bab)(a|b)*,(a|b|bab)*(a|b)*,"[, ba]",[]
+(ab|ba)*,(ab|ba|aabb|bbaa)*(aa|bb|ab|ba)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(a*ba*b)*a*ba*,(a)*b(a*ba*b*)*(a)*,"[bb, aba]","[, a]"
+(a|(b*bb))*,((a|b)*bb(a|b)*)*a*,"[babba, , bbb, ababaabb]","[bab, b, ababaa]"
+(a|baa)*,(a|(b*aa))*,"[bbaabaa, , baaa, baabaa]","[baaab, bbaab, baababba]"
+(a|baa)*,(a)*((b|aa)*(a)*)*,"[, ba]",[]
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*(ba|b))*,"[, bbbbabb, ababaabaab, abaababab, bbbbaaaba, abbbabb, abbbaaaba, bbaababab, bbabaabaab, abab, bbab]","[bbaabababaa, bbabaabaabb, bbbbaaa, abaabababaa, abbbabbaa, bbbbabbaa, abbbaaa, ababaa, ababaabaabb, bbabaa]"
+(0*10*10*)*|0*,(0*|1)*(0*|1)*,"[, 10]",[]
+001|1010|110,0*1(01)*1*0*,"[110, 111, 01000, 10110, 10100]","[1101, 101001, 11001, 101101, 11101, 0100110]"
+a(a|b)a(a|b)*,a+(a|b)+a+(b)*,"[aba, aaba, aaaba, abba]","[bb, aa, abb, ab, aab, ba]"
+/#(/|a|b|##*(a|b))*##*/,(/#)|((a|b|/?)|#)|(#/),"[, a, b, /]",[]
+(ab|ba)*,a*b*(a|b)*,"[, ba]",[]
+(a*ba*b)*a*ba*,((a)*b(a)*(bb)*)*,"[bb, , aba, aab]","[aa, a]"
+(a|b)(a|b)+aaa+,(a+|b+)*aaa,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[babaabaaab, aabaaaba, aaabaabaaabaa, abaaabaaaabaa]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0|1|0(0|1)*0|1(0|1)*1)*,"[, 10]",[]
+b*a*,(a)*a*b*a*,"[bb, , abaa]","[babb, ababa, baab, bbab]"
+(a*ba*b)*a*ba*,(a*ba*)*,"[bb, , aba, aab]","[aa, a]"
+(a|b)(a|b)+aaa+,(a|b)*aaaa*,"[babaabaaabaaa, aabaaabaaa, aaabaabaaabaaa, abaaaa]","[babaabaaab, aabaaaba, abaaaab, aaabaabaaabaaab]"
+(a*ba*b)*a*ba*,(a*ba*)+,"[bb, aba]","[, a]"
+0*10*(10*10*)*,(0*10*1*)*,"[11, , 001, 010]","[0, 00]"
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*ba))|((a|b)a*b))*,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbaababbaa, bbabaabaabb, bbbbaaa, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+a(a|b)a(a|b)*,(a(a|b)a(a|b)*)*,"[, aaaa, abab]","[aa, abb, ab, aabb, ba]"
+(ab|ba)*,((aa)*|(bb)*)((aa)*|(bb)*)*|(ba|ab)(ab|ba)*|aa|bb,"[, abbaba, aaaaaa, aaaabb, aabbbb, aabbaa, baab, bbaa, bbbb, baba, abbaab, ababba, ababab]","[aaaba, aabab, aabbab, aaaaab, abaa, abbb, bbab, baaa, babb, bbba, aabbba, aaaaba, abbaaa, abbabb, ababaa, ababbb]"
+(ab|ba)*,(a*b*)(ab|ba|aa|ab)*,"[bb, babbabaaaaa, , babaa, bababbaaa, babbabaaaab, babbaabba, bababbaab, ababbaabaa, ababbaabab, babbaaababa]","[babaabbaa, babbba, bababbaa, bababbbb, bbabbaa, ababbaaba, babbaaabb, babbaabbb, babbabaaaa, babbabb]"
+(a|b)*baa(a|b)*b,(a|b)*(baa*)(a|b)*b,"[babaab, ababbab, bbab]","[bb, babaa, ababbaba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0|1)*(0(101)*0|1(010)*1|(1001)*|(0110)*)(0|1)*)*,"[, 10]",[]
+(a|b)(a|b)+aaa+,(a|b)+a+a+a+,"[baaa, aabaaabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa, aaaa, babaaabaaaa]","[aaaabaabaaab, baabaaaba, baaab, bbabaabaaab, baaabaabaaab, aaabaaaba, aaaab, ababaabaaab, babaaabaaaab, aabaaabaaaab]"
+(a|b)*baa(a|b)*b,(a*(b+a+)+b+),"[babaab, ababbab, bbab]","[bb, babaa, ababbaba]"
+(a|b)*baa(a|b)*b,((a|b)*|(baa+))b,"[baab, bbab]","[bbaba, baa]"
+(a*ba*b)*a*ba*,"(a*(b|bb{2,})*a*)+","[, ba]",[]
+(0*10*10*)*|0*,0*(0|1)*,"[, 10]",[]
+0*10*(10*10*)*,1*|((0|1)*1(0|1)*)*,"[11, , 001, 010]","[0, 00]"
+(0|1)(0|1)*,(0|1)|(0|1)*(0|1)*,"[, 10]",[]
+0(0|1)*0,0+(0*1*0*)*,"[00, 01]","[, 11, 10]"
+a(a|b)a(a|b)*,a(a|b)*a(a|b)*,"[aaa, aba, aab]","[bb, ab, a, ba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1+(0*1*0*)*1+)|(0*1*0*)*,"[, 10]",[]
+(ab|ba)*,(a|b)*,"[, ba]",[]
+(ab|ba)*,(ab|ba)*|(ab|bb)*,"[baabba, babaab, , abbbabab, abbbbbbb, abbaabab, abbababa, bbbbab, abab]","[bababb, babaaa, bbbbabaa, bbbbabba, abbaaaa, abbabbb, abaa, bbabaa, bbabba, bbbbaa, bbbbba, abbbaa, abbbba, baabbb, baabaa]"
+(a|(b*bb))*,a*|(a|b)*bb+(a|b)*|(a|b)*b+b(a|b)*,"[babba, , bbb, ababaabb]","[bab, b, ababaa]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaaa*,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[baabaaaba, aaaabaabaaabaa, bbabaabaaab, aaabaaaba, ababaabaaab, babaaaabaa, aaaabaaabaa, aabaaaabaa, baaabaa, baaabaabaaabaa]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)((a*b)|(a*ba)))*)?,"[, bbbbaaabab, ababaabaab, abaababbab, abbbaaabab, abbbab, bbbbab, bbaababbab, bbabaabaab, abab, bbab]","[abbbabaa, bbabaabaabb, bbbbaaa, bbbbabaa, abaababbabaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbaababbabaa]"
+(0*10*10*)*|0*,(0*|1*0*1*)+,"[, 10]",[]
+(a|(b*bb))*,((a|b)*bb(a|b)*)|a*,"[babba, , bbb, ababaabb]","[bab, b, ababaa]"
+0(0|1)*0,0+(0|1)*,"[00, 01]","[, 110]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1((0|1)*1)*|0((0|1)*0)*)*,"[, 10]",[]
+(a|b)*baa(a|b)*b,(a|b)*(baa)+(a|b)*,"[babaab, abaaa, bbabaa]","[baba, aba, bbab]"
+(a|(b*bb))*,(a*(b*b)*a*)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a|b)*a{3},"[babaabaaabaaa, aabaaabaaa, aaabaabaaabaaa, abaaaa]","[babaabaaab, aabaaaba, abaaaab, aaabaabaaabaaab]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)(a*))(ba))*(((a|b)(a*))(b|ba))*,"[, bbaabab, abbbabbab, bbbbaaabab, ababaabaab, abbbaaabab, abaabab, bbbbabbab, bbabaabaab, abab, bbab]","[bbabaabaabb, bbbbaaa, abaababaa, abbbabbabaa, bbaababaa, abbbaaa, ababaa, ababaabaabb, bbbbabbabaa, bbabaa]"
+(a|b)(a|b)+aaa+,((a+|b+)+)+aaa+,"[baaa, babaaa, aabaaa, bbabaabaaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, aaaabaabaaabaaaa, aaaa, baaabaabaaabaaaa]","[baabaaaba, baaab, bbabaabaaab, baaabaabaaabaaaab, aaabaaaba, aaaabaabaaabaaaab, aabaaab, aaaab, ababaabaaab, babaaab]"
+(a|(b*bb))*,(a|b(b*))*,"[, ba]",[]
+(a|b)(a|b)+aaa+,(aa*|bb*)+aaa+,"[baaa, aabaaabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa, aaaa, babaaabaaaa]","[baabaaaba, aaaabaabaaabaa, bbabaabaaab, aaabaaaba, aaaabaa, ababaabaaab, aabaaabaaaabaa, baaabaa, baaabaabaaabaa, babaaabaaaabaa]"
+(ab|ba)*,(aa|bb|ab|ba)*(aa|bb|ab|ba)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a|(b*bb))*,(a|(bb*))*,"[, ba]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),1*|0*|1+(0*1*)*1+|0+(1*0*)*0+,"[, 01010, 0110, 1101, 0100, 1001, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+(a|baa)*,[ab]*(baa)*,"[, ba]",[]
+(a*ba*b)*a*ba*,(a*ba*)+(a*ba*ba*)*,"[bb, aba]","[, a]"
+(a|b)(a|b)+aaa+,(a|b)|(b|a)(a|b)*(a)(a)(a)(a*),"[babaaa, baaabaaa, aaabaaa, aaaabaabaaa, baabaaabaaa, aaaabbabaabaaabaaa, baabaaa, baaabaabaaa, bbaaa, aabaaa, aabaaaa, abaaabaaa, babaaaa, aaabaaabaaa]","[baabaaaba, bab, bbaaaba, aaaabbabaabaaab, aab, aaabaaaba, aabaaaaba, aaab, baab, aaaabaabaaaba, baaab, babaaaaba, baaabaabaaaba, abaaabaaaba]"
+(a*ba*b)*a*ba*,(a|b)+(a|b)*,"[aa, bb]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1*01*)*(0*10*)*,"[, 10]",[]
+0+1*,0*1*,"[011, ]","[110, 01010]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0*)|(1*)|(0+(1|0)*0+)|(1+(1|0)*1+),"[, 01010, 1101, 0110, 1001, 0100, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+(ab|ba)*,(ab|ba|aa|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(a|baa)*,((b+a+a)*a*)*,"[bbaabaa, , baaa, baabaa]","[baaab, bbaab, baababba]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][0-1]*|[0101],"[00, 11]",[]
+(a|b)(a|b)+aaa+,(aa+|bb+|ab+|ba+|a|b)+aaa,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[aaaabaabaaab, baabaaaba, babaaaab, baaab, bbabaabaaab, baaabaabaaab, aaabaaaba, aaaabaaab, ababaabaaab, aabaaaab]"
+(ab|ba)*,(ab|ba)*(aa+bb+ba+ab)*,"[, aabbbaabaabbbaab, abbaba, baaabbbaabaabbbaab, aabbbaabaabbbaaab, abaabbbaabaabbbaabaabbbaab, aabbbaabaaabbbaab, aabbbbaabaabbbaab]","[baaabbbaabab, baaaba, abbb, aabbbaabaabbbab, aabbbaabaaa, baaabba, aabbbaabaaba, abaabbbaabab, babb, baaabbbaabb, abaabbbaabb, abaabbbab, aabbbaabaabbbaabb, aabbbaabaabbbaabab, abaabaa, aabbbbaabaabbb, aabbbaabaabbbaaa, abaabbab, aabbbaabaabba, baaabbbab]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0+1*0+)*|((1+0*)*10+1+)*|1*|0+(1+0+)*,"[, 01010, 1101, 0110, 1001, 0100, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0+(1+0)*)|(1+(0+1)*))*,"[, 10]",[]
+(ab|ba)*,(bb|aa|(aabb|abab|abba|baba|bbaa|baab)*)*((aa)|(bb)|(ab)|(ba))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+b*a*,((a+)|(b*a*))*,"[, ba]",[]
+(a|baa)*,(a|(b*a(a)*))*,"[, bbaba, baa]","[baab, bbab]"
+(a|baa)*,((a)*(b+aa+))+|[a]*,"[bbaabaa, , baaa, baabaa]","[baaaba, bbaab, babb, baababa]"
+0*10*(10*10*)*,(0*(10*1)*0*10*)*|(11),"[11, , 001, 010]","[00, 0]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*(b|ba))*)?,"[, bbbbabb, ababaabaab, abaababab, bbbbaaaba, abbbabb, abbbaaaba, bbaababab, bbabaabaab, abab, bbab]","[bbaabababaa, bbabaabaabb, bbbbaaa, abaabababaa, abbbabbaa, bbbbabbaa, abbbaaa, ababaa, ababaabaabb, bbabaa]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aa*,"[bbaba, aabaa, ababa, ba]","[bab, aabaab, abab, bbab]"
+(a|b)(a|b)+aaa+,(aa|bb|ab|ba)+(a*a+a+),"[aaaabbabbaaaa, abaaa, bbaaabaabaaabbaaa, bbbabbaabbaaa, aaaaabaabaaabaaaa, aaaaaabaaaabaaa, aabaaaabaaaaabaaa, aaaaaabbabaaaaabbaaaa, bbaaa, aaaabbaaa, bbaabbaaa, abbabbaabaaaa, bbaaaabaaaabaaa, bbaabaaaabbbaaa, aaaaa, bbbaaaabaaaaabaaa, bbaabbaabaabaabbaaa, aaaabbaabaabaabaaaa, aaaabaaaabbaaaa, baaaa, bbbbaaa, bbaaaabbabaaaaabbbaaa, aabbaaa, bbaabbabbbaaa, aaaabaaaa, bbaabaaaa]","[bbbabbaab, aabaaaabaaaaaba, aaaabaaaabb, bbaabbaaab, bbaaab, aaaabaaaab, bbaabbaabaabaab, aaaaaabbabaaaaabb, bbaabaaaabb, aaaabbaaab, aaaaaabaaaaba, bbbaaaabaaaaaba, bbbbaaab, aaaaabaabaaab, aaaaab, bbaaaabbabaaaaabb, bbaaaabaaaaba, aaaabbabb, bbaaabaabaaab, aabbaaab, abaaab, bbaabbabb, aaaabbaabaabaab, bbaabaaaab, abbabbaab, baaaab]"
+(a|b)(a|b)+aaa+,(a|b)*(a|b)*(aaa)*,"[, ba]",[]
+(a|b)*baa(a|b)*b,(a|b|baa+)+b,"[bb, bbaab, abaab, abbab]","[bba, abbaba, abaa, bbaa]"
+(a|baa)*,(a*)+(a*|b+a+a)+(a*),"[bbaabaa, , baaa, baabaa]","[bbaab, baababba, baaabab]"
+(ab|ba)*,(ab(ab)*|ba(ab)*)*((a|b)(a|b))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+a+b,[ab]*(ab)[ab]*,"[baba, abb, aab]","[aa, a, ba]"
+(a|(b*bb))*,(a|(b)*)*,"[, ba]",[]
+a+b,(a|b)*(b),"[baab, bbab]","[baa, bbaba]"
+(a*ba*b)*a*ba*,(a*(ba*ba*)*ba*)*,"[bb, , aba, aab]","[aa, a]"
+(a|b)(a|b)+aaa+,(a|b)*,"[, ba]",[]
+(a*ba*b)*a*ba*,a*b|(a*ba*(bb)*a*)*,"[bb, , aba, aab]","[aa, a]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|(0+1+)+0+|(1+0+)+1+,"[, 01010, 0110, 1101, 1001, 0100, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+(a*ba*b)*a*ba*,a*b+(a|b(a)*b)*,"[bba, babba, bbb, ababbbab]","[, ababbba, babbab]"
+0(0|1)*0,0*(0|1)*0*,"[, 10]",[]
+(ab|ba)*,((aabb|abab|abba|bbaa|baba|baab)*(aa|ab|ba|bb)*)+((ab)?),"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a|(b*bb))*,(a*|(bb*))*,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a|b)*a{2}aa*,"[babaabaaabaaa, aabaaabaaa, aaabaabaaabaaa, abaaaa]","[aabaaaba, babaabaaab, aaabaabaaabaaaba, abaaaaba]"
+(ab|ba)*,(ab|ba|aabb|bbaa)*(aabb+bbaa+ab+ba)*,[],[]
+(ab|ba)*,((a|b)|((a|b)(a|b)(a|b)))*|(ab|ba)*,"[, ba]",[]
+(ab|ba)*,(bb|aa|(abab|aabb)*)*((aa)|(bb)|(ab)|(ba))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(ab|ba)*,(ab)*((a|b)(a|b))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(a|(b*bb))*,(a*(b+a*b+)*a*)*,"[, babaa, bababba, babababbb, bababaaba]","[bababa, babab, babaaba, bababaa]"
+(a|b)(a|b)+aaa+,(a|b)+(a|b)+(a|b)*aaa*,"[baaa, bbbabaabaa, aaaababaa, aaaabaaa, bbaababaa, abaa, bbaa, aababaabaa]","[aababaab, baaab, bbaab, bbaababaab, abaab, aaaabaaab, bbbabaab, aaaababaab]"
+(a|b)*baa(a|b)*b,(a|b|baa+)*b,"[baab, bbab]","[bbaba, baa]"
+(ab|ba)*,(bb?|aa|(ab|ba)*)*((aa)?|(bb)|(ab)|(ba))*,"[abb, , aabba, abaaaab, abaaabb]","[a, abaaa]"
+(a|b)(a|b)+aaa+,(a|b)|(a|b)+(a|b)*aaa,"[babaaa, baaabaaa, abaaa, aaabaaa, aaaabaabaaa, baabaaabaaa, aaaabbabaabaaabaaa, baabaaa, baaabaabaaa, bbaaa, aabaaa, aabaaabaaaa, aaabaaabaaa, babaaabaaaa]","[baabaaaba, bbaaabaa, bab, aaaabbabaabaaab, aab, aaabaaaba, aabaaabaaaabaa, aaab, baab, baaabaabaaabaa, babaaabaaaabaa, aaaabaabaaabaa, baaab, abaaabaa]"
+a+b,[a]*[b]*,"[abb, ]","[bba, ababa]"
+(ab|ba)*,((ab)|(ba))*|(a|b)((a|b)(a|b))*,"[baaaa, , baaab, abbba, abbbb, babbbbb, abaabab, babbaba, abaaaaa, aabbbaabaab, aabbbaabaaa]","[abaababa, baaaaa, baaabb, baaaba, babbbbbb, babbbbba, aabbbaabaa, abbbaa, abbbbb, abbbba, abbbab, babbabab, babbabaa, abaaaaab, abaaaaaa, abaababb, baaaab]"
+(ab|ba)*,(ab(a|b)*)*((a|b)(a|b))*,"[abb, , aba, babbba, aaaaaa, aaaaab, bbbbab, bbbbaa, bbab, baaa, bbbbba, aababb, aababa]","[baaaa, a, baaab, bbbba, bbabb, bbaba, bbbbbab, aaaaa, aabab, babbbaa]"
+(a|b)(a|b)+aaa+,[ab]|[ab]+a{3},"[babaaa, baaabaaa, abaaa, aaabaaa, aaaabaabaaa, baabaaabaaa, aaaabbabaabaaabaaa, baabaaa, baaabaabaaa, bbaaa, aabaaa, aabaaabaaaa, aaabaaabaaa, babaaabaaaa]","[baabaaaba, bbaaabaa, bab, aaaabbabaabaaab, aab, aaabaaaba, aabaaabaaaabaa, aaab, baab, baaabaabaaabaa, babaaabaaaabaa, aaaabaabaaabaa, baaab, abaaabaa]"
+(a|(b*bb))*,((a|b)*b?)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,((a|b)+)aaa,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[aaaabaabaaab, baabaaaba, babaaaab, baaab, bbabaabaaab, baaabaabaaab, aaabaaaba, aaaabaaab, ababaabaaab, aabaaaab]"
+(a|b)*baa(a|b)*b,(a*b*)*(baa)*(a*b*)b,"[baab, bbab]","[bbaba, baa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(1*0+1*0+1*)*|(0*1+0*1+0*)*,"[101010111, 00, 11, 101010100, , 101011, 1011, 0101000, 0101011, 011, 1010100, 100, 01011, 0100, 01010100, 10100, 010101011]","[01, 010101, 101010, 10]"
+(a|b)(a|b)+aaa+,((a|b)+(aaa+)),"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[aaaabaabaaab, baabaaaba, babaaaab, baaab, bbabaabaaab, baaabaabaaab, aaabaaaba, aaaabaaab, ababaabaaab, aabaaaab]"
+a+b,(a|a*)b,[ab],"[bbb, abaa]"
+(a|b)(a|b)+aaa+,(((a)|(b))+)+(aaa)+,"[baaa, aabaaabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa, aaaa, babaaabaaaa]","[aaaabaabaaab, baabaaaba, baaab, bbabaabaaab, baaabaabaaab, aaabaaaba, aaaab, ababaabaaab, babaaabaaaab, aabaaabaaaab]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)+aaa(a|b)*,"[baaaa, bbaaa, abaaa, aaaababaaaa, aaaaa, aaaabaaab, bbaababaaaa, bbbabaabaaa, bbaabaaab, aababaabaaa]","[bbaabaa, aababaab, baaa, aaaabaa, aaaababaa, bbaababaa, bbbabaab, abaa, aaaa, bbaa]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[baabaaaba, aaaabaabaaabaa, bbabaabaaab, aaabaaaba, ababaabaaab, babaaaabaa, aaaabaaabaa, aabaaaabaa, baaabaa, baaabaabaaabaa]"
+(a|(b*bb))*,(a*|(b*b)*)*,"[, ba]",[]
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*(b|ba))+)?,"[, bbbbaaabab, ababaabaab, abbbaaabab, abaababbab, abbbab, bbbbab, bbaababbab, bbabaabaab, abab, bbab]","[abbbabaa, bbbbaaa, bbabaabaabb, bbbbabaa, abbbaaa, abaababbabaa, ababaa, ababaabaabb, bbabaa, bbaababbabaa]"
+(a|b)(a|b)+aaa+,(a|b)|(a|b)*(aaa)a*,"[babaaa, bbaaa, abaaa, baaabbabaabaaabaaa, aaabaabaaabaaaa, aaabaaabaaa, aabaabaaa, baabaaa]","[bab, aaabaaaba, aabaaba, aaabaabaaabaaaab, abaaab, bbaaab, baaabbabaabaaab, baab, babaaab]"
+(0|1)(0|1)*,[01]*,"[, 10]",[]
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba)*((a|b)a*b)*,"[ababbabbbab, , ababbababbb, bbabbbb, ababbaabbbbb, abbb, abbbbbaab, bbbbbbaab, ababababbbab, ababbbb, bbababaababbbabab, bbabbaabbbbb, abababaaaba, bbaabbb, bbabbabbbab, bbabababbbab, bbabbababbb, bbabbbab, bbababbb, abababbb, ababbbab, bbbb, abababaababbbabab, bbababaaaba, abaabbb]","[bbaabbbb, bbababbbb, abababbba, abbbbbaa, bbbbbbaa, bbabababbbabb, ababbaabbbbba, ababababbbaba, ababbbba, bbabbabbbabb, bbabbbba, bbabbbabb, bbabbababbbb, bbababaaa, ababbabbbaba, abababaaa, abababaababbbababa, abbba, abbbb, ababbababbba, bbabbbaba, bbbbb, bbbba, bbababaababbbababb, ababbbabb, ababbbaba, bbabbaabbbbbb, abaabbba]"
+(a|b)(a|b)+aaa+,(a|b)*aaa(a)*,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[aabaaaba, aaabaaabaa, babaabaaab, aaabaabaaabaa, abaaaabaa]"
+(a|b)(a|b)+aaa+,(a|b)+(a|b)*aaa*,"[bbabaabaa, baa, aaababaa, aaabaaa, baababaa, ababaabaa]","[baababaab, bbabaab, aaabaaab, ababaab, aaababaab, baab]"
+a+b,[a]*[b],[ab],"[bbb, abaa]"
+(ab|ba)*,(ab|ba)*(aa|bb)*(ab|ba)*,"[abaababa, babbbaba, , abbbabba, abbbbaab, baaaabba, baaabaab, aabbbababa, baaaabab, aabbabba, aaaaabab, abbbbaba, abaaabba, abaabaab, abbbabab, babbabba, babbbaab, baaababa, aaaababa, aababaab, aabaabba, aabbbaabab, aaaabaab, aabbabab, aaaaabba, abaaabab, babbabab]","[abbbabbb, abbbbaaa, babbbabb, baaabaaa, aaaabaaa, aabaabbb, aabababb, aabbbabbb, aaaaabaa, baaaabaa, aabbabbb, abaaabbb, babbabbb, abaabaaa, abbbabaa, abbbbabb, babbbaaa, baaababb, aaaababb, aabaabaa, aababaaa, aabbbaaaa, aaaaabbb, baaaabbb, aabbabaa, abaaabaa, babbabaa, abaababb]"
+a+b,(a*b),[ab],"[bbb, abaa]"
+(a|b)*baa(a|b)*b,a*b*baa*b*(a*bb*)*,"[abababaab, baa, babbab, bbab]","[bb, baaba, babbaba, abababaa]"
+(ab|ba)*,((ab)*(ba)*)*(a|b)?,"[, baaba, abbab]","[baaa, babb, abbbba, abaa]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b+a*)*,"[bb, , bab, aab, abba]","[aa, a, b, ba]"
+1*(01*01*01*01*)*,(0|1)*,"[, 10]",[]
+(a|b)*baa(a|b)*b,[ab]*[b][aa][ab]*[b],"[babaab, babb, ababab, bbab]","[babba, bb, babaa, abababa]"
+(a|b)(a|b)+aaa+,"(a|b)(a|b)(a|b)*(a{3,})*","[bb, ab, aaba, ba]","[a, b]"
+(a|b)(a|b)+aaa+,"(a|b|aa|bb|ab|ba)*a{3,}","[babaabaaabaaa, aabaaabaaa, aaabaabaaabaaa, abaaaa]","[babaabaaab, aabaaaba, abaaaab, aaabaabaaabaaab]"
+0*10*(10*10*)*,((0|1)*),"[, 10]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*|1*|((1+0*1+)*|(0+1*0+)*)*)*,"[, 10]",[]
+(ab|ba)*,(ab|ba)*(aabb+bbaa+ab+ba)*,"[aabbbbaaabbaaabbbbaaaabba, , aabbbbaaabbbaaabbbbaaabba, abbabaaabbbbaaabba, baaabbbbaaabbaaabbbbaaabba, aabbbbaaabbaaabbbbaaabba, aabbbbbaaabbaaabbbbaaabba, abaabbbbaaabbaaabbbbaaabbaaabbbbaaabba]","[abaabbbbab, abaaa, aabbbbaaabbaaaba, abbb, baaabba, aabbbbaaabbaaabbbbaaabbab, babb, baaabbbbaab, abaabbbbaab, abaabbbbaaabbaab, aabbbbaaabbaaabbbbaaaa, abaabbbbaaabbab, aabbbbaaabbbaaabbbbaaabb, aabbbbbaaabbaaabbbb, abaaba, aabbbbaaabbaaabbbbaab, aabbbbaaabbaaabba, baaaba, baaabbba, baaabbbbab, aabbbbaaabbaaaa, baaabbbbaaabbaab, baaaa, aabbbbaaabbaaabbbbaaaba, abaabbbbaaaba, aabbbbaaabbaaabbbbaaabbaab, baaabbbbaaabbab, baaabbbbaaaba, aabbbbaaabbaaabbbbaba, abaabba, aabbbbaaabbaaabbba, abaabbba]"
+a+b,(a*(b))*,"[, bab, abaab]","[baba, abaa]"
+a+b,(a)+(b)*,"[aa, abb]","[aaba, b, ababa, abba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((01+0)|(10+1)|(0*10*)|(1*01*))*,"[, 10]",[]
+0*10*(10*10*)*,(0*10*)*,"[11, , 001, 010]","[0, 00]"
+(0(0*|1+0)*)|(1(1*|0+1)*),1?|0|1+(0*1*)*1+|0+(0*1*)*0+,"[, 1101, 0100, 101001, 011010]","[11010, 01101, 01001, 10100]"
+(a|b)(a|b)+aaa+,(a*b*)+a+a+a,"[babaabaaabaaa, aabaaabaaa, abaaa, aaabaabaaabaaaa]","[babaabaaab, aabaaaba, aaabaabaaabaaaab, abaaab]"
+(a|b)(a|b)+aaa+,(a|b)*aaa,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[abaaabaaaab, babaabaaab, aaabaabaaab, aabaaaba]"
+(a|(b*bb))*,a*|((a|b)*bb(a*b*)),"[, bbbabbababb, ababbababaabba, bbabbababbaa, bbababba, bbababbabbababbabababbab]","[ababbababaa, bbaba, bbbabbababbaba, bbabbababbaaba, bbababbabbababbabababbaba]"
+(0|1)(0|1)*,(0*1+)*(1*0+)*,"[, 10]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),1*(0|1)*1*|0*(0|1)*0*,"[, 10]",[]
+(a|(b*bb))*,(a*(bb)*b*a*)*,"[, ba]",[]
+(0*10*10*)*|0*,0*(0*1*)*0*,"[, 10]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1|0|1+(0*1*)*1+|0+(1*0*)*0+)*,"[, 10]",[]
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b)|((a|b)a*ba))*,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbbbaaa, bbaababbaa, bbabaabaabb, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+(ab|ba)*,((aa|bb|ab|ba)?)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+a+b,a*b,[ab],"[bbb, abaa]"
+(a*ba*b)*a*ba*,a*b(ba*b+|a*)*,"[bbbaa, abbbba, bbbabbbb, bbbababb]","[abb, bbbab, bbbaba, bbbaab]"
+(a|b)*(bab)(a|b)*,(a|b)*|(a|bab)*(b|aba)*,"[, ba]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),1*|0*|1+(0+1+)*|0+(1+0+)*,"[, 01010, 1101, 0110, 0100, 101001]","[011, 0101, 11010, 01001, 10100]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa+,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[aaaabaabaaab, baabaaaba, babaaaab, baaab, bbabaabaaab, baaabaabaaab, aaabaaaba, aaaabaaab, ababaabaaab, aabaaaab]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa*,"[bbabaabaa, baa, aaababaa, aaabaaa, baababaa, ababaabaa]","[baaba, bbabaab, aaabaaaba, baababaaba, ababaab, aaababaaba]"
+(a*ba*b)*a*ba*,((a|(bb))*b[a]*)*,"[bb, , aba, aab]","[aa, a]"
+(ab|ba)*,(a|b)*(ab|ba|aa|ab)*,"[, ba]",[]
+0(0|1)*0,0|(0|1)*|0,"[, 10]",[]
+(ab|ba)*,(ab|ba)*(aa|bb)?,"[, baaa, babb, abbb, abaa]","[baaaa, babba, baaab, babbb, abaaa, abaab, abbbaa, abbbbb]"
+(a*ba*b)*a*ba*,(a*)b+((a*)|(b(a*)b))+(a*),"[bba, babbbb, babba, bbb, ababab]","[, babbb, ababa, babbab]"
+(a*ba*b)*a*ba*,a*(b(a*ba*b)*)*a*,"[bba, babbaa, babbbb, , abababa, babbabba]","[bab, babbaab, ababa, babbab]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*(1+0+)*|1*(0+1+)*,"[, 10]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1+|0+)*,"[, 10]",[]
+b*a*,(a+|b*a*)+,"[, ba]",[]
+(ab|ba)*,(aa|ab|ba|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a*ba*b)*a*ba*,(a|(ba*b))*b+a*,"[babbaa, bbbabbababa, babbbbba]","[bbbabbaba, babbbbbabab, babbaab]"
+(a*ba*b)*a*ba*,a*b+(bb*|a*)*,"[bb, aba]","[, a]"
+(a|b)(a|b)+aaa+,(a*|b*)*(a)(a)(a)(a*),"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[aabaaaba, aaabaaabaa, babaabaaab, aaabaabaaabaa, abaaaabaa]"
+(a|(b*bb))*,((b(b*))|a)*,"[, ba]",[]
+a+b,(a|b)*a*b,"[baab, bbab]","[bbaba, baa]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba*)*,"[bba, , bbbab, abbab, abbbaa, bbbbaa, abab]","[abb, a, bbba, b, bbb, abba]"
+(a|(b*bb))*,((bb*)*a*)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a|b)(a|b)(a|b)*(aaa)*,"[bb, ab, aaba, ba]","[a, b]"
+b*a*,a+b*a*|b*a*,"[bb, , abaa]","[babb, ababa, baab, bbab]"
+(a*ba*b)*a*ba*,(a|b(bb)*)*,"[, ba]",[]
+(a*ba*b)*a*ba*,(a*ba*b*)*,"[bb, , aba, aab]","[aa, a]"
+(ab|ba)*,(ab|ba)*(aa|bb)*,"[baaaaa, baaabb, babbaa, babbbb, , abbbaaaa, abbbbbbb, abaaaa, abaabb, bbaabb, bbbbaa]","[baaaba, babbba, bbbbba, bbaaba, abbbaba, abbbbab, abaaba, abaaab, bbaaab, bbbbab, baaaab, babbab]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0+0+0)|(1+0+0)|(0+1+0)|(0+0+1)|(1+1+0)|(0+1+1)|(1+0+1)|(1+1+1)|(1+1)|(0+0)|(1+0)|(0+1),"[000, 011, 100, 111, 101, 1101, 0010, 010]","[000101, 000100, 11010, 1011, 1010, 01101, 01100, 0101, 0100, 111010, 10011, 10010, 11011, 111011, 001000, 001011]"
+(a|(b*bb))*,(b(b*)|a)*,"[, ba]",[]
+(a|(b*bb))*,(a*|(b*bb*)*)*,"[, ba]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1*0*1*)*(0*1*0*)*,"[, 10]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1*0*1*)+(0*1*0*),"[, 10]",[]
+(a|baa)*,(a)*(b|aa|a*)*,"[, ba]",[]
+a+b,(a|b)*,"[, ba]",[]
+(ab|ba)*,((a|b)(a|b))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+a+b,[ab]*[a][b][ab]*,"[baba, abb, aab]","[aa, a, ba]"
+(a*ba*b)*a*ba*,(a|b|bb)+,"[aa, bb]",[]
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)*(0|1)*(0|1)*,"[, 10]",[]
+a(a|b)a(a|b)*,a(a|b)+a(a|b)*,"[aba, aaba, aaaba, abba]","[aa, bb, abb, ab, aab, ba]"
+(a|b)*(bab)(a|b)*,(bab)*(a|b)*(bab)*,"[, ba]",[]
+(a|(b*bb))*,(((b*bb*)|a)?)*,"[, ba]",[]
+(a|baa)*,(a)*((b|aa)*a*)*,"[, ba]",[]
+a+b,a+b+,"[abb, aab]","[aa, b, ababa, abba]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)(a|b)*aaa*,"[baaa, bbbabaabaa, aaaababaa, aaaabaaa, bbaababaa, abaa, bbaa, aababaabaa]","[aababaab, aaaabaaaba, baaaba, bbaaba, aaaababaaba, bbaababaaba, abaaba, bbbabaab]"
+(a|b)(a|b)+aaa+,"(a|b)*(a|b)*a{3,}","[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[aabaaaba, babaabaaab, aaabaabaaaba, aaabaaaba, abaaaaba]"
+(a*ba*b)*a*ba*,b*((a|b)*(a|b)*)*,"[, ba]",[]
+(0|1)(0|1)*,(1|0)*|(0|1)*,"[, 10]",[]
+(a*ba*b)*a*ba*,(a|ab)*(a|ba)*(b|a)*,"[, ba]",[]
+a+b,a*b+,[abb],"[bba, ababa]"
+(a|baa)*,(a|b(aa*))*,"[baba, , baa]","[babba, bbb, baab]"
+a+b,a*b*,"[abb, ]","[bba, bab, abaa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(1+0+)*1*,"[, 10]",[]
+(ab|ba)*,((ab)|(ba))*|(a|b)(a|b)*,"[, ba]",[]
+(a|(b*bb))*,(a|(b*bb*))*,"[, ba]",[]
+(a|(b*bb))*,(ab|ba|b|a)*,"[, ba]",[]
+0*10*(10*10*)*,((0|1))*,"[, 10]",[]
+(a|b)(a|b)+aaa+,(a|b)*(aaa),"[babaabaaabaaa, aabaaabaaa, aaabaabaaabaaa, abaaaa]","[aabaaaba, babaabaaab, aaabaabaaabaaaba, abaaaaba]"
+(a|(b*bb))*,(bb)*(a|b)*(bb)*,"[, ba]",[]
+(ab|ba)*,(a+b|b+a)*,"[bba, , baaab, abbaba, abab]","[bb, baaa, aba, abbab]"
+a+b,(a|b)*(ab),"[abbababbbabbab, abbabaab]","[abbabaa, abbababbbabb]"
+(ab|ba)*,(aa|ab|ba|ba)*,"[baaaaa, , aababa, abaa, abba, baaaab, abab]","[babba, baaaa, aba, aabbb, abbb]"
+a+b,(aa*b)*,"[, ab, abaab]","[abbba, abaa]"
+(a|(b*bb))*,(a|((b|bb)+))*|a*,"[, ba]",[]
+0(0|1)*0,0*(0*1*)*0*,"[, 10]",[]
+a+b,(a*)+b,[ab],"[bb, ababa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(01)*1*0)*|(1*(10)*0*1)*,"[, 10]",[]
+(0*10*10*)*|0*,0*(0*1+)*0*,"[, 10]",[]
+(a|b)(a|b)+aaa+,(a|b)*(aaa)+,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[aabaaaba, babaabaaab, aaabaabaaaba, aaabaaaba, abaaaaba]"
+(a|b)(a|b)+aaa+,(a|b)*(aaa)*,"[, ba]",[]
+(ab|ba)*,(bb|aa|(ab|ba)*)*((aa)*|(bb)*|(ab)*|(ba)*)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(ab|ba)*,(ab)*(ab|ba|aa|ab)*,"[baaaaa, , aababa, abaa, abba, baaaab, abab]","[baaaa, babba, aba, aabbb, abbb]"
+(a|b)*baa(a|b)*b,([ab]*(baa)*[ab]*)*b,"[baab, bbab]","[bbaba, baa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(1+0+)*|1*(0+1+)*,"[, 10]",[]
+b*a*,(a|b)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a|b)(a|b)+aaa*,"[baaa, bbbabaabaa, aaaababaa, aaaabaaa, bbaababaa, abaa, bbaa, aababaabaa]","[aababaab, aaaabaaaba, baaaba, bbaaba, aaaababaaba, bbaababaaba, abaaba, bbbabaab]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|1*(0*1*)*1+|0*(1*0*)*0+,"[, 10]",[]
+(a*ba*b)*a*ba*,b|(b|bbb|bbab|babb|a)*,"[, ba]",[]
+001|1010|110,1*0*01*0*,"[00, 011, 10100]","[01011, 101010, 00101, 01101, 01001]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|0((11*0)|0)*|1((00*1)|1)*,"[, 1101, 0100, 101001, 011010]","[11010, 01101, 01001, 10100]"
+0*10*(10*10*)*,((0*)1(0*))+,"[11, 010]","[0, ]"
+b*a*,a+|(a|b)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,b|(a*b*)*aaa,"[babaaa, aaabaabaaa, aabaaabaaa, aabaaa, abaaa, baaabaaa, abaaabaaa, baabaaa, aaabbabaabaaabaaa, bbaaaa]","[bbaaaab, ab, baaab, bab, aab, aaabaabaaab, aabaaaba, baab, abaaabaaab, aaabbabaabaaab]"
+(a*ba*b)*a*ba*,(a*ba*a*)*,"[bb, , aba, aab]","[aa, a]"
+(ab|ba)*,((aa)*|(bb)*)((aa)*|(bb)*)*|(ba|ab)(ab|ba)*,"[, ababbaba, aaaa, aabb, abba, baab, bbaa, bbbb, abab, baba, abbaabab, aaaabbbb, aabbaaaa]","[aaaabaa, aaaaab, aaab, abaa, abbb, bbab, baaa, babb, bbba, aaba, aabbabb, aabbba, abbaaa, abbabb, ababaa, ababbb]"
+a(a|b)a(a|b)*,(a)(a|b)*,"[aa, ab]","[, bb, ba]"
+a+b,(a|b)*b,"[baab, bbab]","[baa, bbaba]"
+(a|b)*baa(a|b)*b,[ab]*[baa][ab]*b,"[bb, bbaab, abaab, abbab]","[bba, abbaba, abaa, bbaa]"
+(a|b)*baa(a|b)*b,(a|ba*)+b,"[bb, bbaab, abaab, abbab]","[bba, abbaba, abaa, bbaa]"
+(ab|ba)*,((ab)|(ba))*((a|b)(a|b))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(ab|ba)*,(ab|aa|bb|ba)*(a+b)*,"[, aabbaaaabbbb, aabbbaba, aabbbabb, aabaabbb, bbaab, aabaabba, abaababbaabbaaabba, abaababbaabbaaabbb, abbbbb, abbbba, baaabbaababbbb, aabbaaaabbba, baaabbaababbba]","[bbaabba, abbbb, abaababbaabbaaabb, aabbbab, aabaabb, aabbaaaabbb, baaabbaababbb]"
+a+b,a+b*,"[aa, abb]","[bb, aaba, abaa, abba]"
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*b))|((a|b)a*ba))*,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbaababbaa, bbabaabaabb, bbbbaaa, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+0*10*(10*10*)*,0*1(11)*(0|1)*,"[11, 010]","[0, ]"
+((a|b)a*ba)*(((a|b)a*b)?),(a?)|((a|b)a*b(a?))*,"[, bbbbabab, bbaabab, aababb, abaaab, abbbaab, bbbb, bbabaabaab, abab, bbab]","[aababbaa, bbabaabaabb, bbb, abaaa, abbbaa, bbaababaa, ababaa, bbbbababaa, bbabaa]"
+b*a*,a(a)*|(ab)*b*a*,"[bb, , abaaa, abba]","[abaaba, abbabb, aaab, bbab]"
+(a|baa)*,a*(b+aaa*)*,"[bbaabaa, , baaa, baabaa]","[baaaba, bbaab, babb, baababa]"
+(ab|ba)*,(bb|aa|aabb|abab|abba|baba|bbaa|baab)*(aa|bb|ab|ba)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(a|b)(a|b)+aaa+,(((a|b)+)+)aaa,"[baaa, babaaa, aabaaa, bbabaabaaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, aaaabaabaaabaaaa, aaaa, baaabaabaaabaaaa]","[baabaaaba, bbabaabaaab, aaabaaaba, aaaabaa, babaaabaa, baaabaabaaabaaaabaa, ababaabaaab, aaaabaabaaabaaaabaa, aabaaabaa, baaabaa]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*(b|ba))*,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbbbaaa, bbaababbaa, bbabaabaabb, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+(a|(b*bb))*,(a|b|bb)*,"[, ba]",[]
+(0*10*10*)*|0*,(0*(1+0*1+)*0*)*,"[1010111, , 101010010, 101010110, 10100]","[1010100, 1010010, 101010, 10101]"
+1?(01)*0?,((1)?(0)?)*,"[, 10]",[]
+(ab|ba)*,((ab)*(ba)*)*|abb*a*b*ba,"[baabba, babaab, , abbbaaba, ababbba, abaaaba, abbabba, abbababa, abbaaaba, ababbaba, abbaababab, abbaabbaab, abbaabbba, baab, ababbaab, abbaababba, abbaabbaba, abbabaab, abababbaba, abbbaba, ababababab, abaaba, abbbbaba]","[bb, abaaa, abbabaaa, ababbabb, abbaaabaa, abbaababaa, abbaaabab, abababaa, abbaabbabb, babb, abbaabaa, abaabb, abaabab, abaabaa, baabbb, abbbabaa, abbbaabab, abbbabab, babaaa, abbbaabaa, abbbb, abbababb, ababbaaa, abbaababbb, abbaabbbab, abababbb, ababbbab, abbaabbbaa, ababbbaa, abbaabbaaa, baaa, aaba, abbabbaa, abbabbab, ababaa, baabaa]"
+a+b,a|b*a*b,"[bb, ab, bab, aab, aaab]","[abb, baba, bba, aaa, aba, babb, aabaa, aabbb]"
+b*a*,(a|b)*a(a|b)*|b*a*,"[, ba]",[]
+(a|(b*bb))*,(a|bb*)*,"[, ba]",[]
+(a*ba*b)*a*ba*,(a*)b((a*)|(b+(a*)+b))+(a*),"[bbaab, bbabbba, bbaba, bbbb]","[bb, bbabb, bbaa, bbabab]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(1*0+1+)*|(0*1+0+)*,"[, 10]",[]
+(ab|ba)*,(ab(ab)*)*((a|b)(a|b))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a|b)(a|b)+aaa+,aaa(a)*|(a|b)*baaa(a)*,"[babaabaaabaaa, aabaaabaaa, abaaa, aaabaabaaabaaaa]","[babaabaaab, aabaaaba, aaabaabaaabaaaab, abaaab]"
+(a|baa)*,(a|(a*b*(aa)a*)*)*,"[bbaabaa, , baaa, baabaa]","[bbaab, baaab, babb, baababa]"
+(a|b)(a|b)+aaa+,(aa|ab|ba|bb)*(a|b)*aaa,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[aabaaaba, babaabaaab, aaabaabaaaba, aaabaaaba, abaaaaba]"
+(a|baa)*,a*|(a|b)*aa,"[bbabaabaa, , baababaabaaa]","[baababaabaaaba, bbabaab]"
+a+b,a|a*b,"[ab, b, aab, aaab]","[aaa, abb, bb, aba, aababa, aabb, ba]"
+(ab|ba)*,(ab|ba?)*(aa|ab|bb|ba)*,"[bb, abaababa, , aaabbbaa, aabbbaabaa, abba, abaaaaab, aabbbbab, abaaaaaa, abaababb]","[a, aabbbba, aaabbba, abaabab, abaaaaa, aabbbaabaab, aabbbaabaaa]"
+001|1010|110,001|110|10101|1010,"[110, 001, 10101]","[01, 100, 111, 00010, 101010, 0011, 101011, 1101, 1100, 1011, 0010, 10100]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*ba)|((a|b)a*b))*,"[, bbbbabb, ababaabaab, abaababab, bbbbaaaba, abbbabb, abbbaaaba, bbaababab, bbabaabaab, abab, bbab]","[bbbbaaa, bbaabababaa, bbabaabaabb, abaabababaa, abbbabbaa, bbbbabbaa, abbbaaa, ababaa, ababaabaabb, bbabaa]"
+(a*ba*b)*a*ba*,(a*b+a*)*,"[bb, , aba, aab]","[aa, a]"
+(a*ba*b)*a*ba*,([ab](a)*(bb)*)*,"[, ba]",[]
+/#(/|a|b|##*(a|b))*##*/,/#*(a|b|/|(#*(a|b)))*#*/,"[//b/aba/, //b/a/, ///]","[//b/a/a, //b/a/b, ///a, ///b, //b/aba]"
+(a|b)(a|b)+aaa+,(a|b)+aaa,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[baabaaaba, aaaabaabaaaba, aaaabaaaba, baaaba, bbabaabaaab, babaaaaba, aaabaaaba, baaabaabaaaba, ababaabaaab, aabaaaaba]"
+(ab|ba)*,((aa)*|(bb)*)(aa|bb|ab|ba)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(a*ba*b)*a*ba*,(a*|b?)+,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a|b)+(aaa)+,"[baaa, aabaaabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa, aaaa, babaaabaaaa]","[aaaabaabaaab, baabaaaba, baaab, bbabaabaaab, baaabaabaaab, aaabaaaba, aaaab, ababaabaaab, babaaabaaaab, aabaaabaaaab]"
+(ab|ba)*,(aa|bb|ab|ba)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((1+0*1+)*)|((0+1*0+)*)|(0|1)*,"[, 10]",[]
+(a*ba*b)*a*ba*,a*b+(a|ba*b)*,"[babba, bba, babbbb, bbb, ababab]","[, babbb, ababa, babbab]"
+0(0|1)*0,(0*)(0*1*)*(0*),"[, 10]",[]
+(a|baa)*,[a]*[baa]*,"[, ba]",[]
+(a*ba*b)*a*ba*,(((a*)*(b*))*(b*))+b+(((a*)*(b*))*(b*)),"[bb, aba]","[, a]"
+(a|(b*bb))*,(a|(b*b)*)*,"[, ba]",[]
+(ab|ba)*,(((aa)|(bb)|(ab)|(ba))?)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0+(1*0)*)*|(1+(0*1)*)*,"[, 01010, 1101, 0110, 0100, 101001]","[011, 0101, 11010, 01001, 10100]"
+(a|b)*baa(a|b)*b,(a|b)*|(baa)+b,"[, ba]",[]
+(a|b)(a|b)+aaa+,(aa|ab|ba|bb|b|a)*(aaa)a*,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[aabaaaba, babaabaaab, aaabaabaaaba, aaabaaaba, abaaaaba]"
+0(0|1)*0,(0)*(0*1*)*(0)*,"[, 10]",[]
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*ba)|((a|b)a*b))*)?,"[, bbbbabb, ababaabaab, abaababab, bbbbaaaba, abbbabb, abbbaaaba, bbaababab, bbabaabaab, abab, bbab]","[bbaabababaa, bbabaabaabb, bbbbaaa, abaabababaa, abbbabbaa, bbbbabbaa, abbbaaa, ababaa, ababaabaabb, bbabaa]"
+(a|b)(a|b)+aaa+,(ab|aa|bb|ba)*aaa*,"[aaaabbaabbabaabaaa, aaaabbaabbabaabbaa, bbbabbaabbaa, bbbabbaabaaa, aaabaabaaabbaa, aabaaaabbbaa, baaaaaabbaaa, aaaabaaabaabaaa, aabbabbaaa, bbaaabaaaaabaaabaa, aabbabbbaa, baaaaaabbbaa, aabbaaa, aabaaaabbaaa, aabaaaa, aaabaabaaabaaa]","[bbbabbaab, aaabaabaaab, aabbabb, bbaaabaaaaabaaaba, baaaaaabb, aaaabaaabaabaaab, aabbaaab, aabaaaab, aabaaaabb, aaaabbaabbabaab]"
+(a|baa)*,(a*)+(a*|(b+a+a))+(a*),"[bbaabaa, , baaa, baabaa]","[bbaab, baababba, baaabab]"
+(0*10*10*)*|0*,((0*|1)*(0*|1)*)*,"[, 10]",[]
+(a|b)*baa(a|b)*b,(b*a*|a*b*)*(baa)+(b*a*|a*b*)*,"[babaab, abaaa, bbabaa]","[baba, aba, bbab]"
+(a|b)*baa(a|b)*b,(baa)*(a|b)*(baa)*b,"[baab, bbab]","[bbaba, baa]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)?(0|1)?(0|1)?,"[000, 011, 110, , 001, 100, 111, 101, 010]","[1000, 1011, 1110, 0010, 1010, 0101, 0011, 0110, 1101, 0001, 0100, 0111, 1001, 1100, 1111, 000010]"
+(a|b)*(bab)(a|b)*,(a*b*(bab)*a*b*)*,"[, ba]",[]
+(a|(b*bb))*,(a*(bb*)*a*)*,"[, ba]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),0|1|(0(1*0*)*0)*|(1(0*1*)*1)*,"[, 01010, 1101, 0110, 0100, 1001, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa(a)*,"[baaa, aabaaaa, bbabaabaaabaaa, baaabaabaaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaaabaabaaabaaa, aaabaaabaaa, aaaa]","[baabaaaba, baaaba, baaabaabaaabaaaba, bbabaabaaab, babaaaaba, aaabaaaba, aaaaba, aaaabaabaaabaaaba, ababaabaaab, aabaaaaba]"
+(a|(b*bb))*,(a*|(b*bb*)+)*,"[, ba]",[]
+a+b,(a|b)+b,"[bb, bbaab, abaab, abbab]","[bba, abbaba, abaa, bbaa]"
+(a*ba*b)*a*ba*,(a|b)*(b)(a|b)*,"[bb, aba]","[, a]"
+001|1010|110,(001|1010|110)+,"[00110101010, 10101010, 1010001001, 001001110, 001110110, 0011010001, 001001, 10101101010, 110001, 001110001, 0010011010]","[01, 001100, 110000, 001101001, 00101, 00111001, 0010011011, 111, 001001100, 001110000, 0001, 0011010000, 11001, 001111, 1101011, 101001, 110111, 1011, 0011011, 1010100, 100, 1010000, 001001111, 10101101000, 001000]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0*1*0*)|(1*0*1*))*,"[, 10]",[]
+(0|10*1)*,(0*1?0*1?0*)*,"[, 10]",[]
+(a*ba*b)*a*ba*,a*b(a*|ba*|b)*a*,"[bb, aba]","[, a]"
+001|1010|110,(001|1010|110)*,"[, 00110101101010, 101011010101010, 1010001001, 001001, 110001, 001110]","[001100, 001111, 110000, 110111, 101001, 00101, 0010000, 0011011, 1010100, 1010000, 1010110100, 11001, 11010111]"
+(0|10*1)*,(0*(10)*1*)*0*,"[, 10]",[]
+/#(/|a|b|##*(a|b))*##*/,(/#)|((a|b|/?)|#)*|(#/),"[, ba/]",[]
+(a*ba*b)*a*ba*,(((a*)+b+(a*)+b+(a*))|(a*))+b+(((a*)+b+(a*)+b+(a*))|(a*)),"[bababba, babaabb, babababbb, bababaa]","[baba, bababaab, babaa, bababab]"
+a(a|b)a(a|b)*,a(a|b)*aa*b*,"[aaa, aba, aab]","[bb, a, ab, ba]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*ba)*|((a|b)a*b))*,"[, bbbbabb, ababaabaab, abaababab, bbbbaaaba, abbbabb, abbbaaaba, bbaababab, bbabaabaab, abab, bbab]","[bbaabababaa, bbabaabaabb, bbbbaaa, abaabababaa, abbbabbaa, bbbbabbaa, abbbaaa, ababaa, ababaabaabb, bbabaa]"
+(a|(b*bb))*,a?(a|bb*)*,"[, ba]",[]
+(a|b)*baa(a|b)*b,(a|b)*(baa)*(a|b)*b,"[baab, bbab]","[baa, bbaba]"
+(a|baa)*,(b|aa|a)*,"[, ba]",[]
+(ab|ba)*,((ab)|(ba))*((ab)|(ba)|(aa)|(bb))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+0(0|1)*0,(0|(0|1)*0),"[0100, 1010]","[101, 01001]"
+(a|(b*bb))*,(a|b)*bb(a|b)*|a*,"[bba, , babbb, ababaabb]","[b, bab, ababaa]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b)a*)*,"[bba, , bbbab, abbab, abbbaa, bbbbaa, abab]","[abb, a, bbba, b, bbb, abba]"
+(a|b)*baa(a|b)*b,(a|b|baa)*b,"[baab, bbab]","[bbaba, baa]"
+b*a*,a*b*a*,"[bb, , abaa]","[ababba, baab, bbab]"
+001|1010|110,001|10101|1010|110,"[110, 001, 10101]","[01, 100, 111, 00010, 101010, 0011, 101011, 1101, 1100, 1011, 0010, 10100]"
+(b|(a*aa))*,(b*|ab+)*aa(a|b)*|b*,"[, baaa, abaab, abbaa, ababaa]","[abb, aba, abab, ba]"
+(a|b)*(bab)(a|b)*,(a*|b*)*|bab|(a*|b*)*,"[, ba]",[]
+(ab|ba)*,(bb|aa|aabb|abab|abba|baba|bbaa|baab)*((aa)|(bb)|(ab)|(ba))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(0*10*10*)*|0*,(0*|1)*,"[, 10]",[]
+(ab|ba)*,(aabb|abab|abba|bbaa|baba|baab)*(aa|ab|ba|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+a+b,[a]*[ab],"[aa, ab, b]","[bb, abaa, abbb, aabb, ba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*)*((10)*(0*1*)*(01)*)*(0*1*)*,"[, 10]",[]
+(0*10*10*)*|0*,(0?1?0*1?0*)*,"[, 10]",[]
+a+b,(a*)b,[ab],"[bb, ababa]"
+(a|(b*bb))*,((a|b)*bb(a*b*))|a*,"[, bbbabbababb, ababbababaabba, bbabbabababbababbab, bbabbababbaa, bbababba]","[ababbababaa, bbaba, bbabbabababbababbaba, bbbabbababbaba, bbabbababbaaba, bbabab]"
+(a|(b*bb))*,(a)*(ab|ba|b|a)*(a)*,"[, ba]",[]
+(ab|ba)*,((ab)|(ba))*((a|b)(b|a))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a|b)(a|b)+aaa+,(a|b)+aaa(a)*,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[baabaaaba, aaaabaabaaabaa, bbabaabaaab, aaabaaaba, ababaabaaab, babaaaabaa, aaaabaaabaa, aabaaaabaa, baaabaa, baaabaabaaabaa]"
+(ab|ba)*,(aa|bb)*|(ab|ba)*,"[bbaabbbb, baabba, babaab, , bbbbaaaa, abbaba, aaaa, aabb, baab, bbaa, bbbb, baba, ababab]","[bbaabaa, bababb, babaaa, aaab, abaa, abbb, bbaaab, bbab, bbbbabb, baaa, babb, bbba, aaba, bbbbba, baabaa, baabbb]"
+(a|b)*baa(a|b)*b,((b|a)*b+a+a*(b|a)+b),"[bbaab, babb, bbabb, babbaab, abaabbab, baabaab]","[bb, babba, babbaa, abaabbaba, baabaa]"
+(a|b)(a|b)+aaa+,(a|b)+(aaa),"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[baabaaaba, aaaabaabaaaba, aaaabaaaba, baaaba, bbabaabaaab, babaaaaba, aaabaaaba, baaabaabaaaba, ababaabaaab, aabaaaaba]"
+(a*ba*b)*a*ba*,a*b(a*b)*a*,"[bb, aba]","[, a]"
+0*(10*1)*0*,0*(10*10*)*,"[110, , 1111]","[111, 1101]"
+(a|(b*bb))*,(a|b*bb*)*,"[, ba]",[]
+(ab|ba)*,(ab|ba)*(aabb+bbaa+baba+abab)*,"[baaabbbbaababaababaabbbbaababaabab, , aabbbbaababaababaabbbbaababaaabab, abbabaaabbbbaababaabab, aabbbbaababaababaabbbbaababaabab, abaabbbbaababaababaabbbbaababaababaabbbbaababaabab, aabbbbbaababaababaabbbbaababaabab, aabbbbaababaababaabbbbaaababaabab]","[abaabbbbab, baaabbbbaababaabb, abaaa, abaabbbbaababab, aabbbbaababaababaabbbbaababaabaa, baaabbbbaababb, aabbbbaababaababaabbbbaababaababba, abbb, abaabbbbaababaabb, aabbbbaababaababaabbba, baaabba, babb, aabbbbaababaababaabbbbaababaababab, baaabbbbaababaabaa, abaaba, aabbbbaababaababaabba, aabbbbaababaababaaba, baaabbbbaabaa, aabbbbaababaababaabbbbaabababb, aabbbbaababaababaabbbbaababb, aabbbbaababaababaabbbbaababaabb, baaabbbbaababaababb, abaabbbbaababaababab, aabbbbaababaababaabbbbaabaa, abaabbbbaabb, baaaba, abaabbbbaababaabaa, baaabbba, baaabbbbaababab, abaabbbbaababaababb, baaabbbbab, abaabbbbaabaa, aabbbbaababaababaaa, baaaa, baaabbbbaabb, aabbbbbaababaababaabbbb, baaabbbbaababaababab, aabbbbaababaababaabbbbaa, aabbbbaababaababaabbbbab, abaabbbbaababb, aabbbbaababaababaabbbbaababaaa, abaabba, aabbbbaababaababaabbbbaabb, abaabbba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(0|1)*0*)|(1*(0|1)*1*),"[, 10]",[]
+(a*ba*b)*a*ba*,((a*(bb)*a*)ba*)+,"[bb, aba]","[, a]"
+(ab|ba)*,((ab|ba)*(aa|ab|bb|ba)*)+(ab|ba)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a|b)*(bab)(a|b)*,(a|b)*(bab)*(a|b)*(bab)*(a|b)*,"[, ba]",[]
+(a|baa)*,(a*|baa*)*,"[baba, , baa]","[baabb, babbba]"
+(a|b)(a|b)+aaa+,(a|b)*(a|b)*aaa,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[abaaabaaaab, babaabaaab, aaabaabaaab, aabaaaba]"
+a+b,(aa*)b+,"[abb, aab]","[aa, bb, abaa, abba]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0+1*0+)*|((1+0*)*10+1+)*|1*|0+(1+0+)*|1*,"[, 1101, 1001, 0100, 10101, 011010]","[100, 11010, 1010, 01101, 01001]"
+a+b,(a)*(b+),[abb],"[bba, bab, abaa]"
+(ab|ba)*,((ab)|(ba))*((ab)|(ba)|(bb)|(aa))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|0*(1*0*)*|1*(0*1*)*,"[, 10]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(0*1+0*1+0*)*|(1*0+1*0+1*)*,"[101010111, 101010100, 00, 11, , 101011, 1011, 0101000, 0101011, 1010100, 011, 100, 01011, 0100, 01010100, 10100, 010101011]","[01, 010101, 101010, 10]"
+(ab|ba)*,(aa*|bb*)*,"[, ba]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|1+(0+1+)*|0+(1+0+)*,"[, 1101, 0100, 101001, 011010]","[11010, 01101, 01001, 10100]"
+(a|b)(a|b)+aaa+,((a|b)*(a|b))aa(a)*,"[bbabaabaa, baa, aaababaa, aaabaaa, baababaa, ababaabaa]","[baababaab, bbabaab, aaabaaab, ababaab, aaababaab, baab]"
+0(0|1)*0,0*(1|0)*0*,"[, 10]",[]
+(a|b)(a|b)+aaa+,(a|b)(a|b)(a|b)*(aaa(a)*)*,"[bb, ab, aaba, ba]","[a, b]"
+(ab|ba)*,((aa)|(bb)|(ab)|(ba))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+0*10*(10*10*)*,(0|1)*1(0|1)*,"[11, 010]","[0, ]"
+(0|10*1)*,1*|(0|1)*,"[, 10]",[]
+0(0|1)*0,(0+(0|1)*0+)*,"[, 01010, 00100]","[0101, 001001, 10]"
+b*a*,(b|a)*,"[, ba]",[]
+(a|baa)*,(baa*|a*)*,"[baba, , baa]","[baabb, babbba]"
+(ab|ba)*,((ab)*(ba)*)*|abb*ba,"[baabba, babaab, , abbba, abbaabab, abbaba, abbbba, ababbaba, baab]","[aaa, bb, babaaa, abbbb, abaab, baaa, babb, abbbaa, abbaaa, abbabb, ababbb, ababaa, abbbab, baabbb]"
+(a*ba*b)*a*ba*,(a|(ab)*b)+(ba)*,"[aba, b]",[]
+(ab|ba)*,(ab|ba)*(aa|bb|ba|ab)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+b*a*,(a+)*b*a*,"[bb, , abaa]","[babb, ababa, baab, bbab]"
+a+b,(a)*(b)*,"[abb, ]","[bba, bab, abaa]"
+a(a|b)a(a|b)*,a+(a|b)+a+(a|b)*,"[aba, aaba, aaaba, abba]","[aa, bb, abb, ab, aab, ba]"
+/#(/|a|b|##*(a|b))*##*/,(/#((a|b|/)*#*)*#/)*,[],[]
+(0(0*|1+0)*)|(1(1*|0+1)*),(0(0*|(0*1+0+))*|1(1*|1*0+1+)*)?,"[, 01010, 1101, 0110, 1001, 0100, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*)|(1*)|((0+1+)*(0+1+0+)*)|((1+0+)*(1+0+1+)*),"[, 10]",[]
+b*a*,(((a+)|b+a*))*,"[, ba]",[]
+a+b,(a+)*(b),[ab],"[bbb, abaa]"
+a+b,a(a*b*)*b,"[abaab, abbab]","[bba, abbaba, abaa]"
+(ab|ba)*,(a*|b*)*(aa|ab|ba|bb)*,"[, ba]",[]
+(a*ba*b)*a*ba*,(a*)+b+((a*)|(b+(a*)+b))+(a*),"[babba, bababa, bbb, bababbabbb, ababaabbb, bababbb]","[, bababb, bab, bababba, ababaa, bababab]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)(0|1)?(0|1)?,"[000, 011, 110, 001, 100, 111, 101, 010]","[1000, 1011, 1110, 0010, 1010, 0101, 0011, 0110, 1101, 0001, 0100, 0111, 1001, 1100, 1111, 000010]"
+(ab|ba)*,((ab)|(ba))*(aa|ab|ba|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a|b)(a|b)+aaa+,(ab|aa|ba|bb)*(aaa)*,"[, aabaaaabba, baaaaaabbb, aaabaabaaabb, aaaabaaabaabaaa, bbbabbaaba, bbbabbaabb, aaabaabaaaba, aabbaaa, aaaabbaabbabaabb, aaaabbaabbabaaba, bbaaabaaaaabaaabab, aabaaaa, aabbabbb, aabbabba, baaaaaabba, aabaaaabbb]","[bbbabbaab, aabbaaaba, aaabaabaaab, aaaabaaabaabaaaba, aabbabb, bbaaabaaaaabaaaba, baaaaaabb, aabaaaaba, aabaaaabb, aaaabbaabbabaab]"
+(ab|ba)*,(ab|ba)*|(aa|ab|bb)*,"[abbbabaa, , abbbabab, abbaba, aaaabb, aabbab, aabbaa, aaabbb, babaabab, baabbaba, abbaab, abbbbb, abaaaaab, abaaaaaa, abaabbbb]","[bababb, aabba, aaabba, baabbba, aabbba, abbbaba, aaaaba, abaaba, abbaaa, abbabb, abbbba, abaaaaa, babaaab, baabaa]"
+a+b,(a)*b,[ab],"[bb, ababa]"
+a+b,(a*b{1}),[ab],"[bb, ababa]"
+(a*ba*b)*a*ba*,(a*(b|bbb)*)*,"[, ba]",[]
+(a*ba*b)*a*ba*,b|(bb*|a*|bab*)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,"[ab]{2,}","[bb, ab, aaba, ba]","[a, b]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)(a|bb|ba(a|b))*(b|ba))?,"[, bbaaba, bbabbaabbaba, bbabbaabbba, ababbaabbaba, ababbaabbba]","[bbaabaa, bbaabab, bbabbaabba, ababbaabbbaa, ababbaabba, bbabbaabbbab]"
+001|1010|110,(0|1)*(01)*(0|1)*,"[, 10]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),((10*)*1+)*|((01*)*0+)*,"[, 1101, 0100, 101001, 011010]","[11010, 01101, 01001, 10100]"
+(a|b)(a|b)+aaa+,(a*|b*)+(a*|b*)+aaa+,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[aabaaaba, babaabaaab, aaabaabaaaba, aaabaaaba, abaaaaba]"
+a(a|b)a(a|b)*,a(a|b)(a|b)*,"[aaa, abb]","[bb, a, ba]"
+(ab|ba)*,((ab)*(a|b)(a|b)|(ba)*(a|b)(a|b))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(a|b)(a|b)+aaa+,(a*b*)*a*a*a,"[baba, abaa]","[bab, abaab]"
+(a|b)(a|b)+aaa+,(a|b)+(a|b)*aaa,"[baaa, aabaaabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa, aaaa, babaaabaaaa]","[baabaaaba, aaaabaabaaabaa, bbabaabaaab, aaabaaaba, aaaabaa, ababaabaaab, aabaaabaaaabaa, baaabaa, baaabaabaaabaa, babaaabaaaabaa]"
+(a*ba*b)*a*ba*,((a|b)*|(a|bb)*)*b((a|bb)*|(a|b)*),"[bb, aba]","[, a]"
+(ab|ba)*,(ab|ba)*(ab|ba|aa|ab)*,"[baaaaa, , aababa, abaa, abba, baaaab, abab]","[baaaa, babbba, aba, abbb, aabb]"
+/#(/|a|b|##*(a|b))*##*/,(/#((a|b|/)#*)*#/)*,[],[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(01*0*)*|1*(10*1*)*,"[, 10]",[]
+(ab|ba)*,(a|b)*(a|b)*,"[, ba]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),(0?)|1|(0(0|1)*0)|(1(0|1)*1),"[, 1101, 101001, 0100, 011010]","[11010, 01101, 10100, 01001]"
+(a|baa)*,(a|b|baa+)*,"[, ba]",[]
+(ab|ba)*,(ab|ba|aabb|bbaa)*(aa|ab|ba|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+a+b,[a]*b,[ab],"[bbb, abaa]"
+0*10*(10*10*)*,(0*10*)*0*10*,"[11, 010]","[0, ]"
+0(0|1)*0,0*|0(0*1*)*0,"[, 01010, 0110, 0100]","[110, 011, 0101, 01001]"
+(a|b)(a|b)+aaa+,[ab]*a{3},"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[aabaaaba, babaabaaab, aaabaaabaa, aaabaabaaabaa, abaaaabaa]"
+b*a*,((a*)|(b+a*))*,"[, ba]",[]
+(a|b)*baa(a|b)*b,(a*|b*|baa)+b+,"[baab, bbab]","[baa, bbaba]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),[01]*[10]*,"[, 10]",[]
+b*a*,((a)+|b+a*)*,"[, ba]",[]
+(a|b)*(bab)(a|b)*,(a|b|bab)*(bab)*,"[, ba]",[]
+a+b,(a*)(b{1}),[ab],"[bb, ababa]"
+(a|b)(a|b)+aaa+,(aa|ab|ba|bb)*(a|b)*(aaa),"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[babaabaaab, aabaaaba, aaabaabaaabaa, abaaabaaaabaa]"
+0*10*(10*10*)*,(0|1)*,"[, 10]",[]
+(a|b)(a|b)+aaa+,((a|b)|(b|a))(a|b)*(a)(a)(a)(a*),"[baaa, aabaaaa, bbabaabaaabaaa, baaabaabaaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaaabaabaaabaaa, aaabaaabaaa, aaaa]","[baabaaaba, baaaba, baaabaabaaabaaaba, bbabaabaaab, babaaaaba, aaabaaaba, aaaaba, aaaabaabaaabaaaba, ababaabaaab, aabaaaaba]"
+b*a*,aa*|(a?|b)*(a|b?)*,"[, ba]",[]
+a+b,a(a|b)*b,"[abaab, abbab]","[bb, abbaba, abaa, ba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1|0|(1+(0*1*)*1+)*|(0+(1*0*)*0+)*)*,"[, 10]",[]
+(a|b)(a|b)+aaa+,(a|b)(a|b)*(aaa)(a)*,"[baaa, aabaaaa, bbabaabaaabaaa, baaabaabaaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaaabaabaaabaaa, aaabaaabaaa, aaaa]","[baabaaaba, baaaba, baaabaabaaabaaaba, bbabaabaaab, babaaaaba, aaabaaaba, aaaaba, aaaabaabaaabaaaba, ababaabaaab, aabaaaaba]"
+(ab|ba)*,(ab|ba)*|(aa|bb)*,"[baabba, babaab, , abbaba, aaaaaa, aabbbb, bbaabb, bbbbaa, baab, bbaa, bbbb, baba, ababab]","[bababb, babaaa, bbaaaba, aaab, abaa, abbb, bbbbab, baabaab, bbab, baaa, babb, bbba, aaba, bbaaba, bbbbba, baabbb]"
+(a*ba*b)*a*ba*,a*b+(a*|(b(a*)b))+a*,"[bba, babbbb, babba, bbb, ababab]","[, babbb, ababa, babbab]"
+(ab|ba)*,(aa|bb)|(ab|ba)*,"[aa, baba, bb, baabba, babaab, , abbaba, ababab, baab]","[bba, baaa, babb, bababb, babaaa, bbb, abaa, abbb, aaaa, aabb, baabbb, baabaa]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(((0+1*)*0+)*|((1+0*)*1+)*)*,"[, 10]",[]
+b*a*,((a+)|a*b+a*)*,"[, ba]",[]
+0*10*(10*10*)*,0*(11)*1(0|1)*,"[11, 010]","[0, ]"
+(a|b)(a|b)+aaa+,"(a|b)*a{3,}","[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[babaabaaab, aabaaaba, aaabaabaaabaa, abaaabaaaabaa]"
+(ab|ba)*,(ab)*(aa|ab|ba|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+(a|b)(a|b)+aaa+,[ba]*aaa,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[aabaaaba, babaabaaab, aaabaabaaaba, abaaabaaaaba]"
+(a|(b*bb))*,(a|b)*bb(a|b?)*|a*,"[babba, , bbb, ababaabb]","[bab, b, ababaa]"
+b*a*,(a*)(b*)(a*),"[bb, , abaa]","[ababba, baab, bbab]"
+0*(10*1)*0*,(0*10*10*)*|0*,"[11, , 11101]","[111, 1110]"
+(0|1)(0|1)*,(0|1)*,"[, 10]",[]
+(a*ba*b)*a*ba*,(a|(ab)*b)*(ba)*,"[, ba]",[]
+b*a*b*|(a*bb+a*)*,(b|aa*bb)*((aa*(b?))?),"[, babb, abbaa, abbab]","[abbaaba, babbaba, abbabaa, abab]"
+(a*ba*b)*a*ba*,((a*|a*ba*(ba*ba*)*a*)|b),"[, bbba, bbbbb, abbab]","[bbbab, abba, bbbb]"
+(a|(b*bb))*,(a|b*b)*,"[, ba]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((01*0*)|(10*1*))*,"[, 10]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),1*(0+1+)*|0*(1+0+)*,"[, 10]",[]
+0*10*(10*10*)*,(0*(10*1)*0*10*)*,"[11, , 001, 010]","[0, 00]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*(01)*0*1*(10)*0*1*)*,"[, 10]",[]
+(a|baa)*,"(a*(b*a{2,})*)*","[bbaabaa, , baaa, baabaa]","[bbaab, baababba, baaabab]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((01)*(0|1)+(10)*)*,"[, 10]",[]
+(ab|ba)*,(ab|aabb|ba)*,"[, aabbabaabb, aabbbaba, baaabbaabb, aabbaabb, abba]","[babba, baaaa, baaaba, aabbabaaab, aabbaaa, aabbaaba, abaaba, aabbbb, abbb]"
+(ab|ba)*,(aa|ab|bb|ba)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+0(0|1)*0,0*|0(1|0)*0|1*|1(1|0)*1?,"[11, , 01010, 0110, 0100, 10]","[011, 0101, 01001]"
+(a|b)*(bab)(a|b)*,(a|b)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a|b)(a|b)*(aa)(a)*,"[bbabaabaa, baa, aaababaa, aaabaaa, baababaa, ababaabaa]","[baaba, bbabaab, aaabaaaba, baababaaba, ababaab, aaababaaba]"
+(a|b)*(bab)(a|b)*,(a|b|bab)*(a|b|bab)*,"[, ba]",[]
+001|1010|110,0*10*(10)*,"[11010, 011010, 10]","[111, 011001, 1101000, 1011, 11011]"
+(a|b)*(bab)(a|b)*,(a|b)*(bab)*(a|b)*,"[, ba]",[]
+(a|(b*bb))*,(a*|bb*)*,"[, ba]",[]
+a(a|b)a(a|b)*,ab*|(a(a|b)a(a|b)*),"[abbb, aaaa, abab]","[aa, , aaba, b, abbba, abbab]"
+(ab|ba)*,(ab|ba)*(aa|ab|ba|bb)*|(aabb|bbaa)*|(aa|ab|ba|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a|baa)*,a*(baa*|a*)*,"[baba, , baa]","[babba, bbb, baab]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*(aaa)a*,"[baaa, babaaa, aabaaa, bbabaabaaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, aaaabaabaaabaaaa, aaaa, baaabaabaaabaaaa]","[baabaaaba, baaab, bbabaabaaab, baaabaabaaabaaaab, aaabaaaba, aaaabaabaaabaaaab, aabaaab, aaaab, ababaabaaab, babaaab]"
+(0*10*10*)*|0*,(1|0|1)*,"[, 10]",[]
+(a|b)(a|b)+aaa+,(a*b*)*aaa,"[babaabaaabaaa, aabaaabaaa, abaaa, aaabaabaaabaaaa]","[aabaaaba, babaabaaab, aaabaabaaabaaaabaa, abaaabaa]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b((a?)|(bb?)))*|((a|b)a*ba)*,"[, bbbababbab, ababaabaab, abbab, abbb, bbbb, abab, bbab, bbbbaabaab, bbbab, abbabaaabab, bbbabbb, abaababbab, abaabbb, bbbabaaabbb]","[bbbabbbaa, bbbababbabaa, abbabaaa, abbabaa, bbbabaaa, bbabaa, bbbbaa, ababaabaabaa, bbbabba, bbbbaabaabba, abaabbbaa, abbbaa, abaababbabaa, ababaa]"
+0(0|1)*0,(0+(1*0*1*)*0+)*,"[, 01010, 00100]","[110, 0101, 001001]"
+(b|(a*aa))*,(b*|ab)*aa(a|b)*|b*,"[, baaa, abbaa, abaab, ababaa]","[abb, aba, abab, ba]"
+0(0|1)*0,0+(0*1*0*)*0+|1,"[000, 1, 01010, 0010]","[11, 0101, 0001, 00101, 1010]"
+(0|1)(0|1)*,(1|0)*,"[, 10]",[]
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)(a*)ba)*)|((a|b)(a*)b))*,"[, bbbbabb, ababaabaab, abaababab, bbbbaaaba, abbbabb, abbbaaaba, bbaababab, bbabaabaab, abab, bbab]","[bbaabababaa, bbabaabaabb, bbbbaaa, abaabababaa, abbbabbaa, bbbbabbaa, abbbaaa, ababaa, ababaabaabb, bbabaa]"
+a+b,(a*b)*,"[, bab, abaab]","[baba, abaa]"
+0*10*(10*10*)*,0*((1)*1)*1(0|1)*,"[11, 010]","[0, ]"
+(0*10*10*)*|0*,0*(10*1)*0*(10*1*)*,"[, 10]",[]
+(a|b)(a|b)+aaa+,(a|b)(a|b)+aa+,"[baaa, bbbabaabaa, aaaababaa, aaaabaaa, bbaababaa, abaa, bbaa, aababaabaa]","[aababaab, aaaabaaaba, baaaba, bbaaba, aaaababaaba, bbaababaaba, abaaba, bbbabaab]"
+(a|baa)*,(a*|b*aa)*,"[bbaabaa, , baaa, baabaa]","[baaaba, babb, bbaab, baababa]"
+(ab|ba)*,((aa)*|(bb)*)((aa)*|(bb)*)*|(ba|ab)(ab|ba)*|(aa)*|(bb)*,"[bbaabbbb, , bbbbaaaa, aaaa, aabb, abba, baab, bbaa, bbbb, babaabab, abab, baba, baabbaba]","[babaaa, bababb, baabaaa, bbaaab, bbbbab, aaab, abaa, abbb, baabbbb, bbab, baaa, babb, bbba, bbbbba, bbaaba, aaba]"
+(a|b)*(bab)(a|b)*,((a|b)*bab(a|b)*)*,"[, babb, bbaabab, baaabab, abaabab, ababa, baabab]","[aba, baaa, bbaab, baaba, abaa, ba]"
+(a|(b*bb))*,(a*|b+)*,"[, ba]",[]
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)(a*))(b|ba))*,"[, bbbbabb, ababaabaab, abaababab, bbbbaaaba, abbbabb, abbbaaaba, bbaababab, bbabaabaab, abab, bbab]","[bbaabababaa, bbabaabaabb, bbbbaaa, abaabababaa, abbbabbaa, bbbbabbaa, abbbaaa, ababaa, ababaabaabb, bbabaa]"
+(a|(b*bb))*,(a|b)*b*(a|b)*,"[, ba]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*0+)*|(1*0*1+)*,"[, 10]",[]
+(a|b)(a|b)+aaa+,"(a|b){1,}aaa","[baaa, babaaa, aabaaa, bbabaabaaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, aaaabaabaaabaaaa, aaaa, baaabaabaaabaaaa]","[baabaaaba, baaab, bbabaabaaab, baaabaabaaabaaaab, aaabaaaba, aaaabaabaaabaaaab, aabaaab, aaaab, ababaabaaab, babaaab]"
+/#(/|a|b|##*(a|b))*##*/,(/#(a|b)*#/)*,[],[]
+(ab|ba)*,((ab)|(ba))*(ab|ba|aa|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+0(0|1)*0,0*(0*1*0*)*0*,"[, 10]",[]
+(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][0-1]*[0-1]*,"[11, 01, 0010, 10]","[0, 1]"
+(a*ba*b)*a*ba*,(a|b)*b((a)|(bb))*,"[bb, aba]","[, a]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(11*00*)*)|(1*(00*11*)*),"[, 10]",[]
+(a|baa)*,a*(baa*)*,"[baba, , baa]","[baabb, babbba]"
+(a|(b*bb))*,(a|ab|ba|bb*)*,"[, ba]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((1*(0+1+0+)*1*)(0*(1+0+1+)*0*))*|1*|0*,"[, 10]",[]
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b(a?))*,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbaababbaa, bbabaabaabb, bbbbaaa, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+(a*ba*b)*a*ba*,(a*(ba*b)*ba*)+,"[bb, aba]","[, a]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1|0|(1+(0*1*)*1+)|(0+(1*0*)*0+))*,"[, 10]",[]
+(ab|ba)*,((aa)*|(bb)*)(a|b)*,"[, ba]",[]
+0(0|1)*0,(0(0*1*)*0)*,"[000, , 01010, 0010]","[11, 0101, 0001, 00101, 10]"
+(a|b)*baa(a|b)*b,(a*b*)*(baa+|b)+,"[bbabaab, abaaa, baababaabaa]","[baababaabaaba, abaaaba, bbabaaba]"
+(a|b)(a|b)+aaa+,((a|b)*(a|b))aaa(a)*,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[baabaaaba, aaaabaabaaaba, aaaabaaaba, baaaba, bbabaabaaab, babaaaaba, aaabaaaba, baaabaabaaaba, ababaabaaab, aabaaaaba]"
+(ab|ba)*,(ab|ba)*(aa|bb|ab|ba)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+a+b,(a*b)+,"[baab, bbab]","[baa, bbaba]"
+(0|1)(0|1)*,(0|1)|(0|1)*,"[, 10]",[]
+(a*ba*b)*a*ba*,a*ba*(ba*b)*(a*b*)*,"[bb, aba]","[, a]"
+(a|b)*baa(a|b)*b,(a|b)*(baa)(a|b)*,"[babaaa, abaab, bbabaa]","[baba, aba, bbab]"
+b*a*,(a|b*a*)+,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a+|b+)*aa(a+),"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[babaabaaab, aaabaabaaab, aabaaaba, aaabaaab, abaaaab]"
+(a|(b*bb))*,(a|b)*bb(a|bb)*|a*,"[, bbbabb, babbabbaa, bbababaabba]","[bbbabbaba, bbababaa, babbabbaaba]"
+(a|(b*bb))*,(a*(bb*)*)*,"[, ba]",[]
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*b)|(((a|b)a*ba)*))*)?,"[, bbbbabb, ababaabaab, abaababab, bbbbaaaba, abbbabb, abbbaaaba, bbaababab, bbabaabaab, abab, bbab]","[bbaabababaa, bbabaabaabb, bbbbaaa, abaabababaa, abbbabbaa, bbbbabbaa, abbbaaa, ababaa, ababaabaabb, bbabaa]"
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*b)+(a?))*)?,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbbbaaa, bbaababbaa, bbabaabaabb, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+a+b,a*b{1},[ab],"[bb, ababa]"
+(a|(b*bb))*,((a|b)|bb|(a|b))*,"[, ba]",[]
+a+b,(a|b)*(a)*b,"[baab, bbab]","[baa, bbaba]"
+(a*ba*b)*a*ba*,(a*)b+((a*)|(b(a*)b))*,"[babba, bba, babbbb, bbb, ababab]","[, babbb, ababa, babbab]"
+0(0|1)*0,0*|(0|1)*|0*,"[, 10]",[]
+0(0|1)*0,0*|0(1|0)*0?,"[00, , 01]","[11, 10]"
+(a|b)(a|b)+aaa+,(a*b*)*|b+aaa,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a|b)+aaa+,"[baaa, aabaaabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa, aaaa, babaaabaaaa]","[aabaaabaaaaba, baabaaaba, aaaabaabaaaba, baaaba, bbabaabaaab, aaabaaaba, aaaaba, baaabaabaaaba, babaaabaaaaba, ababaabaaab]"
+(a|b)(a|b)+aaa+,((a|b)*(aaa+)),"[babaabaaabaaa, aabaaabaaa, abaaa, aaabaabaaabaaaa]","[babaabaaab, aabaaaba, aaabaabaaabaaaabaa, abaaabaa]"
+(a|(b*bb))*,(a|(b+(b)*))*,"[, ba]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(11*0*)*|1*(00*1*)*,"[, 10]",[]
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(1+0*1*)*|(0+1*0*)*,"[, 10]",[]
+(a|baa)*,a*((b+aa)*a*)*,"[bbaabaa, , baaa, baabaa]","[bbaab, baababba, baaabab]"
+(a|b)(a|b)+aaa+,(a+|b+)+aaa+,"[baaa, aabaaabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa, aaaa, babaaabaaaa]","[baabaaaba, aaaabaabaaabaa, bbabaabaaab, aaabaaaba, aaaabaa, ababaabaaab, aabaaabaaaabaa, baaabaa, baaabaabaaabaa, babaaabaaaabaa]"
+(ab|ba)*,(ab|ba)*(aa|ab|ba|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*)*0*|(1*0*)*1*,"[, 10]",[]
+a+b,(a)*(b),[ab],"[bb, ababa]"
+(a|baa)*,(((b*)(a)(a))*(a*))*,"[bbaabaa, , baaa, baabaa]","[bbaab, baababba, baaabab]"
+(a|b)(a|b)+aaa+,(aa*|ab*|ba*|bb*)*aaaa*,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[babaabaaab, aabaaaba, aaabaabaaabaa, abaaabaaaabaa]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|0+(1+0+)*|1+(0+1+)*,"[, 1101, 101001, 0100, 011010]","[11010, 01101, 10100, 01001]"
+a+b,((a*)b)*,"[, bab, abaab]","[baba, abaa]"
+(ab|ba)*,(ab|ba)*(a|b)*,"[, ba]",[]
+(ab|ba)*,(a(a|b)|b(a|b))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][01]*[10]*,"[000, 11, 01, 10]","[0, 1]"
+001|1010|110,0*1*0*1*0*,"[11, , 100, 010100, 1011]","[110101, 101011, 101001, 101101, 100101, 0101010]"
+0*10*(10*10*)*,[0-1][0-1]*,"[00, 11]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),((0+1*)*0+)*|((1+0*)*1+)*,"[, 01010, 1101, 0110, 1001, 0100, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*|aaa*,"[aba, b]",[]
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b(a?))*|((a|b)a*ba)*,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbaababbaa, bbabaabaabb, bbbbaaa, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+0*10*(10*10*)*,(0|1(11)*)+,"[00, 11]",[]
+(a|b)*baa(a|b)*b,[ab]*(baa)+[ab]*b[ab]*,"[baaab, bbabaab, abaaba, babaabb]","[baaa, babaa, abaa, bbab]"
+(a|baa)*,(((b)*(a)(a))*(a*))*,"[bbaabaa, , baaa, baabaa]","[bbaab, babb, baaaba, baababa]"
+1?(01)*0?,((0|1)|(1|0))*,"[, 10]",[]
+(a*ba*b)*a*ba*,a*(ba*(bb)*)(ba*(bb)*)*a*,"[bb, aba]","[, a]"
+0*10*(10*10*)*,(0*(10*1)*0*10*)*|(0*10*10*),"[11, , 001, 010]","[0, 00]"
+(0*10*10*)*|0*,0*(1+0*1+0*)*,"[1010111, , 101010011, 101010110, 10100]","[1010100, 1010010, 101010, 10101]"
+(a*ba*b)*a*ba*,(b|a+|a*ba*(ba*ba*)*a*),"[aa, bbba, bbb, abbbbab]","[bbbab, bb, abbbba, aabb]"
+(a|b)*baa(a|b)*b,(b*a*)*|baa|(b*a*)*|b|b*,"[, ba]",[]
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b)|((a|b)a*ba))*((a|b)a*b)?,"[, bbaabab, abbbabbab, bbbbaaabab, ababaabaab, abbbaaabab, abaabab, bbbbabbab, bbabaabaab, abab, bbab]","[bbbbaaa, bbabaabaabb, abaababaa, abbbabbabaa, bbaababaa, abbbaaa, ababaa, ababaabaabb, bbbbabbabaa, bbabaa]"
+a+b,(a|a*b),"[ab, b, aab, aaab]","[abb, bb, aaa, aba, aabaa, aabbb, ba]"
+(a|(b*bb))*,(a|b+)*,"[, ba]",[]
+(a*ba*b)*a*ba*,(a)*b(a|(ba)*b)*,"[bb, aba]","[, a]"
+a+b,(a|b)a*b,"[bb, ab, bab, aab]","[aa, bba, abb, bbb, ababa, ba]"
+(b|(a*aa))*,(b*a*(aa)*b*)*,"[, ba]",[]
+a+b,aa*b+,"[abb, aab]","[aa, b, ababa, abba]"
+(a*ba*b)*a*ba*,(a|ba*)*ba*,"[bb, aba]","[, a]"
+a+b,(a*)(b),[ab],"[bbb, abaa]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b+a)*((a|b)a*b+)?,"[, bbaaba, ababbaaab, ababbaabb, bbabbaaab, bbabbaabb]","[bbaabaa, bbaabab, ababbaabbaa, bbabbaabbab, ababbaaa, bbabbaaa]"
+((a|b)a*ba)*(((a|b)a*b)?),((aa*ba?)|(ba*ba?))*,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbbbaaa, bbaababbaa, bbabaabaabb, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*ba)*|((a|b)a*b)?)*,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbbbaaa, bbaababbaa, bbabaabaabb, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b(a?))?)*,"[abbbaaab, , abbbabab, bbbbabab, bbbbaaab, ababaabaab, bbabaabaab, abaababb, abab, bbab, bbaababb]","[bbbbaaa, bbaababbaa, bbabaabaabb, abaababbaa, abbbababaa, abbbaaa, ababaa, ababaabaabb, bbabaa, bbbbababaa]"
+(a*ba*b)*a*ba*,a*b((ba*|a)*)a*,"[bb, aba]","[, a]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(01)*0|1*(10)*1)*,"[, 10]",[]
+0(0|1)*0,((1*|0*)(0*1*)*(0*|1*))*,"[, 10]",[]
+a+b,a*(b),[ab],"[bb, ababa]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][0-1]*,"[000, 11, 01, 10]","[0, 1]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0|1)*(((01)(0|1)*(10))|((10)(0|1)*(01))|(010)*|(101)*)(0|1)*)|0*|1*,"[, 10]",[]
+(a|baa)*,(a|b)*((b)*(aa))*,"[, ba]",[]
+(a|b)*baa(a|b)*b,(a*b*(baa+)*a*b*)*b+,"[baab, bbab]","[bbaba, baa]"
+(a|b)(a|b)+aaa+,(b*a*)*a*a*a,"[baba, abaa]","[bab, abaab]"
+(a|(b*bb))*,(a|b|ba|ab|aba)*,"[, ba]",[]
+(a|b)*(bab)(a|b)*,(a|b|bab)*,"[, ba]",[]
+(a|b)*(bab)(a|b)*,(a|b|bab)+,"[aa, bb]",[]
+(ab|ba)*,(ab|ba)*(aa+bb+ab+ba)*,"[, aabbbabbaaabbabba, aabbabbbaaabbabba, baaabbabbaaabbabbaaabbabba, aabbabbaaaabbabba, abaabbabbaaabbabba, aabbabbaaabbabba, abbabaaabbabba]","[baaaba, baaabbabbab, aabbabbaaabbabbaab, aabbabbaaaba, aabbabbaaabbabbabb, baaabbaa, abaabbabbab, aabbbabbaaabb, abaabbaba, aabbabbbaaabbabb, aabbabbaaaa, abbb, abaabbabbaab, babba, aabbabbaaabbaba, abaaba, baaabbabbaab, baaabbaba, aabbabbaaabbaa, abaabbaa]"
+a+b,(a|b)*(a)b,"[abbababbbabbab, abbabaab]","[abbabaa, abbababbbabb]"
+(b|(a*aa))*,b*|(a|b)*aa(a|b)*,"[, abaaa, abbabaa, baab]","[aba, abbab, ba]"
+(a|b)(a|b)+aaa+,(aa|ab|ba|bb|b)*(aaa)a*,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, abaaabaaaa]","[aabaaaba, babaabaaab, aaabaabaaabaa, abaaabaaaabaa]"
+a+b,a[ab]*b,"[abaab, abbab]","[bba, abbaba, abaa]"
+0*10*(10*10*)*,(0*10*1*0*)*,"[11, , 001, 010]","[00, 0]"
+(ab|ba)*,((ab)*(ba)*)*|(aa|ab|ba|bb)*(a|b),"[baaaa, babba, , baaab, babbb, abbbaba, abaabab, abaaaaa, abbbbbb, aabbbaabaab, aabbbaabaaa]","[abaababa, abbbabaa, baaaaa, babbaa, baaabb, babbbb, baaaba, babbba, abbbabab, abbbbbba, abbbbbbb, aabbbaabaa, abaaaaab, abaaaaaa, abaababb, baaaab, babbab]"
+(a|b)*baa(a|b)*b,(a|b)*baa*(a|b)*b*,"[bba, bab, abaa]","[bb, ab, b]"
+(a|baa)*,(a|(b*aa+))*,"[bbaabaa, , baaa, baabaa]","[baaab, bbaab, babb, baababa]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0(0|1)*0|1(0|1)*1|1*|0*,"[, 01010, 1101, 0110, 1001, 0100, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+(a|b)(a|b)+aaa+,((a|b)*(a|b))+aaa+,"[baaa, aaaabaaa, aabaaaa, bbabaabaaabaaa, aaaabaabaaa, baabaaabaaa, babaaaa, ababaabaaabaaa, aaabaaabaaa, baaabaabaaa]","[baabaaaba, aaaabaabaaabaa, bbabaabaaab, aaabaaaba, ababaabaaab, babaaaabaa, aaaabaaabaa, aabaaaabaa, baaabaa, baaabaabaaabaa]"
+0(0|1)*0,(0(0|1)*0)|(1(0|1)*1)?,"[, 111, 01010, 1101, 11001, 0010]","[0101, 11010, 1100, 00101, 1110]"
+(ab|ba)*,(ab|ba)*((a|b)(a|b))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+a+b,(a|b)*a(a|b)*b(a|b)*,"[baba, abb, aab]","[aa, a, ba]"
+(a|b)(a|b)+aaa+,(a|b)*aaa*,"[babaabaa, aabaaa, aababaa]","[babaab, aabaaaba, aababaaba]"
+(a|b)(a|b)+aaa+,(a|b)*aaa+,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[aabaaaba, babaabaaab, aaabaabaaaba, aaabaaaba, abaaaaba]"
+(ab|ba)*,(aa|bb|ab|ba)*(aa|bb)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+a+b,(a*b|a),"[ab, b, aab, aaab]","[aaa, abb, bb, aba, aababa, aabb, ba]"
+(a|(b*bb))*,(a|b|ba|ab)*,"[, ba]",[]
+0*10*(10*10*)*,[0-1]([0-1])?(([0-1])?)*,"[00, 11]",[]
+(0*10*10*)*|0*,(0|1)*,"[, 10]",[]
+(0*10*10*)*|0*,(0|1)*1*,"[, 10]",[]
+(ab|ba)*,(ab|aabb|ba|bbaa)*,"[bbaaaabb, bbaabbaa, , bbaababbaa, aabbabaabb, aabbbbaabbaa, abbbaa, baaabbaabb, aabbaabb]","[bbaabbb, babbba, baaaba, bbaabbab, aabbabaaa, bbaaaaa, aabbaaba, abbbb, bbaababbabb, baaaa, aabbaaa, aabbbbb, abaaba, abbbab, aabbbbab, bbaaaaba]"
+(a|(b*bb))*,(a|b|ba|ab|aba)*(aba)*,"[, ba]",[]
+(a|b)(a|b)+aaa+,(a|b)*(aaa)a*,"[babaabaaabaaa, aaabaabaaa, aabaaabaaa, aaabaaa, abaaaa]","[babaabaaab, aabaaaba, aaabaabaaab, aaabaaab, abaaaab]"
+(ab|ba)*,(ab|ba)*(aabb+bbaa+ba+ab)*,"[, baaabbbbaabaabaabbbbaabaabaabbbbaabaab, abbaba, aabbbbaabaabaabbbbaabaab, aabbbbbaabaabaabbbbaabaab, abaabbbbaabaabaabbbbaabaab, aabbbbaabaabaabbbbaaabaab]","[abaabbbbab, baaabbbbaabaabb, abaaa, aabbbbaabaabaabbbbaabb, abbb, aabbbbaabaabaaa, aabbbbaabaabaabbbbaabaabab, baaabba, aabbbbaabaabaabbbbaaa, babb, baaabbbbaabaabab, abaaba, baaabbbbaabab, abaabbbbaabb, baaaba, baaabbba, abaabbbbaabaabb, aabbbbbaabaabaabbbb, baaabbbbab, abaabbbbaabab, aabbbbaabaabaabbab, aabbbbaabaabaabaa, baaaa, aabbbbaabaabaabbbbab, baaabbbbaabb, aabbbbaabaabaabbba, aabbbbaabaabaabbbbaabaaa, aabbbbaabaabaabbbbaabaabb, abaabba, aabbbbaabaabaabbbbaabab, abaabbba, abaabbbbaabaabab]"
+(ab|ba)*,(bb|aa|(ab|ba)*)*((aa)|(bb)|(ab)|(ba))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, bbbaabaaa, abbbaabaa, bbbbaabaa]"
+0(0|1)*0,0(0|1)*0|(00)*,"[000, , 01010, 0010]","[11, 0101, 0001, 00101, 10]"
+b*a*,((a+)|b+a*)*,"[, ba]",[]
+(ab|ba)*,((ab|ba)+(aa|bb|ba|ab)*)?,"[, babbbb, babbba, abbaba, abaaaa, abbabb, abaaab, baabab, baabaa, babbbaabaa]","[aaa, babbbaabaab, babbb, babbbaabaaa, bbb, baaba, abaaa, abbab]"
+(a*ba*b)*a*ba*,a*b(ba+b)*|(a*|bb*)*,"[, ba]",[]
+(ab|ba)*,((aa)*|(ab)*|(ba)*|(bb)*)*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a|(b*bb))*,(a*b+a*)*|a*,"[, ba]",[]
+(0|1)(0|1)|(0|1)(0|1)(0|1),"(0|1|10|11){2,3}","[101010, 101011, 101110, 111111, 101111, 1000, 0010, 01111, 01011, 01110, 01010, 0100, 10011, 10110, 11100, 10010, 11010, 000, 0011, 0110, 1100, 111010, 11011, 11110, 111011, 111110, 10100]","[110101, 1110111, 1110110, 110100, 011101, 1010111, 1010110, 011100, 0001, 101101, 111000, 1110101, 1110100, 101000, 111100, 100110, 101001, 111101, 1111110, 1111111, 00110, 00111, 01001, 01000, 100100, 100101, 000010, 00101, 1111100, 1111101, 00100, 010110, 1011101, 1011100, 010111, 11001, 100111, 11000, 110110, 111001, 110111, 101100, 01101, 01100, 1010100, 1011111, 010101, 011110, 1011110, 010100, 011111, 1010101, 10000, 10001]"
+a+b,(a|a*)(b),[ab],"[bb, ababa]"
+a+b,(a+b)*,"[, ab, abaab]","[abbba, abaa]"
+a+b,(a+b)+,"[abaab, abab]","[bb, ababb, abaa, abba]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba?)*,"[, bbbbabb, ababaabaab, abaababab, bbbbaaaba, abbbabb, abbbaaaba, bbaababab, bbabaabaab, abab, bbab]","[bbaabababaa, bbabaabaabb, bbbbaaa, abaabababaa, abbbabbaa, bbbbabbaa, abbbaaa, ababaa, ababaabaabb, bbabaa]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(1+(0+1)*1*)*|(0+(1+0)*0*)*,"[, 01010, 1101, 0110, 0100, 1001, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+1?(01)*0?,((0|1)|(01|10))*,"[, 10]",[]
+(a*ba*b)*a*ba*,a*b(bb*|a*)*,"[bb, aba]","[, a]"
+(ab|ba)*,(ab|ba)*(ab+ba)*,"[, baabbbaabba, abbbaabbaabba, abbbaabba, ababbbaabba, abbaababbba, abbaababbabaabbba, abbababaabbba, abbbbaabba, abbaabbbaabbaabba]","[abbbaabbaaa, abaaa, abbbaabbab, abbbaabbaaba, abbaabbbaaba, baabbbab, ababbbaaba, abbaaab, abbaabbbab, ababbbab, baabbbaaa, abbbbaabb, baaa, babb, baabbbaaba, abbaabbbaaa, ababbbaaa, abbaababbabb, abbabb]"
+(a|b)(a|b)+aaa+,((a|b)*(a|b))(aaa)+,"[baaa, babaaa, aabaaa, bbabaabaaabaaa, baabaaabaaa, ababaabaaabaaa, aaabaaabaaa, aaaabaabaaabaaaa, aaaa, baaabaabaaabaaaa]","[baabaaaba, bbabaabaaab, aaabaaaba, aaaabaa, babaaabaa, baaabaabaaabaaaabaa, ababaabaaab, aaaabaabaaabaaaabaa, aabaaabaa, baaabaa]"
+(a|b)*baa(a|b)*b,((a|b)*baa(a|b)*)*b,"[bbaab, babbabaab, abaabb, aabaab, baab, babaabab, baabaab]","[aa, bbaaba, babaababa, baaba, abaabba, baabaa, babbab]"
+(0(0*|1+0)*)|(1(1*|0+1)*),1*|0*|1+(0*1*)*1+|0+(0*1*)*0+,"[, 01010, 1101, 0110, 1001, 0100, 10101]","[011, 100, 0101, 11010, 1010, 01001]"
+(a|b)*baa(a|b)*b,(a|b)*(a|b)*b,"[baab, bbab]","[bbaba, baa]"
+0(0|1)*0,0+|(0|1)*|0+,"[, 10]",[]
+(a|(b*bb))*,((a|b)*|bb|(a|b)*)*,"[, ba]",[]
+(a|baa)*,(a|b)*(baa)*,"[, ba]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),1*(0+1+0*)*|0*(1+0+1*)*,"[, 10]",[]
+(ab|ba)*,((aa)|(ab)|(ba)|(bb))*,"[, bbbbaabaab, bbbaabaa, abbbaabaaa]","[bbbaabaab, abbbaabaa, bbbaabaaa, bbbbaabaa]"
+(a|baa)*,(a|(b|aa*))*,"[, ba]",[]
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|0+(1*0*)*|1+(0*1*)*,"[, 10]",[]
+a(a|b)a(a|b)*,(aba|aaa|aab|abb|bba)(a|b)*,"[abb, aba, aab, aaab, bbaa]","[bb, aa, ab, baa, bbbb]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba)*((a|b)a*b)?a?,"[, bbaaabaa, aabaababbabbaaabaa, abaaaabaa, ababbaabaaab]","[aabaababbabbaaa, abaaaa, abaabbb, ababbb, bbaaabaaa, abaaabba]"

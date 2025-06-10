@@ -1,0 +1,97 @@
+﻿shortdescription,regex,attemptregex
+even number of 1's,0*(10*1)*0*,0*1(10*10*)*
+At least one a followed by one b,a+b,(a*|b)
+Odd number of 1s,0*10*(10*10*)*,-1
+Odd number of b's,(a*ba*b)*a*ba*,(a|ba*b)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0(0|1)*1
+even number of 1's,(0*10*10*)*|0*,0*10*1(1)0*
+Odd number of 1s,0*10*(10*10*)*,(1)(111)
+Odd number of b's,(a*ba*b)*a*ba*,a*ba*b
+Odd number of b's,(a*ba*b)*a*ba*,a*ba*(bb)*a*b(bb)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,a(a)*b
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,"(ba{2,})*"
+"Starts with a, ends with b",a(a|b)*b,b(a|b)a
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a*b*)*baa(a*b*)*b
+Every b followed by two or more a's,(a|baa)*,"(a)b{2,}"
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,a|b*[baa]b
+Three Choices (Regex),001|1010|110,(001)(10101)(110)
+even number of 1's,(0*10*10*)*|0*,1
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),0|1
+even prefix,(ab|ba)*,(aa|bb|ab|ba)*bb
+even prefix,(ab|ba)*,aabb(a|b)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a*)(b*|aa*)b
+At least one a followed by one b,a+b,(a|b)
+At least one a followed by one b,a+b,a|b
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a*|b*|aa*)b
+Odd number of 1s,0*10*(10*10*)*,0*|1(111)0*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0(0*1*)*1)|(1(0*1*)*0)
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)?
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(b|a)*(baa)+(a|b)*b
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)|(0|1)|(0|1)
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a)(a)*(bb)(b)*(a)(a*)
+Odd number of b's,(a*ba*b)*a*ba*,([a]*[b][a]*[b][a]*)+
+Three Choices (Regex),001|1010|110,1+0+11+0+
+Odd number of b's,(a*ba*b)*a*ba*,b(a*ba*ba*)*a*ba
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,aa||bbaaa+
+At least one a followed by one b,a+b,b+a
+first and third,a(a|b)a(a|b)*,((a|b)aba(a|b)*)
+Odd number of b's,(a*ba*b)*a*ba*,(a*ba*ba*)*
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)(0|1)+(0|1)(0|1)(0|1)
+non isolated 'b',(a|(b*bb))*,b(ab+ba+b)*
+even number of 1's,(0*10*10*)*|0*,0*1(0*10*10*)+
+Three Choices (Regex),001|1010|110,1+0+011+0+
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a)(a)*(b)(b)*(a)(a*)
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,[ab]*baa[ab]*b
+even prefix,(ab|ba)*,aaa*bbb*(a|b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b(aaa))
+At least one a followed by one b,a+b,a*|b
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(ab|aaa)
+At least one a followed by one b,a+b,a*
+Three Choices (Regex),001|1010|110,(0+1)*01(0+1)*
+even number of 1's,(0*10*10*)*|0*,0*1(0|11)*
+Odd number of b's,(a*ba*b)*a*ba*,(a|bb)*(a|bb)*
+Three Choices (Regex),001|1010|110,(0|01)
+even prefix,(ab|ba)*,(aa)*b
+Three Choices (Regex),001|1010|110,0|0|1
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)+bbb+
+first and third,a(a|b)a(a|b)*,(a(a|b)b)(a|b)*
+Odd number of b's,(a*ba*b)*a*ba*,[a]{1}([a]{2})*
+first and third,a(a|b)a(a|b)*,a(a|b)b(a|b)*
+even prefix,(ab|ba)*,a
+non isolated 'b',(a|(b*bb))*,(a+b)b(a+b)
+Three Choices (Regex),001|1010|110,0
+Three Choices (Regex),001|1010|110,1
+first and third,a(a|b)a(a|b)*,a(a|b)b(a+b)*
+Three Choices (Regex),001|1010|110,(1|0)(001|10101|110)*
+Three Choices (Regex),001|1010|110,(0|1)*0101(0|1)*
+At least one a followed by one b,a+b,(a*)ba
+Odd number of b's,(a*ba*b)*a*ba*,(a)*b(a)*b
+At least one zero followed by 0 or more 1s,0+1*,1
+even number of 1's,(0*10*10*)*|0*,0*10*11
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),-1
+Three Choices (Regex),001|1010|110,[001]|[10101]|[110]
+Three Choices (Regex),001|1010|110,11010110
+Odd number of 1s,0*10*(10*10*)*,0*(10*1)
+At least one a followed by one b,a+b,ba+
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,a(a*)b
+first and third,a(a|b)a(a|b)*,abba
+Three Choices (Regex),001|1010|110,(0|1)*0101(0|1)
+Odd number of b's,(a*ba*b)*a*ba*,(bb)+
+Odd number of 1s,0*10*(10*10*)*,0*|1(1)0*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,a(a*)b
+even prefix,(ab|ba)*,(a+a(b+aa)*b)*a(b+aa)*a
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(b|a)*(baa)+(a|b)*b+
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0(0|1)*1)|(1(1|0)*0)
+Every b followed by two or more a's,(a|baa)*,a*b(a*ba*b)*a
+Odd number of 1s,0*10*(10*10*)*,0*
+At least one a followed by one b,a+b,(a*b)*a
+Three Choices (Regex),001|1010|110,((0|01)(1|10))
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),((0|1)(0|1))+((0|1)(0|1)(0|1))
+Odd number of 1s,0*10*(10*10*)*,(0*10*10*10*10*)*
+Three Choices (Regex),001|1010|110,(1|0)(001|1010|110)*
+Odd number of b's,(a*ba*b)*a*ba*,a*b(a*ba*b)*b
+Every b followed by two or more a's,(a|baa)*,abb*
+Odd number of b's,(a*ba*b)*a*ba*,a*b(a|(ba*b))b
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a)*(baa)*((a)*(baa)*)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,a+|b*a*
+Odd number of 1s,0*10*(10*10*)*,(0*(10*1)*0*10*(10*1)*1)

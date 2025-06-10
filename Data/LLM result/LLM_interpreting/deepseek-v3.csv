@@ -1,0 +1,225 @@
+Right Short Description,regex,DeepSeek Output without examples,DeepSeek Output with EPC examples,DeepSeek Output with EGRET examples,DeepSeek Output with MutRex examples
+a and b alternate.,b?(ab)*a?,"The language defined by the regular expression `b?(ab)*a?` consists of all strings that can be formed by alternating `a` and `b` starting with `b` or nothing, and ending with `a` or nothing, including the empty string.","The language defined by the regular expression `b?(ab)*a?` is:  
+**All strings over {a, b} where every 'a' (except possibly the first or last) is immediately preceded by a 'b', and no two 'a's are adjacent unless separated by a 'b'.**  ","In one sentence:  
+**The language consists of strings where 'a's and 'b's are balanced in 'ab' pairs, optionally starting with a 'b' and/or ending with an 'a'.**","The language defined by the regular expression `b?(ab)*a?` consists of all strings over the alphabet {a, b} that start with an optional 'b', followed by zero or more repetitions of 'ab', and end with an optional 'a', ensuring no two 'a's or 'b's are adjacent unless part of an 'ab' pair. 
+"
+The number of a’s is divisible by 3,(b*ab*ab*ab*)*,"The regular expression (b*ab*ab*ab*)* defines the language of all strings over the alphabet {a, b} where the number of 'a's is a multiple of 3.","The language defined by the regular expression `(b*ab*ab*ab*)*` is:  
+
+**""All strings where the number of 'a's is a multiple of 3 (including zero 'a's), and 'b's can appear anywhere between or around the 'a's.""**  ","The regular expression `(b*ab*ab*ab*)*` defines the language of all strings over the alphabet {a, b} where the number of `a`s in the string is a multiple of 3 (including zero). 
+","The regular expression `(b*ab*ab*ab*)*` defines the language of all strings over the alphabet {a, b} where the number of `a`s is a multiple of 3 (including zero `a`s). "
+Does not end with ab,((a|b)*((aa)|(ba)|(bb)))|((a|b)?),"The regular expression defines a language that consists of all strings over the alphabet {a, b} that either end with ""aa"", ""ba"", or ""bb"", or are of length 0 or 1.","The regular expression defines a language consisting of all strings over the alphabet {a, b} that either:  
+1. end with ""aa"", ""ba"", or ""bb"", or  
+2. are of length 0 or 1 (i.e., the empty string, ""a"", or ""b"").  
+
+","The regular expression defines a language consisting of all strings over the alphabet {a, b} that are either:  
+1. Empty,  
+2. A single 'a' or 'b', or  
+3. Any string ending with ""aa"", ""ba"", or ""bb"".  ","The language defined by the regular expression consists of all strings over the alphabet {a, b} that either:  
+1. End with ""aa"", ""ba"", or ""bb"", or  
+2. Are the empty string or a single ""a"" or ""b"".  
+
+"
+Does not end with ba and the length is at least two.,(a|b)*((aa)|(ab)|(bb)),"The regular expression (a|b)*((aa)|(ab)|(bb)) defines the language of all strings over the alphabet {a, b} that end with aa, ab, or bb.","The regular expression `(a|b)*((aa)|(ab)|(bb))` describes the language of all strings over the alphabet `{a, b}` that end with `aa`, `ab`, or `bb`.  ","The regular expression `(a|b)*((aa)|(ab)|(bb))` defines the language of all strings composed of `a`'s and `b`'s that end with `aa`, `ab`, or `bb`.  
+","The language defined by the regular expression `(a|b)*((aa)|(ab)|(bb))` is the set of all strings composed of `a`'s and `b`'s that end with `aa`, `ab`, or `bb`.  
+"
+Does not contain aba as a substring.,(b|aa*bb)*((aa*(b?))?),"The regular expression `(b|aa*bb)*((aa*(b?))?)` defines the language of all strings over the alphabet {a, b} where every 'a' is eventually followed by at least one 'b'.","The language defined by the regular expression `(b|aa*bb)*((aa*(b?))?)` consists of all strings over the alphabet {a, b} where every occurrence of 'a' is either followed by another 'a' or by an even number of 'b's, and no 'a' appears after a single 'b' unless it's at the end of the string.  
+","The language defined by the regular expression `(b|aa*bb)*((aa*(b?))?)` consists of all strings over the alphabet {a, b} where every occurrence of 'a' is either followed by another 'a' or a pair of 'b's, and the string may optionally end with a sequence of 'a's followed by at most one 'b'. ","The regular expression `(b|aa*bb)*((aa*(b?))?)` defines a language consisting of strings that can be empty or composed of sequences of:  
+
+**One-sentence explanation:**  
+The language accepts strings where every `a` (except possibly the last one) is followed by zero or more `a`s and then exactly two `b`s, or consists of `b`s and properly terminated `a`-`b` sequences, rejecting any string with an `a` not followed by the required `b`s (e.g., `aba` is rejected due to the lone `a`).  "
+Does not contain baa as a substring.,a*(ba|b)*,"The regular expression `a*(ba|b)*` defines the language of all strings over the alphabet {a, b} where every 'a' (if any) appears before the first 'b' (if any), and after the first 'b', 'a's can only appear immediately following a 'b'.","The language defined by the regular expression `a*(ba|b)*` is:  
+
+**All strings consisting of any number of 'a's followed by any sequence of 'b's or 'ba's.**  
+","The regular expression `a*(ba|b)*` describes the language consisting of all strings over the alphabet `{a, b}` where every `b` (except possibly the first) is followed by an `a`.  ","The language defined by the regular expression `a*(ba|b)*` is:  
+
+**All strings consisting of any number of 'a's followed by any sequence of 'b's or 'ba's (where 'b's can optionally be followed by 'a's).**  "
+The 5th symbol from the right end is b.,(a|b)*b(a|b)(a|b)(a|b)(a|b),"The regular expression `(a|b)*b(a|b)(a|b)(a|b)(a|b)` defines the language of all strings over the alphabet {a, b} that have a `b` in the fifth position from the end.","The language defined by the regular expression `(a|b)*b(a|b)(a|b)(a|b)(a|b)` consists of all strings over the alphabet {a, b} that contain at least one 'b' followed by exactly four more characters (which can be either 'a' or 'b'). ","The language defined by the regular expression `(a|b)*b(a|b)(a|b)(a|b)(a|b)` consists of all strings over the alphabet {a, b} that contain at least one 'b' followed by exactly four more characters (which can be 'a' or 'b'). ","The language defined by the regular expression `(a|b)*b(a|b)(a|b)(a|b)(a|b)` is:  
+
+**The set of all strings over {a, b} that contain at least one 'b' followed by exactly four additional characters (each being 'a' or 'b').**  
+
+"
+Begins with a and ends with b.,a(a|b)*b,"The regular expression `a(a|b)*b` defines the language of all strings that start with 'a', end with 'b', and have any combination of 'a's and 'b's in between.","The language defined by the regular expression `a(a|b)*b` consists of all strings that start with `a`, end with `b`, and have any combination of `a`s and `b`s (including none) in between.  
+","The language defined by the regular expression `a(a|b)*b` is:  
+
+**""All strings that start with 'a', end with 'b', and have any combination of 'a's and 'b's in between.""**  ","The language defined by the regular expression `a(a|b)*b` is:  
+
+**All strings that start with 'a' and end with 'b', with any combination of 'a's and 'b's in between.**  
+"
+Start with a and have odd length or start with b and have even length.,(a((a|b)(a|b))*)|(b(a|b)((a|b)(a|b))*),"The regular expression defines a language of all strings over the alphabet {a, b} that start with 'a' and have even length, or start with 'b' and have odd length.","The language defined by the regular expression is: **the set of all strings over {a, b} where the first character is 'a' and the length is odd, or the first character is 'b' and the length is even**. 
+","The regular expression defines the language of all strings over the alphabet {a, b} that start with 'a' and have any length (including just 'a'), or start with 'b' and have an odd length greater than or equal to 1. 
+","The language defined by the regular expression consists of all strings over the alphabet {a, b} that start with 'a' and have any length, or start with 'b' and have an odd length greater than or equal to 1.  
+
+**Final one-sentence definition**:  
+The language includes all non-empty strings over {a, b} that start with 'a' (of any length) or start with 'b' and have even length.  
+"
+"Start with a or b, followed by a’s",(a|b)a*,The language defined by the regular expression (a|b)a* consists of all strings that start with either 'a' or 'b' followed by zero or more 'a's.,The language defined by the regular expression `(a|b)a*` consists of all strings that start with either 'a' or 'b' followed by zero or more 'a's.  ,"The language defined by the regular expression `(a|b)a*` is: **all strings that start with either 'a' or 'b' followed by zero or more 'a's**.  
+","The language defined by the regular expression `(a|b)a*` consists of all strings that start with either 'a' or 'b' followed by zero or more 'a's. 
+The one-sentence explanation:  
+**""The language consists of strings that begin with 'a' or 'b' followed by any number of 'a's (including none).""**"
+Sequence of a's or sequence of b's followed by sequence of a's,b*a*,The regular expression `b*a*` defines a language consisting of all strings that start with zero or more `b`s followed by zero or more `a`s.,"The regular expression `b*a*` defines the language consisting of any number of `b`'s followed by any number of `a`'s (including the empty string).  
+",The language defined by the regular expression `b*a*` is the set of all strings consisting of zero or more `b`'s followed by zero or more `a`'s. ,"The language defined by the regular expression `b*a*` is:  
+
+**""All strings consisting of zero or more 'b's followed by zero or more 'a's.""**  
+"
+"Same number of occurances of ""ab"" and ""ba""",(a(a*|b+a)*)|(b(b*|a+b)*),"The regular expression (a(a*|b+a)*)|(b(b*|a+b)*) defines the language of all strings over {a, b} that start with a single a followed by any sequence where every b is preceded by an a, or start with a single b followed by any sequence where every a is preceded by a b.","The language defined by the regular expression `(a(a*|b+a)*)|(b(b*|a+b)*)` consists of all non-empty strings that start with a single 'a' or 'b' and are followed by any combination of 'a's or sequences of 'b's followed by 'a's (if the string starts with 'a'), or any combination of 'b's or sequences of 'a's followed by 'b's (if the string starts with 'b'), ensuring no alternation between 'a's and 'b's occurs without the starting character reappearing first. 
+","The regular expression `(a(a*|b+a)*)|(b(b*|a+b)*)` defines the language of all strings over the alphabet `{a, b}` that **start and end with the same symbol (either all `a`s or all `b`s, with any valid transitions in between)**.
+","The regular expression `(a(a*|b+a)*)|(b(b*|a+b)*)` defines the language of all strings over the alphabet `{a, b}` that start with `a` or `b` and can be followed by any combination of `a`s and `b`s, but any subsequent `b`s after the first `a` must be preceded by at least one `a`, and any subsequent `a`s after the first `b` must be preceded by at least one `b`. 
+the language can be summarized as:  
+**All strings over {a, b} where the first character determines the required interleaving pattern (a-leading requires b's to be preceded by a's, and vice versa).**"
+Contains the substring bab.,(a|b)*(bab)(a|b)*,"The regular expression (a|b)*(bab)(a|b)* defines all strings over the alphabet {a, b} that contain the substring ""bab"".","The language defined by the regular expression `(a|b)*(bab)(a|b)*` is: **the set of all strings over {a, b} that contain the substring ""bab"" at least once**.  
+","The language defined by the regular expression `(a|b)*(bab)(a|b)*` is the set of all strings over the alphabet {a, b} that contain the substring ""bab"".  
+","The language defined by the regular expression `(a|b)*(bab)(a|b)*` is the set of all strings over the alphabet {a, b} that contain the substring ""bab"".  
+"
+Even number of b’s.,(a*ba*ba*)*|a*,"The language defined by the regular expression (a*ba*ba*)*|a* consists of all strings over the alphabet {a, b} that either contain an even number of 'b's (including zero) or consist solely of 'a's.","The language defined by the regular expression `(a*ba*ba*)*|a*` is:  
+
+**""All strings consisting of an even number of 'b's (including zero) and any number of 'a's in any positions.""**  
+","The language defined by the regular expression `(a*ba*ba*)*|a*` is:  
+
+**""All strings over {a, b} that either contain an even number of 'b's (including zero) or consist solely of 'a's.""**  ","The language defined by the regular expression `(a*ba*ba*)*|a*` is: **""All strings consisting of an even number of 'b's (including zero) and any number of 'a's in any position.""**  
+
+"
+Odd number of b’s.,(a*ba*b)*a*ba*,"The regular expression (a*ba*b)*a*ba* defines the language of all strings over {a, b} that contain an odd number of 'b's.","The language defined by the regular expression `(a*ba*b)*a*ba*` is: **The set of all strings over {a, b} that contain an odd number of 'b's**.  
+
+","The regular expression `(a*ba*b)*a*ba*` defines the language of all strings over the alphabet `{a, b}` that contain an odd number of `b`s. 
+","The language defined by the regular expression `(a*ba*b)*a*ba*` consists of all strings over the alphabet `{a, b}` that contain an odd number of `b`s.  
+"
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,"The language defined by the regular expression `(a|b)*baa(a|b)*b` consists of all strings over the alphabet {a, b} that contain the substring ""baa"" and end with the letter ""b"".","The language defined by the regular expression `(a|b)*baa(a|b)*b` is:  
+
+**""All strings over {a, b} that contain the substring 'baa' and end with 'b'.""**  
+","The language defined by the regular expression `(a|b)*baa(a|b)*b` is:  
+
+**All strings over {a, b} that contain the substring ""baa"" and end with a ""b"".**  
+","The language defined by the regular expression `(a|b)*baa(a|b)*b` is:  
+
+**""All strings over {a, b} that contain the substring 'baa' and end with 'b'.""**  
+"
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,"The regular expression `b*(abb*abb*)*` defines the language of all strings over the alphabet {a, b} where the number of 'a's is even (including zero).","The language defined by the regular expression `b*(abb*abb*)*` consists of all strings over the alphabet {a, b} where every occurrence of 'a' is followed by at least one 'b', and the number of 'a's in the string is even (including zero).  
+
+","The regular expression `b*(abb*abb*)*` describes the language of all strings over the alphabet {a, b} where the number of `a`s is even (including zero), and every `a` is followed by at least one `b`.  ","The regular expression `b*(abb*abb*)*` describes the language consisting of strings over the alphabet {a, b} where the number of 'a's is even (including zero), and every 'a' is followed by at least one 'b'.  
+
+In one sentence:  
+**The language consists of all strings over {a, b} with an even number of 'a's, where each 'a' is followed by at least one 'b'.**"
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"The language defined by the regular expression `(b*)|(b*(abbb*)*ab*)` consists of all strings composed of any number of `b`'s (including none) or strings that start with any number of `b`'s followed by sequences of `a` followed by one or more `b`'s, and ending with an `a` followed by any number of `b`'s.","The language defined by the regular expression `(b*)|(b*(abbb*)*ab*)` is:  
+
+**""All strings consisting of any number of 'b's or strings that contain at least one 'a' and where every 'a' (except possibly the last one) is followed by at least two 'b's.""**  
+","The language defined by the regular expression `(b*)|(b*(abbb*)*ab*)` is:  
+
+**All strings consisting of any number of 'b's, optionally followed by sequences of 'a' followed by at least three 'b's, and ending with an 'a' followed by any number of 'b's.**  
+","The language defined by the regular expression `(b*)|(b*(abbb*)*ab*)` is the set of all strings over the alphabet {a, b} that either consist entirely of `b`s or contain at least one `a` and every `a` (except possibly the last one) is followed by at least two `b`s. 
+
+The key constraint is that every `a` (except possibly the last one) must be followed by at least two `b`s."
+Contains less than three a’s.,b*a?b*a?b*,"The language defined by the regular expression `b*a?b*a?b*` consists of all strings over the alphabet {a, b} that contain at most two 'a's and any number of 'b's in any order.","The language defined by the regular expression `b*a?b*a?b*` consists of all strings over the alphabet {a, b} that contain at most two 'a's, with any number of 'b's before, between, and after them.  
+
+**One-sentence summary:**  
+The language consists of strings with at most two 'a's, surrounded by any number of 'b's.","The language defined by the regular expression `b*a?b*a?b*` consists of all strings over the alphabet {a, b} that contain at most two 'a's, with no restrictions on the number or placement of 'b's.  ","The language defined by the regular expression `b*a?b*a?b*` consists of all strings over the alphabet {a, b} that contain at most two 'a's, with any number of 'b's before, between, and after them.  
+
+"
+"Repeat “b” or “ab” x times, ending with at most one “a” (x >= 0)",(b|ab)*(a?),"The regular expression `(b|ab)*(a?)` defines a language consisting of all strings over the alphabet {a, b} that start with any number of 'b's or 'ab's (including none) and optionally end with a single 'a'.","The language defined by the regular expression `(b|ab)*(a?)` consists of all strings over the alphabet {a, b} where every `a` (except possibly the last one) is preceded by a `b`, and there is at most one trailing `a`. 
+","The language defined by the regular expression `(b|ab)*(a?)` consists of all strings over the alphabet {a, b} where no `a` is immediately followed by another `a` (i.e., no ""aa"" substring), and the string either ends with at most one `a` or is empty. 
+","The language defined by the regular expression `(b|ab)*(a?)` consists of all strings over the alphabet `{a, b}` that do not contain the substring `aa` and end with at most one `a`.  
+The key constraints are:  
+1. No two `a`s can appear consecutively.  
+2. The string can end with at most one `a` (due to `a?`)."
+Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,"The language defined by the regular expression ((ab)|b)*aa((ba)|b)* consists of all strings over the alphabet {a, b} that contain exactly one occurrence of the substring ""aa"" and can have any combination of ""ab"" or ""b"" before it and ""ba"" or ""b"" after it.","The language defined by the regular expression `((ab)|b)*aa((ba)|b)*` is:  
+
+**All strings over {a, b} that contain exactly one occurrence of ""aa"" as a substring and do not have any other overlapping or adjacent ""a""s that could form another ""aa"".**  
+","The language defined by the regular expression `((ab)|b)*aa((ba)|b)*` is:  
+
+**""All strings over {a, b} that contain exactly one substring 'aa' and no other occurrences of two consecutive 'a's elsewhere.""**  
+","The language defined by the regular expression `((ab)|b)*aa((ba)|b)*` is:  
+
+**""All strings over {a, b} that contain exactly one substring 'aa' and do not have an 'a' followed by another 'a' except for that single 'aa'.""**  
+
+This ensures that the string has exactly one occurrence of `aa` and no other consecutive `a`s."
+Every pair of adjacent a’s appears before any pair of adjacent b’s,(a|(ba))*(b|(ab))*a?,"The language defined by the regular expression (a|(ba))*(b|(ab))*a? consists of all strings over the alphabet {a, b} that can be formed by alternating sequences of 'a's and 'ba's followed by sequences of 'b's and 'ab's, optionally ending with an 'a'.","The language defined by the regular expression `(a|(ba))*(b|(ab))*a?` consists of all strings over `{a, b}` where every occurrence of `a` (except possibly the last one) is either preceded by `b` or is the first character, and no `a` is followed immediately by another `a` except possibly at the end of the string.  
+
+**One-sentence explanation:**  
+The language accepts strings where every `a` (except possibly the last) is either the first character or preceded by `b`, and no two `a`s are adjacent unless at the end.  
+
+","The language defined by the regular expression `(a|(ba))*(b|(ab))*a?` consists of all strings over the alphabet {a, b} where every 'b' (except possibly the last one) is followed by an 'a', and the string may optionally end with a single 'a'. ","The language defined by the regular expression `(a|(ba))*(b|(ab))*a?` consists of all strings over the alphabet `{a, b}` where every `b` (except possibly the last character) is followed by an `a`, and the string does not end with `ba` unless it is part of a larger valid suffix. 
+
+**Explanation in one sentence:**  
+The language accepts strings where every `b` (except possibly the last one) is followed by an `a`, and the string does not end with a standalone `b` unless it is the last character (optionally followed by `a`)."
+At most one pair of consecutive b’s.,(a|(ba))*(bb)?(a|(ab))*,"The regular expression `(a|(ba))*(bb)?(a|(ab))*` defines a language consisting of all strings over the alphabet {a, b} that can be formed by alternating sequences of 'a's and 'ba's, optionally followed by 'bb', and then alternating sequences of 'a's and 'ab's.","The language defined by the regular expression `(a|(ba))*(bb)?(a|(ab))*` consists of all strings over `{a, b}` that do not contain the substring `bbb` and do not end with `b` unless the entire string is just `bb`. 
+
+Thus, the language is:  
+**All strings over {a, b} where no three `b`s are consecutive, and the string does not end with a single `b` (unless the string is exactly `bb`).**","The language defined by the regular expression `(a|(ba))*(bb)?(a|(ab))*` consists of all strings over the alphabet {a, b} that do not contain the substring ""bbb"" and where every ""bb"" (if present) is preceded by ""a"" or is at the start of the string, and followed by ""a"" or is at the end of the string.  ","The language defined by the regular expression `(a|(ba))*(bb)?(a|(ab))*` consists of all strings over the alphabet {a, b} that do not contain the substring ""bbb"" and avoid patterns like ""baa"" or ""bab"" unless formed by the allowed substrings (e.g., ""ba"" followed by ""a"" or ""ab"").  
+
+In one sentence:  
+*The language accepts strings where ""a""s and ""ba""s form the first part, optionally a single ""bb"" in the middle, and ""a""s or ""ab""s in the end, while forbidding ""bbb"" or invalid transitions like ""baa"" outside the allowed patterns.*"
+Every a followed by at least one b.,(a?b)*,"The regular expression `(a?b)*` defines a language consisting of all strings over the alphabet {a, b} where every 'a' (if present) is immediately followed by a 'b'.","The language defined by the regular expression `(a?b)*` is:  
+
+**""All strings consisting of zero or more repetitions of either 'b' or 'ab'.""**  
+","The language defined by the regular expression `(a?b)*` is:  
+
+**""All strings consisting of zero or more repetitions of either a single 'b' or an 'a' followed by a 'b'.""**  ","The regular expression `(a?b)*` defines the language of all strings consisting of zero or more repetitions of either `b` or `ab`.  
+"
+Every odd position is b.,(b((a|b)b)*(a|b)?)?,"The regular expression `(b((a|b)b)*(a|b)?)?` defines a language that consists of strings over the alphabet {a, b} where the string is either empty or starts with a 'b' followed by any number of sequences of 'a' or 'b' followed by 'b', and optionally ends with an 'a' or 'b'.","The regular expression `(b((a|b)b)*(a|b)?)?` describes the language of all strings (including the empty string) that either are empty or start with 'b' followed by any number of sequences where each 'a' or 'b' is followed by a 'b', and optionally ending with an 'a' or 'b'.  
+
+**One-sentence explanation**:  
+The language consists of the empty string or strings starting with 'b' followed by zero or more instances of ""(a or b)b"", and optionally ending with an 'a' or 'b'.  
+","The regular expression `(b((a|b)b)*(a|b)?)?` describes the language of all strings (including the empty string) that consist of a sequence of `b` followed by pairs of `a` or `b` and another `b`, optionally ending with a single `a` or `b`.  
+
+In one sentence:  
+**The language consists of the empty string or strings starting with `b` followed by any number of `ab` or `bb` pairs, optionally ending with a single `a` or `b`.**  ","The regular expression `(b((a|b)b)*(a|b)?)?` defines a language consisting of strings that start with 'b' followed by any number of sequences of 'a' or 'b' followed by 'b', and optionally ending with 'a' or 'b', or the empty string. 
+
+
+**One-sentence explanation**:  
+The language consists of strings that either are empty or start with 'b' followed by zero or more sequences of ('a' or 'b') followed by 'b', and optionally end with 'a' or 'b'.  
+"
+Every b followed by two or more a's,(a|baa)*,"The regular expression `(a|baa)*` defines a language consisting of all strings over the alphabet {a, b} where every occurrence of 'b' is followed by exactly two 'a's, and the string can be any combination of 'a's and 'baa's (including the empty string).","The language defined by the regular expression `(a|baa)*` consists of all strings over the alphabet `{a, b}` that can be formed by concatenating zero or more occurrences of `a` or `baa`, ensuring that every `b` is followed by exactly two `a`s.  
+","The regular expression `(a|baa)*` defines the language consisting of all strings over the alphabet `{a, b}` where every `b` is immediately followed by `aa`, and no `b` appears at the end of the string. 
+","The language defined by the regular expression `(a|baa)*` is:  
+
+**""All strings consisting of 'a's and 'baa's concatenated in any order (including the empty string), where every 'b' is followed by exactly two 'a's.""**  
+"
+"Start with tt least one a, ended with one b",a+b,The regular expression `a+b` matches one or more `a`s followed by a single `b`.,"The regular expression `a+b` describes the language of strings that consist of **one or more 'a's followed by exactly one 'b'**.  
+
+Thus, the language is: **All non-empty strings of 'a's followed by exactly one 'b'.**","The regular expression `a+b` defines a language consisting of strings that start with one or more `a`s followed by exactly one `b`.  
+
+- **Positive examples (accepted):** `aab`, `ab` (both start with `a`s and end with `b`)  
+- **Negative example (rejected):** `b` (does not start with `a`)","The regular expression `a+b` describes a language consisting of strings that start with one or more `a`'s followed by exactly one `b`.  
+"
+Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),"The language defined by the regular expression (aa*)|(aa*ba)|(a*baa*) consists of all strings over the alphabet {a, b} that start with one or more a's, or start with one or more a's followed by a single b and then an a, or contain exactly one b followed by any number of a's.","The language defined by the regular expression `(aa*)|(aa*ba)|(a*baa*)` is:  
+
+**All non-empty strings over {a, b} that either consist solely of a's, or contain exactly one 'b' preceded and/or followed by one or more a's.**  ","The regular expression `(aa*)|(aa*ba)|(a*baa*)` defines the language of all non-empty strings over the alphabet `{a, b}` that either consist of one or more `a`s, or contain exactly one `b` that is either preceded by one or more `a`s or followed by one or more `a`s (or both).  
+","The language defined by the regular expression `(aa*)|(aa*ba)|(a*baa*)` consists of all non-empty strings over the alphabet {a, b} that either:  
+- contain only `a`s, or  
+- contain exactly one `b` that is either at the end (`aa*ba`), or in the middle (`a*baa*`).  
+
+In one sentence:  
+**The language accepts all non-empty strings of `a`s and at most one `b`, where if `b` is present, it is either the last character or followed by at least one `a`.**  
+"
+anbm where n ≥ 3 and m is even,aaaa*(bb)*,The regular expression aaaa*(bb)* defines a language consisting of strings that start with at least three 'a's followed by any number of 'bb' pairs.,"The language defined by the regular expression `aaaa*(bb)*` is:  
+
+**""All strings that start with at least three 'a's, followed by any number of additional 'a's, and then an even number of 'b's (including zero 'b's).""**  
+
+The regex enforces a strict structure where 'b's (if present) must come after all 'a's and in pairs.",The language defined by the regular expression `aaaa*(bb)*` consists of strings that start with at least three 'a's followed by zero or more pairs of 'b's. ,"The language defined by the regular expression `aaaa*(bb)*` is:  
+
+**""All strings that start with at least three 'a's, followed by any number of 'a's, and then an even number of 'b's (including zero 'b's).""**  
+"
+Length is a multiple of 3.,((a|b)(a|b)(a|b))*,"The regular expression `((a|b)(a|b)(a|b))*` defines the language of all strings over the alphabet {a, b} whose lengths are multiples of three.","The language defined by the regular expression `((a|b)(a|b)(a|b))*` consists of all strings over the alphabet {a, b} whose lengths are multiples of 3 (including the empty string).  
+
+All accepted strings must have a length divisible by 3.","The regular expression `((a|b)(a|b)(a|b))*` defines the language of all strings over the alphabet {a, b} whose lengths are multiples of 3 (including the empty string).  
+","The regular expression `((a|b)(a|b)(a|b))*` defines the language of all strings over the alphabet {a, b} whose lengths are multiples of 3 (including the empty string). 
+
+The empty string is accepted because the Kleene star `*` allows zero repetitions of the inner pattern `(a|b)(a|b)(a|b)`."
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"The regular expression (a|b)(a|b)a(a|b)* defines the language of all strings over the alphabet {a, b} that have at least three characters where the third character is 'a'.","The language defined by the regular expression `(a|b)(a|b)a(a|b)*` consists of all strings over the alphabet {a, b} that start with any two characters (a or b), have 'a' as the third character, and are followed by any number of additional a's or b's.  
+
+**One-sentence summary:**  
+The language accepts all strings of length ≥ 3 where the third character is 'a' and the first two characters are any combination of 'a' or 'b', followed by any suffix of a's and b's.  
+","The language defined by the regular expression `(a|b)(a|b)a(a|b)*` consists of all strings over the alphabet {a, b} that start with any two characters (each being 'a' or 'b'), followed by an 'a', and then any number of 'a's or 'b's (including none).  ","The language defined by the regular expression `(a|b)(a|b)a(a|b)*` consists of all strings over the alphabet {a, b} that start with any two characters (a or b), are followed by an 'a', and then may be followed by any number of additional 'a's or 'b's. 
+
+In one sentence:  
+**The language consists of all strings over {a, b} of length at least 3 where the third character is 'a'.**"
+Any strings except a and b.,(((a|b)(a|b))(a|b)*)?,"The regular expression defines a language consisting of all strings over the alphabet {a, b} that are either empty or start with exactly two characters (each being 'a' or 'b') followed by any number of additional 'a's or 'b's.","The regular expression defines a language consisting of strings that are either empty or begin with exactly two 'a's or 'b's, followed by any number (including zero) of additional 'a's or 'b's.  
+","The regular expression `(((a|b)(a|b))(a|b)*)?` defines the language of all strings over the alphabet {a, b} that are either empty or start with exactly two characters (each being 'a' or 'b') followed by any number (including zero) of additional 'a's or 'b's. ","The regular expression `(((a|b)(a|b))(a|b)*)?` defines the language of all strings over the alphabet {a, b} that are either empty or have a length of at least 2.  
+
+**Explanation**:  
+- The outer `(...)?` makes the entire pattern optional, allowing the empty string.  
+- `(a|b)(a|b)` matches exactly two characters (each being `a` or `b`).  
+- `(a|b)*` matches any additional characters (zero or more).  
+
+Thus, the language includes:  
+- The empty string (due to `?`).  
+- All strings of length ≥ 2 (since `(a|b)(a|b)` enforces at least two characters, and `(a|b)*` allows more).  "

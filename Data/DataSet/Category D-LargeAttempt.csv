@@ -1,0 +1,640 @@
+﻿shortdescription,regex,attemptregex
+Odd number of b's,(a*ba*b)*a*ba*,a*b*(a*ba*b)*a*
+Three Choices (Regex),001|1010|110,001|10101|110|1010
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)(a|b)+aa+)
+even number of 1's,(0*10*10*)*|0*,(0*|1*)*
+contains 'bab',(a|b)*(bab)(a|b)*,((a|b)*(bab)*(a|b)*)*
+even prefix,(ab|ba)*,((ab|ba)*|(aabb|bbaa)*)*(aa|ab|ba|bb)*
+Every b followed by two or more a's,(a|baa)*,[a]*|[baa]*
+Odd number of 1s,0*10*(10*10*)*,(0|1)*1(0|1)*1*0*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0*1*)*0*)|((1*0*)*1*)
+even number of 1's,(0*10*10*)*|0*,0*(0*1+0*1+0*)*
+even prefix,(ab|ba)*,(ab|ba)*(aa+bb+ab+ab)*
+non isolated 'b',(a|(b*bb))*,(ab|ba|b|a)*(a)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b*a|b*)*aaa
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,a+[ba]*|(b*a*)
+non isolated 'b',(a|(b*bb))*,(a|b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a+|b+)+aaa
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)|(aa|bb))+aaa
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(aa+|bb+|ab+|ba+|a*|b*)+aaa
+contains 'bab',(a|b)*(bab)(a|b)*,(a|b|bab)*(a|b)*
+even prefix,(ab|ba)*,(ab|ba|aabb|bbaa)*(aa|bb|ab|ba)*
+Odd number of b's,(a*ba*b)*a*ba*,(a)*b(a*ba*b*)*(a)*
+non isolated 'b',(a|(b*bb))*,((a|b)*bb(a|b)*)*a*
+Every b followed by two or more a's,(a|baa)*,(a|(b*aa))*
+Every b followed by two or more a's,(a|baa)*,(a)*((b|aa)*(a)*)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*(ba|b))*
+even number of 1's,(0*10*10*)*|0*,(0*|1)*(0*|1)*
+Three Choices (Regex),001|1010|110,0*1(01)*1*0*
+first and third,a(a|b)a(a|b)*,a+(a|b)+a+(b)*
+A valid comment (Sipser 1.22b),/#(/|a|b|##*(a|b))*##*/,(/#)|((a|b|/?)|#)|(#/)
+even prefix,(ab|ba)*,a*b*(a|b)*
+Odd number of b's,(a*ba*b)*a*ba*,((a)*b(a)*(bb)*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a+|b+)*aaa
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),(0|1|0(0|1)*0|1(0|1)*1)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a)*a*b*a*
+Odd number of b's,(a*ba*b)*a*ba*,(a*ba*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*aaaa*
+Odd number of b's,(a*ba*b)*a*ba*,(a*ba*)+
+Odd number of 1s,0*10*(10*10*)*,(0*10*1*)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*ba))|((a|b)a*b))*
+first and third,a(a|b)a(a|b)*,(a(a|b)a(a|b)*)*
+even prefix,(ab|ba)*,((aa)*|(bb)*)((aa)*|(bb)*)*|(ba|ab)(ab|ba)*|aa|bb
+even prefix,(ab|ba)*,(a*b*)(ab|ba|aa|ab)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b)*(baa*)(a|b)*b
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0|1)*(0(101)*0|1(010)*1|(1001)*|(0110)*)(0|1)*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)+a+a+a+
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a*(b+a+)+b+)
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,((a|b)*|(baa+))b
+Odd number of b's,(a*ba*b)*a*ba*,"(a*(b|bb{2,})*a*)+"
+even number of 1's,(0*10*10*)*|0*,0*(0|1)*
+Odd number of 1s,0*10*(10*10*)*,1*|((0|1)*1(0|1)*)*
+Length 1 or More,(0|1)(0|1)*,(0|1)|(0|1)*(0|1)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0+(0*1*0*)*
+first and third,a(a|b)a(a|b)*,a(a|b)*a(a|b)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1+(0*1*0*)*1+)|(0*1*0*)*
+even prefix,(ab|ba)*,(a|b)*
+even prefix,(ab|ba)*,(ab|ba)*|(ab|bb)*
+non isolated 'b',(a|(b*bb))*,a*|(a|b)*bb+(a|b)*|(a|b)*b+b(a|b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*aaaa*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)((a*b)|(a*ba)))*)?
+even number of 1's,(0*10*10*)*|0*,(0*|1*0*1*)+
+non isolated 'b',(a|(b*bb))*,((a|b)*bb(a|b)*)|a*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0+(0|1)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1((0|1)*1)*|0((0|1)*0)*)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b)*(baa)+(a|b)*
+non isolated 'b',(a|(b*bb))*,(a*(b*b)*a*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*a{3}
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)(a*))(ba))*(((a|b)(a*))(b|ba))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a+|b+)+)+aaa+
+non isolated 'b',(a|(b*bb))*,(a|b(b*))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(aa*|bb*)+aaa+
+even prefix,(ab|ba)*,(aa|bb|ab|ba)*(aa|bb|ab|ba)*
+non isolated 'b',(a|(b*bb))*,(a|(bb*))*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),1*|0*|1+(0*1*)*1+|0+(1*0*)*0+
+Every b followed by two or more a's,(a|baa)*,[ab]*(baa)*
+Odd number of b's,(a*ba*b)*a*ba*,(a*ba*)+(a*ba*ba*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)|(b|a)(a|b)*(a)(a)(a)(a*)
+Odd number of b's,(a*ba*b)*a*ba*,(a|b)+(a|b)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1*01*)*(0*10*)*
+At least one zero followed by 0 or more 1s,0+1*,0*1*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),(0*)|(1*)|(0+(1|0)*0+)|(1+(1|0)*1+)
+even prefix,(ab|ba)*,(ab|ba|aa|bb)*
+Every b followed by two or more a's,(a|baa)*,((b+a+a)*a*)*
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][0-1]*|[0101]
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(aa+|bb+|ab+|ba+|a|b)+aaa
+even prefix,(ab|ba)*,(ab|ba)*(aa+bb+ba+ab)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),(0+1*0+)*|((1+0*)*10+1+)*|1*|0+(1+0+)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0+(1+0)*)|(1+(0+1)*))*
+even prefix,(ab|ba)*,(bb|aa|(aabb|abab|abba|baba|bbaa|baab)*)*((aa)|(bb)|(ab)|(ba))*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,((a+)|(b*a*))*
+Every b followed by two or more a's,(a|baa)*,(a|(b*a(a)*))*
+Every b followed by two or more a's,(a|baa)*,((a)*(b+aa+))+|[a]*
+Odd number of 1s,0*10*(10*10*)*,(0*(10*1)*0*10*)*|(11)
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*(b|ba))*)?
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*aa*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(aa|bb|ab|ba)+(a*a+a+)
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*(a|b)*(aaa)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b|baa+)+b
+Every b followed by two or more a's,(a|baa)*,(a*)+(a*|b+a+a)+(a*)
+even prefix,(ab|ba)*,(ab(ab)*|ba(ab)*)*((a|b)(a|b))*
+At least one a followed by one b,a+b,[ab]*(ab)[ab]*
+non isolated 'b',(a|(b*bb))*,(a|(b)*)*
+At least one a followed by one b,a+b,(a|b)*(b)
+Odd number of b's,(a*ba*b)*a*ba*,(a*(ba*ba*)*ba*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*
+Odd number of b's,(a*ba*b)*a*ba*,a*b|(a*ba*(bb)*a*)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|(0+1+)+0+|(1+0+)+1+
+Odd number of b's,(a*ba*b)*a*ba*,a*b+(a|b(a)*b)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0*(0|1)*0*
+even prefix,(ab|ba)*,((aabb|abab|abba|bbaa|baba|baab)*(aa|ab|ba|bb)*)+((ab)?)
+non isolated 'b',(a|(b*bb))*,(a*|(bb*))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*a{2}aa*
+even prefix,(ab|ba)*,(ab|ba|aabb|bbaa)*(aabb+bbaa+ab+ba)*
+even prefix,(ab|ba)*,((a|b)|((a|b)(a|b)(a|b)))*|(ab|ba)*
+even prefix,(ab|ba)*,(bb|aa|(abab|aabb)*)*((aa)|(bb)|(ab)|(ba))*
+even prefix,(ab|ba)*,(ab)*((a|b)(a|b))*
+non isolated 'b',(a|(b*bb))*,(a*(b+a*b+)*a*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)+(a|b)+(a|b)*aaa*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b|baa+)*b
+even prefix,(ab|ba)*,(bb?|aa|(ab|ba)*)*((aa)?|(bb)|(ab)|(ba))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)|(a|b)+(a|b)*aaa
+At least one a followed by one b,a+b,[a]*[b]*
+even prefix,(ab|ba)*,((ab)|(ba))*|(a|b)((a|b)(a|b))*
+even prefix,(ab|ba)*,(ab(a|b)*)*((a|b)(a|b))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,[ab]|[ab]+a{3}
+non isolated 'b',(a|(b*bb))*,((a|b)*b?)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)+)aaa
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a*b*)*(baa)*(a*b*)b
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(1*0+1*0+1*)*|(0*1+0*1+0*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)+(aaa+))
+At least one a followed by one b,a+b,(a|a*)b
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(((a)|(b))+)+(aaa)+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)+aaa(a|b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa
+non isolated 'b',(a|(b*bb))*,(a*|(b*b)*)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*(b|ba))+)?
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)|(a|b)*(aaa)a*
+Length 1 or More,(0|1)(0|1)*,[01]*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba)*((a|b)a*b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*aaa(a)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)+(a|b)*aaa*
+At least one a followed by one b,a+b,[a]*[b]
+even prefix,(ab|ba)*,(ab|ba)*(aa|bb)*(ab|ba)*
+At least one a followed by one b,a+b,(a*b)
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,a*b*baa*b*(a*bb*)*
+even prefix,(ab|ba)*,((ab)*(ba)*)*(a|b)?
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b+a*)*
+4 | #0,1*(01*01*01*01*)*,(0|1)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,[ab]*[b][aa][ab]*[b]
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,"(a|b)(a|b)(a|b)*(a{3,})*"
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,"(a|b|aa|bb|ab|ba)*a{3,}"
+Odd number of 1s,0*10*(10*10*)*,((0|1)*)
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*|1*|((1+0*1+)*|(0+1*0+)*)*)*
+even prefix,(ab|ba)*,(ab|ba)*(aabb+bbaa+ab+ba)*
+At least one a followed by one b,a+b,(a*(b))*
+At least one a followed by one b,a+b,(a)+(b)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((01+0)|(10+1)|(0*10*)|(1*01*))*
+Odd number of 1s,0*10*(10*10*)*,(0*10*)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),1?|0|1+(0*1*)*1+|0+(0*1*)*0+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a*b*)+a+a+a
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*aaa
+non isolated 'b',(a|(b*bb))*,a*|((a|b)*bb(a*b*))
+Length 1 or More,(0|1)(0|1)*,(0*1+)*(1*0+)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),1*(0|1)*1*|0*(0|1)*0*
+non isolated 'b',(a|(b*bb))*,(a*(bb)*b*a*)*
+even number of 1's,(0*10*10*)*|0*,0*(0*1*)*0*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1|0|1+(0*1*)*1+|0+(1*0*)*0+)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b)|((a|b)a*ba))*
+even prefix,(ab|ba)*,((aa|bb|ab|ba)?)*
+At least one a followed by one b,a+b,a*b
+Odd number of b's,(a*ba*b)*a*ba*,a*b(ba*b+|a*)*
+contains 'bab',(a|b)*(bab)(a|b)*,(a|b)*|(a|bab)*(b|aba)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),1*|0*|1+(0+1+)*|0+(1+0+)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa*
+Odd number of b's,(a*ba*b)*a*ba*,((a|(bb))*b[a]*)*
+even prefix,(ab|ba)*,(a|b)*(ab|ba|aa|ab)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0|(0|1)*|0
+even prefix,(ab|ba)*,(ab|ba)*(aa|bb)?
+Odd number of b's,(a*ba*b)*a*ba*,(a*)b+((a*)|(b(a*)b))+(a*)
+Odd number of b's,(a*ba*b)*a*ba*,a*(b(a*ba*b)*)*a*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),0*(1+0+)*|1*(0+1+)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1+|0+)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a+|b*a*)+
+even prefix,(ab|ba)*,(aa|ab|ba|bb)*
+Odd number of b's,(a*ba*b)*a*ba*,(a|(ba*b))*b+a*
+Odd number of b's,(a*ba*b)*a*ba*,a*b+(bb*|a*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a*|b*)*(a)(a)(a)(a*)
+non isolated 'b',(a|(b*bb))*,((b(b*))|a)*
+At least one a followed by one b,a+b,(a|b)*a*b
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba*)*
+non isolated 'b',(a|(b*bb))*,((bb*)*a*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)(a|b)*(aaa)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,a+b*a*|b*a*
+Odd number of b's,(a*ba*b)*a*ba*,(a|b(bb)*)*
+Odd number of b's,(a*ba*b)*a*ba*,(a*ba*b*)*
+even prefix,(ab|ba)*,(ab|ba)*(aa|bb)*
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),(0+0+0)|(1+0+0)|(0+1+0)|(0+0+1)|(1+1+0)|(0+1+1)|(1+0+1)|(1+1+1)|(1+1)|(0+0)|(1+0)|(0+1)
+non isolated 'b',(a|(b*bb))*,(b(b*)|a)*
+non isolated 'b',(a|(b*bb))*,(a*|(b*bb*)*)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1*0*1*)*(0*1*0*)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1*0*1*)+(0*1*0*)
+Every b followed by two or more a's,(a|baa)*,(a)*(b|aa|a*)*
+At least one a followed by one b,a+b,(a|b)*
+even prefix,(ab|ba)*,((a|b)(a|b))*
+At least one a followed by one b,a+b,[ab]*[a][b][ab]*
+Odd number of b's,(a*ba*b)*a*ba*,(a|b|bb)+
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)*(0|1)*(0|1)*
+first and third,a(a|b)a(a|b)*,a(a|b)+a(a|b)*
+contains 'bab',(a|b)*(bab)(a|b)*,(bab)*(a|b)*(bab)*
+non isolated 'b',(a|(b*bb))*,(((b*bb*)|a)?)*
+Every b followed by two or more a's,(a|baa)*,(a)*((b|aa)*a*)*
+At least one a followed by one b,a+b,a+b+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)(a|b)*aaa*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,"(a|b)*(a|b)*a{3,}"
+Odd number of b's,(a*ba*b)*a*ba*,b*((a|b)*(a|b)*)*
+Length 1 or More,(0|1)(0|1)*,(1|0)*|(0|1)*
+Odd number of b's,(a*ba*b)*a*ba*,(a|ab)*(a|ba)*(b|a)*
+At least one a followed by one b,a+b,a*b+
+Every b followed by two or more a's,(a|baa)*,(a|b(aa*))*
+At least one a followed by one b,a+b,a*b*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(1+0+)*1*
+even prefix,(ab|ba)*,((ab)|(ba))*|(a|b)(a|b)*
+non isolated 'b',(a|(b*bb))*,(a|(b*bb*))*
+non isolated 'b',(a|(b*bb))*,(ab|ba|b|a)*
+Odd number of 1s,0*10*(10*10*)*,((0|1))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*(aaa)
+non isolated 'b',(a|(b*bb))*,(bb)*(a|b)*(bb)*
+even prefix,(ab|ba)*,(a+b|b+a)*
+At least one a followed by one b,a+b,(a|b)*(ab)
+even prefix,(ab|ba)*,(aa|ab|ba|ba)*
+At least one a followed by one b,a+b,(aa*b)*
+non isolated 'b',(a|(b*bb))*,(a|((b|bb)+))*|a*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0*(0*1*)*0*
+At least one a followed by one b,a+b,(a*)+b
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(01)*1*0)*|(1*(10)*0*1)*
+even number of 1's,(0*10*10*)*|0*,0*(0*1+)*0*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*(aaa)+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*(aaa)*
+even prefix,(ab|ba)*,(bb|aa|(ab|ba)*)*((aa)*|(bb)*|(ab)*|(ba)*)*
+even prefix,(ab|ba)*,(ab)*(ab|ba|aa|ab)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,([ab]*(baa)*[ab]*)*b
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(1+0+)*|1*(0+1+)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a|b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)+aaa*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|1*(0*1*)*1+|0*(1*0*)*0+
+Odd number of b's,(a*ba*b)*a*ba*,b|(b|bbb|bbab|babb|a)*
+Three Choices (Regex),001|1010|110,1*0*01*0*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),0*|0((11*0)|0)*|1((00*1)|1)*
+Odd number of 1s,0*10*(10*10*)*,((0*)1(0*))+
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,a+|(a|b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,b|(a*b*)*aaa
+Odd number of b's,(a*ba*b)*a*ba*,(a*ba*a*)*
+even prefix,(ab|ba)*,((aa)*|(bb)*)((aa)*|(bb)*)*|(ba|ab)(ab|ba)*
+first and third,a(a|b)a(a|b)*,(a)(a|b)*
+At least one a followed by one b,a+b,(a|b)*b
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,[ab]*[baa][ab]*b
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|ba*)+b
+even prefix,(ab|ba)*,((ab)|(ba))*((a|b)(a|b))*
+even prefix,(ab|ba)*,(ab|aa|bb|ba)*(a+b)*
+At least one a followed by one b,a+b,a+b*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*b))|((a|b)a*ba))*
+Odd number of 1s,0*10*(10*10*)*,0*1(11)*(0|1)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(a?)|((a|b)a*b(a?))*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,a(a)*|(ab)*b*a*
+Every b followed by two or more a's,(a|baa)*,a*(b+aaa*)*
+even prefix,(ab|ba)*,(bb|aa|aabb|abab|abba|baba|bbaa|baab)*(aa|bb|ab|ba)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(((a|b)+)+)aaa
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*(b|ba))*
+non isolated 'b',(a|(b*bb))*,(a|b|bb)*
+even number of 1's,(0*10*10*)*|0*,(0*(1+0*1+)*0*)*
+contains no 00 nor 11,1?(01)*0?,((1)?(0)?)*
+even prefix,(ab|ba)*,((ab)*(ba)*)*|abb*a*b*ba
+At least one a followed by one b,a+b,a|b*a*b
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a|b)*a(a|b)*|b*a*
+non isolated 'b',(a|(b*bb))*,(a|bb*)*
+Odd number of b's,(a*ba*b)*a*ba*,(a*)b((a*)|(b+(a*)+b))+(a*)
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(1*0+1+)*|(0*1+0+)*
+even prefix,(ab|ba)*,(ab(ab)*)*((a|b)(a|b))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,aaa(a)*|(a|b)*baaa(a)*
+Every b followed by two or more a's,(a|baa)*,(a|(a*b*(aa)a*)*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(aa|ab|ba|bb)*(a|b)*aaa
+Every b followed by two or more a's,(a|baa)*,a*|(a|b)*aa
+At least one a followed by one b,a+b,a|a*b
+even prefix,(ab|ba)*,(ab|ba?)*(aa|ab|bb|ba)*
+Three Choices (Regex),001|1010|110,001|110|10101|1010
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*ba)|((a|b)a*b))*
+Odd number of b's,(a*ba*b)*a*ba*,(a*b+a*)*
+Odd number of b's,(a*ba*b)*a*ba*,([ab](a)*(bb)*)*
+A valid comment (Sipser 1.22b),/#(/|a|b|##*(a|b))*##*/,/#*(a|b|/|(#*(a|b)))*#*/
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)+aaa
+even prefix,(ab|ba)*,((aa)*|(bb)*)(aa|bb|ab|ba)*
+Odd number of b's,(a*ba*b)*a*ba*,(a*|b?)+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)+(aaa)+
+even prefix,(ab|ba)*,(aa|bb|ab|ba)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((1+0*1+)*)|((0+1*0+)*)|(0|1)*
+Odd number of b's,(a*ba*b)*a*ba*,a*b+(a|ba*b)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,(0*)(0*1*)*(0*)
+Every b followed by two or more a's,(a|baa)*,[a]*[baa]*
+Odd number of b's,(a*ba*b)*a*ba*,(((a*)*(b*))*(b*))+b+(((a*)*(b*))*(b*))
+non isolated 'b',(a|(b*bb))*,(a|(b*b)*)*
+even prefix,(ab|ba)*,(((aa)|(bb)|(ab)|(ba))?)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),(0+(1*0)*)*|(1+(0*1)*)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b)*|(baa)+b
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(aa|ab|ba|bb|b|a)*(aaa)a*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,(0)*(0*1*)*(0)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*ba)|((a|b)a*b))*)?
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(ab|aa|bb|ba)*aaa*
+Every b followed by two or more a's,(a|baa)*,(a*)+(a*|(b+a+a))+(a*)
+even number of 1's,(0*10*10*)*|0*,((0*|1)*(0*|1)*)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(b*a*|a*b*)*(baa)+(b*a*|a*b*)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(baa)*(a|b)*(baa)*b
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)?(0|1)?(0|1)?
+contains 'bab',(a|b)*(bab)(a|b)*,(a*b*(bab)*a*b*)*
+non isolated 'b',(a|(b*bb))*,(a*(bb*)*a*)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),0|1|(0(1*0*)*0)*|(1(0*1*)*1)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa(a)*
+non isolated 'b',(a|(b*bb))*,(a*|(b*bb*)+)*
+At least one a followed by one b,a+b,(a|b)+b
+Odd number of b's,(a*ba*b)*a*ba*,(a|b)*(b)(a|b)*
+Three Choices (Regex),001|1010|110,(001|1010|110)+
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0*1*0*)|(1*0*1*))*
+An even number of 1's,(0|10*1)*,(0*1?0*1?0*)*
+Odd number of b's,(a*ba*b)*a*ba*,a*b(a*|ba*|b)*a*
+Three Choices (Regex),001|1010|110,(001|1010|110)*
+An even number of 1's,(0|10*1)*,(0*(10)*1*)*0*
+A valid comment (Sipser 1.22b),/#(/|a|b|##*(a|b))*##*/,(/#)|((a|b|/?)|#)*|(#/)
+Odd number of b's,(a*ba*b)*a*ba*,(((a*)+b+(a*)+b+(a*))|(a*))+b+(((a*)+b+(a*)+b+(a*))|(a*))
+first and third,a(a|b)a(a|b)*,a(a|b)*aa*b*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*ba)*|((a|b)a*b))*
+non isolated 'b',(a|(b*bb))*,a?(a|bb*)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b)*(baa)*(a|b)*b
+Every b followed by two or more a's,(a|baa)*,(b|aa|a)*
+even prefix,(ab|ba)*,((ab)|(ba))*((ab)|(ba)|(aa)|(bb))*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,(0|(0|1)*0)
+non isolated 'b',(a|(b*bb))*,(a|b)*bb(a|b)*|a*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b)a*)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b|baa)*b
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,a*b*a*
+Three Choices (Regex),001|1010|110,001|10101|1010|110
+non isolated 'a',(b|(a*aa))*,(b*|ab+)*aa(a|b)*|b*
+contains 'bab',(a|b)*(bab)(a|b)*,(a*|b*)*|bab|(a*|b*)*
+even prefix,(ab|ba)*,(bb|aa|aabb|abab|abba|baba|bbaa|baab)*((aa)|(bb)|(ab)|(ba))*
+even number of 1's,(0*10*10*)*|0*,(0*|1)*
+even prefix,(ab|ba)*,(aabb|abab|abba|bbaa|baba|baab)*(aa|ab|ba|bb)*
+At least one a followed by one b,a+b,[a]*[ab]
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*)*((10)*(0*1*)*(01)*)*(0*1*)*
+even number of 1's,(0*10*10*)*|0*,(0?1?0*1?0*)*
+At least one a followed by one b,a+b,(a*)b
+non isolated 'b',(a|(b*bb))*,((a|b)*bb(a*b*))|a*
+non isolated 'b',(a|(b*bb))*,(a)*(ab|ba|b|a)*(a)*
+even prefix,(ab|ba)*,((ab)|(ba))*((a|b)(b|a))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)+aaa(a)*
+even prefix,(ab|ba)*,(aa|bb)*|(ab|ba)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,((b|a)*b+a+a*(b|a)+b)
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)+(aaa)
+Odd number of b's,(a*ba*b)*a*ba*,a*b(a*b)*a*
+even number of 1's,0*(10*1)*0*,0*(10*10*)*
+non isolated 'b',(a|(b*bb))*,(a|b*bb*)*
+even prefix,(ab|ba)*,(ab|ba)*(aabb+bbaa+baba+abab)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(0|1)*0*)|(1*(0|1)*1*)
+Odd number of b's,(a*ba*b)*a*ba*,((a*(bb)*a*)ba*)+
+even prefix,(ab|ba)*,((ab|ba)*(aa|ab|bb|ba)*)+(ab|ba)*
+contains 'bab',(a|b)*(bab)(a|b)*,(a|b)*(bab)*(a|b)*(bab)*(a|b)*
+Every b followed by two or more a's,(a|baa)*,(a*|baa*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*(a|b)*aaa
+At least one a followed by one b,a+b,(aa*)b+
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),(0+1*0+)*|((1+0*)*10+1+)*|1*|0+(1+0+)*|1*
+At least one a followed by one b,a+b,(a)*(b+)
+even prefix,(ab|ba)*,((ab)|(ba))*((ab)|(ba)|(bb)|(aa))*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|0*(1*0*)*|1*(0*1*)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(0*1+0*1+0*)*|(1*0+1*0+1*)*
+even prefix,(ab|ba)*,(aa*|bb*)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|1+(0+1+)*|0+(1+0+)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)*(a|b))aa(a)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0*(1|0)*0*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)(a|b)*(aaa(a)*)*
+even prefix,(ab|ba)*,((aa)|(bb)|(ab)|(ba))*
+Odd number of 1s,0*10*(10*10*)*,(0|1)*1(0|1)*
+An even number of 1's,(0|10*1)*,1*|(0|1)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,(0+(0|1)*0+)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(b|a)*
+Every b followed by two or more a's,(a|baa)*,(baa*|a*)*
+even prefix,(ab|ba)*,((ab)*(ba)*)*|abb*ba
+Odd number of b's,(a*ba*b)*a*ba*,(a|(ab)*b)+(ba)*
+even prefix,(ab|ba)*,(ab|ba)*(aa|bb|ba|ab)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a+)*b*a*
+At least one a followed by one b,a+b,(a)*(b)*
+first and third,a(a|b)a(a|b)*,a+(a|b)+a+(a|b)*
+A valid comment (Sipser 1.22b),/#(/|a|b|##*(a|b))*##*/,(/#((a|b|/)*#*)*#/)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),(0(0*|(0*1+0+))*|1(1*|1*0+1+)*)?
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*)|(1*)|((0+1+)*(0+1+0+)*)|((1+0+)*(1+0+1+)*)
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(((a+)|b+a*))*
+At least one a followed by one b,a+b,(a+)*(b)
+At least one a followed by one b,a+b,a(a*b*)*b
+even prefix,(ab|ba)*,(a*|b*)*(aa|ab|ba|bb)*
+Odd number of b's,(a*ba*b)*a*ba*,(a*)+b+((a*)|(b+(a*)+b))+(a*)
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)(0|1)?(0|1)?
+even prefix,(ab|ba)*,((ab)|(ba))*(aa|ab|ba|bb)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(ab|aa|ba|bb)*(aaa)*
+even prefix,(ab|ba)*,(ab|ba)*|(aa|ab|bb)*
+At least one a followed by one b,a+b,(a)*b
+At least one a followed by one b,a+b,(a*b{1})
+Odd number of b's,(a*ba*b)*a*ba*,(a*(b|bbb)*)*
+Odd number of b's,(a*ba*b)*a*ba*,b|(bb*|a*|bab*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,"[ab]{2,}"
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)(a|bb|ba(a|b))*(b|ba))?
+Three Choices (Regex),001|1010|110,(0|1)*(01)*(0|1)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),((10*)*1+)*|((01*)*0+)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a*|b*)+(a*|b*)+aaa+
+first and third,a(a|b)a(a|b)*,a(a|b)(a|b)*
+even prefix,(ab|ba)*,((ab)*(a|b)(a|b)|(ba)*(a|b)(a|b))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a*b*)*a*a*a
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)+(a|b)*aaa
+Odd number of b's,(a*ba*b)*a*ba*,((a|b)*|(a|bb)*)*b((a|bb)*|(a|b)*)
+even prefix,(ab|ba)*,(ab|ba)*(ab|ba|aa|ab)*
+A valid comment (Sipser 1.22b),/#(/|a|b|##*(a|b))*##*/,(/#((a|b|/)#*)*#/)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(01*0*)*|1*(10*1*)*
+even prefix,(ab|ba)*,(a|b)*(a|b)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),(0?)|1|(0(0|1)*0)|(1(0|1)*1)
+Every b followed by two or more a's,(a|baa)*,(a|b|baa+)*
+even prefix,(ab|ba)*,(ab|ba|aabb|bbaa)*(aa|ab|ba|bb)*
+At least one a followed by one b,a+b,[a]*b
+Odd number of 1s,0*10*(10*10*)*,(0*10*)*0*10*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0*|0(0*1*)*0
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,[ab]*a{3}
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,((a*)|(b+a*))*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a*|b*|baa)+b+
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),[01]*[10]*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,((a)+|b+a*)*
+contains 'bab',(a|b)*(bab)(a|b)*,(a|b|bab)*(bab)*
+At least one a followed by one b,a+b,(a*)(b{1})
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(aa|ab|ba|bb)*(a|b)*(aaa)
+Odd number of 1s,0*10*(10*10*)*,(0|1)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)|(b|a))(a|b)*(a)(a)(a)(a*)
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,aa*|(a?|b)*(a|b?)*
+At least one a followed by one b,a+b,a(a|b)*b
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1|0|(1+(0*1*)*1+)*|(0+(1*0*)*0+)*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*(aaa)(a)*
+even prefix,(ab|ba)*,(ab|ba)*|(aa|bb)*
+Odd number of b's,(a*ba*b)*a*ba*,a*b+(a*|(b(a*)b))+a*
+even prefix,(ab|ba)*,(aa|bb)|(ab|ba)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),(((0+1*)*0+)*|((1+0*)*1+)*)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,((a+)|a*b+a*)*
+Odd number of 1s,0*10*(10*10*)*,0*(11)*1(0|1)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,"(a|b)*a{3,}"
+even prefix,(ab|ba)*,(ab)*(aa|ab|ba|bb)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,[ba]*aaa
+non isolated 'b',(a|(b*bb))*,(a|b)*bb(a|b?)*|a*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a*)(b*)(a*)
+even number of 1's,0*(10*1)*0*,(0*10*10*)*|0*
+Length 1 or More,(0|1)(0|1)*,(0|1)*
+Odd number of b's,(a*ba*b)*a*ba*,(a|(ab)*b)*(ba)*
+Does not contain aba as a substring,b*a*b*|(a*bb+a*)*,(b|aa*bb)*((aa*(b?))?)
+Odd number of b's,(a*ba*b)*a*ba*,((a*|a*ba*(ba*ba*)*a*)|b)
+non isolated 'b',(a|(b*bb))*,(a|b*b)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((01*0*)|(10*1*))*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),1*(0+1+)*|0*(1+0+)*
+Odd number of 1s,0*10*(10*10*)*,(0*(10*1)*0*10*)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*(01)*0*1*(10)*0*1*)*
+Every b followed by two or more a's,(a|baa)*,"(a*(b*a{2,})*)*"
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((01)*(0|1)+(10)*)*
+even prefix,(ab|ba)*,(ab|aabb|ba)*
+even prefix,(ab|ba)*,(aa|ab|bb|ba)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0*|0(1|0)*0|1*|1(1|0)*1?
+contains 'bab',(a|b)*(bab)(a|b)*,(a|b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*(aa)(a)*
+contains 'bab',(a|b)*(bab)(a|b)*,(a|b|bab)*(a|b|bab)*
+Three Choices (Regex),001|1010|110,0*10*(10)*
+contains 'bab',(a|b)*(bab)(a|b)*,(a|b)*(bab)*(a|b)*
+non isolated 'b',(a|(b*bb))*,(a*|bb*)*
+first and third,a(a|b)a(a|b)*,ab*|(a(a|b)a(a|b)*)
+even prefix,(ab|ba)*,(ab|ba)*(aa|ab|ba|bb)*|(aabb|bbaa)*|(aa|ab|ba|bb)*
+Every b followed by two or more a's,(a|baa)*,a*(baa*|a*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*(aaa)a*
+even number of 1's,(0*10*10*)*|0*,(1|0|1)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a*b*)*aaa
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b((a?)|(bb?)))*|((a|b)a*ba)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,(0+(1*0*1*)*0+)*
+non isolated 'a',(b|(a*aa))*,(b*|ab)*aa(a|b)*|b*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0+(0*1*0*)*0+|1
+Length 1 or More,(0|1)(0|1)*,(1|0)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((((a|b)(a*)ba)*)|((a|b)(a*)b))*
+At least one a followed by one b,a+b,(a*b)*
+Odd number of 1s,0*10*(10*10*)*,0*((1)*1)*1(0|1)*
+even number of 1's,(0*10*10*)*|0*,0*(10*1)*0*(10*1*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)+aa+
+Every b followed by two or more a's,(a|baa)*,(a*|b*aa)*
+even prefix,(ab|ba)*,((aa)*|(bb)*)((aa)*|(bb)*)*|(ba|ab)(ab|ba)*|(aa)*|(bb)*
+contains 'bab',(a|b)*(bab)(a|b)*,((a|b)*bab(a|b)*)*
+non isolated 'b',(a|(b*bb))*,(a*|b+)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)(a*))(b|ba))*
+non isolated 'b',(a|(b*bb))*,(a|b)*b*(a|b)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*0+)*|(1*0*1+)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,"(a|b){1,}aaa"
+A valid comment (Sipser 1.22b),/#(/|a|b|##*(a|b))*##*/,(/#(a|b)*#/)*
+even prefix,(ab|ba)*,((ab)|(ba))*(ab|ba|aa|bb)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0*(0*1*0*)*0*
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][0-1]*[0-1]*
+Odd number of b's,(a*ba*b)*a*ba*,(a|b)*b((a)|(bb))*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(11*00*)*)|(1*(00*11*)*)
+Every b followed by two or more a's,(a|baa)*,a*(baa*)*
+non isolated 'b',(a|(b*bb))*,(a|ab|ba|bb*)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((1*(0+1+0+)*1*)(0*(1+0+1+)*0*))*|1*|0*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b(a?))*
+Odd number of b's,(a*ba*b)*a*ba*,(a*(ba*b)*ba*)+
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1|0|(1+(0*1*)*1+)|(0+(1*0*)*0+))*
+even prefix,(ab|ba)*,((aa)*|(bb)*)(a|b)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,(0(0*1*)*0)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a*b*)*(baa+|b)+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)*(a|b))aaa(a)*
+even prefix,(ab|ba)*,(ab|ba)*(aa|bb|ab|ba)*
+At least one a followed by one b,a+b,(a*b)+
+Length 1 or More,(0|1)(0|1)*,(0|1)|(0|1)*
+Odd number of b's,(a*ba*b)*a*ba*,a*ba*(ba*b)*(a*b*)*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b)*(baa)(a|b)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,(a|b*a*)+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a+|b+)*aa(a+)
+non isolated 'b',(a|(b*bb))*,(a|b)*bb(a|bb)*|a*
+non isolated 'b',(a|(b*bb))*,(a*(bb*)*)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*b)|(((a|b)a*ba)*))*)?
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*b)+(a?))*)?
+At least one a followed by one b,a+b,a*b{1}
+non isolated 'b',(a|(b*bb))*,((a|b)|bb|(a|b))*
+At least one a followed by one b,a+b,(a|b)*(a)*b
+Odd number of b's,(a*ba*b)*a*ba*,(a*)b+((a*)|(b(a*)b))*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0*|(0|1)*|0*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0*|0(1|0)*0?
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a*b*)*|b+aaa
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)+aaa+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)*(aaa+))
+non isolated 'b',(a|(b*bb))*,(a|(b+(b)*))*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(11*0*)*|1*(00*1*)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(1+0*1*)*|(0+1*0*)*
+Every b followed by two or more a's,(a|baa)*,a*((b+aa)*a*)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a+|b+)+aaa+
+even prefix,(ab|ba)*,(ab|ba)*(aa|ab|ba|bb)*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*)*0*|(1*0*)*1*
+At least one a followed by one b,a+b,(a)*(b)
+Every b followed by two or more a's,(a|baa)*,(((b*)(a)(a))*(a*))*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(aa*|ab*|ba*|bb*)*aaaa*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|0+(1+0+)*|1+(0+1+)*
+At least one a followed by one b,a+b,((a*)b)*
+even prefix,(ab|ba)*,(ab|ba)*(a|b)*
+even prefix,(ab|ba)*,(a(a|b)|b(a|b))*
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][01]*[10]*
+Three Choices (Regex),001|1010|110,0*1*0*1*0*
+Odd number of 1s,0*10*(10*10*)*,[0-1][0-1]*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),((0+1*)*0+)*|((1+0*)*1+)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)(a|b)*|aaa*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b(a?))*|((a|b)a*ba)*
+Odd number of 1s,0*10*(10*10*)*,(0|1(11)*)+
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,[ab]*(baa)+[ab]*b[ab]*
+Every b followed by two or more a's,(a|baa)*,(((b)*(a)(a))*(a*))*
+contains no 00 nor 11,1?(01)*0?,((0|1)|(1|0))*
+Odd number of b's,(a*ba*b)*a*ba*,a*(ba*(bb)*)(ba*(bb)*)*a*
+Odd number of 1s,0*10*(10*10*)*,(0*(10*1)*0*10*)*|(0*10*10*)
+even number of 1's,(0*10*10*)*|0*,0*(1+0*1+0*)*
+Odd number of b's,(a*ba*b)*a*ba*,(b|a+|a*ba*(ba*ba*)*a*)
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(b*a*)*|baa|(b*a*)*|b|b*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b)|((a|b)a*ba))*((a|b)a*b)?
+At least one a followed by one b,a+b,(a|a*b)
+non isolated 'b',(a|(b*bb))*,(a|b+)*
+Odd number of b's,(a*ba*b)*a*ba*,(a)*b(a|(ba)*b)*
+At least one a followed by one b,a+b,(a|b)a*b
+non isolated 'a',(b|(a*aa))*,(b*a*(aa)*b*)*
+At least one a followed by one b,a+b,aa*b+
+Odd number of b's,(a*ba*b)*a*ba*,(a|ba*)*ba*
+At least one a followed by one b,a+b,(a*)(b)
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b+a)*((a|b)a*b+)?
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((aa*ba?)|(ba*ba?))*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*ba)*|((a|b)a*b)?)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b(a?))?)*
+Odd number of b's,(a*ba*b)*a*ba*,a*b((ba*|a)*)a*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(01)*0|1*(10)*1)*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,((1*|0*)(0*1*)*(0*|1*))*
+At least one a followed by one b,a+b,a*(b)
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][0-1]*
+"Equal number of occurrences of ""01"" and ""10""",((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0|1)*(((01)(0|1)*(10))|((10)(0|1)*(01))|(010)*|(101)*)(0|1)*)|0*|1*
+Every b followed by two or more a's,(a|baa)*,(a|b)*((b)*(aa))*
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a*b*(baa+)*a*b*)*b+
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(b*a*)*a*a*a
+non isolated 'b',(a|(b*bb))*,(a|b|ba|ab|aba)*
+contains 'bab',(a|b)*(bab)(a|b)*,(a|b|bab)*
+contains 'bab',(a|b)*(bab)(a|b)*,(a|b|bab)+
+even prefix,(ab|ba)*,(ab|ba)*(aa+bb+ab+ba)*
+At least one a followed by one b,a+b,(a|b)*(a)b
+non isolated 'a',(b|(a*aa))*,b*|(a|b)*aa(a|b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(aa|ab|ba|bb|b)*(aaa)a*
+At least one a followed by one b,a+b,a[ab]*b
+Odd number of 1s,0*10*(10*10*)*,(0*10*1*0*)*
+even prefix,(ab|ba)*,((ab)*(ba)*)*|(aa|ab|ba|bb)*(a|b)
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b)*baa*(a|b)*b*
+Every b followed by two or more a's,(a|baa)*,(a|(b*aa+))*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),0(0|1)*0|1(0|1)*1|1*|0*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)*(a|b))+aaa+
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,(0(0|1)*0)|(1(0|1)*1)?
+even prefix,(ab|ba)*,(ab|ba)*((a|b)(a|b))*
+At least one a followed by one b,a+b,(a|b)*a(a|b)*b(a|b)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*aaa*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*aaa+
+even prefix,(ab|ba)*,(aa|bb|ab|ba)*(aa|bb)*
+At least one a followed by one b,a+b,(a*b|a)
+non isolated 'b',(a|(b*bb))*,(a|b|ba|ab)*
+Odd number of 1s,0*10*(10*10*)*,[0-1]([0-1])?(([0-1])?)*
+even number of 1's,(0*10*10*)*|0*,(0|1)*
+even number of 1's,(0*10*10*)*|0*,(0|1)*1*
+even prefix,(ab|ba)*,(ab|aabb|ba|bbaa)*
+non isolated 'b',(a|(b*bb))*,(a|b|ba|ab|aba)*(aba)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,(a|b)*(aaa)a*
+even prefix,(ab|ba)*,(ab|ba)*(aabb+bbaa+ba+ab)*
+even prefix,(ab|ba)*,(bb|aa|(ab|ba)*)*((aa)|(bb)|(ab)|(ba))*
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0(0|1)*0|(00)*
+Non-empty sequence of a's or sequence of b's followed by sequence of a's,b*a*,((a+)|b+a*)*
+even prefix,(ab|ba)*,((ab|ba)+(aa|bb|ba|ab)*)?
+Odd number of b's,(a*ba*b)*a*ba*,a*b(ba+b)*|(a*|bb*)*
+even prefix,(ab|ba)*,((aa)*|(ab)*|(ba)*|(bb)*)*
+non isolated 'b',(a|(b*bb))*,(a*b+a*)*|a*
+Length 2 and 3,(0|1)(0|1)|(0|1)(0|1)(0|1),"(0|1|10|11){2,3}"
+At least one a followed by one b,a+b,(a|a*)(b)
+At least one a followed by one b,a+b,(a+b)*
+At least one a followed by one b,a+b,(a+b)+
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba?)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),(1+(0+1)*1*)*|(0+(1+0)*0*)*
+contains no 00 nor 11,1?(01)*0?,((0|1)|(01|10))*
+Odd number of b's,(a*ba*b)*a*ba*,a*b(bb*|a*)*
+even prefix,(ab|ba)*,(ab|ba)*(ab+ba)*
+"Two or more symbols, followed by at least three a's",(a|b)(a|b)+aaa+,((a|b)*(a|b))(aaa)+
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,((a|b)*baa(a|b)*)*b
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),1*|0*|1+(0*1*)*1+|0+(0*1*)*0+
+Contains baa and ends with b.,(a|b)*baa(a|b)*b,(a|b)*(a|b)*b
+"{0^k s 0^k | k >= 1, s in {0,1}*}",0(0|1)*0,0+|(0|1)*|0+
+non isolated 'b',(a|(b*bb))*,((a|b)*|bb|(a|b)*)*
+Every b followed by two or more a's,(a|baa)*,(a|b)*(baa)*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),1*(0+1+0*)*|0*(1+0+1*)*
+even prefix,(ab|ba)*,((aa)|(ab)|(ba)|(bb))*
+Every b followed by two or more a's,(a|baa)*,(a|(b|aa*))*
+"Same number of occurances of ""01"" and ""10""",(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|0+(1*0*)*|1+(0*1*)*
+first and third,a(a|b)a(a|b)*,(aba|aaa|aab|abb|bba)(a|b)*
+HW2-#1e: NFA to REX,((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba)*((a|b)a*b)?a?
