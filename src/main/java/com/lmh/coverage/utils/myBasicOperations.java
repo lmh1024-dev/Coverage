@@ -331,7 +331,7 @@ public class myBasicOperations {
 
     }
 
-    public static void acceptExtendEPC(LinkedList<Path> EPC, Automaton automaton) {
+    /*public static void acceptExtendEPC(LinkedList<Path> EPC, Automaton automaton) {
 
         Set<Integer> acceptStatesNumber = new HashSet<>();
         Set<State> acceptStates = automaton.getAcceptStates();
@@ -366,7 +366,7 @@ public class myBasicOperations {
             }
         }
         EPC.addAll(addList);
-    }
+    }*/
 
     public static Map<State, LinkedList<Edge>> generateEdgeMap(Automaton automaton){
         Map<State, LinkedList<Edge>> form = new HashMap<>();

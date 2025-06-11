@@ -16,7 +16,7 @@ class CoverageApplicationTests {
 
         edgePairCoverage.generate();
 
-        System.out.println("Regex:" + regex +"EPC:");
+        System.out.println("Regex:" + regex +"\nEPC:");
         System.out.println("Positive Strings:" + edgePairCoverage.getPositiveStrings());
         System.out.println("Negative Strings:" + edgePairCoverage.getNegativeStrings());
 
@@ -24,26 +24,26 @@ class CoverageApplicationTests {
 
     @Test
     void primeCoverage(){
-        String regex = "(001)(10101)(110)";
+        String regex = "(a((a|b)(a|b))*)|(b(a|b)((a|b)(a|b))*)";
         primePathCoverage primePathCoverage = new primePathCoverage();
         primePathCoverage.generate(regex);
 
         primePathCoverage.generate();
 
-        System.out.println("Regex:" + regex +"PPC:");
+        System.out.println("Regex:" + regex +"\nPPC:");
         System.out.println("Positive Strings:" + primePathCoverage.getPositiveStrings());
         System.out.println("Negative Strings:" + primePathCoverage.getNegativeStrings());
     }
 
     @Test
     void nodeCoverage(){
-        String regex = "(a((a|b)(a|b))*)|(b(a|b)((a|b)(a|b))*)";
+        String regex = "a+b*";
         nodeCoverage nodeCoverage = new nodeCoverage();
         nodeCoverage.generate(regex);
 
         nodeCoverage.generate();
 
-        System.out.println("Regex:" + regex +"NC:");
+        System.out.println("Regex:" + regex +"\nNC:");
         System.out.println("Positive Strings:" + nodeCoverage.getPositiveStrings());
         System.out.println("Negative Strings:" + nodeCoverage.getNegativeStrings());
     }
@@ -56,7 +56,7 @@ class CoverageApplicationTests {
 
         edgeCoverage.generate();
 
-        System.out.println("Regex:" + regex +"EC:");
+        System.out.println("Regex:" + regex +"\nEC:");
         System.out.println("Positive Strings:" + edgeCoverage.getPositiveStrings());
         System.out.println("Negative Strings:" + edgeCoverage.getNegativeStrings());
     }

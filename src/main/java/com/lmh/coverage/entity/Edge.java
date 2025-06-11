@@ -1,10 +1,6 @@
 package com.lmh.coverage.entity;
 
-import dk.brics.automaton.State;
 import dk.brics.automaton.Transition;
-
-import java.util.HashMap;
-import java.util.HashSet;
 
 public class Edge {
 

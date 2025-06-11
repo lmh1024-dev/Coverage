@@ -52,12 +52,11 @@ public class Path implements Serializable {
 
     public Path deepClone() {
         try {
-            // 将对象写入流中
+
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
             objectOutputStream.writeObject(this);
 
-            // 从流中读取对象
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
             ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
             return (Path) objectInputStream.readObject();

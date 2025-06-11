@@ -28,9 +28,9 @@ public class primePathCoverage extends Coverage{
             this.setAttemptAutomaton(myComplement(this.getAttemptAutomaton()));
 
         if (!(this.getAttemptAutomaton().getStates().size() <= 1 && !this.getAttemptAutomaton().getInitialState().isAccept())) {
-            LinkedList<Path> EPC = generatePath(this.getAttemptAutomaton());
+            LinkedList<Path> PPC = generatePath(this.getAttemptAutomaton());
 
-            stringsList = generateStrings(EPC);
+            stringsList = generateStrings(PPC);
 
             if(this.getAttemptAutomaton().run("")){
                 stringsList.add("ε");
@@ -100,7 +100,6 @@ public class primePathCoverage extends Coverage{
 
     }
     static LinkedList<Path> generatePath(Automaton automaton){
-        //生成简单路径
         Set<State> states = automaton.getStates();
         LinkedList<Path> simplePaths = new LinkedList<>();
         for(State s:states){

@@ -3,9 +3,7 @@ package com.lmh.coverage.entity;
 import dk.brics.automaton.Transition;
 
 public class edgePair {
-    /*
-    邻接对边：<S,T1,P,T2,E>
-     */
+
     private Integer number;
     private Transition transition1;
     private Transition transition2;

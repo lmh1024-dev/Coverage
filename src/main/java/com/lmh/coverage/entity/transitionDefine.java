@@ -16,9 +16,6 @@ public class transitionDefine implements Serializable, Cloneable {
 
 	static final long serialVersionUID = 40001;
 
-	/*
-	 * CLASS INVARIANT: min<=max
-	 */
 
 	char min;
 	char max;
@@ -26,21 +23,11 @@ public class transitionDefine implements Serializable, Cloneable {
 	public transitionDefine() {
 	}
 
-	/**
-	 * Constructs a new singleton interval transition.
-	 * @param c transition character
-	 */
 	public transitionDefine(char c)	{
 		min = max = c;
 
 	}
 
-	/**
-	 * Constructs a new transition.
-	 * Both end points are included in the interval.
-	 * @param min transition interval minimum
-	 * @param max transition interval maximum
-	 */
 	public transitionDefine(char min, char max)	{
 		if (max < min) {
 			char t = max;
@@ -56,12 +43,10 @@ public class transitionDefine implements Serializable, Cloneable {
 		this.max = transition.getMax();
 	}
 
-	/** Returns minimum of this transition interval. */
 	public char getMin() {
 		return min;
 	}
 	
-	/** Returns maximum of this transition interval. */
 	public char getMax() {
 		return max;
 	}
@@ -78,7 +63,6 @@ public class transitionDefine implements Serializable, Cloneable {
 		Iterator<transitionDefine> iterator = set.iterator();
 
 		while (iterator.hasNext()) {
-			//先将单个字符的转换直接加入defines
 			transitionDefine transitionDefine= iterator.next();
 			if(transitionDefine.getMax() == transitionDefine.getMin()){
 				transitionDefine newDefine = new transitionDefine(transitionDefine.min);
@@ -99,7 +83,6 @@ public class transitionDefine implements Serializable, Cloneable {
 				}
 			}
 
-			//此时找到transition中min最小，max最大的minDefine，从它的最大值开始确定范围
 			while (maxx >= minDefine.max){
 				boolean flag = false;
 				Iterator<transitionDefine> setIterator = set.iterator();
@@ -110,13 +93,11 @@ public class transitionDefine implements Serializable, Cloneable {
 						flag = true;
 						break;
 					}else if (minDefine.getMax()+1 > transitionDefine.getMax()){
-						//此时的范围已包含此转换，移除
 						setIterator.remove();
 					}
 				}
 				if(!flag){
 					if (minDefine.max != minDefine.min){
-						//不为单点
 						defines.add(minDefine);
 						minDefine = new transitionDefine((char)(minDefine.getMax()+1));
 					}else {
@@ -143,10 +124,9 @@ public class transitionDefine implements Serializable, Cloneable {
 	}
 
 	static transitionDefine getMinDefine(Set<transitionDefine> set){
-		//返回当前集合的minDefine，minDefine满足minDefine.min最小的原则
 		if (set.isEmpty()) return null;
 		Iterator<transitionDefine> iterator = set.iterator();
-		//设minDefine为迭代器的第一个元素
+
 		transitionDefine first = iterator.next();
 		transitionDefine minDefine = new transitionDefine(first.min,first.max);
 		iterator = set.iterator();
@@ -158,12 +138,7 @@ public class transitionDefine implements Serializable, Cloneable {
 		}
 		return minDefine;
 	}
-	/**
-	 * Checks for equality.
-	 * @param obj object to compare with
-	 * @return true if <code>obj</code> is a transition with same
-	 *         character interval and destination state as this transition.
-	 */
+
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof transitionDefine) {
@@ -173,20 +148,11 @@ public class transitionDefine implements Serializable, Cloneable {
 			return false;
 	}
 
-	/**
-	 * Returns hash code.
-	 * The hash code is based on the character interval (not the destination state).
-	 * @return hash code
-	 */
 	@Override
 	public int hashCode() {
 		return min * 2 + max * 3;
 	}
 
-	/**
-	 * Clones this transition.
-	 * @return clone with same character interval and destination state
-	 */
 	@Override
 	public transitionDefine clone() {
 		try {
@@ -196,12 +162,6 @@ public class transitionDefine implements Serializable, Cloneable {
 		}
 	}
 
-
-
-	/**
-	 * Returns a string describing this state. Normally invoked via
-	 * {@link Automaton#toString()}.
-	 */
 	@Override
 	public String toString() {
 		StringBuilder b = new StringBuilder();
