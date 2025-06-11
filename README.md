@@ -3,7 +3,8 @@
 
 This project is a Java based testing tool used to generate test strings that meet different regular expression coverage criteria. It provides four coverage testing methods to help developers and testers verify the implementation quality of regular expressions.
 
-
+## Data
+Experimental data is published in the file 'Data'
 ## Core functions
 The usage methods of four coverage criteria have been pre written in the file CoverageApplicabilityTests.java
 
