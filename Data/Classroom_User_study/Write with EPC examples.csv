@@ -1,183 +1,183 @@
 attempt_regex,question_description,correct_regex,positive_strings,negative_strings,user_id
 b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,"[bba, babbaaaba]","[aaa, bb, ababb, <empty>, babbaaabab]",107
 b[ab]*a,Begins with b and ends with a.,b(a|b)*a,"[bba, babaaabbba]","[bbbab, ab, babb, baaabab, <empty>, aabbaa]",100
-((b*ab*a)*),Even number of aâ€™s.,(b|(ab*a))*,"[aa, baaaa, aba, babbabbbaa]","[babbaa, ab, aab, baabbba]",107
+((b*ab*a)*),Even number of a¡¯s.,(b|(ab*a))*,"[aa, baaaa, aba, babbabbbaa]","[babbaa, ab, aab, baabbba]",107
 "b*(ab{2,}a)*b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[bb, bbabbbbaabba, abbabbb, abba]","[aaa, bba, abbbbaab, abbbb, abbaabab, abbaba, bbaabaabb, abbaaa, abbbbaabaa, abbabab, abbabaa, abbabbba]",107
-b*(a?b*)*aa(b*|a?b*)*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[bbabaa, abaa, aaaa, aabb]","[a, aba, <empty>, bbab]",107
+b*(a?b*)*aa(b*|a?b*)*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[bbabaa, abaa, aaaa, aabb]","[a, aba, <empty>, bbab]",107
 (a|b(?!b))*,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[b?!ba, aab?!bb?!b]","[aabbabbaa, bbb, b?!, b?!aa, b?!bbab, b?!ab, b?!bbaa, b?aa, b?bb, b?ba, b?ab, b?!bab, b?]",107
 (b(a|b))*b?,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[bb, bab, bbb, ba]","[abb, bba, babaa, bbbba, baa, aaaba]",107
-"a{3,}b{2,}*",anbm where n â‰?3 and m is even,aaaa*(bb)*,"[aaa, aaabbbb, aaaaabb]","[abb, aa, aba, a, bbb, aaabbab, aaabbaa, aaabbbba, <empty>, aaabaa, aaab, aabb, babaa, aaba, aaaaabab]",107
+"a{3,}b{2,}*",anbm where n ¡Ý 3 and m is even,aaaa*(bb)*,"[aaa, aaabbbb, aaaaabb]","[abb, aa, aba, a, bbb, aaabbab, aaabbaa, aaabbbba, <empty>, aaabaa, aaab, aabb, babaa, aaba, aaaaabab]",107
 (a|b){2}a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",107
 b[ab]*a,Begins with b and ends with a.,b(a|b)*a,"[babba, baaaba, bbbaba]","[bb, ab, babaaabbb, <empty>, aabbaa]",105
 b*a(bbb*a)*b*|b*,At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[bbabbb, abba, bbab]","[bbaabbab, abbaa, abbbaa, abaa, aaaa, abab]",100
 (a|b){2}a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",108
-((ab+){2})*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[abbbababab, <empty>, ababbbabab]","[baabba, bb, aa, ab, ababaaa, abaaa, abaab, ababbbabbba, ababa, ababaab]",108
-"(b)*(ab*){0,2}",Contains less than three aâ€™s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, bbabbabbabbaab, aaaa]",108
+((ab+){2})*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[abbbababab, <empty>, ababbbabab]","[baabba, bb, aa, ab, ababaaa, abaaa, abaab, ababbbabbba, ababa, ababaab]",108
+"(b)*(ab*){0,2}",Contains less than three a¡¯s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, bbabbabbabbaab, aaaa]",108
 (b*(ab)*)*aab+(a(b)+)*a,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,"[aaba, baaba, aababa, abaabbbaba]","[aa, aba, aababaaaabba, <empty>, aabaab, aaab, aabb, aaaa, bbab]",110
-b?(a+b)*a*(b+a)*b*,At most one pair of consecutive bâ€™s.,(a|(ba))*(b|(ab))*a?,"[a, bab, bbb, babbaba]","[abbaa, bbabaa, bbaaaa, babbbbabaa, bbaababb]",108
+b?(a+b)*a*(b+a)*b*,At most one pair of consecutive b¡¯s.,(a|(ba))*(b|(ab))*a?,"[a, bab, bbb, babbaba]","[abbaa, bbabaa, bbaaaa, babbbbabaa, bbaababb]",108
 b*(ab+)*,Every odd position is b.,(a?b)*,"[bbab, abab]","[baaa, aba, abbaabaabb]",108
-(b*(ab)*)*aa(b*|b+a|(b+ab+)*)*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[aabbbab, abbaaba, abaa]","[aba, aabbbabaa, aabaa, aaaabbaa, <empty>, aaab, bbab]",100
+(b*(ab)*)*aa(b*|b+a|(b+ab+)*)*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[aabbbab, abbaaba, abaa]","[aba, aabbbabaa, aabaa, aaaabbaa, <empty>, aaab, bbab]",100
 a*(ab|ba|a)a*,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),"[aaa, ab, baa, aaabaa]","[bba, abb, babb, bab, b, bbb, aaabb, baaababbaa, <empty>, abab]",108
 ((a|b){3})*,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,"[aaaaaa, bbbbbb]","[aa, bb, aaaa, bbbb]",108
 [ab]{2}a[ab]*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",104
-(b*abb*abb*)*|b*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[bbabbbabb, abababab, abab]","[aba, abaaa, abbbaba, abaab, ababbaa, abbb, aaaa, bbaababb]",104
-b*ab*|b*ab*ab*|b*,Contains less than three aâ€™s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, bbabbabbaaabba, aaab]",104
+(b*abb*abb*)*|b*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[bbabbbabb, abababab, abab]","[aba, abaaa, abbbaba, abaab, ababbaa, abbb, aaaa, bbaababb]",104
+b*ab*|b*ab*ab*|b*,Contains less than three a¡¯s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, bbabbabbaaabba, aaab]",104
 b*(abb*)*,Every odd position is b.,(a?b)*,"[abbab, abab]","[aba, aab, baa, abaaabbaa]",104
 (ba|a)*((bb)?)((ab|a)*),Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[babba, bbaaaba, aaaba, abbab, ba, abab]","[babbb, bbabb, bab, aabbbabaa, bbb, abaabbabb, aabbb, aabbbbb, ababbb, bbaaababb]",100
 a*aba*|a*baa*|aa*,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),"[a, baa, abaa, aaab]","[abb, bba, bab, b, bbb, abbaa, aaabb, abaabbabb, <empty>, baab]",104
-((b*ab*ab*)|b*)*,Even number of aâ€™s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[bbaaa, aaba, abbaa]",105
+((b*ab*ab*)|b*)*,Even number of a¡¯s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[bbaaa, aaba, abbaa]",105
 "b*(?:b{2,}a)*b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[bb, bb?:bbbba?:bbab, ?:bba, ?:bbabbb]","[bbaabaa, abb, ?a, ?b, ?:b, ?:bba?:aa, ?:bbbba?ba, ?:bba?:ab, ?:bbaba, ?:bbaaa, ?:bbaab, ?:baa, ?:bba?bb, ?:bba?aa, ?:bba?ab, ?:bab, ?:bbaa, ?:, ?:bbbb, ?:bbabab, ?:bbabbbaa, ?]",105
-b?(a+b)*a*(b+a)*b*,At most one pair of consecutive bâ€™s.,(a|(ba))*(b|(ab))*a?,"[a, bab, bbb, babbaba]","[abbaa, bbabaa, bbaaaa, babbbbabaa, bbaababb]",105
-b*(ab)*b*aab*(ab)*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[abbbbaaab, abbaa, aaabab, abbaab, aabbab, ababaa, bbabaa]","[aaa, bb, abb, aba, aaaaaaba, abbaba, aaababb, <empty>, aaaabb, aaabba, aaabbb, abab, abbaabaa, abbaaa, abbabb, abbbba, bbaabbaba]",105
+b?(a+b)*a*(b+a)*b*,At most one pair of consecutive b¡¯s.,(a|(ba))*(b|(ab))*a?,"[a, bab, bbb, babbaba]","[abbaa, bbabaa, bbaaaa, babbbbabaa, bbaababb]",105
+b*(ab)*b*aab*(ab)*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[abbbbaaab, abbaa, aaabab, abbaab, aabbab, ababaa, bbabaa]","[aaa, bb, abb, aba, aaaaaaba, abbaba, aaababb, <empty>, aaaabb, aaabba, aaabbb, abab, abbaabaa, abbaaa, abbabb, abbbba, bbaabbaba]",105
 (a*|a*b)a*(a|bb)a*,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[bb, a, ababb, aaabb, abbbaa, abbaaa, abaaabba, ba]","[<empty>, abbabaa, abbaaab, abbbbaa, abbbaab, aaab, bbbb, abab, bbab, baba, abbbbbabb, ababbb, ababab, abbabbabb, abaaabaa, ababbab]",105
 (b(a|b))*b?,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[bb, bab, bbb, ba]","[aaa, bba, babaa, bbbba, baa, ababb]",105
-"a{3,}(bb)*",anbm where n â‰?3 and m is even,aaaa*(bb)*,"[aaa, aaabbbb, aaaaabb]","[abb, aa, aba, a, bbb, aaabbab, aaabbaa, aaabbbba, aaabab, <empty>, aaabaa, aaabbb, aaaaab, aabb, aaba, baaba]",105
+"a{3,}(bb)*",anbm where n ¡Ý 3 and m is even,aaaa*(bb)*,"[aaa, aaabbbb, aaaaabb]","[abb, aa, aba, a, bbb, aaabbab, aaabbaa, aaabbbba, aaabab, <empty>, aaabaa, aaabbb, aaaaab, aabb, aaba, baaba]",105
 (a|b)(a|b)a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",111
 (b*(ab)*b*)*,Every odd position is b.,(a?b)*,"[b, abab]","[aba, aabbab, bbabaa, aaaa]",111
-b*a?b*a?b*,Contains less than three aâ€™s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, bbabbabbabaabb, aaaa]",111
-(b(aa)*)*(bb)+b*,At most one pair of consecutive bâ€™s.,(a|(ba))*(b|(ab))*a?,"[bbbbaabaabb, bbaabbaabb, baaaabb]","[aa, baaaa, babaa, baaa, ab, bbaaba, b, <empty>, bbaabbbbab, babbbab]",111
-b*(b*(ab)b*(ab)b*)*b*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[bbababb, abababab, abbbab]","[bbaaabaa, ab, abaaa, abbba, abaab, ababa, ababbaa, aabb]",111
+b*a?b*a?b*,Contains less than three a¡¯s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, bbabbabbabaabb, aaaa]",111
+(b(aa)*)*(bb)+b*,At most one pair of consecutive b¡¯s.,(a|(ba))*(b|(ab))*a?,"[bbbbaabaabb, bbaabbaabb, baaaabb]","[aa, baaaa, babaa, baaa, ab, bbaaba, b, <empty>, bbaabbbbab, babbbab]",111
+b*(b*(ab)b*(ab)b*)*b*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[bbababb, abababab, abbbab]","[bbaaabaa, ab, abaaa, abbba, abaab, ababa, ababbaa, aabb]",111
 ^.{2}a.*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[^\uffff\uffffa\uffff\uffff, ^","[aa, bb, ^\uffff\uffff, ^",113
-^[^a]*a?[^a]*a?[^a]*$,Contains less than three aâ€™s.,b*a?b*a?b*,"[^$aa$, ^###a`#`#$#a\uffff`\uffff$\uffff$``$, ^a$","[^\uffff`##\uffff\uffff#`\uffffa``#\uffff\uffff`\uffff#`a``\uffff##\uffff\uffff`#`$\uffffaa, ^",113
+^[^a]*a?[^a]*a?[^a]*$,Contains less than three a¡¯s.,b*a?b*a?b*,"[^$aa$, ^###a`#`#$#a\uffff`\uffff$\uffff$``$, ^a$","[^\uffff`##\uffff\uffff#`\uffffa``#\uffff\uffff`\uffff#`a``\uffff##\uffff\uffff`#`$\uffffaa, ^",113
 b[ab]*a,Begins with b and ends with a.,b(a|b)*a,"[bba, babbaaaba]","[bbbab, aaa, babb, abbab, baaabab, <empty>]",114
-"[aa,aab,aba,baa,b]*",Even number of aâ€™s.,(b|(ab*a))*,"[,,, a,aa, b,bb]",[],114
+"[aa,aab,aba,baa,b]*",Even number of a¡¯s.,(b|(ab*a))*,"[,,, a,aa, b,bb]",[],114
 [abba|abbba|b]*,At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[a||aa, b||bb]",[],114
-[b|bab|ab]*[aa][b|bab|ab]*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[|a, bb||ba||aa|, bb||ba||bb|, |ab, |aa]","[bb||b, <empty>, |]",114
+[b|bab|ab]*[aa][b|bab|ab]*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[|a, bb||ba||aa|, bb||ba||bb|, |ab, |aa]","[bb||b, <empty>, |]",114
 [a|aba|aba]*[bb]+[a|aba|aba]*,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[||aa|b||aa|, ||aa|b||bb|, abb, aba, ab]","[aa||a, <empty>, |]",114
 [b[ab|bb]*]?,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[[[|[a|aa[], [[|[b|bb[], [[|[b|bb[, b], ||], a], [[|[a|aa[]","[[aa|]aa, [aa|]bb, []b, [aa|]ba, b]b, |[[||aa[a|]abbaab, a]b, |[[||bb[b|]abbaab, [bb|]ba, [bb|]aa, [bb|]bb]",114
-"[ab]*a{3,}[bb]+",anbm where n â‰?3 and m is even,aaaa*(bb)*,"[aaaaabbbaabaaab, aaabaaab, aaabaabbaaab, abbaaab, bbabaaab, aaababaaab, aaab]","[abb, aaaba, aaaaa, aaabaabb, aaababa, <empty>, aaaaabbbaaba, aaabaa, bbab]",114
+"[ab]*a{3,}[bb]+",anbm where n ¡Ý 3 and m is even,aaaa*(bb)*,"[aaaaabbbaabaaab, aaabaaab, aaabaabbaaab, abbaaab, bbabaaab, aaababaaab, aaab]","[abb, aaaba, aaaaa, aaabaabb, aaababa, <empty>, aaaaabbbaaba, aaabaa, bbab]",114
 b[ab]*a,Begins with b and ends with a.,b(a|b)*a,"[babba, baaaba, bbbaba]","[bbbab, aa, babb, abbaab, baaabab, <empty>]",102
 (b[ab])*|(b([ab]b)*),Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[bb, bab, bbb, ba]","[aaa, bba, babaa, bbbba, baa, ababb]",102
 ^(?!.*baa),Begins with b and ends with a.,b(a|b)*a,"[^?!bcuffffbaabcuffffcuffffbaa, ^?!b\uffffbaa\uffffabaa, ^?!babcuffffbaa","[^?!baa\uffff\uffff, ^?!baacuffff",110
-^(?:b*a b*a)* b*$,Even number of aâ€™s.,(b|(ab*a))*,"[^?:a bba $, ^?:a a?:a a $, ^ $, ^?:a a $, ^?:bba a $, ^?:a a bb$]","[bb, ^ ab, ^ aa, <empty>, ^?bb, ^?ba, ^?:bbaaa, ^?:a ab, ^?:aab, ^?:a bbaa, ^ bb$b, ^ $bb, ^ $ba, ^ba, ^ a, ^?:a a , ^bb, aa, ab, ^?:a, ^?ab, ^?aa, ^?:a bb, ^?:a a, ^?:abb, ^?:bb, ^ $ab, ^ $aa, ^?:aba, ^abbaab, ^aa, ^?:a a?, ba]",110
+^(?:b*a b*a)* b*$,Even number of a¡¯s.,(b|(ab*a))*,"[^?:a bba $, ^?:a a?:a a $, ^ $, ^?:a a $, ^?:bba a $, ^?:a a bb$]","[bb, ^ ab, ^ aa, <empty>, ^?bb, ^?ba, ^?:bbaaa, ^?:a ab, ^?:aab, ^?:a bbaa, ^ bb$b, ^ $bb, ^ $ba, ^ba, ^ a, ^?:a a , ^bb, aa, ab, ^?:a, ^?ab, ^?aa, ^?:a bb, ^?:a a, ^?:abb, ^?:bb, ^ $ab, ^ $aa, ^?:aba, ^abbaab, ^aa, ^?:a a?, ba]",110
 "^[b]*(?:a(?:b{2,}a)*)?[b]*$",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[^?:ab$, ^?:a?:bbbba$, ^?:a?:bbab$, ^$, ^?:a?:bbabbb$, ^?:a?:bba$, ^?:a$, ^bb$, ^?:a?:bba?:bba$]","[^?:a?:ab, bb, ^?:a?:aa, <empty>, ^?bb, ^?ba, ^?:a?:bab, ^?:a?:bbabab, ^?:ab, ^?:a?:bbabaa, ^?:a?:bba$aa, ^?:a?:bba$ab, ^?:a?:bba, ^?:aa, ^?:a?:bbbb, ^?:a?:bba?bb, ^?:a?:, ^$a, ^$b, ^, aa, ^?, ab, ^aaba, ^?ab, ^?aa, ^?:a?:bbaaa, ^?:a?:bbaab, ^?:a?:bbabbba, ^?:a?:bbbba?ba, ^abb, ^bba, ^?:a?ab, ^?:a?:bba$ba, ^?:a?:baa, ^?:a?:bba$bb, ^?:ba, ^?:bb, ^?:a?:bbab$a, ^?:a?:b, ^?:a?:bbab$b, ^?:, ^?:a$b, ^?:a?, ^?:a?aa, ba]",110
-^(?:b|a(?!a))*aa(?!a)(?:b|a(?!a))*$,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[^aa?!a$, ^?:ba?!a?:baa?!a$, ^?:b?:baa?!a$, ^?:ba?!aaa?!aa?!a$, ^?:ba?!aaa?!a?:ba?!a$, ^?:ba?!aaa?!a?:b?:b$, ^?:ba?!aaa?!a?:b$, ^?:ba?!aaa?!a$]","[^?:ba?aa, ^?:baa?!a?, ^?:ba?ab, ^?:ba?!, ^?:babb, ^?:ba?!a?, ^?:baa?!a?:baa, ^?:baba, ^?:baa?!a?:bab, babbaa, aa, ab, ^?:ba?!aba, ^?:ba?!abb, ^?:baa?!a?ab, ^?:baa?!a?aa, ^?:, ^?:b?ba, ^?:baa?!a?:ab, ^?:baa?!a?:ba?b, ^?:b?bb, ^?:baa?!a?:ba?a, ^?:baa?!a?:aa, bb, ^?:baa?!a?:b?ba, ^?:baa?!a?:b?bb, ^a, ^?:baa?!bb, ^b, ^?:baa?!ba, <empty>, ^?:baa?!, ^?:baaba, ^?:baabb, ^?:ab, ^?:aa, ^?:baa?!a?:b$ab, ^?:ba?!bb, ^?:ba?!ba, ^?:baa?, ^?:b?ab, ^?:b?aa, ^?:baa?!a?:b$aa, ^?:baa?!a$b, ^?:b, ^?:baa?!ab, ^?:baa?!aa, ^?:ba?ba, ^?:ba?bb, ^?:baa?!a, ^?:baaab, ^?:baaaa, ^?:bb, ^?:ba?!aa, ^?:baa?!a?:, ^?:baa?!a?:bbb, ^?:ba?, ^?:baa?!a?:bba, ^?:baa?!a?:b$ba, ^?:baa?!a?:b$bb]",110
+^(?:b|a(?!a))*aa(?!a)(?:b|a(?!a))*$,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[^aa?!a$, ^?:ba?!a?:baa?!a$, ^?:b?:baa?!a$, ^?:ba?!aaa?!aa?!a$, ^?:ba?!aaa?!a?:ba?!a$, ^?:ba?!aaa?!a?:b?:b$, ^?:ba?!aaa?!a?:b$, ^?:ba?!aaa?!a$]","[^?:ba?aa, ^?:baa?!a?, ^?:ba?ab, ^?:ba?!, ^?:babb, ^?:ba?!a?, ^?:baa?!a?:baa, ^?:baba, ^?:baa?!a?:bab, babbaa, aa, ab, ^?:ba?!aba, ^?:ba?!abb, ^?:baa?!a?ab, ^?:baa?!a?aa, ^?:, ^?:b?ba, ^?:baa?!a?:ab, ^?:baa?!a?:ba?b, ^?:b?bb, ^?:baa?!a?:ba?a, ^?:baa?!a?:aa, bb, ^?:baa?!a?:b?ba, ^?:baa?!a?:b?bb, ^a, ^?:baa?!bb, ^b, ^?:baa?!ba, <empty>, ^?:baa?!, ^?:baaba, ^?:baabb, ^?:ab, ^?:aa, ^?:baa?!a?:b$ab, ^?:ba?!bb, ^?:ba?!ba, ^?:baa?, ^?:b?ab, ^?:b?aa, ^?:baa?!a?:b$aa, ^?:baa?!a$b, ^?:b, ^?:baa?!ab, ^?:baa?!aa, ^?:ba?ba, ^?:ba?bb, ^?:baa?!a, ^?:baaab, ^?:baaaa, ^?:bb, ^?:ba?!aa, ^?:baa?!a?:, ^?:baa?!a?:bbb, ^?:ba?, ^?:baa?!a?:bba, ^?:baa?!a?:b$ba, ^?:baa?!a?:b$bb]",110
 (?!.*(bb).*\1)[ab]*,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[?!bb1b`\uffff1, ?!bb1acuffff2uffff1, ?!bb1a","[bb, ?!a\uffffa, ?!bb111bb1\uffff1`, ?!cuffffcuffff",110
 b([ab]b)*[ab]?,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[baba, bab, bbb, bbbb]","[aaa, babaa, baaa, bbbba, ababb, <empty>, baab, bbaa, bbab]",351
 a*ba*|a+,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),"[aaa, ab, baa, aaaba]","[abb, bb, bab, abbaa, abaab, aaabbbbab, <empty>]",351
-"(a{3,})(b{2,})",anbm where n â‰?3 and m is even,aaaa*(bb)*,"[aaabbbb, aaaaabb]","[abb, bb, aa, aba, a, aaabbab, aaaaa, aabaa, aaaaabbbbaa, aaabab, <empty>, aaabba, aaabaa, aaab, aabbabb, ba]",351
+"(a{3,})(b{2,})",anbm where n ¡Ý 3 and m is even,aaaa*(bb)*,"[aaabbbb, aaaaabb]","[abb, bb, aa, aba, a, aaabbab, aaaaa, aabaa, aaaaabbbbaa, aaabab, <empty>, aaabba, aaabaa, aaab, aabbabb, ba]",351
 (a|b){3}*,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,"[aaaaaa, bbbbbb]","[aa, bb, aaaa, bbbb]",351
 (a|b){2}a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",351
 b(ab|bb)*|(ab|bb)*|b,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[bb, bbabbb, abbb, bbabab, abab]","[bbabb, bbaba, aab, abbbb, aaabbaa, ababa]",355
 (a)*ab(a)*|(a)*ba(a)*|(a)+,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),"[a, baa, abaa, aaab]","[abb, bba, bab, b, bbb, aaabaabbaabb, <empty>, abba, baab]",355
-aaa(a)*(bb)*,anbm where n â‰?3 and m is even,aaaa*(bb)*,"[aaabb, aaaaa, aaaaabbbb, aaabbbb]","[abb, bb, aa, aba, a, aaabbab, aabaa, aaabbaa, aaabbbbb, aaabab, <empty>, aaabaa, aaab, aabbbab, aaaaabbb, ba]",355
+aaa(a)*(bb)*,anbm where n ¡Ý 3 and m is even,aaaa*(bb)*,"[aaabb, aaaaa, aaaaabbbb, aaabbbb]","[abb, bb, aa, aba, a, aaabbab, aabaa, aaabbaa, aaabbbbb, aaabab, <empty>, aaabaa, aaab, aabbbab, aaaaabbb, ba]",355
 (aaa|aab|aba|abb|baa|bab|bba|bbb)*,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,"[aaaaaa, bbbbbb]","[aa, bb, aaaa, bbbb]",355
 (a|b)*(aab|abb|aba|aaa),Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbababaab, ababb, abbaaabaabbbbaab, abaab, abbaaabaabbabaab, abbaaabaaaaabb, abbaaa, abbbaab, abbaaababa, abbaaabaaba, abbaaabaabbbaab]","[bba, aaabaaabbaabbbabbab, aaabaaabbaabbbabbb, aaabaaabbaabab, aaabaaabbaabbbabab, bbaaababab, aaabaabab, <empty>, aaabaaaaabbaabbbb, abaa, ababbab]",355
 ^b[ab]*a$,Begins with b and ends with a.,b(a|b)*a,"[^baba$, ^bbbaba$, ^babba$, ^ba$, ^baaa$]","[aa, bb, ^baaaba$b, ab, ^babb, ^bbba, <empty>, ^ba$ab, ^abaabb, ^ba$aa, ^ba$bb, ^, ^aa, ^bbbab, ^ba$ba, ba]",323
 a*b?a+,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),"[aaa, aba, aaabaaa, ba]","[baaabb, baba, abb, bab, bbabbaa, bbb, <empty>, aaab, abab]",356
-"a{3,}(bb)*",anbm where n â‰?3 and m is even,aaaa*(bb)*,"[aaa, aaabbbb, aaaaabb]","[abb, bb, aa, a, aaabbab, aaabbaa, aaabbbba, aaabab, <empty>, aaabaa, aaabbb, aaaaab, aabb, aaba, abaabba, ba]",356
+"a{3,}(bb)*",anbm where n ¡Ý 3 and m is even,aaaa*(bb)*,"[aaa, aaabbbb, aaaaabb]","[abb, bb, aa, a, aaabbab, aaabbaa, aaabbbba, aaabab, <empty>, aaabaa, aaabbb, aaaaab, aabb, aaba, abaabba, ba]",356
 ((a|b){3})*,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,"[aaaaaa, bbbbbb]","[aa, bb, aaaa, bbbb]",356
 ((a|b){2}a)(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",356
 (b(a|b))*b?,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[bb, bab, bbb, ba]","[abb, bba, babaa, bbbba, baa, aabaa]",356
 ^ba`aa$``a$,Begins with b and ends with a.,b(a|b)*a,[^ba`aa$``a$],"[bb, ^ba`aa$``a, ^ba`aa$aa, ^b, ^ba`a, ^baba, ^babb, ^ba`aa$ab, ^ba`aa$``aba, <empty>, ^ba`aa$, ^aabbaa, ^ba`aabb, ^ba`aaba, ^ba`, ^ba`aa$``a$bb, ^ba`aba, ^ba`aa$``a$ba, ^ba`abb, ^ba`aa$``aab, ^ba`aa$``aaa, ^ba`ba, ^ba`bb, ^ba, ^ba`aa$`aa, ^, ^bb, ^ba`aa$``ba, aa, ^ba`aa$`ab, ^ba`aa$``bb, ab, ^baab, ^ba`aa$bb, ^ba`aa$``, ^ba`aa$ba, ^baaa, ^ba`aaab, ^ba`aaaa, ^ba`aa$``a$aa, ^ba`aa$`, ^ba`aa$``a$ab, ^ba`aa$``abb, ^ba`aa, ^ab, ^ba`aa$`bb, ^ba`aa$`ba, ba]",333
 ^[ab]{2}a[ab]*$,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[^aaaaa$, ^bbabb$, ^aaa$, ^bba$]","[aaa, ^a, bbb, ^bbbb, ^b, ^aaba, <empty>, ^aaa$a, ^aaaaa, ^bbabb$bb, ^aaaaa$aa, ^bbabb, ^bba$b, ^, ^aa, ^bb]",333
-^(b*ab*a)*b*$,Even number of aâ€™s.,(b|(ab*a))*,"[^$, ^bb$, ^aa$, ^aab$, ^abbaaa$]","[^$abaabb, aa, bb, ab, ^bbaa, ^aa$b, ^aab, <empty>, ^$aa, ^$bb, ^$ba, ^abbaa, ^$b, ba]",333
-^(b*ab+b*ab+)*b*$,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[^ababb$, ^$, ^abababab$, ^abab$, ^bb$, ^abbbab$]","[aa, bb, ab, ^a, ^ababaab, <empty>, ^ababaaa, ^$ab, ^$bb, ^$aa, ^ababb, ^abaaa, ^abbba, ^abaab, ^bb$babbaa, ^abab$b, ^$b, ^ab, ba]",333
+^(b*ab*a)*b*$,Even number of a¡¯s.,(b|(ab*a))*,"[^$, ^bb$, ^aa$, ^aab$, ^abbaaa$]","[^$abaabb, aa, bb, ab, ^bbaa, ^aa$b, ^aab, <empty>, ^$aa, ^$bb, ^$ba, ^abbaa, ^$b, ba]",333
+^(b*ab+b*ab+)*b*$,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[^ababb$, ^$, ^abababab$, ^abab$, ^bb$, ^abbbab$]","[aa, bb, ab, ^a, ^ababaab, <empty>, ^ababaaa, ^$ab, ^$bb, ^$aa, ^ababb, ^abaaa, ^abbba, ^abaab, ^bb$babbaa, ^abab$b, ^$b, ^ab, ba]",333
 "^b*(ab{2,}a)*b*$",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[^abbaabba$, ^abbab$, ^abbabbb$, ^$, ^abba$, ^bb$, ^abbbba$]","[bb, ^aab, <empty>, ^aaa, ^abbab$bb, ^abbaabab, ^abba$a, ^abbab$b, ^$a, ^$b, ^abba$b, ^, ^abbaba, babbaa, aa, ab, ^abbbbabbbab, ^abba, ^abbab$ba, ^abbaabaa, ^abbbbabbb, ^bba, ^abbbb, ^abbab$aa, ^abbab$ab, ^abbabaa, ^abbaaa, ^ab]",333
 (ab|b)*,Every odd position is b.,(a?b)*,"[bbab, abab]","[aaa, aba, bbaba, aabaabb]",344
 (ba|a)*(bb|a*)(ab|a)*,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[babb, aaaba, abbaaaba, ba, bbab, abab]","[abbbbbaab, bab, bbabb, bbb, abbba, aabbb, ababbabb, bbaaababb]",344
 a|bb,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,[bb],"[aa, baaaba, babb, bbba, ab, b, <empty>, bbaa, bbbb, bbab]",335
 b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,"[babba, baaaba, bbbaba]","[abb, bbbab, babb, aaaba, baaabab, <empty>]",324
 aaa(a|b)*|aba(a|b)*|baa(a|b)*|bba(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",324
-^(b*ab*ab*)*$,Even number of aâ€™s.,(b|(ab*a))*,"[^aabbaa$, ^baba$, ^$, ^aaaba$, ^bbbaa$, ^aaaa$, ^abba$, ^aa$, ^baa$]","[bb, aa, ab, ^aa$bbbaab, ^b, ^aaab, ^aa$b, ^bbba, ^baa, ^bab, <empty>, ^aabbaa, ^aa$ab, ^aa$aa, ^aa$ba, ^abbaa, ^$a, ^$b, ^, ba]",324
-(b*abb*abb*)*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[abbbababab, bbbabab, babab, <empty>, ababbbabab]","[aa, bbba, bab, b, abababbba, ababaaa, ababbba, baa, abaab, abaaabbaa, ababaab]",324
+^(b*ab*ab*)*$,Even number of a¡¯s.,(b|(ab*a))*,"[^aabbaa$, ^baba$, ^$, ^aaaba$, ^bbbaa$, ^aaaa$, ^abba$, ^aa$, ^baa$]","[bb, aa, ab, ^aa$bbbaab, ^b, ^aaab, ^aa$b, ^bbba, ^baa, ^bab, <empty>, ^aabbaa, ^aa$ab, ^aa$aa, ^aa$ba, ^abbaa, ^$a, ^$b, ^, ba]",324
+(b*abb*abb*)*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[abbbababab, bbbabab, babab, <empty>, ababbbabab]","[aa, bbba, bab, b, abababbba, ababaaa, ababbba, baa, abaab, abaaabbaa, ababaab]",324
 b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,"[babba, baaaba, bbbaba]","[bbbab, abb, babb, aabaa, baaabab, <empty>]",421
 (a|b)(a|b)a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",421
-(ab*a|b)*,Even number of aâ€™s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[aaa, aaba, bbabbaa]",421
-(abb*ab|b)*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[ababb, bbabbbababab, abab]","[aba, abaaa, abaab, ababba, bbabbbabaababb, bbabbb, ababaaaa]",421
+(ab*a|b)*,Even number of a¡¯s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[aaa, aaba, bbabbaa]",421
+(abb*ab|b)*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[ababb, bbabbbababab, abab]","[aba, abaaa, abaab, ababba, bbabbbabaababb, bbabbb, ababaaaa]",421
 (abb|b)*(a|b*)b*,At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[bbabbb, abba, bbab]","[aaa, abbaa, bbaabaabb, abbbaa, abaa, abab]",421
 b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,"[babba, baaaba, bbbaba]","[bb, ab, babaaabbb, <empty>, aaabba]",331
 (a|b)(a|b)a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",331
-b*(ab*ab*)*,Even number of aâ€™s.,(b|(ab*a))*,"[aab, abbaaa, bbaa]","[aaa, aaba, bbabbaa]",331
-b*(abb*abb*)*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[bbababb, abababab, abbbab]","[bba, bbabaabbaab, ababaaa, abaaa, abbba, ababaab, ababbab]",331
+b*(ab*ab*)*,Even number of a¡¯s.,(b|(ab*a))*,"[aab, abbaaa, bbaa]","[aaa, aaba, bbabbaa]",331
+b*(abb*abb*)*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[bbababb, abababab, abbbab]","[bba, bbabaabbaab, ababaaa, abaaa, abbba, ababaab, ababbab]",331
 "b* (ab{2,})* (a?b*)",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[  a,   b, bb abbbb bbb, bb abbbb abb,  abbabb ,  abb ]","[aaa,  abbbb abbaa,  abb aa,  bb, bb,  ,  abbaa,  abb ba, bbababb,  abbab, <empty>,  abbabab,  abbabaa,   aa,  abba,   ba,  aaa,  abb,  aab,  abb aab,  abbbb bbbaa,  abb bab,  ba]",331
 b(a|b)*b(a|b)*,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[bb, baabaa, baabbb]","[aaa, abb, b, baa, <empty>]",347
 (a|ab|ba|aab|aba|baa)+,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),"[aa, babaa, abaabba, baab]","[baabb, bab, bbbabb, abbab, aaababb, <empty>, abbb, bbaa]",347
 b[ab]*a,Begins with b and ends with a.,b(a|b)*a,"[babba, baaaba, bbbaba]","[bbbab, abb, babb, aabaa, baaabab, <empty>]",385
 [ab][ab]a[ab]*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",385
-(b*(ab*a)*)*,Even number of aâ€™s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[bbaaa, aaba, abbaa]",385
-(b*ab*b*)*(b*ab*ab*)*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[aaa, abb, bbba, bab, baa, <empty>]","[b, bbb]",385
+(b*(ab*a)*)*,Even number of a¡¯s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[bbaaa, aaba, abbaa]",385
+(b*ab*b*)*(b*ab*ab*)*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[aaa, abb, bbba, bab, baa, <empty>]","[b, bbb]",385
 "(a(b{2,}a)+)*b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[bbb, abbabbab, abbabbaabbab, abbbba, <empty>, abbabb, abbaabbab, abbabbbba]","[aa, abbabbabab, bab, abbabbaabb, abbaaaa, abbaaab, abbabbbbabaa, abaa, baabbaa, abab, abbbbaabb, bbba, abbabbaa, abbaab]",385
-^(?!(?:[^a]*a){3}).*$,Contains less than three aâ€™s.,b*a?b*a?b*,"[^?!?:a?:a?:`\uffffa$$$\uffff$, ^?!?:a?:``a?:a$, ^?!?:a?:a?:",[^?!?:,394
-a*b*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[aa, aabbb]","[baaa, bbba, aababbab]",394
+^(?!(?:[^a]*a){3}).*$,Contains less than three a¡¯s.,b*a?b*a?b*,"[^?!?:a?:a?:`\uffffa$$$\uffff$, ^?!?:a?:``a?:a$, ^?!?:a?:a?:",[^?!?:,394
+a*b*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[aa, aabbb]","[baaa, bbba, aababbab]",394
 b*(ab+)*b*,Every odd position is b.,(a?b)*,"[b, abab]","[baabb, aba, abbaaabaa]",394
 "(a*(b{0,1})a+)*((bb){0,1})(a+(b{0,1})a*)*",Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[aa, babaab, ababbaaaba, ba, bbab]","[bab, abbbaaba, bbabb, bbb, aaababbb, abbbbb, abbabb, ababbb, bbaaababb]",394
 b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,"[bba, babaaabbba]","[bb, ab, <empty>, babbaaabab, aabbaa]",419
 (a|b)(a|b)a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",419
-b*(ab*ab*)*b*,Even number of aâ€™s.,(b|(ab*a))*,"[aab, abbaaa, bbaa]","[bbaaa, aaba, abbaa]",419
-b*(abb*abb*)*b*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[ababb, bbabababab, abbbab]","[bba, ababaaa, abbba, abaabb, ababaab, bbabaaabaa, ababbab]",419
+b*(ab*ab*)*b*,Even number of a¡¯s.,(b|(ab*a))*,"[aab, abbaaa, bbaa]","[bbaaa, aaba, abbaa]",419
+b*(abb*abb*)*b*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[ababb, bbabababab, abbbab]","[bba, ababaaa, abbba, abaabb, ababaab, bbabaaabaa, ababbab]",419
 b*(abbb*)*ab*|b*ab*|b*|b*(abbb*)*b*,At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[abbb, bbabba, bbab]","[abbaab, abbbaa, abbaaa, bbabaaabba, abab]",419
-(a|ba)*(aa|ab)*(bb|ab)*(ba|b)*,At most one pair of consecutive bâ€™s.,(a|(ba))*(b|(ab))*a?,"[bba, aaba, bab, bbaba, bbbbab]","[babbaa, abbbaaaa, baabbabbaabbab, abbbaa, bbabaa]",344
-(ab|b)*aa(ba|b)*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[aabbbab, abbaaba, abaa]","[aba, aabbbabaa, aabaa, aaabbaab, <empty>, aaaa, bbab]",344
-b*(a|b*)b*(a|b*)b*,Contains less than three aâ€™s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[bbaabbaaabba, aaa, abbaa, aaab]",344
-(b*ab*ab*)?|(b*ab*)?|b*,Contains less than three aâ€™s.,b*a?b*a?b*,"[aa, bb, bbabb, bbabbabb]","[bbaabbaaabba, aaa, abbaa, aaab]",342
-(b*(ab)*b*)*aa(b*(ba)*b*)*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[aabbbab, abbaaba, abaa]","[aba, b, aabbbabaa, aaabbab, aaaaa, aabaa, <empty>, abaabaa]",342
+(a|ba)*(aa|ab)*(bb|ab)*(ba|b)*,At most one pair of consecutive b¡¯s.,(a|(ba))*(b|(ab))*a?,"[bba, aaba, bab, bbaba, bbbbab]","[babbaa, abbbaaaa, baabbabbaabbab, abbbaa, bbabaa]",344
+(ab|b)*aa(ba|b)*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[aabbbab, abbaaba, abaa]","[aba, aabbbabaa, aabaa, aaabbaab, <empty>, aaaa, bbab]",344
+b*(a|b*)b*(a|b*)b*,Contains less than three a¡¯s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[bbaabbaaabba, aaa, abbaa, aaab]",344
+(b*ab*ab*)?|(b*ab*)?|b*,Contains less than three a¡¯s.,b*a?b*a?b*,"[aa, bb, bbabb, bbabbabb]","[bbaabbaaabba, aaa, abbaa, aaab]",342
+(b*(ab)*b*)*aa(b*(ba)*b*)*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[aabbbab, abbaaba, abaa]","[aba, b, aabbbabaa, aaabbab, aaaaa, aabaa, <empty>, abaabaa]",342
 ^[ab]{2}a[ab]*$,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[^aaaaa$, ^bbabb$, ^aaa$, ^bba$]","[aaa, ^a, bbb, ^bbbb, ^b, ^aaba, <empty>, ^aaa, ^bba, ^bbabb$b, ^aaa$aa, ^aaaaa$a, ^bba$bb, ^, ^aa, ^bb]",352
 ^([ab]{3})+$,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,"[^aaaaaa$, ^bbbbbb$, ^bbb$, ^aaa$]","[aa, ^bbb$bbb, bb, ^aaaa, ^bbbb, ^bbb, ^aaa$aaa, <empty>, ^, ^bbbbb, ^aaaaa, ^aaa]",352
-"^(aa){2,}(bb){2,}$",anbm where n â‰?3 and m is even,aaaa*(bb)*,"[^aaaabbbbbb$, ^aaaabbbb$, ^aaaaaabbbb$]","[^aaaabbbb$aa, ^aaaabbbb$ab, baa, ^a, ^aaaabbaa, ^aaaabbab, ^aaaabbbbb, ^aaaabbbbbb, <empty>, ^aaaabb, ^aaaba, ^aaabb, ^aaaabab, ^aaaabaa, ^ba, ^, ^bb, aa, ^aaaabbbb$bb, ab, ^aaaabbbb$ba, ^aabb, ^aaba, ^aaaabbbab, ^aaaabbbbab, ^aaaab, ^aaaabbbaa, ^aaaabbbbaa, ^aaaaaa, ^aba, ^aaaaa, ^abb, ^aaaabbb, bbabb, ^aa]",352
+"^(aa){2,}(bb){2,}$",anbm where n ¡Ý 3 and m is even,aaaa*(bb)*,"[^aaaabbbbbb$, ^aaaabbbb$, ^aaaaaabbbb$]","[^aaaabbbb$aa, ^aaaabbbb$ab, baa, ^a, ^aaaabbaa, ^aaaabbab, ^aaaabbbbb, ^aaaabbbbbb, <empty>, ^aaaabb, ^aaaba, ^aaabb, ^aaaabab, ^aaaabaa, ^ba, ^, ^bb, aa, ^aaaabbbb$bb, ab, ^aaaabbbb$ba, ^aabb, ^aaba, ^aaaabbbab, ^aaaabbbbab, ^aaaab, ^aaaabbbaa, ^aaaabbbbaa, ^aaaaaa, ^aba, ^aaaaa, ^abb, ^aaaabbb, bbabb, ^aa]",352
 ^(a+|a+ba*|a*ba+)$,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),"[^a$, ^ab$, ^abaa$, ^baa$, ^aaa$, ^ba$]","[aa, bb, ^ba$b, ab, ^b, ^ab$b, ^bbb, ^bab, <empty>, ^a$a, ^a$b, ^aaaba, ^bba, ^abb, ^aaa, ^ba$ab, ^baaabbabb, ^ba$aa, ^ba$bb, ^ab, ^, ^babaa, ^ba$ba, ba]",352
 ^b[ab]*b$,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[^bbaab$, ^baabab$, ^bb$, ^bbbb$, ^bbab$]","[^bbaab$aa, aa, ^bbaab$bb, bb, ^babbbab$b, <empty>, ^ba, ^, ^bbaab, ^aaa, ^babbbab$a, ^abb]",352
 (ab|b)*,Every odd position is b.,(a?b)*,"[bbab, abab]","[aaaa, abaababb, ba]",342
 (ba|a)*(bb)?(ab|a)*,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[aa, babaa, bbaaaba, abaabbab, ba, abab]","[babbb, bbabb, bab, aaababbb, bbbaabba, ababbb, abbb, bbbb, abbaaababb]",342
-(ba|a)*(b|ba)*,At most one pair of consecutive bâ€™s.,(a|(ba))*(b|(ab))*a?,"[bba, aaba, bab, bbaba, bbbbab]","[bbaab, abbaa, bbaaabbaa, bbabaa, babbbbabaa]",342
+(ba|a)*(b|ba)*,At most one pair of consecutive b¡¯s.,(a|(ba))*(b|(ab))*a?,"[bba, aaba, bab, bbaba, bbbbab]","[bbaab, abbaa, bbaaabbaa, bbabaa, babbbbabaa]",342
 b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,"[bba, babbaaaba]","[bbbab, aa, babb, abbaab, baaabab, <empty>]",325
 (a|b)(a|b)a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",325
-(b*(ab*a)*)*,Even number of aâ€™s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[bbaaa, aaba, abbaa]",325
-(b*(abb*ab)*)*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[ababb, bbabbbababab, abab]","[bbababbab, abaaa, abbba, abaab, ababaababb, ababaaaa, bbababba]",325
+(b*(ab*a)*)*,Even number of a¡¯s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[bbaaa, aaba, abbaa]",325
+(b*(abb*ab)*)*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[ababb, bbabbbababab, abab]","[bbababbab, abaaa, abbba, abaab, ababaababb, ababaaaa, bbababba]",325
 b*(abbb*)*(ab*|b*),At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[abbb, bbabba, bbab]","[abbaab, abbbaa, abbaaa, abaa, bbababbaab]",325
-baba,Contains less than three aâ€™s.,b*a?b*a?b*,[baba],"[babaab, aa, bababb, babaaa, ab, bababa, b, bab, <empty>, bbaa, baab, babba, babbb, baaa, bbbabb, ba]",335
-((.*a){3}),Contains less than three aâ€™s.,b*a?b*a?b*,"[buffffabuffffbuffffaa, aaabuffff",[,343
-^(?![^a]*aa[^a]*aa[^a]*$)[^a]*aa[^a]*$,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[^?!aaaa$aa$%buffff$, ^?!\uffff`aaaa$aa#$, ^?!\uffff`aa``aa$aa$, ^?!\uffff`aaaa$aa\uffff``$\uffff\uffff$, ^?!buffff","[^?!aaaa\uffff\uffff#`$\uffffaa$$$`$a, ^?!aaaa",343
+baba,Contains less than three a¡¯s.,b*a?b*a?b*,[baba],"[babaab, aa, bababb, babaaa, ab, bababa, b, bab, <empty>, bbaa, baab, babba, babbb, baaa, bbbabb, ba]",335
+((.*a){3}),Contains less than three a¡¯s.,b*a?b*a?b*,"[buffffabuffffbuffffaa, aaabuffff",[,343
+^(?![^a]*aa[^a]*aa[^a]*$)[^a]*aa[^a]*$,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[^?!aaaa$aa$%buffff$, ^?!\uffff`aaaa$aa#$, ^?!\uffff`aa``aa$aa$, ^?!\uffff`aaaa$aa\uffff``$\uffff\uffff$, ^?!buffff","[^?!aaaa\uffff\uffff#`$\uffffaa$$$`$a, ^?!aaaa",343
 ^bufffbb,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),[^bufffbb],"[bb, ^b, ^baa, ^buab, ^bufffb, ^bab, <empty>, ^buaa, ^buffbb, ^buffba, ^bufbb, ^bufff, ^bufba, ^bufffbbaa, ^bufffbbab, ^, aa, ab, ^bufffbaa, ^bufffbab, ^aabaa, ^bbb, ^buba, ^bubb, ^buff, ^abb, ^bba, ^bufffaa, ^bu, ^bufffab, ^buffaa, ^bufab, ^bufaa, ^buffab, ^buf, ^bufffbbba, ^bufffbbbb, ba]",354
-^bba,anbm where n â‰?3 and m is even,aaaa*(bb)*,[^bba],"[aa, ab, ^bbbb, ^b, ^bbba, ^baa, ^bab, <empty>, bbbaab, ^bbaba, ^bbaaa, ^bbabb, ^bbaab, ^ab, ^, ba, ^aa, ^bb]",354
+^bba,anbm where n ¡Ý 3 and m is even,aaaa*(bb)*,[^bba],"[aa, ab, ^bbbb, ^b, ^bbba, ^baa, ^bab, <empty>, bbbaab, ^bbaba, ^bbaaa, ^bbabb, ^bbaab, ^ab, ^, ba, ^aa, ^bb]",354
 ^bbaaa,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,[^bbaaa],"[aa, bb, ^b, ^bbaa, ^bbbb, ^bbba, ^baa, <empty>, ^bab, ^bbaabb, ^bbaaba, ^aaa, ^bba, ^abb, ^bbaaaaa, ^bbaaabb, ^bbaba, ^bbabb, ^, ^bb]",354
 ^bbbb,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,[^bbbb],"[aa, bb, ^bbaa, ^b, ^bbab, ^baa, ^bbb, <empty>, ^bab, ^bbbbbbb, ^bbbbaaa, ^bbbaa, ^, ^ab, ^aa, ^bb, ^bbbab]",354
-^(?!.*a.*a.*a),Contains less than three aâ€™s.,b*a?b*a?b*,"[^?!aaaaa\uffffa, ^?!\uffff`\uffff\uffffaaa, ^?!a`\uffff\uffff``aa, ^?!abuffffaa, ^?!aaa\uffff`a, ^?!aaaaabuffffa, ^?!aaabuffffbuffffa, ^?!aa\uffff\uffff`\uffffa\uffffa, ^?!","[^?!``a``a`a``, baa, <empty>, ^?!``aa, ^?bb, ^?!aaa",339
-^(?!.*aa.*aa).*aa.*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[^?!aa\uffffaaaa, ^?!aabuffffaaaa, ^?!aaaaa\uffff\uffff`\uffffa``aa\uffff\uffff, ^?!a",[^?!aaaaa,339
+^(?!.*a.*a.*a),Contains less than three a¡¯s.,b*a?b*a?b*,"[^?!aaaaa\uffffa, ^?!\uffff`\uffff\uffffaaa, ^?!a`\uffff\uffff``aa, ^?!abuffffaa, ^?!aaa\uffff`a, ^?!aaaaabuffffa, ^?!aaabuffffbuffffa, ^?!aa\uffff\uffff`\uffffa\uffffa, ^?!","[^?!``a``a`a``, baa, <empty>, ^?!``aa, ^?bb, ^?!aaa",339
+^(?!.*aa.*aa).*aa.*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[^?!aa\uffffaaaa, ^?!aabuffffaaaa, ^?!aaaaa\uffff\uffff`\uffffa``aa\uffff\uffff, ^?!a",[^?!aaaaa,339
 abba,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,[abba],"[aaa, abb, ab, a, bbb, aab, abbba, abbbb, abbaba, <empty>, abaa, abab, babaa, abbaab, abbabb, abbaaa]",339
 bbabb,Every odd position is b.,(a?b)*,[bbabb],"[abb, bbabbab, bba, bb, bab, bbabbba, b, baa, bbabbaa, bbabbbb, aabaa, <empty>, bbabaa, bbbb, bbabab, bbab, bbaab, bbba, bbaaa]",339
 (b|(ab*a))*,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[aa, aab, bbabbaaa]","[aaa, aaba, bbabbaa]",343
 ^b(.b)*.$,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,"[^b\uffffb\uffff$, ^b\uffff$, ^b","[aa, ^b\uffffb, bb, ^b\uffffb\uffff, ^b",353
 ^[^b]a[^b],Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),"[^\uffffa\uffff, ^cuffffacuffff, ^cuffffa","[bb, ^aa\uffffb, ^aa\uffffa, ^a, ^",353
-"^a{3,}(bb)*$",anbm where n â‰?3 and m is even,aaaa*(bb)*,"[^aaaaabbbb$, ^aaabb$, ^aaabbbb$, ^aaa$]","[aaa, bb, ^a, ^aaab, abbab, ^aaaaabbb, <empty>, ^aaa$b, ^aaa$ab, ^aaa$aa, ^aaabab, ^aaabb$b, ^aaabb$a, ^aaabbbb, ^ba, ^, ^bb, ^aabb, ^aaba, ^aaabaa, ^aba, ^abb, ^aaaaa, ^aaabbab, ^aaa$bb, ^aaa$ba, ^aaabbaa, ba, ^aa]",353
+"^a{3,}(bb)*$",anbm where n ¡Ý 3 and m is even,aaaa*(bb)*,"[^aaaaabbbb$, ^aaabb$, ^aaabbbb$, ^aaa$]","[aaa, bb, ^a, ^aaab, abbab, ^aaaaabbb, <empty>, ^aaa$b, ^aaa$ab, ^aaa$aa, ^aaabab, ^aaabb$b, ^aaabb$a, ^aaabbbb, ^ba, ^, ^bb, ^aabb, ^aaba, ^aaabaa, ^aba, ^abb, ^aaaaa, ^aaabbab, ^aaa$bb, ^aaa$ba, ^aaabbaa, ba, ^aa]",353
 ^(?:.{3})*$,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,"[^$, ^?:\uffff\uffff\uffff?:\uffff\uffff\uffff$, ^?:","[aaa, ^?:\uffff\uffff, ^?:\uffff, ^?, ^a, bbb, ^b, <empty>, ^?:\uffff\uffff\uffffbb, ^$aa, ^$bb, ^?:\uffff\uffff\uffff$b, ^?:",353
 ^..a.*$,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,[^,"[aa, bb, ^\uffff\uffffa$$$\uffff$#, ^\uffff\uffff, ^\uffff\uffffa#, ^\uffff\uffffa\uffff##\uffff\uffff$#$\uffff, <empty>, ^\uffff\uffffbbb, ^\uffff\uffffa$\uffff#, ^",353
 bA*a,Begins with b and ends with a.,b(a|b)*a,"[bAAa, ba]","[baba, bba, aa, baaa, babb, ab, bab, b, bbb, baabaabb, <empty>, bAAb]",330
 (A+A+a)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[AAa, AAAAaAAa]","[AA, AAba, AAb, AAaaa, AAabb, AAaAaaa, AAaAbbb, AAAAaA, AAbb]",330
-(a|b)*aa(a|b)*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[bbabaa, abaa, aaaa, aabb]","[aba, b, <empty>]",336
-aa(a|b)*bb(a|b)*,At most one pair of consecutive bâ€™s.,(a|(ba))*(b|(ab))*a?,"[aababb, aaaababb, aabbaa, aabbbb]","[abb, bb, a, aab, aaaaba, aabab, <empty>, ababbaa, ba]",336
+(a|b)*aa(a|b)*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[bbabaa, abaa, aaaa, aabb]","[aba, b, <empty>]",336
+aa(a|b)*bb(a|b)*,At most one pair of consecutive b¡¯s.,(a|(ba))*(b|(ab))*a?,"[aababb, aaaababb, aabbaa, aabbbb]","[abb, bb, a, aab, aaaaba, aabab, <empty>, ababbaa, ba]",336
 (a|b)*abb*,Every odd position is b.,(a?b)*,"[bbabaabbbab, aab]","[aa, bb, <empty>, bbababbbaaa]",336
 ^b[a|b]*a$  ,Begins with b and ends with a.,b(a|b)*a,"[^bbb||ba|aba$  , ^bab|a$  , ^babba$  , ^baaa$  , ^ba$  , ^b|a$  ]","[^ba||a$ ab, ^ba||a$ aa, ^baba||b|aaa$ , ^ba||a$ab, ^ba||a$aa, <empty>, ^ba||a$  ab, ^ba||a$  aa, ^baba||b|aaa$ bb, ^ba||a$  ba, ^ba||abbb, ^ba||a$, ^ba||a$ba, ^ba|b, ^ba||ab|, ^ba||a$ ba, ^, ^bb, aa, ab, ^ba||a$bb, ^ba||a$  bb, bbbaab, ^ba||a|a, ^b|, ^ab, ba, ^aa]",323
 ^[ab]{2}a[a|b]*$  ,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[^bba|$  , ^aaa$  , ^bbabb||b$  , ^bba$  , ^aaa|$  , ^aaaaa||a$  ]","[aa, bb, ^aaaa$  aa, ^a, ^b, ^aaaa$ aa, ^aabaa, <empty>, ^bbab$ bb, ^aaaa$, ^bba||bb|$bb, ^bbab$ , ^aaaa$ , ^bba||bb|, ^aaa||aa|$aa, ^aaa$, ^aaa||aa|, ^bbab$  bb, ^bba$, ^, ^bbbbb, ^aa, ^bbab$, ^bb]",323
-((b*)|(b*)a(b*)|(b*)a(b*)a(b*)),Contains less than three aâ€™s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, aaabb, abbaa, bbaabbaaaba]",340
-(b|ab)*aa(b|ab)*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[baaab, aaabab, abbaabbab, abaa]","[aba, aaaba, aaaababb, <empty>, aabbabaa, aaaaaa, bbab]",340
-(b*ab*a)*b*  ,Even number of aâ€™s.,(b|(ab*a))*,"[abbaaa  , aab  , aa  , bb  ]","[ bb, aa, aa , aab, abbaa, <empty>,   ab,   bb,   aa,   ba,  abb, bb aaaba,  ba]",323
-(b*(ab+)*(b*))*  ,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[abab  , ab  , bb  ]","[ bb,  aa,  ab, aba, b, aab, abaaabbaa, <empty>,   ab,   aa,   bb,   ba, ab ,  ba]",323
-((a|ba)*b?)((b|ab)*a?),At most one pair of consecutive bâ€™s.,(a|(ba))*(b|(ab))*a?,"[aaba, bab, bbb, bbaba, bbabba]","[babbaa, aababbaa, bbabaaaabba, bbaab, bbbaa]",340
+((b*)|(b*)a(b*)|(b*)a(b*)a(b*)),Contains less than three a¡¯s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, aaabb, abbaa, bbaabbaaaba]",340
+(b|ab)*aa(b|ab)*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[baaab, aaabab, abbaabbab, abaa]","[aba, aaaba, aaaababb, <empty>, aabbabaa, aaaaaa, bbab]",340
+(b*ab*a)*b*  ,Even number of a¡¯s.,(b|(ab*a))*,"[abbaaa  , aab  , aa  , bb  ]","[ bb, aa, aa , aab, abbaa, <empty>,   ab,   bb,   aa,   ba,  abb, bb aaaba,  ba]",323
+(b*(ab+)*(b*))*  ,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[abab  , ab  , bb  ]","[ bb,  aa,  ab, aba, b, aab, abaaabbaa, <empty>,   ab,   aa,   bb,   ba, ab ,  ba]",323
+((a|ba)*b?)((b|ab)*a?),At most one pair of consecutive b¡¯s.,(a|(ba))*(b|(ab))*a?,"[aaba, bab, bbb, bbaba, bbabba]","[babbaa, aababbaa, bbabaaaabba, bbaab, bbbaa]",340
 "b*(ab{2,}a)*b*  ",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[  , abbbba  , abbab  , bbabba  , abbabbb  , abbaabba  ]","[ aa, aaa, bb,  ab, aab, abbab, abbab , <empty>, abba  b, abbab a, abbab b, abba,   bb, bb babbaa, abbab  b, abbaab, abbaaa,  bb, abbbba b, a, abbbb, abbabab, abbabaa, abbabbba, abaa,   ab,   aa, abab,   ba, abba a]",323
-(a|ba)*(bb)?(a|ba)*bï¼?19,(a|(ba))*(bb)?(a|(ab))*,[bbbï¼? bbbabï¼? babï¼? aababï¼? bï¼? bbaababï¼Ÿ],"[bba, bab, bbbabï¼Ÿb, <empty>, bï¼Ÿabbaab, bbbab, bbbbb, aaba, bbbba, bbbï¼Ÿa, bï¼Ÿba, bï¼Ÿaa, bï¼Ÿbb]",340,
+(a|ba)*(bb)?(a|ba)*b£¿,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[bbb£¿, bbbab£¿, bab£¿, aabab£¿, b£¿, bbaabab£¿]","[bba, bab, bbbab£¿b, <empty>, b£¿abbaab, bbbab, bbbbb, aaba, bbbba, bbb£¿a, b£¿ba, b£¿aa, b£¿bb]",340
 (b|ab)*,Every odd position is b.,(a?b)*,"[bbab, abab]","[aaa, aba, bbaba, aabbaab]",340
-^(b*ab*ab*|b*ab*|b*)$,Contains less than three aâ€™s.,b*a?b*a?b*,"[^a$, ^$, ^aabb$, ^aa$, ^abb$, ^bbaa$]","[aa, bb, ^aa$a, ab, ^a, ^aaaa, ^bb$b, ^aa$b, ^aabb$b, <empty>, ^$ab, ^a$a, ^$bb, ^a$b, ^$ba, ^aaa, ^abbaab, ^, ^$aaabba, ^aa, ba]",341
-^[^a]*(aa)[^a]*$,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,[^buffffbuffffaa,"[^aabuffffbuffffab, ^aa$`#, ^aa\uffff\uffff`$##, ^aabuffffbuffff%",341
+^(b*ab*ab*|b*ab*|b*)$,Contains less than three a¡¯s.,b*a?b*a?b*,"[^a$, ^$, ^aabb$, ^aa$, ^abb$, ^bbaa$]","[aa, bb, ^aa$a, ab, ^a, ^aaaa, ^bb$b, ^aa$b, ^aabb$b, <empty>, ^$ab, ^a$a, ^$bb, ^a$b, ^$ba, ^aaa, ^abbaab, ^, ^$aaabba, ^aa, ba]",341
+^[^a]*(aa)[^a]*$,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,[^buffffbuffffaa,"[^aabuffffbuffffab, ^aa$`#, ^aa\uffff\uffff`$##, ^aabuffffbuffff%",341
 b*a,Begins with b and ends with a.,b(a|b)*a,[bba],"[aaa, bb, aab, <empty>, bbababaa, abbb]",332
 ^b.*a$,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,[^b,"[bb, ^babuffff",332
-b*a?b*a?b*,Contains less than three aâ€™s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, bbabbabbaaaba, aaabb]",394
-(ab|b)*aa(ba|b)*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[aabbbab, abaaba, aabb, baab]","[aba, b, aabaa, <empty>, aabbaa, aaaa, abaaabaabb]",394
+b*a?b*a?b*,Contains less than three a¡¯s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, bbabbabbaaaba, aaabb]",394
+(ab|b)*aa(ba|b)*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[aabbbab, abaaba, aabb, baab]","[aba, b, aabaa, <empty>, aabbaa, aaaa, abaaabaabb]",394
 (ba|a)*(bb)?(ab|a)*,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"[aa, babaa, bbaaaba, ababbab, ba, abab]","[babbb, bbbbb, bbabb, bab, bbbabaa, aaababbb, ababbb, abbb, abbaaababb]",394
 (ab|b)*,Every odd position is b.,(a?b)*,"[b, abab]","[aba, bbaba, aab, aaabbaa]",394
-(a|ba)*(b|ba)*,At most one pair of consecutive bâ€™s.,(a|(ba))*(b|(ab))*a?,"[aaba, bab, bbb, bbaba, bbabba]","[babbaa, aababbaa, bbbbabaa, bbabaa, bbaaaa, bbaababb]",394
-aabaabb,At most one pair of consecutive bâ€™s.,(a|(ba))*(b|(ab))*a?,[aabaabb],"[bb, aab, aabba, aabbb, <empty>, aabaab, abbb, aabaabbba, aabaabbbb, aababb, aababa, aabaaab, aabaaaa, abaaba, aa, a, aabaa, aabaabab, aaab, aabaabaa, aaaa, aabaabbab, aabaabbaa, aaba, ba]",337
+(a|ba)*(b|ba)*,At most one pair of consecutive b¡¯s.,(a|(ba))*(b|(ab))*a?,"[aaba, bab, bbb, bbaba, bbabba]","[babbaa, aababbaa, bbbbabaa, bbabaa, bbaaaa, bbaababb]",394
+aabaabb,At most one pair of consecutive b¡¯s.,(a|(ba))*(b|(ab))*a?,[aabaabb],"[bb, aab, aabba, aabbb, <empty>, aabaab, abbb, aabaabbba, aabaabbbb, aababb, aababa, aabaaab, aabaaaa, abaaba, aa, a, aabaa, aabaabab, aaab, aabaabaa, aaaa, aabaabbab, aabaabbaa, aaba, ba]",337
 abba,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,[abba],"[bb, abb, a, ab, abbba, abbbb, abbaba, <empty>, abaa, aabb, abab, aaaaba, abbaab, abbaaa, abbabb, ba]",337
 bbabb,Every odd position is b.,(a?b)*,[bbabb],"[bbabbab, aa, bba, bb, ab, bbabbba, bab, b, bbabbaa, bbabbbb, baa, <empty>, bbabaa, bbbb, bbab, bbaab, bbba, bbaaa, bbababaabb]",337
 b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,"[babba, baaaba, bbbaba]","[bb, aaa, ababb, <empty>, babbaaabab]",329
-(ab*)|(aab*)|(b*a)|(b*aa)|(ab*a)|(b*)|b*aab*|ab*ab*|b*ab*|b*ab*a|b*ab*ab*,Contains less than three aâ€™s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, aabba, aaab, bbabbaaaabba]",337
-^b*((ab+b*){2})*b*$,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[^ababbbabab$, ^b$, ^$, ^abababab$, ^abab$, ^abbbab$]","[baabba, bb, aa, ab, ^b, ^aab, <empty>, ^abab$ba, ^abab$ab, ^abab$bb, ^abab$aa, ^ababa, ^abaaa, ^abbba, ^aaa, ^abaab, ^ababbb$b, ^$b, ^ab]",327
-((a|(b|ba)*)*b)*aa(b|ba)*,Has exactly one pair of consecutive aâ€™s,((ab)|b)*aa((ba)|b)*,"[aabaaabbaaba, aababa, aabbbab, aabaaabaaba, aaabaaba, aabaaaaabaaba, abaaba, aabaab, bbabaa, bbabaaba]","[aaa, aba, aabbaaaba, aababbaabbaaab, aabbaaabb, aabbaaaaab, <empty>, bbab, aababaaab]",337
+(ab*)|(aab*)|(b*a)|(b*aa)|(ab*a)|(b*)|b*aab*|ab*ab*|b*ab*|b*ab*a|b*ab*ab*,Contains less than three a¡¯s.,b*a?b*a?b*,"[bba, bb, bbaabb, abba]","[aaa, aabba, aaab, bbabbaaaabba]",337
+^b*((ab+b*){2})*b*$,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[^ababbbabab$, ^b$, ^$, ^abababab$, ^abab$, ^abbbab$]","[baabba, bb, aa, ab, ^b, ^aab, <empty>, ^abab$ba, ^abab$ab, ^abab$bb, ^abab$aa, ^ababa, ^abaaa, ^abbba, ^aaa, ^abaab, ^ababbb$b, ^$b, ^ab]",327
+((a|(b|ba)*)*b)*aa(b|ba)*,Has exactly one pair of consecutive a¡¯s,((ab)|b)*aa((ba)|b)*,"[aabaaabbaaba, aababa, aabbbab, aabaaabaaba, aaabaaba, aabaaaaabaaba, abaaba, aabaab, bbabaa, bbabaaba]","[aaa, aba, aabbaaaba, aababbaabbaaab, aabbaaabb, aabbaaaaab, <empty>, bbab, aababaaab]",337
 [ab]{2}a[ab]*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",329
-b*(ab*ab*)*,Even number of aâ€™s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[aaa, aaba, bbabbaa]",329
-b*(ab+ab+)*,Even number of aâ€™s and each a is followed by at least one b.,b*(abb*abb*)*,"[ababb, bbabbbababab, abab]","[aba, abaaa, abaab, bbabbbabaaabaa, ababbaa, bbabbb, ababaabb, bbabbbaba]",329
+b*(ab*ab*)*,Even number of a¡¯s.,(b|(ab*a))*,"[aa, aab, bbabbaaa]","[aaa, aaba, bbabbaa]",329
+b*(ab+ab+)*,Even number of a¡¯s and each a is followed by at least one b.,b*(abb*abb*)*,"[ababb, bbabbbababab, abab]","[aba, abaaa, abaab, bbabbbabaaabaa, ababbaa, bbabbb, ababaabb, bbabbbaba]",329
 "b*(ab{2,})*a?b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[abbb, bbabba, bbab]","[abbaaaa, abbaabbab, abaa, bbabbbaa, abab]",329
 "b*(ab{2,})*a?b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"[abbb, bbabba, bbab]","[abbaab, abbbaa, abbaaa, abaa, bbababaabb]",327
 b[ab]*a,Begins with b and ends with a.,b(a|b)*a,"[babba, baaaba, bbbaba]","[aa, bbbab, babb, abbaab, baaabab, <empty>]",327
-b*(ab*ab*)*,Even number of aâ€™s.,(b|(ab*a))*,"[aab, abbaaa, bbaa]","[aaa, aaba, bbabbaa]",327
+b*(ab*ab*)*,Even number of a¡¯s.,(b|(ab*a))*,"[aab, abbaaa, bbaa]","[aaa, aaba, bbabbaa]",327
 [ab]{2}a[ab]*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[bbabb, aaaaa]","[aa, bb, a, bbbbb, b, aabaa, <empty>]",327
