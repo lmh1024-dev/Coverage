@@ -1,41 +1,15 @@
 
-# Coverage:a regular expression example string generator applied in the teaching field based on the coverage criterion of automata
+# A regular expression example string generator applied in the teaching field based on the coverage criterion of automata
 
-This project is a Java based testing tool used to generate test strings that meet different regular expression coverage criteria. It provides four coverage testing methods to help developers and testers verify the implementation quality of regular expressions.
+This project is a Java based tool used to generate positive strings and negative strings that meet different regular expression coverage criteria. It provides four coverage methods to help users verify the implementation quality of regular expressions.
+
+We traverse the DFA and their complement DFA of regular expressions to ensure the generation of positive and negative strings. Strong coverage criteria extending graph-based coverage metrics, including
+node, edge, edge-pair and prime-path coverage, to enforce structural completeness and final-state validation in finite automata.
+
 
 ## Data
-Experimental data is published in the file 'Data'
-## Core functions
-The usage methods of four coverage criteria have been pre written in the file CoverageApplicabilityTests.java
+Experimental data and results are published in the file 'Data'.
 
-
-1. Edge Pair Coverage (EPC)
-Example Regex: "a*|(a|bb)*"
-
-Covers consecutive edge pairs
-
-Creates test cases that traverse every edge pairs
-
-2. Prime Path Coverage (PPC)
-Example Regex: "(a((a|b)(a|b))*)|(b(a|b)((a|b)(a|b))*)"
-
-Tests all prime paths
-
-Provides the most comprehensive path coverage
-
-3. Node Coverage (NC)
-Example Regex: "a+b*"
-
-Ensures all nodes in the regex finite automaton are visited
-
-Generates test strings that cover every state
-
-4. Edge Coverage (EC)
-Example Regex: "(a(a*|b+a)*)|(b(b*|a+b)*)"
-
-Validates all transitions between states
-
-Creates test cases that traverse every edge
 
 ## Requirements
 Java 17+
@@ -87,4 +61,4 @@ Negative Strings:[baaaa, , baaab, bbbba, bbabb, bbaba, abbbaa, abbbab, aaaa, aba
   mvn test
 ```
 ## License
-Coverage is released under the under the terms of the BSD license. Copyright (C) Lixiao Zheng, Minghuang Lin
+Coverage is released under the terms of the BSD license. Copyright (C) Lixiao Zheng, Minghuang Lin
