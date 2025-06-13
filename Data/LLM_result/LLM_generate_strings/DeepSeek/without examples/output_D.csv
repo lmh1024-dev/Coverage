@@ -1,0 +1,867 @@
+Regex,Attempt Regex,DeepSeek Output
+(a*ba*b)*a*ba*,a*b*(a*ba*b)*a*,"positive example: [aaabbb, abab, aabbaa, bbaa, aaa], negative example: [ababab, baba, aababba, abaab, bbaabba]"
+001|1010|110,001|10101|110|1010,"positive example: [001, 10101, 110, 1010], negative example: [0001, 1011, 1110, 10010]"
+(a|b)(a|b)+aaa+,((a|b)(a|b)+aa+),"positive example: [baaa, aabaa, bbaaa], negative example: [aa, bba, abba]"
+(0*10*10*)*|0*,(0*|1*)*,"positive example: [0, 1, 00, 11, 01, 10, 000, 111, 001, 110],  
+negative example: [2, 01a, b1, 1010a, 0b1, a01, 1b0, abc, 012, 120]"
+(a|b)*(bab)(a|b)*,((a|b)*(bab)*(a|b)*)*,"positive example: [abab, baba, aababba, bbabaa, abababab], negative example: [abc, bca, aabbcc, babc, ababca]"
+(ab|ba)*,((ab|ba)*|(aabb|bbaa)*)*(aa|ab|ba|bb)*,"positive example: [""abab"", ""baab"", ""aabbaa"", ""bbaabb"", ""aaab"", ""bbba"", ""abba"", ""baaa"", ""aabbbb"", ""bbaaab""],  
+negative example: [""abc"", ""aac"", ""bbbccc"", ""ababca"", ""baabx"", ""aabbaac"", ""bbaabbz"", ""aabbcc"", ""bbaaac"", ""abbaax""]"
+(a|baa)*,[a]*|[baa]*,"positive example: [a, aa, aaa, baa, baabaa, baaaa], negative example: [b, bb, ab, aba, baba, abab]"
+0*10*(10*10*)*,(0|1)*1(0|1)*1*0*,"positive example: [0110, 1010, 1100, 11110, 10010], negative example: [000, 111, 0101, 0011, 10101]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0*1*)*0*)|((1*0*)*1*),"positive example: [""0"", ""1"", ""01"", ""10"", ""001"", ""110"", ""0001"", ""1110"", ""0101"", ""1010""],  
+negative example: [""2"", ""a"", ""0112"", ""10a"", ""001b"", ""111c"", ""010d"", ""101e""]"
+(0*10*10*)*|0*,0*(0*1+0*1+0*)*,"positive example: [""01"", ""001"", ""0001"", ""0101"", ""00101"", ""000101"", ""010101""], negative example: ["""", ""0"", ""00"", ""000"", ""1"", ""11"", ""111"", ""10"", ""100"", ""1000""]"
+(ab|ba)*,(ab|ba)*(aa+bb+ab+ab)*,"positive example: [ab, ba, abab, baba, aabb, bbaa, abba, baab, ababaa, babaab], negative example: [a, b, aaab, bbba, abbb, baaa, aba, bab, aab, bba]"
+(a|(b*bb))*,(ab|ba|b|a)*(a)*,"positive example: [ab, ba, b, a, aa, aba, baa, abaa, aaa], negative example: [bb, abb, bba, baba, abab, abba, babb]"
+(a|b)(a|b)+aaa+,(a|b*a|b*)*aaa,"positive example: [aaa, aaaaa, baaa, bbaaa, abaaa, aabaaa, bbbaaa], negative example: [aa, aab, bba, abab, baba, aabb, bbba]"
+b*a*,a+[ba]*|(b*a*),"positive example: [a, aa, ab, aab, ba, baa, bba, b, bb, bbb, aaa, aba, abba, baba], negative example: [abab, bbaa, ababab, bbaabb, aaabbb, bbaaab]"
+(a|(b*bb))*,(a|b)*,"positive example: [a, b, aa, ab, ba, bb, aab, aba, bba, aabb], negative example: [c, ac, bc, abc, aac, bbc, abac, aabc]"
+(a|b)(a|b)+aaa+,(a+|b+)+aaa,"positive example: [aaaa, bbaaa, aabaaa, bbbaaa], negative example: [a, b, aa, bb, aab, bba]"
+(a|b)(a|b)+aaa+,((a|b)|(aa|bb))+aaa,"positive example: [aaa, aaaaa, bbaaa, abbaaa, bbaaaaa], negative example: [aa, bb, aab, bba, abab]"
+(a|b)(a|b)+aaa+,(aa+|bb+|ab+|ba+|a*|b*)+aaa,"positive example: [aaa, aaaaa, bbaaa, abaaa, baaaa, aaabaa, bbbaaa], negative example: [aa, bb, ab, ba, a, b, aab, bba, aba, baa]"
+(a|b)*(bab)(a|b)*,(a|b|bab)*(a|b)*,"positive example: [a, b, bab, ab, ba, baba, abab, aa, bb, babb], negative example: [abba, bbaa, abaab, bababab, bba, aab, ababab, babaab, aabb, babba]"
+(ab|ba)*,(ab|ba|aabb|bbaa)*(aa|bb|ab|ba)*,"positive example: [abba, aabbaa, bbaabb, abab, baba, aabbaabb, bbaaabba, aabbaaabbaa], negative example: [a, b, aba, bab, aab, bba, aabab, bbaba, aabbb, bbaaa]"
+(a*ba*b)*a*ba*,(a)*b(a*ba*b*)*(a)*,"positive example: [ab, aab, b, aabab, aabbaa], negative example: [aa, ba, aba, baa, aaba]"
+(a|(b*bb))*,((a|b)*bb(a|b)*)*a*,"positive example: [""bb"", ""abba"", ""aabbaa"", ""bbbb"", ""ababba"", ""a""], negative example: [""ba"", ""aba"", ""baba"", ""aaab"", ""bbab"", ""abab""]"
+(a|baa)*,(a|(b*aa))*,"positive example: [a, baa, abaa, aaa, bbaa], negative example: [b, bb, aba, baba, abab]"
+(a|baa)*,(a)*((b|aa)*(a)*)*,"positive example: [""a"", ""aa"", ""aaa"", ""b"", ""ab"", ""aab"", ""aba"", ""baa"", ""aaba"", ""aaaa"", ""bb"", ""aabaa""],  
+negative example: ["""", ""c"", ""ac"", ""ca"", ""bac"", ""abc"", ""aac"", ""abbc"", ""aabb""]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*(ba|b))*,"positive example: [aa, aba, bba, aaba, abba, baba, aabba, ababa], negative example: [ab, ba, bb, aab, abb, baa, bab, bbba]"
+(0*10*10*)*|0*,(0*|1)*(0*|1)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""0011"", ""1100"", ""000"", ""111"", ""0101"", ""1010""], negative example: [""2"", ""00a"", ""b11"", ""01c"", ""d10"", ""e"", ""f"", ""g"", ""h"", ""i""]"
+001|1010|110,0*1(01)*1*0*,"positive example: [""0110"", ""010110"", ""001100"", ""0101010"", ""000111000""],  
+negative example: [""10"", ""001"", ""1100"", ""01010"", ""0001111""]"
+a(a|b)a(a|b)*,a+(a|b)+a+(b)*,"positive example: [aaaaa, aabaa, aabab, aabba, aaabba], negative example: [ab, ba, a, b, abab]"
+/#(/|a|b|##*(a|b))*##*/,(/#)|((a|b|/?)|#)|(#/),"positive example:[""#"", ""a"", ""b"", ""/"", ""#/"", ""/#"", ""a#"", ""b#"", ""/#/""], negative example:[""ab"", ""//"", ""aa"", ""bb"", ""##"", ""a/b"", ""a/#b"", ""a#b#""]"
+(ab|ba)*,a*b*(a|b)*,"positive example: [aaabbb, aab, bbb, aabb, ab, a, b, aaabbbab], negative example: [ba, aba, bba, aabba, abab, baba, aabbaa, bbaa]"
+(a*ba*b)*a*ba*,((a)*b(a)*(bb)*)*,"positive example: [ab, aba, abab, ababb, aabba, b, bb, bba, abbb, ababab],  
+negative example: [aa, aaa, bbb, aab, baa, bab, baba, abbaa, ababba, abababab]"
+(a|b)(a|b)+aaa+,(a+|b+)*aaa,"positive example: [aaa, baaa, aabaaa, bbaaa, aaaaa], negative example: [a, b, ab, ba, aab, bba, aa, bb, aabba]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0|1|0(0|1)*0|1(0|1)*1)*,"positive example: [0, 1, 00, 11, 010, 101, 0000, 1111, 0110, 1001], negative example: [01, 10, 001, 110, 0101, 1010, 0001, 1110]"
+b*a*,(a)*a*b*a*,"positive example: [a, aa, aab, aaba, aabaa, b, ab, aabba, aabbaa], negative example: [aba, abab, baba, aabab, ba, baa, abaa, aababaa]"
+(a*ba*b)*a*ba*,(a*ba*)*,"positive example: [ab, aba, aabaa, b, babab, aababaa], negative example: [aa, a, aaaa, ba, bba, abababba]"
+(a|b)(a|b)+aaa+,(a|b)*aaaa*,"positive example: [aaaa, baaaa, aabaaaa, bbaaaaaa, aaaa], negative example: [a, b, ab, ba, aab, bba, aaba, bbba]"
+(a*ba*b)*a*ba*,(a*ba*)+,"positive example: [ba, aba, aabaa, baaaab, aabbaa], negative example: [a, aa, ab, b, aab]"
+0*10*(10*10*)*,(0*10*1*)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""001"", ""100"", ""0101"", ""1010"", ""000110"", ""1100""],  
+negative example: [""2"", ""11"", ""1011"", ""1101"", ""111"", ""0110"", ""1001"", ""000111"", ""10101"", ""1110""]"
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*ba))|((a|b)a*b))*,"positive example: [abab, aabab, baab, abba, aabba], negative example: [aa, bb, aba, bba, aaa]"
+a(a|b)a(a|b)*,(a(a|b)a(a|b)*)*,"positive example: [aaaa, aaba, aabaa, aabab, abaa, abab, abaab, ababa],  
+negative example: [a, b, aa, ab, ba, bb, aab, abb, baa, bab, bba, bbb]"
+(ab|ba)*,((aa)*|(bb)*)((aa)*|(bb)*)*|(ba|ab)(ab|ba)*|aa|bb,"positive example: [aa, bb, aaaa, bbbb, ab, ba, abab, baba, aabb, bbaa, aabbaa, bbaabb], negative example: [a, b, aba, bab, aab, bba, abba, baab, aabab, bbaba]"
+(ab|ba)*,(a*b*)(ab|ba|aa|ab)*,"positive example: [ ""aaab"", ""aabba"", ""abab"", ""bbaa"", ""aabbaa"" ],  
+negative example: [ ""abc"", ""bca"", ""aac"", ""bbaabx"", ""abbaaabz"" ]"
+(a|b)*baa(a|b)*b,(a|b)*(baa*)(a|b)*b,"positive example: [baab, baaaab, abaaab, baaab, baaabb], negative example: [a, b, ab, ba, baba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0|1)*(0(101)*0|1(010)*1|(1001)*|(0110)*)(0|1)*)*,"positive example: [""0101010"", ""1010101"", ""1001"", ""0110"", ""00110011"", ""11001100"", ""000101000"", ""111010111""],  
+negative example: [""010"", ""101"", ""100"", ""011"", ""0011"", ""1100"", ""0000"", ""1111""]"
+(a|b)(a|b)+aaa+,(a|b)+a+a+a+,"positive example: [aaa, baaa, aabaaa, bbaaaa, aaaaa], negative example: [a, b, ab, ba, aab, bba, aaba, bbaa]"
+(a|b)*baa(a|b)*b,(a*(b+a+)+b+),"positive example: [""aabab"", ""aabba"", ""abab"", ""abba"", ""baab"", ""bbab""],  
+negative example: [""a"", ""b"", ""aa"", ""bb"", ""aba"", ""bab"", ""aaa"", ""bbb""]"
+(a|b)*baa(a|b)*b,((a|b)*|(baa+))b,"positive example: [ab, baaab, baaaab, babb, abab], negative example: [ba, aaa, baaa, baab, bba]"
+(a*ba*b)*a*ba*,"(a*(b|bb{2,})*a*)+","positive example: [abba, aabbbaa, aabbaa, bbbaa, aabbbbaa], negative example: [a, b, aba, bbba, aababaa]"
+(0*10*10*)*|0*,0*(0|1)*,"positive example: [0, 01, 0001, 10, 0000], negative example: [2, 012, 0012, 11a, 101b]"
+0*10*(10*10*)*,1*|((0|1)*1(0|1)*)*,"positive example: [""1"", ""11"", ""111"", ""01"", ""10"", ""101"", ""110"", ""011"", ""0011"", ""1001""],  
+negative example: ["""", ""0"", ""00"", ""000"", ""010"", ""001"", ""0001"", ""0100""]"
+(0|1)(0|1)*,(0|1)|(0|1)*(0|1)*,"positive example: [0, 1, 01, 10, 00, 11, 001, 110, 000, 111],  
+negative example: [2, 3, 12, 20, 21, 22, 012, 120, 201, 210]"
+0(0|1)*0,0+(0*1*0*)*,"positive example: [0, 01, 010, 0010, 00010, 01010], negative example: [1, 10, 100, 1010, 0111, 1110]"
+a(a|b)a(a|b)*,a(a|b)*a(a|b)*,"positive example: [aaaa, ababa, aabaa, abbba, aabba], negative example: [a, b, aba, baba, aaab]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1+(0*1*0*)*1+)|(0*1*0*)*,"positive example: [110, 1010, 111, 000, 01010, 1001], negative example: [011, 100, 0011, 1100, 10101, 0000]"
+(ab|ba)*,(a|b)*,"positive example: [a, b, aa, ab, ba, bb, aaa, aab, aba, abb, baa, bab, bba, bbb], negative example: [c, ac, bc, abc, aac, bbc, aabbcc]"
+(ab|ba)*,(ab|ba)*|(ab|bb)*,"positive example: [ab, ba, abab, baba, abba, bb, abbb, bbab], negative example: [a, b, aa, bbb, aba, bab, abb, baa]"
+(a|(b*bb))*,a*|(a|b)*bb+(a|b)*|(a|b)*b+b(a|b)*,"positive example: [""a"", ""aa"", ""bbb"", ""abbb"", ""bbab"", ""aabba"", ""bab"", ""bba""],  
+negative example: [""b"", ""ba"", ""ab"", ""aab"", ""aba"", ""baa"", ""abb"", ""baba""]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaaa*,"positive example: [baaaaa, aaaaa, bbaaaaa, abaaaaa, aabaaaa], negative example: [a, b, aa, bb, aba]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)((a*b)|(a*ba)))*)?,"positive example: [a, b, aa, ab, ba, aab, aba, baa, aaba, abaa, baaa, aabaa, abaab, baaab, aababa, abaaba, baaaab, aababaa, abaabaa, baaaaab],  
+negative example: [c, ac, bc, abc, bac, aac, bbc, aabc, abac, baac, aabbc, abaac, baaac, aabac, abaabc, baaaac, aabacb, abaabac, baaaaac]"
+(0*10*10*)*|0*,(0*|1*0*1*)+,"positive example: [""0"", ""1"", ""00"", ""01"", ""10"", ""11"", ""000"", ""001"", ""010"", ""011"", ""100"", ""101"", ""110"", ""111"", ""0000"", ""0001"", ""0010"", ""0011"", ""0100"", ""0101"", ""0110"", ""0111"", ""1000"", ""1001"", ""1010"", ""1011"", ""1100"", ""1101"", ""1110"", ""1111""],  
+negative example: [""2"", ""a"", ""b"", ""02"", ""20"", ""12"", ""21"", ""102"", ""201"", ""120"", ""210"", ""012"", ""021"", ""0012"", ""0021"", ""0102"", ""0201"", ""1012"", ""1021"", ""1102"", ""1201""]"
+(a|(b*bb))*,((a|b)*bb(a|b)*)|a*,"positive example: [bb, abb, bba, aabba, aaa, bbb, ababba], negative example: [a, b, aba, bab, aaab, baba, abab]"
+0(0|1)*0,0+(0|1)*,"positive example: [0, 01, 001, 0001, 00001], negative example: [1, 10, 11, 101, 110]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1((0|1)*1)*|0((0|1)*0)*)*,"positive example: [""0"", ""1"", ""00"", ""11"", ""010"", ""101"", ""0011"", ""1100"", ""01010"", ""10101""],  
+negative example: ["""", ""01"", ""10"", ""011"", ""100"", ""0010"", ""1101"", ""0101"", ""1010"", ""01100""]"
+(a|b)*baa(a|b)*b,(a|b)*(baa)+(a|b)*,"positive example: [baa, abaa, baaab, aabaa, bbaa], negative example: [a, b, ab, ba, aba]"
+(a|(b*bb))*,(a*(b*b)*a*)*,"positive example: [""a"", ""b"", ""aa"", ""ab"", ""ba"", ""bb"", ""aaa"", ""aab"", ""aba"", ""abb"", ""baa"", ""bab"", ""bba"", ""bbb"", ""aaaa"", ""aaab"", ""aaba"", ""aabb"", ""abaa"", ""abab"", ""abba"", ""abbb"", ""baaa"", ""baab"", ""baba"", ""babb"", ""bbaa"", ""bbab"", ""bbba"", ""bbbb""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""bac"", ""bca"", ""aac"", ""bbc"", ""abac"", ""bbca"", ""aabc"", ""abbc""]"
+(a|b)(a|b)+aaa+,(a|b)*a{3},"positive example: [aaa, baaa, abaa, bbaaa, aabaaa], negative example: [aa, aab, bba, abab, bbaa]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)(a*))(ba))*(((a|b)(a*))(b|ba))*,"positive example: [""aabbaab"", ""baabaa"", ""ababba"", ""aabab"", ""bbabba""],  
+negative example: [""aabbb"", ""ababab"", ""baabbb"", ""aaabbb"", ""bababab""]"
+(a|b)(a|b)+aaa+,((a+|b+)+)+aaa+,"positive example: [aaa, aaaaa, baaa, aabaa, bbaaa], negative example: [aa, ab, ba, bb, aab]"
+(a|(b*bb))*,(a|b(b*))*,"positive example: [a, b, ab, bb, aab, abb, bbb, abbb, aabb, baba], negative example: [c, ac, bc, abc, bca, aac, bbc, abac, bbca, aabc]"
+(a|b)(a|b)+aaa+,(aa*|bb*)+aaa+,"positive example: [aaa, aaaa, baaa, aabaa, bbbaaa], negative example: [aa, bb, aab, bba, aabba]"
+(ab|ba)*,(aa|bb|ab|ba)*(aa|bb|ab|ba)*,"positive example: [aa, bb, ab, ba, aaaa, abab, baba, bbaa, aabb, abba], negative example: [a, b, aba, bab, aab, bba, aaab, bbba, abbb, baaa]"
+(a|(b*bb))*,(a|(bb*))*,"positive example: [a, b, bb, aab, bba, abab, bbb, aaaa, abbb, baba], negative example: [c, ac, bc, abc, bca, aac, bcc, abbc, bbba, abca]"
+(0(0*|1+0)*)|(1(1*|0+1)*),1*|0*|1+(0*1*)*1+|0+(1*0*)*0+,"positive example: [""1"", ""0"", ""11"", ""00"", ""101"", ""010"", ""1110"", ""0001"", ""11101"", ""00010""],  
+negative example: ["""", ""01"", ""10"", ""011"", ""100"", ""1010"", ""0101"", ""1100"", ""0011"", ""11001""]"
+(a|baa)*,[ab]*(baa)*,"positive example: [ab, baa, abbaa, aabbaa, baaab], negative example: [aba, baba, aaba, bbba, ababaa]"
+(a*ba*b)*a*ba*,(a*ba*)+(a*ba*ba*)*,"positive example: [ba, aba, baba, ababa, bababa], negative example: [a, aa, b, ab, bb, aab, abb, bbb, aaa, abab]"
+(a|b)(a|b)+aaa+,(a|b)|(b|a)(a|b)*(a)(a)(a)(a*),"positive example: [ab, baa, baaaa, aaaa, baaaaa], negative example: [ba, aa, baaa, abaa, bbaa]"
+(a*ba*b)*a*ba*,(a|b)+(a|b)*,"positive example: [aa, ab, ba, bb, aaa, aba, bba, abab, baaa], negative example: [a, b, c, ac, bc, abc, bac, cab]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1*01*)*(0*10*)*,"positive example: [101, 010, 1101, 0010, 101010],  
+negative example: [11, 00, 111, 000, 111000]"
+0+1*,0*1*,"positive example: ["""", ""0"", ""1"", ""01"", ""001"", ""0001"", ""011"", ""0011"", ""00011""], negative example: [""10"", ""100"", ""110"", ""101"", ""010"", ""00101""]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0*)|(1*)|(0+(1|0)*0+)|(1+(1|0)*1+),"positive example: [""0"", ""1"", ""00"", ""11"", ""000"", ""111"", ""010"", ""101"", ""00100"", ""11011""],  
+negative example: [""01"", ""10"", ""0011"", ""1100"", ""0101"", ""1010"", ""000111"", ""111000""]"
+(ab|ba)*,(ab|ba|aa|bb)*,"positive example: [ab, ba, aa, bb, abab, baba, aaaa, bbbb, abba, baab], negative example: [a, b, aba, bab, abbb, baaa, abababab, bbaa, aab, bba]"
+(a|baa)*,((b+a+a)*a*)*,"positive example: [""baa"", ""baaaa"", ""baabaa"", ""a"", ""ba"", ""baaabaa""], negative example: [""b"", ""bb"", ""bab"", ""ab"", ""bba"", ""baba""]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][0-1]*|[0101],"positive example: [000, 01, 101, 0101, 111], negative example: [2, 12, 102, 0202, 211]"
+(a|b)(a|b)+aaa+,(aa+|bb+|ab+|ba+|a|b)+aaa,"positive example: [aaaaa, bbaaa, abaaa, baaaa, aaaa, baaa], negative example: [aa, bb, ab, ba, a, b, aab, bba, aba, bab]"
+(ab|ba)*,(ab|ba)*(aa+bb+ba+ab)*,"positive example: [ab, ba, aab, bba, abab, baba, aaaa, bbbb, abaa, babb], negative example: [a, b, aa, bb, aba, bab, aabb, bbaa, abba, baab]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0+1*0+)*|((1+0*)*10+1+)*|1*|0+(1+0+)*,"positive example: [""0"", ""1"", ""00"", ""10"", ""010"", ""101"", ""0000"", ""1010"", ""1101"", ""1111"", ""00000"", ""10101"", ""11110"", ""000001"", ""101010"", ""111101""],  
+negative example: ["""", ""2"", ""01a"", ""11b"", ""001c"", ""101d"", ""0000e"", ""1010f"", ""1101g"", ""1111h"", ""00000i"", ""10101j"", ""11110k"", ""000001l"", ""101010m"", ""111101n""]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0+(1+0)*)|(1+(0+1)*))*,"positive example: [0, 1, 00, 01, 10, 11, 000, 010, 101, 110, 0010, 1010, 0101],  
+negative example: [2, 3, 12, 20, 21, 22, 012, 120, 102, 210, 0012, 1201]"
+(ab|ba)*,(bb|aa|(aabb|abab|abba|baba|bbaa|baab)*)*((aa)|(bb)|(ab)|(ba))*,"positive example: [aa, bb, aabb, abab, abba, baba, bbaa, baab, aabbaa, bbabba, ababab, babaab, aaaabb, bbaabb, abbaaa, bbaaab], negative example: [a, b, aba, bab, aab, bba, abbb, baaa, abbba, baaab, ababba, baabab]"
+b*a*,((a+)|(b*a*))*,"positive example: [aa, b, a, ba, ab, aab, baa, bbaa, aaaa, bba], negative example: [c, ac, bc, abc, aabbc, bca, abca]"
+(a|baa)*,(a|(b*a(a)*))*,"positive example: [a, aa, baa, abaa, baaa, aabaa], negative example: [b, bb, bab, bba, abab, bbba]"
+(a|baa)*,((a)*(b+aa+))+|[a]*,"positive example: [a, aa, b, aab, aaa, aabaa, baa, aabaaa], negative example: [ab, ba, aabab, bba, aaba, abaa]"
+0*10*(10*10*)*,(0*(10*1)*0*10*)*|(11),"positive example: [""11"", ""010"", ""1010"", ""00100"", ""11011""], negative example: [""0"", ""1"", ""00"", ""01"", ""10"", ""100"", ""101"", ""1001"", ""1011""]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*(b|ba))*)?,"positive example: ["""", ""a"", ""b"", ""aa"", ""ab"", ""ba"", ""bba"", ""aab"", ""aba"", ""abba"", ""aaba"", ""aaab"", ""aabba"", ""ababa"", ""abbba"", ""aababa"", ""aabbba"", ""ababba"", ""aaabba"", ""aaababa""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""bac"", ""aac"", ""abbc"", ""aabc"", ""abac"", ""aabac"", ""ababc"", ""aabbc"", ""aaabc"", ""aabbac"", ""ababac"", ""aababac""]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aa*,"positive example: [aa, baaa, abaa, bbaa], negative example: [a, b, aba, bba]"
+(a|b)(a|b)+aaa+,(aa|bb|ab|ba)+(a*a+a+),"positive example: [aaa, bbaa, abbaa, baaaa, ababaa], negative example: [a, b, ab, ba, aab, bba, aba, baa]"
+(a|b)(a|b)+aaa+,(a|b)*(a|b)*(aaa)*,"positive example: [aa, ab, aaa, baa, abaaa, bbaaa], negative example: [aabbb, bbb, aabab, baba, ababab]"
+(a|b)*baa(a|b)*b,(a|b|baa+)+b,"positive example: [ab, baaab, baaabaaab, baab, baaabab], negative example: [a, b, ba, baaa, baaabaa]"
+(a|baa)*,(a*)+(a*|b+a+a)+(a*),"positive example: [aaa, aabaa, aaabaa, aaaaa, baa], negative example: [aba, baba, bba, aab, baaab]"
+(ab|ba)*,(ab(ab)*|ba(ab)*)*((a|b)(a|b))*,"positive example: [abab, baba, ababab, baab, abba, abababab, babaab, ababba], negative example: [a, b, aa, bb, aba, bab, abbb, baaa]"
+a+b,[ab]*(ab)[ab]*,"positive example: [abab, aabab, ababab, babaab, ab],  
+negative example: [aa, bb, a, b, baa]"
+(a|(b*bb))*,(a|(b)*)*,"positive example: [a, b, aa, ab, ba, bb, aaa, aab, aba, abb, baa, bab, bba, bbb],  
+negative example: [c, ac, bc, abc, aac, bbc, ca, cb, cab, cba, cc]"
+a+b,(a|b)*(b),"positive example: [ab, bb, aab, bbb, abab], negative example: [a, aa, aaa, aba, baba]"
+(a*ba*b)*a*ba*,(a*(ba*ba*)*ba*)*,"positive example: [a, aba, ababa, aabaa, aababaa], negative example: [b, ab, ba, abab, babab]"
+(a|b)(a|b)+aaa+,(a|b)*,"positive example: [a, b, aa, ab, ba, bb, aab, aba, bba, abab], negative example: [c, ac, bc, abc, a1b, a b, ab., a+b]"
+(a*ba*b)*a*ba*,a*b|(a*ba*(bb)*a*)*,"positive example: [ab, aab, aaaab, b, abab, aabaa, aabbaa, aabbbbaa], negative example: [ba, aba, aaba, aaaba, bba, abba, aabbba, aabbbab]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|(0+1+)+0+|(1+0+)+1+,"positive example: [""0"", ""1"", ""00"", ""11"", ""000"", ""111"", ""01"", ""10"", ""001"", ""110"", ""010"", ""101"", ""0011"", ""1100"", ""0101"", ""1010""],  
+negative example: ["""", ""2"", ""012"", ""102"", ""0012"", ""1102"", ""0102"", ""1012""]"
+(a*ba*b)*a*ba*,a*b+(a|b(a)*b)*,"positive example: [""ab"", ""aab"", ""abb"", ""aabb"", ""abab"", ""aabab"", ""ababb"", ""aababb""], negative example: [""ba"", ""b"", ""aa"", ""bb"", ""aba"", ""bab"", ""aaba"", ""bbab""]"
+0(0|1)*0,0*(0|1)*0*,"positive example: [0, 00, 000, 1, 01, 10, 001, 100, 000100], negative example: [2, 012, 102, 0002, 2010]"
+(ab|ba)*,((aabb|abab|abba|bbaa|baba|baab)*(aa|ab|ba|bb)*)+((ab)?),"positive example: [aabb, ababab, bbaaab, aabbaa, ababbaab, babaab, baabaa, ab],  
+negative example: [a, b, aaabbb, bbbaaa, abbb, baaa, ababbaaabb, bbaaabab]"
+(a|(b*bb))*,(a*|(bb*))*,"positive example: ["""", ""a"", ""aa"", ""b"", ""bb"", ""aab"", ""bba"", ""abba"", ""aaabbb""],  
+negative example: [""c"", ""ac"", ""baa"", ""abab"", ""aabbc"", ""abca""]"
+(a|b)(a|b)+aaa+,(a|b)*a{2}aa*,"positive example: [aaa, bbaa, aabaa, baaa, aaaaa], negative example: [a, b, ab, ba, aba]"
+(ab|ba)*,(ab|ba|aabb|bbaa)*(aabb+bbaa+ab+ba)*,"positive example: [ab, ba, aabb, bbaa, abba, bbaaab, aabbba, ababba, bbaabbaa, abbaaabb],  
+negative example: [a, b, aa, bb, aba, bab, aab, bba, abab, baba, aabbb, bbaab, aaabbb, bbaaa]"
+(ab|ba)*,((a|b)|((a|b)(a|b)(a|b)))*|(ab|ba)*,"positive example: [a, b, aa, ab, ba, bb, aaa, aab, aba, abb, baa, bab, bba, bbb, abab, baba, abba, baab],  
+negative example: [c, ac, bc, abc, aac, bbc, aaac, bbbc, abac, babaac]"
+(ab|ba)*,(bb|aa|(abab|aabb)*)*((aa)|(bb)|(ab)|(ba))*,"positive example: [""bb"", ""aa"", ""abab"", ""aabb"", ""bbaa"", ""abababab"", ""aabbaabb"", ""aaab"", ""bbba"", ""abba""],  
+negative example: [""a"", ""b"", ""aba"", ""bab"", ""abbaa"", ""bbaab"", ""abbba"", ""baaab"", ""ababba"", ""aabbaa""]"
+(ab|ba)*,(ab)*((a|b)(a|b))*,"positive example: [ab, abab, aabb, abaa, baba, ababab, aabbaa], negative example: [a, b, aa, bb, aba, bab, aab, bba, abba, baab]"
+(a|(b*bb))*,(a*(b+a*b+)*a*)*,"positive example: [""a"", ""b"", ""aa"", ""ab"", ""ba"", ""aba"", ""aab"", ""baa"", ""abba"", ""aaabaa""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""bac"", ""abac"", ""aabbc"", ""aabca"", ""abbac""]"
+(a|b)(a|b)+aaa+,(a|b)+(a|b)+(a|b)*aaa*,"positive example: [aaabaaa, bbbaaa, abbaaa, aabaaaaa], negative example: [abab, bbba, aabba, aabaa]"
+(a|b)*baa(a|b)*b,(a|b|baa+)*b,"positive example: [ab, b, baab, baaaab, baaab, baaaab, baaab, baaaab, baaab],  
+negative example: [a, aa, baa, ba, baaa, baaaa, baaaaa, baaaaaa, baaaaaaa]"
+(ab|ba)*,(bb?|aa|(ab|ba)*)*((aa)?|(bb)|(ab)|(ba))*,"positive example: [""aa"", ""bb"", ""ab"", ""ba"", ""aab"", ""bba"", ""abab"", ""baba"", ""aabb"", ""bbaa"", ""abba"", ""baab"", ""aabbaa"", ""bbaabb"", ""ababab"", ""bababa""],  
+negative example: [""a"", ""b"", ""aba"", ""bab"", ""aaba"", ""bbab"", ""abaa"", ""babb"", ""aabab"", ""bbaba"", ""abbaa"", ""babbb""]"
+(a|b)(a|b)+aaa+,(a|b)|(a|b)+(a|b)*aaa,"positive example: [a, b, aa, ab, ba, bb, aaa, baa, aba, bba, aaaa, abaa, bbaa, aabaa, bbbaa], negative example: [ε, aab, bbb, aabb, bbbb, aabbb, bbbbb, aabbbb, bbbbbb]"
+a+b,[a]*[b]*,"positive example: [""a"", ""b"", ""aa"", ""bb"", ""aab"", ""abb"", ""aabb"", """"],  
+negative example: [""abab"", ""ba"", ""aba"", ""bab"", ""aabba"", ""bbaab""]"
+(ab|ba)*,((ab)|(ba))*|(a|b)((a|b)(a|b))*,"positive example: [""ab"", ""ba"", ""abab"", ""baba"", ""a"", ""b"", ""aa"", ""bb"", ""aaa"", ""bbb"", ""abba"", ""baab""],  
+negative example: [""aba"", ""bab"", ""abc"", ""bac"", ""aab"", ""bba"", ""abaa"", ""babb""]"
+(ab|ba)*,(ab(a|b)*)*((a|b)(a|b))*,"positive example: [abab, abba, abaa, abbb, abaab, ababb, abbaa, abbbb, ababab, ababba],  
+negative example: [a, b, aa, bb, aba, abb, baa, bab, aab, bba]"
+(a|b)(a|b)+aaa+,[ab]|[ab]+a{3},"positive example: [a, b, aa, ba, aaa, baaa, aaaaa], negative example: [ab, aba, aab, baa, abaa, aaba, baaaaa]"
+(a|(b*bb))*,((a|b)*b?)*,"positive example: [ab, abb, aab, b, abab, aaabbb], negative example: [ac, bca, abc, aabbc, bbaa, abac]"
+(a|b)(a|b)+aaa+,((a|b)+)aaa,"positive example: [baaaa, aaaaa, bbaaaa], negative example: [aaa, baa, abba]"
+(a|b)*baa(a|b)*b,(a*b*)*(baa)*(a*b*)b,"positive example: [ ""aabbaaab"", ""baaab"", ""abbaaab"", ""aabbaaab"", ""baab"" ], negative example: [ ""aabba"", ""baa"", ""abbaa"", ""aabbaa"", ""baaabb"" ]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(1*0+1*0+1*)*|(0*1+0*1+0*)*,"positive example: ["""", ""0"", ""1"", ""000"", ""111"", ""1010"", ""0101"", ""101010"", ""010101"", ""001100"", ""110011""],  
+negative example: [""01"", ""10"", ""0110"", ""1001"", ""0011"", ""1100"", ""010"", ""101"", ""01010"", ""10101""]"
+(a|b)(a|b)+aaa+,((a|b)+(aaa+)),"positive example: [baaa, aaaa, bbaaaa], negative example: [ab, aab, bbaa]"
+a+b,(a|a*)b,"positive example: [ab, aab, b], negative example: [aa, a, aba]"
+(a|b)(a|b)+aaa+,(((a)|(b))+)+(aaa)+,"positive example: [aaa, aaaa, baaa, abaaa, bbaaa, aabaaa, abbaaa, bbaaaa],  
+negative example: [a, b, aa, ab, ba, bb, aab, abb, baa, bba, aaba, abba, baaaab]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)+aaa(a|b)*,"positive example: [baaaa, aabaaa, bbaaaab, aaaaab, baaaab], negative example: [aa, bba, abba, aab, baba]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa,"positive example: [aaa, baaa, abaaa, bbaaa, aabaaa], negative example: [aa, bb, aba, bab, abba]"
+(a|(b*bb))*,(a*|(b*b)*)*,"positive example: ["""", ""a"", ""aa"", ""b"", ""bb"", ""ab"", ""aab"", ""ba"", ""bba"", ""bbab"", ""bbbb"", ""aaabbb"", ""abab"", ""abba""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""bbc"", ""abababcc"", ""aabbcc"", ""bbca""]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*(b|ba))+)?,"positive example: [ab, aab, bba, aabba, abab, baab, baba, abba, aabbaab], negative example: [aa, bb, aba, baa, aaa, bbb, ababab, bbaa, aabb]"
+(a|b)(a|b)+aaa+,(a|b)|(a|b)*(aaa)a*,"positive example: [""a"", ""b"", ""aaa"", ""aaaa"", ""baaa"", ""abaaa"", ""bbaaa""], negative example: [""aa"", ""bb"", ""ab"", ""ba"", ""aab"", ""bba"", ""aba"", ""bab""]"
+(0|1)(0|1)*,[01]*,"positive example: [0, 1, 01, 10, 000, 111, 0101, 1010], negative example: [2, 3, 12, 20, 021, 102, 0012, 1102]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba)*((a|b)a*b)*,"positive example: [ ""aaba"", ""baab"", ""aababaa"", ""bababaa"", ""aababab"" ],  
+negative example: [ ""aab"", ""baa"", ""aba"", ""bb"", ""aabba"" ]"
+(a|b)(a|b)+aaa+,(a|b)*aaa(a)*,"positive example: [aaa, aaaaa, baaa, abaaa, bbaaa], negative example: [aa, aab, aba, bba, abab]"
+(a|b)(a|b)+aaa+,(a|b)+(a|b)*aaa*,"positive example: [abbaa, bbaaaa, aabaaa, abbaaa, bbbaaaa], negative example: [a, b, ab, ba, bbaa]"
+a+b,[a]*[b],"positive example: [ab, aab, aaab, b], negative example: [a, ba, aba, aaa]"
+(ab|ba)*,(ab|ba)*(aa|bb)*(ab|ba)*,"positive example: [ab, ba, aa, bb, abab, baba, aabb, bbaa, abba, baab, abbaab, bbaaba],  
+negative example: [a, b, aba, bab, aab, bba, abaa, babb, abbba, baaba, ababab, bababa]"
+a+b,(a*b),"positive example: [ab, aab, aaab, b], negative example: [ba, aba, a, aa, aaa]"
+(a|b)*baa(a|b)*b,a*b*baa*b*(a*bb*)*,"positive example: [ba, bba, baaa, aabaa, aabbaa, aabbbaa, aabbbbaa, aabbaaabbaa],  
+negative example: [ab, aab, baba, aabab, aabbaab, aabbaaab, aabbbba, aabbaaabab]"
+(ab|ba)*,((ab)*(ba)*)*(a|b)?,"positive example: [""ab"", ""ba"", ""aba"", ""abba"", ""baba"", ""a"", ""b"", ""abab"", ""babaab"", ""ababab"", ""abbaa"", ""babab"", ""ababba""],  
+negative example: [""aa"", ""bb"", ""abb"", ""baa"", ""ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b+a*)*,"positive example: [abba, aabbaa, baba, aabbbaa, aabba], negative example: [abab, bbaa, aabb, bba, aaabbb]"
+1*(01*01*01*01*)*,(0|1)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""001"", ""110"", ""0000"", ""1111"", ""0101"", ""1010""],  
+negative example: [""2"", ""a"", ""01a"", ""10b"", ""0012"", ""110c"", ""0000d"", ""1111e"", ""0101f"", ""1010g""]"
+(a|b)*baa(a|b)*b,[ab]*[b][aa][ab]*[b],"positive example: [abbb, aabab, bbaab, aaabab, abaaab], negative example: [aba, baaa, abab, aabb, bbaa]"
+(a|b)(a|b)+aaa+,"(a|b)(a|b)(a|b)*(a{3,})*","positive example: [aaa, bbaaa, aabaaaa, bbabbbaaa], negative example: [a, b, aa, bb, aab, bba, aabba, bbaab]"
+(a|b)(a|b)+aaa+,"(a|b|aa|bb|ab|ba)*a{3,}","positive example: [aaa, aaaaa, bbaaa, ababaaa, bbaaaaa], negative example: [a, b, aa, bb, ab, ba, abab, baba]"
+0*10*(10*10*)*,((0|1)*),"positive example: [0, 1, 01, 10, 0011, 1100, 000, 111, 0101], negative example: [2, 3, 12, 20, 0112, 101a, abc, 00x, 1y0]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*|1*|((1+0*1+)*|(0+1*0+)*)*)*,"positive example: ["""", ""0"", ""1"", ""00"", ""11"", ""01"", ""10"", ""000"", ""111"", ""010"", ""101"", ""0011"", ""1100"", ""0101"", ""1010"", ""0000"", ""1111"", ""001100"", ""110011"", ""010101"", ""101010""],  
+negative example: [""2"", ""a"", ""01a"", ""1b0"", ""00c1"", ""110d"", ""e010"", ""f1010"", ""0g1"", ""h11"", ""i00"", ""j0101"", ""k10101"", ""l0011"", ""m1100""]"
+(ab|ba)*,(ab|ba)*(aabb+bbaa+ab+ba)*,"positive example: [abab, baba, aabbaa, bbaabb, abba, baab, ababab, babaabba],  
+negative example: [aa, bb, aab, bba, ababba, babaabb, aabba, bbaabaa]"
+a+b,(a*(b))*,"positive example: [""ab"", ""aab"", ""aabb"", ""aaaab"", ""b"", ""bb""], negative example: [""ba"", ""aba"", ""aaabba"", ""a"", ""ababababba"", ""aabbaa""]"
+a+b,(a)+(b)*,"positive example: [a, aa, aaa, ab, aab, aabb, aaaab], negative example: [b, bb, bbb, ba, baa, bab, bba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((01+0)|(10+1)|(0*10*)|(1*01*))*,"positive example: [ ""010"", ""101"", ""0101"", ""0010"", ""1101"", ""01010"", ""10101"", ""00010"", ""11101"", ""010101"" ],  
+negative example: [ ""00"", ""11"", ""000"", ""111"", ""0011"", ""1100"", ""00011"", ""11100"", ""0110"", ""1001"" ]"
+0*10*(10*10*)*,(0*10*)*,"positive example: [""10"", ""010"", ""1010"", ""00100"", ""1001""],  
+negative example: ["""", ""0"", ""1"", ""11"", ""000""]"
+(0(0*|1+0)*)|(1(1*|0+1)*),1?|0|1+(0*1*)*1+|0+(0*1*)*0+,"positive example: [""1"", ""0"", ""11"", ""00"", ""101"", ""010"", ""1110"", ""0001"", ""11011"", ""00100""],  
+negative example: ["""", ""2"", ""01a"", ""10b"", ""abc"", ""0112"", ""100a"", ""11111a"", ""00000b"", ""10101c""]"
+(a|b)(a|b)+aaa+,(a*b*)+a+a+a,"positive example: [aaa, aabbaaa, bbaaa, aabbaa, abbaaa], negative example: [bb, aab, abab, baba, aaabbb]"
+(a|b)(a|b)+aaa+,(a|b)*aaa,"positive example: [aaa, baaa, aaaaa, bbaaa, abaaa], negative example: [a, b, aa, ab, ba, bb, aab, abb, bba, bbb]"
+(a|(b*bb))*,a*|((a|b)*bb(a*b*)),"positive example: [""a"", ""aa"", ""aaa"", ""bb"", ""abb"", ""aabbb"", ""baabbb"", ""ababbb"", ""babbb""],  
+negative example: [""b"", ""ba"", ""aba"", ""abab"", ""bab"", ""baba""]"
+(0|1)(0|1)*,(0*1+)*(1*0+)*,"positive example: [""01"", ""110"", ""00110"", ""111000"", ""0101010""], negative example: ["""", ""0"", ""1"", ""000"", ""111"", ""001001"", ""110011""]"
+(0(0*|1+0)*)|(1(1*|0+1)*),1*(0|1)*1*|0*(0|1)*0*,"positive example: [ ""1"", ""0"", ""11"", ""00"", ""101"", ""110"", ""0110"", ""1111"", ""0000"", ""1001"" ],  
+negative example: [ ""2"", ""01a"", ""b10"", ""12"", ""a"", ""b"", ""abc"", ""10a1"", ""0b1"", ""1c0"" ]"
+(a|(b*bb))*,(a*(bb)*b*a*)*,"positive example: ["""", ""a"", ""bb"", ""abba"", ""aaabbba"", ""aabbaa"", ""bbaa"", ""aabbbaa""],  
+negative example: [""b"", ""aba"", ""abab"", ""ba"", ""aabab"", ""bbaab"", ""abbbaab""]"
+(0*10*10*)*|0*,0*(0*1*)*0*,"positive example: [""0"", ""01"", ""001"", ""0001"", ""010"", ""0010"", ""00010"", ""000"", ""0000"", ""00000""], negative example: [""1"", ""10"", ""100"", ""110"", ""101"", ""011"", ""0011"", ""111"", ""1010"", ""1100""]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1|0|1+(0*1*)*1+|0+(1*0*)*0+)*,"positive example: [ ""1"", ""0"", ""10"", ""01"", ""110"", ""001"", ""1010"", ""0101"", ""111000"", ""000111"", ""101010"", ""010101"", ""11001100"", ""00110011"", ""11110000"", ""00001111"", ""10101010"", ""01010101"" ], negative example: [ """", ""2"", ""a"", ""11a"", ""00b"", ""1a0"", ""0b1"", ""101a0"", ""010b1"", ""110a011"", ""001b100"", ""111a000"", ""000b111"", ""1010a1010"", ""0101b0101"" ]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b)|((a|b)a*ba))*,"positive example: [ab, aba, ba, baba, abab, ababa, baaab, aabaa, aabbaa, ababab],  
+negative example: [a, b, aa, bb, aaa, bbb, abba, baaa, aabb, bbaa]"
+(ab|ba)*,((aa|bb|ab|ba)?)*,"positive example: [aa, bb, ab, ba, aabb, abba, baba, abab, aaaa, bbbb], negative example: [a, b, aab, bba, aba, bab, abc, aabba, bbaab]"
+a+b,a*b,"positive example: [ab, aab, aaab, b], negative example: [ba, aba, aaa, bb]"
+(a*ba*b)*a*ba*,a*b(ba*b+|a*)*,"positive example: [ab, aab, baba, aabba, aababaa], negative example: [ba, bba, a, b, aaabbb]"
+(a|b)*(bab)(a|b)*,(a|b)*|(a|bab)*(b|aba)*,"positive example: [a, b, aa, ab, ba, bb, bab, aba, aab, baa, baba, abab, aaba, baab, bbab, abaa, babaab, abaaba],  
+negative example: [ac, bc, abc, bac, bca, abac, babaac, abaaac, bbaa, aabab, baabac, abaabb, bbaab, aabac, babac, abaabc]"
+(0(0*|1+0)*)|(1(1*|0+1)*),1*|0*|1+(0+1+)*|0+(1+0+)*,"positive example: [""1"", ""0"", ""11"", ""00"", ""101"", ""010"", ""1110"", ""0001"", ""111010"", ""000101""],  
+negative example: ["""", ""01"", ""10"", ""011"", ""100"", ""1010"", ""0101"", ""1100"", ""0011"", ""10101""]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa+,"positive example: [abaaa, aaaaa, baaaaa, abbaaaaa], negative example: [a, b, aa, bb, aab, bba, aabba, bbaa]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa*,"positive example: [aa, baa, abaaa, bbaaa, aaaaa], negative example: [a, b, aba, bba, abba]"
+(a*ba*b)*a*ba*,((a|(bb))*b[a]*)*,"positive example: [a, b, aa, bb, aba, bba, abba, aabba, baaa, bbaaa], negative example: [ab, ba, baba, aabb, bbaa, abab, bbaab, aabab]"
+(ab|ba)*,(a|b)*(ab|ba|aa|ab)*,"positive example: [a, b, aa, ab, ba, aab, baa, aba, bba, aabb, bbaa, abab, baba, aaa, bbb, aaba, baab],  
+negative example: [ac, bc, abc, bac, aac, bbc, cab, cba, ccc, aabbc, bbaac, ababc, babac, aaac, bbbc]"
+0(0|1)*0,0|(0|1)*|0,"positive example: [0, 00, 01, 000, 010, 001, 10, 11, 101, 110], negative example: [2, 3, 12, 20, 21, 22, 102, 120, 201]"
+(ab|ba)*,(ab|ba)*(aa|bb)?,"positive example: [ab, ba, abab, baba, aa, bb, abaa, babb, ababaa], negative example: [a, b, aba, baa, abb, bba, abba, baab, aab, bbaa]"
+(a*ba*b)*a*ba*,(a*)b+((a*)|(b(a*)b))+(a*),"positive example: [""ab"", ""aab"", ""abab"", ""aabb"", ""aaabbb"", ""ba"", ""bbaa"", ""bab"", ""bbab""],  
+negative example: [""a"", ""b"", ""baa"", ""abba"", ""babab"", ""aaa"", ""bbb"", ""aba"", ""bba""]"
+(a*ba*b)*a*ba*,a*(b(a*ba*b)*)*a*,"positive example: [""a"", ""aa"", ""b"", ""aba"", ""aabaa"", ""baab"", ""aaabaaa"", ""babab"", ""aababaa""],  
+negative example: [""abab"", ""ba"", ""aaba"", ""bb"", ""abba"", ""baa"", ""aabbaa"", ""baba"", ""aabba""]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*(1+0+)*|1*(0+1+)*,"positive example: [0, 1, 00, 11, 01, 10, 000, 111, 010, 101, 0011, 1100],  
+negative example: [2, 3, 012, 102, 0012, 1103, 0110, 1001, 00011, 11100]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1+|0+)*,"positive example: [1, 0, 11, 00, 101, 010, 1111, 0000, 1100, 0011],  
+negative example: [2, 01a, b10, 123, abc, 1a0, 0b1, 10c, a1b, c0d]"
+b*a*,(a+|b*a*)+,"positive example: [""a"", ""aa"", ""ba"", ""ab"", ""bba"", ""aab"", ""b"", ""bb"", ""baba"", ""aaab""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""bac"", ""aac"", ""bbca"", ""aabbc"", ""bca"", ""abca""]"
+(ab|ba)*,(aa|ab|ba|bb)*,"positive example: [aa, ab, ba, bb, aaaa, abab, baba, bbbb, aabbaa, abbabb], negative example: [a, b, aab, bba, abbaa, baaab, aabab, bbbaa]"
+(a*ba*b)*a*ba*,(a|(ba*b))*b+a*,"positive example: [ab, b, baab, baaa, aab, baabab, baaaaa], negative example: [a, aa, aba, baba, baaab, abab, aaba]"
+(a*ba*b)*a*ba*,a*b+(bb*|a*)*,"positive example: [""ab"", ""aab"", ""bb"", ""abb"", ""aabb"", ""bbbb"", ""aabbb"", ""abbb"", ""aabbbbb"", ""aabbaa""],  
+negative example: [""ba"", ""a"", ""b"", ""aba"", ""bab"", ""aaba"", ""baab"", ""bbba"", ""abab"", ""baba""]"
+(a|b)(a|b)+aaa+,(a*|b*)*(a)(a)(a)(a*),"positive example: [aaaa, aaaaa, bbaaaa, aaa, aaaabaaa], negative example: [bbb, aaab, bbaa, aab, baa]"
+(a|(b*bb))*,((b(b*))|a)*,"positive example: [""a"", ""bb"", ""ab"", ""bba"", ""abba"", ""aaaa"", ""bbbb"", ""abab"", ""baba""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aab"", ""bac"", ""bbca"", ""abac"", ""baaac""]"
+a+b,(a|b)*a*b,"positive example: [ab, aab, babb, aaab, bbab], negative example: [ba, aba, bba, aaba, abab]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba*)*,"positive example: [aba, baba, aabba, ababab, bbaaabba], negative example: [aa, bb, aab, bbb, ababbaa]"
+(a|(b*bb))*,((bb*)*a*)*,"positive example: [bb, a, bba, bbbaa, bbaaa], negative example: [baa, ab, baba, aab, bbaab]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)(a|b)*(aaa)*,"positive example: [aaa, baa, aab, bba, aaaa, baaa, aabaa, bbaaa], negative example: [aa, bb, ab, ba, aab, bba, aaaaab, bbbaaa]"
+b*a*,a+b*a*|b*a*,"positive example: [aa, baa, aab, bbaa, a], negative example: [abab, baba, aabb, bb, aba]"
+(a*ba*b)*a*ba*,(a|b(bb)*)*,"positive example: [a, b, abb, bbb, aabbb, bbba, abbba], negative example: [aa, ab, ba, baba, abab, bbaa, abbbba]"
+(a*ba*b)*a*ba*,(a*ba*b*)*,"positive example: [ab, aab, aabab, aabaaab, baaab], negative example: [a, b, aa, bb, aba]"
+(ab|ba)*,(ab|ba)*(aa|bb)*,"positive example: [ab, ba, aa, bb, abaa, babb, abba, baaa, bbaa, ababaa], negative example: [a, b, aba, bab, aab, bba, abab, baba, aaab, bbba]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0+0+0)|(1+0+0)|(0+1+0)|(0+0+1)|(1+1+0)|(0+1+1)|(1+0+1)|(1+1+1)|(1+1)|(0+0)|(1+0)|(0+1),"positive example: [000, 100, 010, 001, 110, 011, 101, 111, 11, 00, 10, 01], negative example: [0, 1, 0000, 1111, 1010, 0101, 1100, 0011]"
+(a|(b*bb))*,(b(b*)|a)*,"positive example: [""a"", ""bb"", ""ab"", ""bba"", ""aab"", ""bbbb"", ""abab"", ""bbaa""], negative example: ["""", ""c"", ""ac"", ""bc"", ""abc"", ""bac"", ""bbac"", ""aabbc""]"
+(a|(b*bb))*,(a*|(b*bb*)*)*,"positive example: [ ""a"", ""aa"", ""b"", ""bb"", ""bbb"", ""ab"", ""aab"", ""ba"", ""bba"", ""abba"", ""aaabbb"", ""aabbbbaa"" ], negative example: [ ""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""bbc"", ""abac"", ""aabbc"", ""abbbc"", ""aabcc"", ""abca"", ""aabcb"" ]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1*0*1*)*(0*1*0*)*,"positive example: [ ""1010"", ""1100"", ""0011"", ""0000"", ""1111"", ""0101"", ""1001"", ""0110"", ""101010"", ""001100"" ],  
+negative example: [ ""2"", ""a"", ""01a"", ""10b"", ""1102"", ""001a"", ""10101b"", ""01102"", ""a1010"", ""b0011"" ]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1*0*1*)+(0*1*0*),"positive example: [""101"", ""010"", ""1001"", ""0110"", ""110011""],  
+negative example: [""0011"", ""1100"", ""000111"", ""111000"", ""1010101""]"
+(a|baa)*,(a)*(b|aa|a*)*,"positive example: [a, aa, b, ab, aab, aaa, ba, baa, aaaa, abaa], negative example: [c, ac, bc, abc, aac, bac, aabc, abac, aabb, abab]"
+a+b,(a|b)*,"positive example: [a, b, aa, ab, ba, bb, aab, aba, bba, aabb], negative example: [c, ac, bc, abc, aac, bbc, aabcc]"
+(ab|ba)*,((a|b)(a|b))*,"positive example: [aa, bb, ab, ba, aaaa, abab, baba, bbaa], negative example: [a, b, aba, bba, aab, bbb, aabb, abba]"
+a+b,[ab]*[a][b][ab]*,"positive example: [ab, aab, baba, aaab, abab], negative example: [b, bb, bbb, a, aaa]"
+(a*ba*b)*a*ba*,(a|b|bb)+,"positive example: [a, b, bb, ab, ba, bba, abb, aab, bbb, abba],  
+negative example: [c, aa, bbbbb, aaa, baba, abab, abbb, baaa, abbba, bbbaa]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)*(0|1)*(0|1)*,"positive example: [0, 1, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111],  
+negative example: [2, 3, 12, 20, 21, 22, 102, 120, 201, 210, 220, 221]"
+a(a|b)a(a|b)*,a(a|b)+a(a|b)*,"positive example: [aaaa, abba, aabaa, ababa, aabba], negative example: [aa, ab, aaa, aba, aab]"
+(a|b)*(bab)(a|b)*,(bab)*(a|b)*(bab)*,"positive example: [bab, baba, babab, bababab, a, b, ab, ba, babababab], negative example: [aa, bb, aab, bba, aaa, bbb, abab, babaab]"
+(a|(b*bb))*,(((b*bb*)|a)?)*,"positive example: ["""" , ""a"" , ""b"" , ""bb"" , ""bbb"" , ""ab"" , ""bba"" , ""bbba"" , ""abbb"" , ""aabbb""], negative example: [""c"" , ""baa"" , ""abab"" , ""baba"" , ""aaab"" , ""bbac"" , ""bca"" , ""acb"" , ""abc"" , ""bac""]"
+(a|baa)*,(a)*((b|aa)*a*)*,"positive example: [""a"", ""aa"", ""aaa"", ""b"", ""ab"", ""aab"", ""aaba"", ""ba"", ""bba"", ""aaabaa""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""bb"", ""aabb"", ""abab"", ""baaab"", ""aaabbb""]"
+a+b,a+b+,"positive example: [aaab, aabbb, aabb, abbb], negative example: [ab, baa, a, b]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)(a|b)*aaa*,"positive example: [aaa, baaa, aabaaa, bbaaaaa], negative example: [a, b, ab, ba, aab, bba, aaab, bbba]"
+(a|b)(a|b)+aaa+,"(a|b)*(a|b)*a{3,}","positive example: [aaa, baaa, ababaaa, bbaaaaa, aabbaaa], negative example: [aa, ba, abba, bbab, aabba]"
+(a*ba*b)*a*ba*,b*((a|b)*(a|b)*)*,"positive example: [b, bb, bbb, a, aa, ab, ba, bba, bab, aab, baa, abab, baba, bbaa, aaab, bbba, abba, babaab, bbaabb, ababab],  
+negative example: [c, ac, bc, abc, bca, cab, bacc, aabbc, abac, bbcac, abbc, caab, cbba, bccab, abcc, bcaa, abcb, aacb, bacb, abcabc]"
+(0|1)(0|1)*,(1|0)*|(0|1)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""001"", ""110"", ""0101"", ""1010"", """", ""000"", ""111""],  
+negative example: [""2"", ""a"", ""01a"", ""b10"", ""0012"", ""110b"", ""0101c"", ""1010d"", "" "", ""00e"", ""11f""]"
+(a*ba*b)*a*ba*,(a|ab)*(a|ba)*(b|a)*,"positive example: [a, ab, aba, abab, aab, ba, baa, aabb, abba], negative example: [b, bb, bbb, aabbb, abababab, aaabbb, ababab, baba]"
+a+b,a*b+,"positive example: [""ab"", ""aab"", ""aaab"", ""b"", ""bb"", ""aabb""], negative example: [""a"", ""ba"", ""aaba"", ""bba"", ""abab""]"
+(a|baa)*,(a|b(aa*))*,"positive example: [a, ba, baa, aaa, aba, baaa, aaba, abaa], negative example: [b, ab, bb, aab, bab, bba, abab, babb]"
+a+b,a*b*,"positive example: [""a"", ""b"", ""aa"", ""bb"", ""aab"", ""abb"", ""aabb""], negative example: [""ba"", ""aba"", ""bab"", ""abab"", ""baba""]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(1+0+)*1*,"positive example: [""0"", ""1"", ""01"", ""001"", ""10"", ""100"", ""010"", ""0001"", ""111"", ""0111"", ""00111"", ""0000111""], negative example: ["""", ""2"", ""12"", ""021"", ""1012"", ""0012"", ""1102"", ""00012""]"
+(ab|ba)*,((ab)|(ba))*|(a|b)(a|b)*,"positive example: [ab, ba, abab, baba, a, b, aa, bb, aba, bab, aab, bba],  
+negative example: [abc, bac, aaab, bbb, aaa, bbb, abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab"
+(a|(b*bb))*,(a|(b*bb*))*,"positive example: [""a"", ""bb"", ""abba"", ""bbbaa"", ""aaabbb""], negative example: [""b"", ""ba"", ""abab"", ""bbbaba"", ""aabab""]"
+(a|(b*bb))*,(ab|ba|b|a)*,"positive example: [ab, ba, b, a, abba, baba, aab, baa, abab, bbaa], negative example: [aaab, bbb, ababab, babaab, aabba, bbaab, aaaa, bbbb, abbb, baaa]"
+0*10*(10*10*)*,((0|1))*,"positive example: [0, 1, 01, 10, 0011, 1100, 010101], negative example: [2, 00a, 1b, 0112, 101#]"
+(a|b)(a|b)+aaa+,(a|b)*(aaa),"positive example: [aaa, aaaa, baaa, abaaa, bbaaa], negative example: [aa, ab, ba, bb, aba]"
+(a|(b*bb))*,(bb)*(a|b)*(bb)*,"positive example: [bb, bba, bbab, a, ab, bbb, bbba, bbbab], negative example: [ba, aba, baba, aa, aab, bab, bbbb, bbbba]"
+(ab|ba)*,(a+b|b+a)*,"positive example: [ab, ba, abab, baba, abba, baab, aabba, bbaab], negative example: [aa, bb, aaa, bbb, aabb, bbaa, abaab, babba]"
+a+b,(a|b)*(ab),"positive example: [ab, aab, bbab, abab, aabbab], negative example: [a, b, aa, bb, aba]"
+(ab|ba)*,(aa|ab|ba|ba)*,"positive example: [aa, ab, ba, aaaa, abab, baba, aaab, baaa, aaba, abaab], negative example: [a, b, bb, aab, abb, baa, bbb, aabba, abbb, baabba]"
+a+b,(aa*b)*,"positive example: [aa, aab, aaaaab, aaaabaaaab], negative example: [b, ab, ba, aabba]"
+(a|(b*bb))*,(a|((b|bb)+))*|a*,"positive example: [""a"", ""aa"", ""b"", ""bb"", ""ab"", ""bba"", ""bbbb"", ""abbb"", ""aab"", ""bbba""],  
+negative example: [""c"", ""ac"", ""baa"", ""bbbca"", ""abac"", ""bbbc"", ""aabbc"", ""bca"", ""abbbd"", ""aabc""]"
+0(0|1)*0,0*(0*1*)*0*,"positive example: [""0"", ""01"", ""001"", ""000"", ""010"", ""0010"", ""0000"", ""00100""],  
+negative example: [""1"", ""10"", ""100"", ""101"", ""110"", ""111"", ""0110"", ""1001""]"
+a+b,(a*)+b,"positive example: [ab, aab, aaab, b, aaaaaab], negative example: [ba, aba, aaba, aa, aaaa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(01)*1*0)*|(1*(10)*0*1)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""0011"", ""1100"", ""0101"", ""1010"", ""000111"", ""111000"", ""010101"", ""101010""],  
+negative example: [""011"", ""100"", ""0010"", ""1101"", ""00010"", ""11101"", ""0100"", ""1011"", ""00110"", ""11001""]"
+(0*10*10*)*|0*,0*(0*1+)*0*,"positive example: [""0"", ""1"", ""01"", ""001"", ""0001"", ""010"", ""0010"", ""00010"", ""000010"", ""0000010""],  
+negative example: ["""", ""2"", ""a"", ""10"", ""11"", ""101"", ""110"", ""1001"", ""1010"", ""1100""]"
+(a|b)(a|b)+aaa+,(a|b)*(aaa)+,"positive example: [aaa, aaaaa, baaa, aabaaa, bbaaa], negative example: [a, b, aa, ab, ba, bb, aab, aba, abb, baa, bab, bba, bbb]"
+(a|b)(a|b)+aaa+,(a|b)*(aaa)*,"positive example: [a, b, aaa, abaaa, bbaaa, aabbaaa, bbbaaa], negative example: [aa, bb, aab, bba, abab, baba, aabbaa]"
+(ab|ba)*,(bb|aa|(ab|ba)*)*((aa)*|(bb)*|(ab)*|(ba)*)*,"positive example: [bb, aa, abba, baba, aaaa, bbbb, abab, babaabba, aabbaa, bbaabb], negative example: [ab, ba, aab, bba, aba, bab, aabb, bbaa, abbb, baaa]"
+(ab|ba)*,(ab)*(ab|ba|aa|ab)*,"positive example: [ab, abab, abba, abaa, ababab, ababba, ababaa, abababab],  
+negative example: [a, b, aba, baa, bab, baba, aab, bba]"
+(a|b)*baa(a|b)*b,([ab]*(baa)*[ab]*)*b,"positive example: [ab, baaab, abaabaaab, baa, abaaab, bbaaab], negative example: [a, b, aa, bb, abab, baaa, abaabaaa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(1+0+)*|1*(0+1+)*,"positive example: [""0"", ""1"", ""00"", ""11"", ""01"", ""10"", ""000"", ""111"", ""010"", ""101"", ""0011"", ""1100"", ""0101"", ""1010""],  
+negative example: [""2"", ""a"", ""01a"", ""1b0"", ""00c"", ""d11"", ""e0f"", ""g1h"", ""i01"", ""10j"", ""k00"", ""l11"", ""m01"", ""n10""]"
+b*a*,(a|b)*,"positive example: [a, b, aa, ab, ba, bb, aab, bba, abab, baba], negative example: [c, ac, bc, abc, aac, bbc, ca, cb, cba, acb]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)+aaa*,"positive example: [baaaa, aabaaa, bbaaaaa], negative example: [aa, bba, aabaa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|1*(0*1*)*1+|0*(1*0*)*0+,"positive example: ["""", ""0"", ""1"", ""000"", ""111"", ""01"", ""0011"", ""000111"", ""1010"", ""0101""],  
+negative example: [""2"", ""01a"", ""10b"", ""00112"", ""abc"", ""0a1"", ""1b0"", ""a01"", ""b10"", ""001a1""]"
+(a*ba*b)*a*ba*,b|(b|bbb|bbab|babb|a)*,"positive example: [b, bb, bbb, bbab, babb, a, ab, abb, abab, ababb, bba, bbba, bbbab, bbbabb, bab, baba, babab, bababb],  
+negative example: [baa, abaa, bbaa, bbbaa, bbbba, abbaa, babaa, bbbaaa, abbaaa, bbbaaaa]"
+001|1010|110,1*0*01*0*,"positive example: [100, 0010, 11000, 000, 1000], negative example: [101, 0101, 111, 0001, 1101]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|0((11*0)|0)*|1((00*1)|1)*,"positive example: [""0"", ""00"", ""000"", ""1"", ""11"", ""111"", ""010"", ""001"", ""100"", ""110"", ""101"", ""011"", ""0011"", ""1100"", ""1010"", ""0101""],  
+negative example: [""01"", ""10"", ""0010"", ""1101"", ""1011"", ""0110"", ""0001"", ""1110"", ""0100"", ""1001""]"
+0*10*(10*10*)*,((0*)1(0*))+,"positive example: [""101"", ""010"", ""1001"", ""0001000"", ""110001""], negative example: [""0"", ""1"", ""00"", ""11"", ""01010""]"
+b*a*,a+|(a|b)*,"positive example: [""a"", ""aa"", ""aaa"", ""ab"", ""ba"", ""aab"", ""bba"", ""aabb""], negative example: ["""", ""b"", ""bb"", ""bbb"", ""aba"", ""bab"", ""abc"", ""bac""]"
+(a|b)(a|b)+aaa+,b|(a*b*)*aaa,"positive example: [b, aaa, aabaa, baaa, aabbaaa], negative example: [ab, ba, aab, bba, aabab]"
+(a*ba*b)*a*ba*,(a*ba*a*)*,"positive example: [ba, aba, aabaa, baba, aababaa], negative example: [a, ab, baa, aab, aabba]"
+(ab|ba)*,((aa)*|(bb)*)((aa)*|(bb)*)*|(ba|ab)(ab|ba)*,"positive example: [aa, bb, aaaa, bbbb, ba, ab, baab, abba, aabbaa, bbaabb],  
+negative example: [a, b, aba, bab, aab, bba, aabab, bbaba, aabbb, bbaaa]"
+a(a|b)a(a|b)*,(a)(a|b)*,"positive example: [a, aa, ab, aaa, aab, aba, abb], negative example: [b, ba, bb, baa, bab, bba, bbb]"
+a+b,(a|b)*b,"positive example: [b, ab, bb, aab, abb, bab, bbb, aaab, aabb, abab, abbb, baab, babb, bbab, bbbb], negative example: [a, aa, aaa, aaaa, baaa, abaa, aaba, aaab, bbaa, baba, baab, abba, abab, aabb, bbba, bbab, babb, abbb]"
+(a|b)*baa(a|b)*b,[ab]*[baa][ab]*b,"positive example: [baab, aabab, baaaab, abbaab], negative example: [abab, bba, aaa, baba]"
+(a|b)*baa(a|b)*b,(a|ba*)+b,"positive example: [ab, bab, baaab, aab, baab], negative example: [b, a, aa, bba, baaa]"
+(ab|ba)*,((ab)|(ba))*((a|b)(a|b))*,"positive example: [ababaa, babaab, abba, baab, ababab], negative example: [a, b, aba, baa, ababa]"
+(ab|ba)*,(ab|aa|bb|ba)*(a+b)*,"positive example: [abaa, bbaa, aabba, baaab, ababab], negative example: [abc, aabcc, bbaaac, abbaaab, aabbaabbc]"
+a+b,a+b*,"positive example: [a, aa, aaa, ab, aab, aabb, aabbb], negative example: [b, bb, bbb, ba, baa, baaa, abab]"
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*b))|((a|b)a*ba))*,"positive example: [""ab"", ""ba"", ""aab"", ""aba"", ""baa"", ""bb"", ""abab"", ""baba"", ""aaab"", ""aaba""],  
+negative example: [""a"", ""b"", ""aa"", ""bbba"", ""abba"", ""babab"", ""aaa"", ""bbb"", ""abbba"", ""babaa""]"
+0*10*(10*10*)*,0*1(11)*(0|1)*,"positive example: [01, 0111, 01110, 0111101, 00011101], negative example: [1, 10, 1110, 0000, 111]"
+((a|b)a*ba)*(((a|b)a*b)?),(a?)|((a|b)a*b(a?))*,"positive example: [""a"", ""b"", ""aa"", ""ab"", ""ba"", ""aaa"", ""aab"", ""aba"", ""bba"", ""aaab"", ""abab"", ""baba"", ""aabba"", ""ababa"", ""bbaba""], negative example: ["""", ""bb"", ""aabb"", ""abba"", ""bab"", ""bbaa"", ""bbab"", ""baab"", ""abaa"", ""babb"", ""aaba"", ""baaab""]"
+b*a*,a(a)*|(ab)*b*a*,"positive example: [a, aa, aaa, ab, abb, aba, aab, abab, aabb], negative example: [b, ba, baa, abba, ababab, baba, abaa, aabba]"
+(a|baa)*,a*(b+aaa*)*,"positive example: [""a"", ""b"", ""aa"", ""ab"", ""ba"", ""aaa"", ""aab"", ""aba"", ""baa"", ""aaaa"", ""aaab"", ""aaba"", ""abaa"", ""baaa"", ""aaaaa"", ""aaaab"", ""aaaba"", ""aabaa"", ""abaaa"", ""baaaa""],  
+negative example: [""c"", ""ac"", ""bc"", ""aac"", ""abc"", ""bac"", ""aaac"", ""aabc"", ""abac"", ""baac"", ""aaaac"", ""aaabc"", ""aabac"", ""abaac"", ""baaac"", ""aaaaac"", ""aaaabc"", ""aaabac"", ""aabaac"", ""abaaac"", ""baaaac""]"
+(ab|ba)*,(bb|aa|aabb|abab|abba|baba|bbaa|baab)*(aa|bb|ab|ba)*,"positive example: [bbaa, aabb, ababab, bbaabb, aaabba, babaab, bbaaabba],  
+negative example: [aaa, bbb, aabbaa, bbbaaa, abaabba, bbabab, aababba]"
+(a|b)(a|b)+aaa+,(((a|b)+)+)aaa,"positive example: [aaa, baaa, abaaa, bbaaa, aabaaa, abbaaa], negative example: [aa, ba, aba, bba, aaba, abba]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*(b|ba))*,"positive example: [ab, aaab, bba, aba, aabba], negative example: [baa, baba, aabb, bbaa, aabab]"
+(a|(b*bb))*,(a|b|bb)*,"positive example: [a, b, bb, ab, ba, bba, abb, aab, bbb, aa, aabb, baba],  
+negative example: [c, ac, bc, abc, bbc, aabc, bbbcc, aaabbbccc]"
+(0*10*10*)*|0*,(0*(1+0*1+)*0*)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""001"", ""100"", ""010"", ""101"", ""0000"", ""1111"", ""0101"", ""1010"", ""001100"", ""110011""],  
+negative example: [""2"", ""12"", ""21"", ""0112"", ""120"", ""0012"", ""1102"", ""1020"", ""01121"", ""1201"", ""00112"", ""11021""]"
+1?(01)*0?,((1)?(0)?)*,"positive example: ["""", ""0"", ""1"", ""10"", ""01"", ""1010"", ""0101"", ""1100"", ""0011""], negative example: [""2"", ""00a"", ""11b"", ""abc"", ""10101x"", ""01010y""]"
+(ab|ba)*,((ab)*(ba)*)*|abb*a*b*ba,"positive example: [abba, ababba, abbaba, abababba, abbaabba, ababababba, abbabba, abababababba], negative example: [a, b, aba, bba, abab, bab, ababab, baba, abababab, babab]"
+a+b,a|b*a*b,"positive example: [a, ab, aab, aaab, b, ba, bba, bbba], negative example: [aa, bb, aba, baa, abab, bbaa]"
+b*a*,(a|b)*a(a|b)*|b*a*,"positive example: [a, b, aa, ab, ba, bb, aaa, aab, aba, baa, bba, bbb], negative example: [ε, b, bb, bbb, abab, baba, abba, baab]"
+(a|(b*bb))*,(a|bb*)*,"positive example: [a, aa, abb, bba, abba, b, bb, bbb, ab, aba, abbb], negative example: [c, ac, bca, abac, bbbca, abc, abcb, abbc, abbbca]"
+(a*ba*b)*a*ba*,(a*)b((a*)|(b+(a*)+b))+(a*),"positive example:[""ab"", ""aab"", ""abab"", ""aabb"", ""aaabbb"", ""abba"", ""abbba"", ""aabbaa""], negative example:[""b"", ""a"", ""ba"", ""aba"", ""baa"", ""bb"", ""bab"", ""aaba""]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(1*0+1+)*|(0*1+0+)*,"positive example: ["""", ""0"", ""1"", ""000"", ""111"", ""10"", ""01"", ""110"", ""001"", ""1010"", ""0101"", ""111000"", ""000111"", ""101010"", ""010101""],  
+negative example: [""2"", ""a"", ""01a"", ""10b"", ""0112"", ""101c"", ""000a1"", ""111b0"", ""abc"", ""120"", ""210"", ""a0b1"", ""1a0b""]"
+(ab|ba)*,(ab(ab)*)*((a|b)(a|b))*,"positive example: [abab, ababab, abababab, aabb, ababaa, ababbb, abababaa, abababbb],  
+negative example: [a, b, aba, abb, baa, bab, ababa, ababb, abba, abbb]"
+(a|b)(a|b)+aaa+,aaa(a)*|(a|b)*baaa(a)*,"positive example: [aaa, aaaa, aaabaaa, baaa, aabaa, baaaa], negative example: [aa, ab, baa, aab, ba, aba]"
+(a|baa)*,(a|(a*b*(aa)a*)*)*,"positive example: [""a"", ""aa"", ""aaa"", ""aabaa"", ""aabaaa"", ""aabaaaa"", ""aabbaa"", ""aabbaaa"", ""aabbaaaa"", ""aabbaabaa""],  
+negative example: [""b"", ""ab"", ""ba"", ""aba"", ""bab"", ""aaba"", ""aabab"", ""aabba"", ""aabbba"", ""aabbbaa""]"
+(a|b)(a|b)+aaa+,(aa|ab|ba|bb)*(a|b)*aaa,"positive example: [aaa, bbaaa, aabaaa, abbaaa, bbaaabaaa], negative example: [aa, ab, ba, bb, aab, bba, abab, baba]"
+(a|baa)*,a*|(a|b)*aa,"positive example: [ ""a"", ""aa"", ""aaa"", ""aa"", ""baa"", ""abaa"", ""bbaa"" ], negative example: [ ""b"", ""ab"", ""ba"", ""aba"", ""bba"", ""abb"", ""bab"" ]"
+a+b,a|a*b,"positive example: [a, b, ab, aab, aaab], negative example: [ba, aba, aaba, baa, bb]"
+(ab|ba)*,(ab|ba?)*(aa|ab|bb|ba)*,"positive example: [ab, baa, abba, ababaa, babaab], negative example: [a, b, aba, bbba, aabbaa]"
+001|1010|110,001|110|10101|1010,"positive example: [001, 110, 10101, 1010], negative example: [000, 111, 1011, 1001]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*ba)|((a|b)a*b))*,"positive example: [aab, bab, aaba, baba, aabaa, babab, aabba, babaab],  
+negative example: [aa, bb, aba, bba, abab, bbaa, abba, bbbaa]"
+(a*ba*b)*a*ba*,(a*b+a*)*,"positive example: [ab, aab, baa, aabbaa, b, aababaa], negative example: [aba, baba, aabab, aaabbb, aabbaab]"
+(a*ba*b)*a*ba*,([ab](a)*(bb)*)*,"positive example: [aa, ab, aabb, bbaa, ababbaa], negative example: [baa, abab, aab, bba, abbaa]"
+/#(/|a|b|##*(a|b))*##*/,/#*(a|b|/|(#*(a|b)))*#*/,"positive example: [""#a#"", ""##b##"", ""#a/b#"", ""##a#b##"", ""#b/a#"", ""###""],  
+negative example: [""a#b"", ""#a#b"", ""a/b"", ""ab"", ""##a##b"", ""#a#b#""]"
+(a|b)(a|b)+aaa+,(a|b)+aaa,"positive example: [aaaa, baaa, abaaa, bbaaa], negative example: [a, b, aa, bb, aab, bba, aba, bbb]"
+(ab|ba)*,((aa)*|(bb)*)(aa|bb|ab|ba)*,"positive example: [aa, bb, aaaa, bbbb, aabb, bbaa, abab, baba, aabbaa, bbaabb],  
+negative example: [a, b, aba, bab, aab, bba, abba, baab, aabab, bbabba]"
+(a*ba*b)*a*ba*,(a*|b?)+,"positive example: [""a"", ""b"", ""aa"", ""ab"", ""ba"", ""bb"", ""aab"", ""aba"", ""bba"", ""aaa"", ""bbb"", ""aabb"", ""abab"", ""baba""], negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""bbc"", ""abac"", ""babc"", ""aabc"", ""abbc""]"
+(a|b)(a|b)+aaa+,(a|b)+(aaa)+,"positive example: [baaa, aaaaa, bbaaa], negative example: [aa, ab, bba]"
+(ab|ba)*,(aa|bb|ab|ba)*,"positive example: [aa, bb, ab, ba, aaaa, bbbb, abab, baba, aabb, bbaa],  
+negative example: [a, b, aab, bba, abaab, bbaab, abc, aabbc, abbaa, bbaab]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((1+0*1+)*)|((0+1*0+)*)|(0|1)*,"positive example: [ ""101"", ""010"", ""1101"", ""0010"", ""0"", ""1"", ""111000"", ""000111"", ""101010"", ""010101"" ],  
+negative example: [ ""2"", ""a"", ""10a"", ""01b"", ""abc"", ""120"", ""0112"", ""101a"", ""0b1"", ""1c0"" ]"
+(a*ba*b)*a*ba*,a*b+(a|ba*b)*,"positive example: [ab, aab, b, aaab, baaab], negative example: [ba, aba, aaba, bba, aabaa]"
+0(0|1)*0,(0*)(0*1*)*(0*),"positive example: [""0"", ""01"", ""001"", ""0001"", ""00001"", ""000011"", ""0000110"", ""00001100""],  
+negative example: [""1"", ""10"", ""11"", ""101"", ""110"", ""111"", ""1010"", ""1101""]"
+(a|baa)*,[a]*[baa]*,"positive example: [a, aa, baa, aabaa, aaa, baaa, aabaaa], negative example: [b, ab, aba, ba, bb, bba, aab]"
+(a*ba*b)*a*ba*,(((a*)*(b*))*(b*))+b+(((a*)*(b*))*(b*)),"positive example: [""ab"", ""aab"", ""bb"", ""abab"", ""aabb"", ""babb"", ""aaabbb"", ""ababab""],  
+negative example: [""a"", ""b"", ""ba"", ""aba"", ""bab"", ""aaab"", ""bbba"", ""abba""]"
+(a|(b*bb))*,(a|(b*b)*)*,"positive example: [a, b, bb, ab, bbb, aba, bbba, abbb, bbbbb, abab], negative example: [c, aa, ba, abb, bba, ababab, bbbaa, aab, baba, abba]"
+(ab|ba)*,(((aa)|(bb)|(ab)|(ba))?)*,"positive example: [aa, bb, ab, ba, aabb, abba, bbaa, aaab, baba, aabbaa],  
+negative example: [a, b, aba, bab, aab, bba, aaa, bbb, abab, babaab]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0+(1*0)*)*|(1+(0*1)*)*,"positive example: [0, 1, 00, 11, 010, 101, 0000, 1111, 01010, 10101],  
+negative example: [01, 10, 001, 110, 0101, 1010, 0011, 1100, 01011, 10100]"
+(a|b)*baa(a|b)*b,(a|b)*|(baa)+b,"positive example: [a, b, aa, ab, ba, baa, baaa, baaab, baaaba, baaabaa], negative example: [bb, aba, baba, baab, baaaab, baaabb, baaabab]"
+(a|b)(a|b)+aaa+,(aa|ab|ba|bb|b|a)*(aaa)a*,"positive example: [aaaa, aaaaa, baaa, abaaa, bbaaa], negative example: [a, b, ab, ba, bb]"
+0(0|1)*0,(0)*(0*1*)*(0)*,"positive example: [""0"", ""01"", ""001"", ""0001"", ""0011"", ""000011"", ""000"", ""0000""],  
+negative example: [""1"", ""10"", ""110"", ""101"", ""0110"", ""1001"", ""111"", ""1010""]"
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*ba)|((a|b)a*b))*)?,"positive example: [""aab"", ""baab"", ""aabaab"", ""baaab"", ""abab"", ""bab""], negative example: [""aa"", ""bb"", ""aba"", ""baa"", ""a"", ""b""]"
+(a|b)(a|b)+aaa+,(ab|aa|bb|ba)*aaa*,"positive example: [aaabaa, bbaaaa, ababaaa, aaaaa, bbaaabaaa], negative example: [abab, bbaa, abba, aab, baba]"
+(a|baa)*,(a*)+(a*|(b+a+a))+(a*),"positive example: [""aa"", ""aaa"", ""abaa"", ""aabaa"", ""baa""], negative example: [""b"", ""bb"", ""aba"", ""abab"", ""aabba""]"
+(0*10*10*)*|0*,((0*|1)*(0*|1)*)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""0011"", ""1100"", ""000"", ""111"", ""0101"", ""1010""],  
+negative example: [""2"", ""a"", ""01a"", ""b10"", ""00112"", ""1100c"", ""000d"", ""111e"", ""0101f"", ""1010g""]"
+(a|b)*baa(a|b)*b,(b*a*|a*b*)*(baa)+(b*a*|a*b*)*,"positive example: [""baa"", ""bbbaa"", ""aaabaa"", ""bbbaaaaa"", ""aabaaabaa""],  
+negative example: [""bab"", ""aba"", ""bbaab"", ""aabba"", ""abbaa""]"
+(a|b)*baa(a|b)*b,(baa)*(a|b)*(baa)*b,"positive example: [baab, baaabaaab, baaab, baaabaaabaaab, baaabaaabaaabaaab], negative example: [a, b, ba, baaa, baaabaa]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)?(0|1)?(0|1)?,"positive example: [0, 1, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111],  
+negative example: [2, 00a, 1b, 012, 1100, 1111, a01, b10, 0.1, 1.0]"
+(a|b)*(bab)(a|b)*,(a*b*(bab)*a*b*)*,"positive example: [ab, aab, bab, aabbab, ababab, aabbaabbaabb], negative example: [ba, aba, baba, aabba, abba, bbaa]"
+(a|(b*bb))*,(a*(bb*)*a*)*,"positive example: [ ""a"", ""aa"", ""abba"", ""aabbaa"", ""bb"", ""bba"", ""abab"", ""aaaa"", ""bbbb"", ""aabbbaa"" ],  
+negative example: [ ""b"", ""ba"", ""aba"", ""bab"", ""aab"", ""baa"", ""ababab"", ""baba"", ""aaabbb"", ""bbbaaa"" ]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0|1|(0(1*0*)*0)*|(1(0*1*)*1)*,"positive example: [0, 1, 00, 11, 010, 101, 0000, 0110, 1001, 1111],  
+negative example: [2, 01a, 10b, 0011, 1100, 012, 102, 0001, 1110]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*aaa(a)*,"positive example: [baaaa, aaaaaa, baaabaaaa], negative example: [ab, baa, aabaa]"
+(a|(b*bb))*,(a*|(b*bb*)+)*,"positive example: ["""", ""a"", ""aa"", ""b"", ""bb"", ""bbb"", ""ab"", ""aab"", ""bbab"", ""abab"", ""aabb"", ""aabbb""],  
+negative example: [""ba"", ""aba"", ""bba"", ""abba"", ""aaba"", ""bab"", ""baba"", ""abbbba""]"
+a+b,(a|b)+b,"positive example: [ab, abb, aab, bbb, aabb], negative example: [a, b, aa, bb, aba]"
+(a*ba*b)*a*ba*,(a|b)*(b)(a|b)*,"positive example: [ab, ba, aab, bba, abab, baba], negative example: [a, b, aa, bb, aaa, bbb]"
+001|1010|110,(001|1010|110)+,"positive example: [001, 1010, 110, 0011010, 110001, 1010110, 001001110],  
+negative example: [0, 1, 00, 01, 10, 11, 100, 101, 1001, 1011, 1100, 1101, 0010, 10101, 11011]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0*1*0*)|(1*0*1*))*,"positive example: [""010"", ""101"", ""001100"", ""110011"", ""000111000"", ""111000111""], negative example: [""0110"", ""1001"", ""001011"", ""110100"", ""010101"", ""101010""]"
+(0|10*1)*,(0*1?0*1?0*)*,"positive example: [""010"", ""001100"", ""000111000"", ""1010"", ""0000""],  
+negative example: [""11"", ""000"", ""111"", ""01"", ""10""]"
+(a*ba*b)*a*ba*,a*b(a*|ba*|b)*a*,"positive example: [ ""aba"", ""aabaa"", ""bbba"", ""abbaa"", ""aaabaaa"" ], negative example: [ ""abc"", ""aab"", ""baa"", ""abab"", ""baab"" ]"
+001|1010|110,(001|1010|110)*,"positive example: [001, 1010, 110, 001001, 1010110, 110110, 0011010, 1010001, 110001110],  
+negative example: [0, 1, 01, 10, 100, 111, 101, 1001, 1101, 1011, 0011, 10101, 11001]"
+(0|10*1)*,(0*(10)*1*)*0*,"positive example: [0, 01, 010, 0101, 000, 0010, 01010, 0000, 00100, 010101],  
+negative example: [1, 11, 101, 110, 1010, 1001, 111, 10101, 1100, 10010]"
+/#(/|a|b|##*(a|b))*##*/,(/#)|((a|b|/?)|#)*|(#/),"positive example: [""#"", ""a"", ""b"", ""/"", ""#/"", ""a#"", ""b#"", ""/#"", ""a/b"", ""a#b"", ""#a#b#""],  
+negative example: ["""", ""ab#/"", ""/a#b"", ""##"", ""//"", ""ab/"", ""a/b#"", ""#a/b#""]"
+(a*ba*b)*a*ba*,(((a*)+b+(a*)+b+(a*))|(a*))+b+(((a*)+b+(a*)+b+(a*))|(a*)),"positive example: [""aababab"", ""bababab"", ""aabbaab"", ""ababab"", ""aabab""],  
+negative example: [""aa"", ""bb"", ""aba"", ""aaba"", ""baab""]"
+a(a|b)a(a|b)*,a(a|b)*aa*b*,"positive example: [aaaa, aabaa, abbaab, aabbaa, aabbb], negative example: [ab, baa, aab, bba, aaab]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*ba)*|((a|b)a*b))*,"positive example: [abba, aabba, baba, ababba, aababba], negative example: [aa, bb, abaab, bbaa, aabab]"
+(a|(b*bb))*,a?(a|bb*)*,"positive example: [""a"", ""aa"", ""abb"", ""abba"", ""b"", ""bb"", ""bbb"", ""ab"", ""aab"", ""ba""], negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""bbaac"", ""abca"", ""bca"", ""aabbc""]"
+(a|b)*baa(a|b)*b,(a|b)*(baa)*(a|b)*b,"positive example: [ ""abbaab"", ""baab"", ""abbaaab"", ""bbaaab"", ""abbaaabb"" ],  
+negative example: [ ""abab"", ""ba"", ""aab"", ""bba"", ""abbaaba"" ]"
+(a|baa)*,(b|aa|a)*,"positive example: [b, aa, a, baa, aab, aaa, bba, abab, aaaa, bbb], negative example: [ab, ba, aba, bab, aabb, baba, abba, bbaa, ababab, baaab]"
+(ab|ba)*,((ab)|(ba))*((ab)|(ba)|(aa)|(bb))*,"positive example: [ab, ba, abab, baba, abba, baab, aaaa, bbbb, abaa, babb], negative example: [a, b, aba, bab, abb, baa, aab, bba, aaab, bbba]"
+0(0|1)*0,(0|(0|1)*0),"positive example: [0, 00, 10, 100, 010, 000, 1010], negative example: [1, 11, 111, 0111, 101, 0101]"
+(a|(b*bb))*,(a|b)*bb(a|b)*|a*,"positive example: [bb, abb, bba, abba, aabba, bbb, aabb, bbab], negative example: [a, b, ab, ba, aba, bab, aab, baa]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b)a*)*,"positive example: [aba, ababaa, baaabaa, aababaa, baaab], negative example: [a, b, ab, ba, baba]"
+(a|b)*baa(a|b)*b,(a|b|baa)*b,"positive example: [b, ab, baaab, baab, baaaab], negative example: [a, ba, baaa, aa, baba]"
+b*a*,a*b*a*,"positive example: [ ""aaaabba"", ""abba"", ""aabaa"", ""bb"", ""a"" ], negative example: [ ""abaab"", ""baab"", ""aabab"", ""bab"", ""baaab"" ]"
+001|1010|110,001|10101|1010|110,"positive example:[001,10101,1010,110], negative example:[0001,1001,1110,1011]"
+(b|(a*aa))*,(b*|ab+)*aa(a|b)*|b*,"positive example: [ ""baa"", ""abaa"", ""bbaa"", ""abbaa"", ""aa"", ""aaa"", ""baab"", ""abaab"", ""bbaab"", ""abbaab"" ],  
+negative example: [ ""b"", ""ab"", ""bb"", ""abb"", ""bab"", ""bba"", ""abab"", ""bbab"", ""abbb"", ""bbbb"" ]"
+(a|b)*(bab)(a|b)*,(a*|b*)*|bab|(a*|b*)*,"positive example: ["""", ""a"", ""b"", ""aa"", ""bb"", ""bab"", ""aab"", ""bba"", ""aabb"", ""bbaa""], negative example: [""c"", ""ab"", ""ba"", ""abc"", ""bac"", ""aba"", ""babab"", ""abab""]"
+(ab|ba)*,(bb|aa|aabb|abab|abba|baba|bbaa|baab)*((aa)|(bb)|(ab)|(ba))*,"positive example: [aa, bb, abab, baba, aabbaa, bbaabb, abbaab, baabba], negative example: [a, b, aba, bab, aab, bba, abbb, baaa]"
+(0*10*10*)*|0*,(0*|1)*,"positive example: ["""", ""0"", ""1"", ""01"", ""10"", ""0011"", ""000"", ""111"", ""0101"", ""000111""],  
+negative example: [""2"", ""a"", ""01a"", ""10b"", ""00112"", ""000a"", ""111b"", ""0101c"", ""000111d""]"
+(ab|ba)*,(aabb|abab|abba|bbaa|baba|baab)*(aa|ab|ba|bb)*,"positive example: [aabb, ababab, bbaaab, baabba, aabbaa, ababba, bbaabb, babaab, aaab, abba, bbaa, baab, aaaa, abab, baba, bbbb],  
+negative example: [abc, aab, bba, abcb, aabba, baabc, aabbc, ababc, bbaac, babac, bbaaab, baabbaa, aabbaab, ababbab, bbaabba, babaaba]"
+a+b,[a]*[ab],"positive example: [a, aa, aab, ab, aaaab], negative example: [b, bb, ba, aba, baa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*)*((10)*(0*1*)*(01)*)*(0*1*)*,"positive example: [""01"", ""10"", ""0011"", ""1100"", ""0101"", ""1010"", ""000111"", ""111000"", ""010101"", ""101010""],  
+negative example: [""0"", ""1"", ""00"", ""11"", ""000"", ""111"", ""001"", ""110"", ""011"", ""100""]"
+(0*10*10*)*|0*,(0?1?0*1?0*)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""001"", ""110"", ""0101"", ""1001"", ""0000"", ""1111"", ""010101""],  
+negative example: [""2"", ""00a"", ""11b"", ""012"", ""1012"", ""a01"", ""b10"", ""01c"", ""10d"", ""e00""]"
+a+b,(a*)b,"positive example: [""b"", ""ab"", ""aab"", ""aaab""], negative example: ["""", ""a"", ""ba"", ""aba"", ""baa""]"
+(a|(b*bb))*,((a|b)*bb(a*b*))|a*,"positive example: [aabbaa, bba, aaabbb, aabba, aaa],  
+negative example: [abab, baba, aab, bbbbaa, abbaa]"
+(a|(b*bb))*,(a)*(ab|ba|b|a)*(a)*,"positive example: [a, aa, ab, ba, aaa, aba, baa, aab, baaa, aaba],  
+negative example: [b, bb, bbb, abab, baba, abba, baab, bab, abb, babb]"
+(ab|ba)*,((ab)|(ba))*((a|b)(b|a))*,"positive example: [ab, ba, abab, baba, abba, baab, aab, bba, ababab, bababa],  
+negative example: [a, b, aa, bb, aba, bab, aabb, bbaa, abbaa, baabb]"
+(a|b)(a|b)+aaa+,(a|b)+aaa(a)*,"positive example: [baaa, aaaa, bbaaa, abaaa, aaaaa], negative example: [ab, ba, aab, bba, aaab]"
+(ab|ba)*,(aa|bb)*|(ab|ba)*,"positive example: [aa, bb, ab, ba, aaaa, bbbb, abab, baba, aabb, bbaa], negative example: [a, b, aba, bab, aab, bba, abba, baab, abbb, baaa]"
+(a|b)*baa(a|b)*b,((b|a)*b+a+a*(b|a)+b),"positive example: [baaab, aabab, bbabab, aaaabab, baaabb], negative example: [ab, baa, aab, baba, abab]"
+(a|b)(a|b)+aaa+,(a|b)+(aaa),"positive example: [baaaa, abaaa, bbaaa, aaaaa], negative example: [aa, bb, ab, ba, aab, bba, abba, baba]"
+(a*ba*b)*a*ba*,a*b(a*b)*a*,"positive example: [""aba"", ""aabaa"", ""baa"", ""ababaa"", ""aababaa""], negative example: [""ab"", ""ba"", ""aaba"", ""bb"", ""aaab""]"
+0*(10*1)*0*,0*(10*10*)*,"positive example: [""0"", ""010"", ""01010"", ""1010"", ""000101000"", ""101010""],  
+negative example: [""1"", ""11"", ""0110"", ""0101"", ""101"", ""1001""]"
+(a|(b*bb))*,(a|b*bb*)*,"positive example: ["""", ""a"", ""b"", ""bb"", ""ab"", ""bba"", ""abab"", ""bbbb"", ""abbb"", ""aabba""], negative example: [""c"", ""ac"", ""bc"", ""abc"", ""bca"", ""aac"", ""bbbc"", ""abca"", ""abcc"", ""aabbc""]"
+(ab|ba)*,(ab|ba)*(aabb+bbaa+baba+abab)*,"positive example: [abab, baba, aabbaa, bbaabb, abababab, babaabab, abbaabba, babaabba],  
+negative example: [aa, bb, aab, bba, abbaa, babaa, aabab, bbaab]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(0|1)*0*)|(1*(0|1)*1*),"positive example: [0, 1, 00, 01, 10, 11, 000, 010, 101, 111, 0000, 0110, 1001, 1111],  
+negative example: [2, 3, 12, 20, 21, 22, 012, 120, 201, 210, 0112, 1201, 2010, 2101]"
+(a*ba*b)*a*ba*,((a*(bb)*a*)ba*)+,"positive example: [abba, aabba, abbaa, aabbaa, ababaa, aababaa], negative example: [aba, aaa, bba, baba, abab, aabab]"
+(ab|ba)*,((ab|ba)*(aa|ab|bb|ba)*)+(ab|ba)*,"positive example: [ababaa, babaab, abbaabba, aabba, baabab], negative example: [a, b, aaab, bbba, ababababab]"
+(a|b)*(bab)(a|b)*,(a|b)*(bab)*(a|b)*(bab)*(a|b)*,"positive example: [""bab"", ""abab"", ""aabab"", ""babab"", ""bababa"", ""ababab"", ""aababab"", ""bababab"", ""babababa"", ""abababab""],  
+negative example: [""bb"", ""aa"", ""ba"", ""ab"", ""bba"", ""aab"", ""baa"", ""abb"", ""bbab"", ""aabb""]"
+(a|baa)*,(a*|baa*)*,"positive example: [a, baa, aaa, baaaa, aabaa, baaaaa], negative example: [b, ab, ba, aab, bba, abaa]"
+(a|b)(a|b)+aaa+,(a|b)*(a|b)*aaa,"positive example: [aaa, baaa, aabaaa, bbaaa, abbaaa], negative example: [a, b, ab, ba, aab, bba]"
+a+b,(aa*)b+,"positive example: [ab, aab, aaab, aaaab], negative example: [b, a, aa, aaa, aaaa]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0+1*0+)*|((1+0*)*10+1+)*|1*|0+(1+0+)*|1*,"positive example: [""0"", ""1"", ""00"", ""10"", ""01"", ""11"", ""000"", ""101"", ""010"", ""111"", ""0010"", ""1001"", ""1101"", ""0000"", ""10101"", ""01010"", ""11111"", ""00100"", ""10010"", ""11011""],  
+negative example: [""2"", ""a"", ""01a"", ""1b0"", ""c10"", ""0112"", ""10a1"", ""b001"", ""11c0"", ""000a"", ""101b"", ""010c"", ""1112"", ""0010a"", ""1001b"", ""1101c"", ""00002"", ""10101a"", ""01010b"", ""11111c""]"
+a+b,(a)*(b+),"positive example: [ab, aab, aaab, b, abbb, aabb], negative example: [ba, a, aa, aaa, bba, aba]"
+(ab|ba)*,((ab)|(ba))*((ab)|(ba)|(bb)|(aa))*,"positive example: [ab, ba, abab, baba, abba, baab, ababab, babaab, abbaab, baabab],  
+negative example: [a, b, aa, bb, aba, bab, aab, bba, ababba, baabba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|0*(1*0*)*|1*(0*1*)*,"positive example: ["""", ""0"", ""1"", ""00"", ""11"", ""000"", ""111"", ""01"", ""10"", ""001"", ""110"", ""010"", ""101"", ""0011"", ""1100"", ""0101"", ""1010""],  
+negative example: [""2"", ""a"", ""01a"", ""10b"", ""0012"", ""110a"", ""010b"", ""101c""]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(0*1+0*1+0*)*|(1*0+1*0+1*)*,"positive example: ["""", ""0"", ""1"", ""00"", ""11"", ""000"", ""111"", ""010"", ""101"", ""001100"", ""110011"", ""000111000"", ""111000111""],  
+negative example: [""01"", ""10"", ""001"", ""110"", ""0101"", ""1010"", ""0011"", ""1100"", ""000111"", ""111000""]"
+(ab|ba)*,(aa*|bb*)*,"positive example: [a, b, aa, bb, aaa, bbb, ab, ba, aab, bba, abab, baba], negative example: [ababab, bababa, aabb, bbaa, abba, baab, aaab, bbba, abbb, baaa]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|1+(0+1+)*|0+(1+0+)*,"positive example: [""0"", ""1"", ""00"", ""11"", ""10"", ""01"", ""000"", ""111"", ""101"", ""010"", ""1001"", ""0110""],  
+negative example: [""2"", ""a"", ""01a"", ""10b"", ""0012"", ""110a"", ""101b"", ""0102""]"
+(a|b)(a|b)+aaa+,((a|b)*(a|b))aa(a)*,"positive example: [aaa, baa, abaa, bbaa, aaaaa], negative example: [a, b, ab, ba, aba]"
+0(0|1)*0,0*(1|0)*0*,"positive example: [""0"", ""1"", ""00"", ""01"", ""10"", ""000"", ""010"", ""100"", ""0000"", ""0100"", ""1000"", ""1010"", ""00000"", ""01010"", ""10000"", ""10100""],  
+negative example: [""2"", ""11"", ""011"", ""110"", ""111"", ""0110"", ""1100"", ""1111"", ""01110"", ""11000"", ""11110"", ""011110""]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)(a|b)*(aaa(a)*)*,"positive example: [aaa, baa, bbbaaa, aabaaaa, baaaaaa], negative example: [ab, ba, a, b, aabba]"
+(ab|ba)*,((aa)|(bb)|(ab)|(ba))*,"positive example: [aa, bb, ab, ba, aabb, abba, baba, aabbaa], negative example: [a, b, aba, bab, aab, bba, aaa, bbb]"
+0*10*(10*10*)*,(0|1)*1(0|1)*,"positive example: [1, 01, 10, 110, 0110, 111],  
+negative example: [0, 00, 000, 0000, 00000]"
+(0|10*1)*,1*|(0|1)*,"positive example: [""1"", ""11"", ""111"", ""0"", ""01"", ""10"", ""001"", ""110""], negative example: ["""", ""2"", ""00a"", ""1b1"", ""0112""]"
+0(0|1)*0,(0+(0|1)*0+)*,"positive example: [000, 01010, 00100, 0001100, 0101010], negative example: [01, 10, 0011, 1100, 10101]"
+b*a*,(b|a)*,"positive example: [a, b, aa, ab, ba, bb, aaa, aba, bba, bbb], negative example: [c, ac, bc, abc, aac, bbc, aabbc]"
+(a|baa)*,(baa*|a*)*,"positive example: [""baa"", ""a"", ""baaa"", ""aa"", ""baaabaa"", ""aaaa""], negative example: [""b"", ""bb"", ""ab"", ""ba"", ""bab"", ""bba""]"
+(ab|ba)*,((ab)*(ba)*)*|abb*ba,"positive example: [ab, ba, abba, ababba, abbaba, abbabba, abb, abbbba], negative example: [a, b, aba, bba, abab, baba, abbba, ababab]"
+(a*ba*b)*a*ba*,(a|(ab)*b)+(ba)*,"positive example: [a, ab, abb, abbb, aba, abba, abbba, abab, ababb, ababba], negative example: [b, aa, aab, aabb, bab, baba, baab, bba, bbaa, bbb]"
+(ab|ba)*,(ab|ba)*(aa|bb|ba|ab)*,"positive example: [abba, baaa, abab, baba, aabb, bbaa], negative example: [a, b, aba, bab, abbb, baaaab]"
+b*a*,(a+)*b*a*,"positive example: [ ""ab"", ""aab"", ""aaab"", ""b"", ""bb"", ""a"", ""aa"", ""aabaa"", ""abba"", ""aaaab"" ], negative example: [ ""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""bac"", ""aabbc"", ""abca"", ""aabca"", ""abac"" ]"
+a+b,(a)*(b)*,"positive example: [a, b, aa, bb, aab, abb, aabb], negative example: [abab, ba, aba, bba, abba]"
+a(a|b)a(a|b)*,a+(a|b)+a+(a|b)*,"positive example: [""aaaa"", ""aabaa"", ""aaaab"", ""aabab"", ""aaaaa""],  
+negative example: [""a"", ""aa"", ""ab"", ""ba"", ""bba""]"
+/#(/|a|b|##*(a|b))*##*/,(/#((a|b|/)*#*)*#/)*,"positive example: [""#a#"", ""#b#"", ""#/#"", ""#ab#"", ""#a/#"", ""#b/#"", ""#a/b#"", ""#a#b#"", ""#a#/#"", ""#a##b#"", ""#a##/#"", ""#a##b##/#"", ""###a#"", ""###b#"", ""###/#"", ""###ab#"", ""###a/#"", ""###b/#"", ""###a/b#"", ""###a#b#"", ""###a#/#"", ""###a##b#"", ""###a##/#"", ""###a##b##/#""],  
+negative example: [""a"", ""b"", ""/"", ""ab"", ""a/b"", ""a#b"", ""a/#"", ""b/#"", ""a#b#"", ""a##b"", ""a##/#"", ""a##b##"", ""###"", ""####"", ""#####"", ""#a"", ""#b"", ""#/"", ""#ab"", ""#a/"", ""#b/"", ""#a/b"", ""#a#b"", ""#a#/"", ""#a##b"", ""#a##/"", ""#a##b##""]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0(0*|(0*1+0+))*|1(1*|1*0+1+)*)?,"positive example: [""0"", ""1"", ""00"", ""01"", ""10"", ""11"", ""000"", ""001"", ""010"", ""011"", ""100"", ""101"", ""110"", ""111"", ""0000"", ""0001"", ""0010"", ""0011"", ""0100"", ""0101"", ""0110"", ""0111"", ""1000"", ""1001"", ""1010"", ""1011"", ""1100"", ""1101"", ""1110"", ""1111""],  
+negative example: [""2"", ""a"", ""b"", ""00a"", ""01b"", ""10c"", ""11d"", ""0002"", ""001a"", ""010b"", ""011c"", ""100d"", ""101e"", ""110f"", ""111g""]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*)|(1*)|((0+1+)*(0+1+0+)*)|((1+0+)*(1+0+1+)*),"positive example: ["""", ""0"", ""1"", ""00"", ""11"", ""01"", ""10"", ""000"", ""111"", ""010"", ""101"", ""0011"", ""1100"", ""0110"", ""1001"", ""00110"", ""11001"", ""011001"", ""100110""],  
+negative example: [""01"", ""10"", ""001"", ""110"", ""0101"", ""1010"", ""00110"", ""11001"", ""011001"", ""100110""]"
+b*a*,(((a+)|b+a*))*,"positive example: [a, aa, b, ba, aaa, aba, baa, aaba, baaa, aabaa],  
+negative example: [c, abab, abc, aab, bbb, aabb, abac, bca, aabca, bbaa]"
+a+b,(a+)*(b),"positive example: [ab, aab, aaab, b], negative example: [a, ba, aba, aaba]"
+a+b,a(a*b*)*b,"positive example: [aab, ab, aaab, aabb, aabbb], negative example: [ba, aba, aaa, bbb, abab]"
+(ab|ba)*,(a*|b*)*(aa|ab|ba|bb)*,"positive example: [""a"", ""b"", ""aa"", ""ab"", ""ba"", ""bb"", ""aaa"", ""aab"", ""aba"", ""abb"", ""baa"", ""bab"", ""bba"", ""bbb"", ""aaaa"", ""aaab"", ""aaba"", ""aabb"", ""abaa"", ""abab"", ""abba"", ""abbb"", ""baaa"", ""baab"", ""baba"", ""babb"", ""bbaa"", ""bbab"", ""bbba"", ""bbbb""],  
+negative example: [""c"", ""ac"", ""bc"", ""ca"", ""cb"", ""abc"", ""bac"", ""cab"", ""cba"", ""aac"", ""bbc"", ""abac"", ""babc"", ""cbaa"", ""cc""]"
+(a*ba*b)*a*ba*,(a*)+b+((a*)|(b+(a*)+b))+(a*),"positive example: [""ab"", ""aab"", ""aaab"", ""abb"", ""aabb"", ""aaabb"", ""abab"", ""aabab"", ""aaabab"", ""abbb"", ""aabbb"", ""aaabbb""],  
+negative example: [""a"", ""b"", ""ba"", ""aba"", ""baa"", ""bab"", ""bba"", ""bbaa"", ""baba"", ""abba"", ""aaba""]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),(0|1)(0|1)?(0|1)?,"positive example: [0, 1, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111],  
+negative example: [0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111]"
+(ab|ba)*,((ab)|(ba))*(aa|ab|ba|bb)*,"positive example: [ab, ba, abba, aabb, baba, abab, aabbaa, bbaabb],  
+negative example: [a, b, aaab, bbba, abaab, babba, abbaa, bbaab]"
+(a|b)(a|b)+aaa+,(ab|aa|ba|bb)*(aaa)*,"positive example: [ab, aa, ba, bb, aaa, abaa, bbaaa, aabbaaa], negative example: [a, b, aba, baa, aab, bbb, ababab, bbaaab]"
+(ab|ba)*,(ab|ba)*|(aa|ab|bb)*,"positive example: [ab, ba, abab, baba, aa, bb, aabb, abba], negative example: [a, b, aba, bab, aaa, bbb, abb, baa]"
+a+b,(a)*b,"positive example: [b, ab, aab, aaab], negative example: [a, ba, aba, aaa]"
+a+b,(a*b{1}),"positive example: [ab, aab, aaab, b], negative example: [abb, aabb, a, bbb, aa]"
+(a*ba*b)*a*ba*,(a*(b|bbb)*)*,"positive example: ["""", ""a"", ""b"", ""ab"", ""aab"", ""bbb"", ""abbb"", ""aabbb"", ""aaabbb"", ""abab"", ""aabab"", ""aaabab"", ""abbbab"", ""aabbbab"", ""aaabbbab""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aabc"", ""bbbc"", ""abbbc"", ""aabbbc"", ""aaabbbc"", ""ababc"", ""aababc"", ""aaababc"", ""abbbabc"", ""aabbbabc"", ""aaabbbabc""]"
+(a*ba*b)*a*ba*,b|(bb*|a*|bab*)*,"positive example: [b, bb, a, bab, bba, aa, bbab, bbb, aba, baba], negative example: [c, bc, abca, bbaa, ab, bca, aab, bbac, bbaa, abab]"
+(a|b)(a|b)+aaa+,"[ab]{2,}","positive example: [aa, ab, ba, bb, aaa, aba, bba, aab, abb, bbb, aaaa, abab, bbbb],  
+negative example: [a, b, , aabab, ababab, bbabab]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)(a|bb|ba(a|b))*(b|ba))?,"positive example: [a, b, ab, ba, bba, aba, baba, abba, bab, baab, bbab, abab, abbaa, babab],  
+negative example: [aa, bb, aaa, bbb, aab, baa, abb, bbaa, aabb, bbba, abbb, baaa, aaab, bbaaa]"
+001|1010|110,(0|1)*(01)*(0|1)*,"positive example: [0101, 0011, 101010, 000101, 11101], negative example: [0110, 1001, 1100, 0010, 1011]"
+(0(0*|1+0)*)|(1(1*|0+1)*),((10*)*1+)*|((01*)*0+)*,"positive example: [""101"", ""1101"", ""10101"", ""010"", ""0010"", ""01010""], negative example: [""11"", ""00"", ""1010"", ""0101"", ""111"", ""000""]"
+(a|b)(a|b)+aaa+,(a*|b*)+(a*|b*)+aaa+,"positive example: [""aaaaa"", ""bbbaaa"", ""abbaaa"", ""aaa"", ""baaa""], negative example: [""ab"", ""ba"", ""aab"", ""bba"", ""abab""]"
+a(a|b)a(a|b)*,a(a|b)(a|b)*,"positive example: [aaa, aba, aab, abba, aaba], negative example: [a, b, aa, ab, ba]"
+(ab|ba)*,((ab)*(a|b)(a|b)|(ba)*(a|b)(a|b))*,"positive example: [abab, baba, abba, baab, ababab, bababa, ababba, baabab, aabb, bbaa],  
+negative example: [aa, bb, a, b, aba, bab, abbba, baaab, abababa, babaab]"
+(a|b)(a|b)+aaa+,(a*b*)*a*a*a,"positive example: [aaa, aabbaaa, bbaaa, aabbbaaa, aaa],  
+negative example: [bb, abab, aabba, bbba, aabbaa]"
+(a|b)(a|b)+aaa+,(a|b)+(a|b)*aaa,"positive example: [abaaa, baaaa, aabaaa, bbaaaa], negative example: [aa, bb, aab, bba, abba]"
+(a*ba*b)*a*ba*,((a|b)*|(a|bb)*)*b((a|bb)*|(a|b)*),"positive example: [ab, b, abb, bba, bbb, abab, abba, baba, bbbb, abbb, aabba],  
+negative example: [a, aa, aaa, aaaa, aba, bab, baa, baaa, abaa, baab, aabb]"
+(ab|ba)*,(ab|ba)*(ab|ba|aa|ab)*,"positive example: [ab, ba, abab, baba, abba, baab, abaa, baaa, ababab, bababa], negative example: [a, b, aa, bb, aab, bba, aaa, bbb, abbb, baaa]"
+/#(/|a|b|##*(a|b))*##*/,(/#((a|b|/)#*)*#/)*,"positive example: [""/#a#/"", ""/#b#/"", ""/#/#/"", ""/#a#b#/"", ""/#a#/#b#/"", ""/#a#b#/#/"", ""/#a#/#/#b#/"", ""/#a#b#/#/#/"", ""/#a#/#/#/#b#/"", ""/#a#b#/#/#/#/""],  
+negative example: [""/a#/"", ""/b#/"", ""/#a/"", ""/#b/"", ""/#/"", ""/##/"", ""/#a##/"", ""/#b##/"", ""/#/#a/"", ""/#/#b/""]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(01*0*)*|1*(10*1*)*,"positive example: [""0"", ""1"", ""00"", ""11"", ""010"", ""101"", ""0000"", ""1111"", ""01010"", ""10101""],  
+negative example: [""01"", ""10"", ""011"", ""100"", ""0011"", ""1100"", ""0101"", ""1010"", ""0110"", ""1001""]"
+(ab|ba)*,(a|b)*(a|b)*,"positive example: [a, b, aa, ab, ba, bb, aab, aba, bba, abab], negative example: [c, ac, bc, abc, aac, bbc, abca, abcb]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(0?)|1|(0(0|1)*0)|(1(0|1)*1),"positive example: ["""", ""0"", ""1"", ""00"", ""11"", ""010"", ""101"", ""0000"", ""1111"", ""0110"", ""1001""],  
+negative example: [""01"", ""10"", ""001"", ""110"", ""0001"", ""1110"", ""0101"", ""1010""]"
+(a|baa)*,(a|b|baa+)*,"positive example: [a, b, baa, baaa, abaa, baaab, baaaaa, aabaa, baaabaa], negative example: [aa, bb, aba, baba, baaaab, baaaba, abab, baaaabaa]"
+(ab|ba)*,(ab|ba|aabb|bbaa)*(aa|ab|ba|bb)*,"positive example: [abaa, baaa, aabbaa, bbaaab, abba, aabb, bbaa, aaab, bbaaabba], negative example: [abaab, baaab, aabbb, bbaaa, abbb, aab, bba, a, b]"
+a+b,[a]*b,"positive example:[b, ab, aab, aaab], negative example:[a, ba, aba, aaba]"
+0*10*(10*10*)*,(0*10*)*0*10*,"positive example: [""0"", ""1"", ""010"", ""00100"", ""1010"", ""0001000""],  
+negative example: [""11"", ""00"", ""0101"", ""1001"", ""1100"", ""0000""]"
+0(0|1)*0,0*|0(0*1*)*0,"positive example: [0, 00, 000, 01, 001, 0001, 010, 0010, 00010],  
+negative example: [1, 10, 11, 101, 110, 111, 100, 1100, 1010]"
+(a|b)(a|b)+aaa+,[ab]*a{3},"positive example: [aaa, aaaaa, bbaaa, ababaaa, bbbaaa], negative example: [aa, aba, bbba, abab, bbbab]"
+b*a*,((a*)|(b+a*))*,"positive example: [a, aa, b, ba, aab, baa, aaba, baaa, ab, aabba, bbaa], negative example: [c, ac, bc, abc, aac, bbc, aabbc, bbaac]"
+(a|b)*baa(a|b)*b,(a*|b*|baa)+b+,"positive example: [ab, baaab, bbb, aab, baab], negative example: [a, b, aba, baaa, aaab]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),[01]*[10]*,"positive example: [0, 1, 01, 10, 0011, 1100, 000111, 111000], negative example: [011, 100, 0101, 1010, 00110, 11001]"
+b*a*,((a)+|b+a*)*,"positive example: [""a"", ""aa"", ""ba"", ""baa"", ""aba"", ""aab"", ""bb"", ""bba"", ""aabaa"", ""baba""],  
+negative example: [""b"", ""c"", ""ab"", ""abc"", ""bac"", ""aac"", ""bbca"", ""aabbc"", ""bcaa"", ""abab""]"
+(a|b)*(bab)(a|b)*,(a|b|bab)*(bab)*,"positive example: [ ""bab"", ""abab"", ""aabab"", ""bbab"", ""babaabab"", ""bababab"" ],  
+negative example: [ ""ba"", ""aba"", ""aaba"", ""bbba"", ""abba"", ""baaab"" ]"
+a+b,(a*)(b{1}),"positive example: [ab, aab, aaab, b], negative example: [ba, a, bb, aaaa]"
+(a|b)(a|b)+aaa+,(aa|ab|ba|bb)*(a|b)*(aaa),"positive example: [aaabaaa, bbaaaa, abbaaa, aabbaaa, bbbaaa], negative example: [aa, ab, ba, bb, aaa, aaba, baba, abab, bbba]"
+0*10*(10*10*)*,(0|1)*,"positive example: [0, 1, 01, 10, 000, 111, 0101, 1010], negative example: [2, 00a, 1b1, abc, 0112, 110a]"
+(a|b)(a|b)+aaa+,((a|b)|(b|a))(a|b)*(a)(a)(a)(a*),"positive example: [baaaaa, aaaaa, baaaaa, aaaaaa, baaaaaa], negative example: [ab, baa, a, b, aabaa]"
+b*a*,aa*|(a?|b)*(a|b?)*,"positive example: [""a"", ""aa"", ""aaa"", ""b"", ""ab"", ""ba"", ""aab"", ""bba"", ""aabb"", ""baba""],  
+negative example: [""c"", ""ac"", ""cb"", ""abc"", ""bac"", ""aacb"", ""bbca"", ""abca"", ""bacb""]"
+a+b,a(a|b)*b,"positive example: [ab, aab, abb, aaab, abbb, aabb], negative example: [a, b, aa, bb, aba, baa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1|0|(1+(0*1*)*1+)*|(0+(1*0*)*0+)*)*,"positive example: [""1"", ""0"", ""10"", ""01"", ""110"", ""001"", ""1010"", ""0101"", ""111000"", ""000111"", ""101010"", ""010101"", ""11001100"", ""00110011"", ""11110000"", ""00001111""],  
+negative example: [""2"", ""a"", ""11a"", ""00b"", ""1c0"", ""01d"", ""101e"", ""010f"", ""111g000"", ""000h111"", ""1010i"", ""0101j"", ""1100k1100"", ""0011l0011"", ""1111m0000"", ""0000n1111""]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*(aaa)(a)*,"positive example: [baaaa, aaaaaa, bbaaaa, abaaaa, aabaaa], negative example: [ab, ba, aab, bba, aaa]"
+(ab|ba)*,(ab|ba)*|(aa|bb)*,"positive example: [ab, ba, abab, baba, aa, bb, aaaa, bbbb, abba, baab], negative example: [a, b, aba, bab, abb, baa, aab, bba, aabb, abbb]"
+(a*ba*b)*a*ba*,a*b+(a*|(b(a*)b))+a*,"positive example: [""aaabbba"", ""baaab"", ""bbbaaa"", ""ababba"", ""aabbaa""], negative example: [""abab"", ""ba"", ""aab"", ""bba"", ""ababa""]"
+(ab|ba)*,(aa|bb)|(ab|ba)*,"positive example: [aa, bb, ab, ba, abab, baba, abba, baab],  
+negative example: [a, b, aba, bab, aab, bba, aaa, bbb]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(((0+1*)*0+)*|((1+0*)*1+)*)*,"positive example: [""0"", ""1"", ""00"", ""01"", ""10"", ""11"", ""000"", ""001"", ""010"", ""011"", ""100"", ""101"", ""110"", ""111"", ""0000"", ""0001"", ""0010"", ""0011"", ""0100"", ""0101"", ""0110"", ""0111"", ""1000"", ""1001"", ""1010"", ""1011"", ""1100"", ""1101"", ""1110"", ""1111""],  
+negative example: [""2"", ""a"", ""b"", ""01a"", ""10b"", ""0c1"", ""1d0"", ""e00"", ""f11"", ""0g01"", ""1h10""]"
+b*a*,((a+)|a*b+a*)*,"positive example: [""a"", ""aa"", ""aba"", ""aabba"", ""aaaabbaa"", ""abababa"", ""bba"", ""bbaa"", ""aabbaa""],  
+negative example: [""b"", ""bb"", ""bab"", ""abab"", ""baab"", ""abbaaab"", ""abababab"", ""aaabbb"", ""bbbaaa""]"
+0*10*(10*10*)*,0*(11)*1(0|1)*,"positive example: [0, 11, 011, 110, 1110, 00111, 01101, 11110], negative example: [1, 01, 10, 101, 1001, 0101, 1010, 10001]"
+(a|b)(a|b)+aaa+,"(a|b)*a{3,}","positive example: [aaa, aaaaa, baaa, abbaaa, bbaaaa], negative example: [a, aa, ab, bba, abab]"
+(ab|ba)*,(ab)*(aa|ab|ba|bb)*,"positive example: [ab, abab, aa, abaa, bba, abba, ababaa, abbb], negative example: [a, b, aba, baa, aab, bab, ababa, abbba]"
+(a|b)(a|b)+aaa+,[ba]*aaa,"positive example: [baaaa, bbaaaa, aaaa, bbbaaaa], negative example: [baa, bbaa, aa, bbbaa]"
+(a|(b*bb))*,(a|b)*bb(a|b?)*|a*,"positive example: [bb, abb, bba, aabba, bbb, abba], negative example: [a, b, aba, baa, abab, baba]"
+b*a*,(a*)(b*)(a*),"positive example: [""aaa"", ""bb"", ""aabba"", ""b"", ""aaabbba""], negative example: [""aba"", ""abab"", ""baa"", ""aabab"", ""baba""]"
+0*(10*1)*0*,(0*10*10*)*|0*,"positive example: [""0"", ""010"", ""1010"", ""01010"", ""0101010"", ""00"", ""000"", ""0000""],  
+negative example: [""1"", ""11"", ""110"", ""101"", ""1001"", ""0101"", ""10101"", ""111""]"
+(0|1)(0|1)*,(0|1)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""001"", ""110"", ""0000"", ""1111"", ""0101"", ""1010""],  
+negative example: [""2"", ""a"", ""01a"", ""10b"", ""0012"", ""110c"", ""0000d"", ""1111e"", ""0101f"", ""1010g""]"
+(a*ba*b)*a*ba*,(a|(ab)*b)*(ba)*,"positive example: [ab, abab, ababb, baba, abababba, ababba, ababababba], negative example: [aab, abb, baa, abababa, ababab, baaa]"
+b*a*b*|(a*bb+a*)*,(b|aa*bb)*((aa*(b?))?),"positive example: [""b"", ""aa"", ""bb"", ""aab"", ""aaab"", ""bbb"", ""aaabb"", ""baaab"", ""baaabb""], negative example: [""a"", ""ab"", ""aba"", ""aaba"", ""ba"", ""bab"", ""baa"", ""bbba""]"
+(a*ba*b)*a*ba*,((a*|a*ba*(ba*ba*)*a*)|b),"positive example: [a, aa, b, ab, ba, aab, aba, baa, aaba, abaa, baaa, aabaa, abaab, baaaa, aabaab, abaaba, baaaaa],  
+negative example: [bb, aabba, abab, baba, aaabbb, ababab, bababa, aababab, abababa, bababab]"
+(a|(b*bb))*,(a|b*b)*,"positive example: [a, b, ab, ba, bbb, abab, bbaa, aabbb, bbbab], negative example: [c, ac, bc, abc, bca, aac, bbc, abca, bbbaac]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((01*0*)|(10*1*))*,"positive example: [""010"", ""1001"", ""1010"", ""01010"", ""100101""], negative example: [""0"", ""1"", ""011"", ""110"", ""0011""]"
+(0(0*|1+0)*)|(1(1*|0+1)*),1*(0+1+)*|0*(1+0+)*,"positive example: [""1"", ""0"", ""10"", ""01"", ""110"", ""001"", ""1110"", ""0001"", ""1010"", ""0101""],  
+negative example: [""2"", ""a"", ""11a"", ""0b1"", ""1012"", ""01a0"", ""1+0"", ""0*1"", ""10+"", ""01*""]"
+0*10*(10*10*)*,(0*(10*1)*0*10*)*,"positive example: [0, 010, 1010, 01010, 0010100], negative example: [1, 011, 1001, 01011, 10101]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*(01)*0*1*(10)*0*1*)*,"positive example: [""01"", ""10"", ""0011"", ""0101"", ""1010"", ""000111"", ""001100"", ""010101"", ""101010"", ""0000111100""],  
+negative example: [""0"", ""1"", ""00"", ""11"", ""001"", ""110"", ""0001"", ""1110"", ""00101"", ""11010""]"
+(a|baa)*,"(a*(b*a{2,})*)*","positive example: [""aa"", ""baa"", ""aabaa"", ""aaaa"", ""baabaa"", ""aabaabaa""], negative example: [""b"", ""ab"", ""aab"", ""ba"", ""aba"", ""aaba""]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((01)*(0|1)+(10)*)*,"positive example: [""0101"", ""0110"", ""1010"", ""010110"", ""011010"", ""101010""],  
+negative example: ["""", ""0"", ""1"", ""00"", ""11"", ""0011"", ""1100""]"
+(ab|ba)*,(ab|aabb|ba)*,"positive example: [ab, aabb, ba, abab, aabbaabb, baba, abba, abaabb],  
+negative example: [aa, bb, aab, bba, abbaa, baaab, aabab, bbaa]"
+(ab|ba)*,(aa|ab|bb|ba)*,"positive example: [aa, ab, bb, ba, aaaa, abab, baba, bbaa, aabbaa],  
+negative example: [a, b, aab, bba, abaab, bbaaab, aabba, abbaa]"
+0(0|1)*0,0*|0(1|0)*0|1*|1(1|0)*1?,"positive example: [""0"", ""00"", ""000"", ""1"", ""11"", ""111"", ""010"", ""0010"", ""101"", ""1101""],  
+negative example: [""01"", ""10"", ""011"", ""100"", ""0011"", ""1100"", ""0101"", ""1010""]"
+(a|b)*(bab)(a|b)*,(a|b)*,"positive example: [a, b, aa, ab, ba, bb, aab, aba, baa, bbb], negative example: [c, ac, bc, abc, aac, bbc, abca, abba]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*(aa)(a)*,"positive example: [aaaa, bbaa, aabaa, bbaaa, aaaaa], negative example: [a, b, ab, ba, aba]"
+(a|b)*(bab)(a|b)*,(a|b|bab)*(a|b|bab)*,"positive example: [a, b, bab, abab, baba, aab, bba, babab], negative example: [c, aaab, bbba, abac, babbc, ababa, babbab]"
+001|1010|110,0*10*(10)*,"positive example: [0, 1, 010, 00100, 1010, 00010010], negative example: [11, 0101, 100, 0011, 1010101, 000110]"
+(a|b)*(bab)(a|b)*,(a|b)*(bab)*(a|b)*,"positive example: [ab, bab, abab, aababba, babbab], negative example: [aaabbb, bbaa, abba, aabba, babaab]"
+(a|(b*bb))*,(a*|bb*)*,"positive example: ["""", ""a"", ""aa"", ""b"", ""bb"", ""ab"", ""aab"", ""bba"", ""abba"", ""aaaabbbb""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""bbbc"", ""abca"", ""aabbc""]"
+a(a|b)a(a|b)*,ab*|(a(a|b)a(a|b)*),"positive example: [ab, abb, aaba, aabab, aabaa], negative example: [a, b, aa, ba, abba]"
+(ab|ba)*,(ab|ba)*(aa|ab|ba|bb)*|(aabb|bbaa)*|(aa|ab|ba|bb)*,"positive example: [ababaa, babaab, aabbaa, bbaaab, aabb, bbaa, aaabba, bbaabba], negative example: [abba, baab, aabab, bbaaabab, aaa, bbb, abaabb, bbaaabb]"
+(a|baa)*,a*(baa*|a*)*,"positive example: [""a"", ""ba"", ""aa"", ""baa"", ""aabaa"", ""aaa"", ""baaa"", ""aaba"", ""abaa"", ""baaaa""],  
+negative example: [""b"", ""bb"", ""aba"", ""ab"", ""bab"", ""bba"", ""bbb"", ""aab"", ""baab"", ""abab""]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*(aaa)a*,"positive example: [abaaa, baaaaa, aabaaaa, bbaaaa], negative example: [aa, bbb, abba, aabba]"
+(0*10*10*)*|0*,(1|0|1)*,"positive example: [1, 0, 11, 01, 10, 00, 101, 010, 111, 000],  
+negative example: [2, 3, 12, 20, 21, 30, 31, 102, 201, 1102]"
+(a|b)(a|b)+aaa+,(a*b*)*aaa,"positive example: [aaa, aaaaaa, baaa, aabaaa, aabbaaa], negative example: [aa, aab, aabb, bbb, abab]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b((a?)|(bb?)))*|((a|b)a*ba)*,"positive example: [ ""aab"", ""baab"", ""abba"", ""aaba"", ""bab"", ""baaab"", ""abab"", ""baabb"", ""aabbb"", ""baaabb"" ], negative example: [ ""a"", ""b"", ""aa"", ""bb"", ""aba"", ""bba"", ""ababab"", ""baa"", ""abbb"", ""baabbaa"" ]"
+0(0|1)*0,(0+(1*0*1*)*0+)*,"positive example: [000, 010, 0010, 01010, 000100], negative example: [1, 11, 101, 1001, 11001]"
+(b|(a*aa))*,(b*|ab)*aa(a|b)*|b*,"positive example: [aa, baa, abaa, bbaa, ababaa, bbbaa], negative example: [a, b, ab, ba, aba, bab, bbb]"
+0(0|1)*0,0+(0*1*0*)*0+|1,"positive example: [0, 000, 010, 00100, 111, 1], negative example: [01, 10, 0110, 101, 0001]"
+(0|1)(0|1)*,(1|0)*,"positive example: [""0"", ""1"", ""01"", ""10"", ""0011"", ""1100"", ""1010"", ""0000"", ""1111"", """"], negative example: [""2"", ""a"", ""01a"", ""10b"", ""001c"", ""110d"", ""101e"", ""000f"", ""111g"", ""h""]"
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)(a*)ba)*)|((a|b)(a*)b))*,"positive example: [""ab"", ""aab"", ""ba"", ""aaab"", ""abab"", ""aabaab"", ""baab""], negative example: ["""", ""a"", ""b"", ""bb"", ""aba"", ""bab"", ""aabb""]"
+a+b,(a*b)*,"positive example: [ab, aab, b, aaaab, abab], negative example: [aba, aaabbb, ba, aaba, bba]"
+0*10*(10*10*)*,0*((1)*1)*1(0|1)*,"positive example: [""01"", ""0011"", ""000111"", ""0110"", ""001110""], negative example: [""0"", ""00"", ""000"", ""1"", ""10"", ""100""]"
+(0*10*10*)*|0*,0*(10*1)*0*(10*1*)*,"positive example: [ ""0101"", ""001001"", ""000"", ""1010"", ""010010"" ], negative example: [ ""11"", ""1011"", ""0102"", ""00110"", ""1100"" ]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)+aa+,"positive example: [abaa, baaaa, aabaa, bbaaa, aabaaa], negative example: [a, b, aa, bb, aba, bab, aab, bba, aaba, baba]"
+(a|baa)*,(a*|b*aa)*,"positive example: ["""", ""a"", ""aa"", ""aaa"", ""b"", ""baa"", ""aaabaa"", ""bbaa"", ""aaaabbaa""], negative example: [""ab"", ""aba"", ""aab"", ""ba"", ""bba"", ""aaba"", ""abaa""]"
+(ab|ba)*,((aa)*|(bb)*)((aa)*|(bb)*)*|(ba|ab)(ab|ba)*|(aa)*|(bb)*,"positive example: [aa, bb, aaaa, bbbb, ab, ba, abab, baba, aabb, bbaa], negative example: [a, b, aba, bab, aab, bba, aaaab, bbbba]"
+(a|b)*(bab)(a|b)*,((a|b)*bab(a|b)*)*,"positive example: [bab, abab, babab, aabab, babbab, bababab, ababab, aababab],  
+negative example: [a, b, aa, bb, aba, bba, abba, baba]"
+(a|(b*bb))*,(a*|b+)*,"positive example: [a, b, aa, ab, ba, bb, aaa, aab, aba, abb, baa, bab, bba, bbb, aaaa, aaab, aaba, aabb, abaa, abab, abba, abbb, baaa, baab, baba, babb, bbaa, bbab, bbba, bbbb], negative example: [c, ac, bc, abc, aac, bbc, ca, cb, cba, cab, cbb, cbaa, cabb, cbba, cbbb]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)(a*))(b|ba))*,"positive example: [ab, aaab, bba, aabba, babab], negative example: [baa, a, bbb, aba, aab]"
+(a|(b*bb))*,(a|b)*b*(a|b)*,"positive example: [ab, b, aab, bba, abab, bbb, aabb], negative example: [aa, aba, bab, aaa, baba, abba, baaa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*0+)*|(1*0*1+)*,"positive example: [""010"", ""110"", ""1010"", ""001100"", ""111000111""],  
+negative example: [""011"", ""1001"", ""000111000"", ""10101"", ""010101""]"
+(a|b)(a|b)+aaa+,"(a|b){1,}aaa","positive example: [aaa, baaa, aaaaa, baaaaa], negative example: [aa, ba, abaa, bbaa]"
+/#(/|a|b|##*(a|b))*##*/,(/#(a|b)*#/)*,"positive example: [""##"", ""#a#"", ""#b#"", ""#ab#"", ""#ba#"", ""#aab#"", ""#bba#"", ""####"", ""#a##b#"", ""#ab##ba#""],  
+negative example: [""#"", ""a"", ""b"", ""ab"", ""ba"", ""a#b"", ""#a"", ""#b"", ""#ab#a"", ""#ba#b""]"
+(ab|ba)*,((ab)|(ba))*(ab|ba|aa|bb)*,"positive example: [ab, ba, abab, baba, abba, baab, aabb, bbaa, ababab, babaab],  
+negative example: [a, b, aaab, bbba, abbb, baaa, abbba, baaab, aabbb, bbaaa]"
+0(0|1)*0,0*(0*1*0*)*0*,"positive example: [""0"", ""01"", ""0010"", ""000"", ""01010""], negative example: [""1"", ""10"", ""101"", ""110"", ""01101""]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][0-1]*[0-1]*,"positive example: [000, 111, 01, 10, 0011, 1100], negative example: [2, 22, 012, 102, 120, 0012]"
+(a*ba*b)*a*ba*,(a|b)*b((a)|(bb))*,"positive example: [ab, bba, abba, bbb, aabba], negative example: [a, aa, aba, baba, bbba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(11*00*)*)|(1*(00*11*)*),"positive example: [""0"", ""1"", ""00"", ""11"", ""000"", ""111"", ""011"", ""100"", ""0011"", ""1100"", ""000111"", ""111000"", ""001100"", ""110011""],  
+negative example: [""01"", ""10"", ""010"", ""101"", ""0010"", ""1101"", ""0101"", ""1010"", ""0110"", ""1001""]"
+(a|baa)*,a*(baa*)*,"positive example: [""a"", ""aa"", ""ba"", ""baa"", ""baaa"", ""aba"", ""aaba"", ""aabaa""],  
+negative example: [""b"", ""ab"", ""bb"", ""bab"", ""abab"", ""baab"", ""aab"", ""aabb""]"
+(a|(b*bb))*,(a|ab|ba|bb*)*,"positive example: [a, ab, ba, b, aa, aba, bba, bbb, abab, baaa], negative example: [c, ac, bc, abc, aab, bca, bcc, abac, bbaa]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((1*(0+1+0+)*1*)(0*(1+0+1+)*0*))*|1*|0*,"positive example: [""1101010"", ""1010101"", ""000"", ""111"", ""1011001"", ""0101010"", ""0"", ""1"", ""1010"", ""0101""],  
+negative example: [""2"", ""a"", ""1102"", ""101a"", ""abc"", ""120"", ""01a0"", ""10b1"", ""0012"", ""110a""]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b(a?))*,"positive example: [""aba"", ""baab"", ""aabba"", ""bba"", ""abababa""], negative example: [""acb"", ""bca"", ""aaa"", ""bbb"", ""abac""]"
+(a*ba*b)*a*ba*,(a*(ba*b)*ba*)+,"positive example: [ab, aba, abab, aabaa, aababaa], negative example: [b, aa, aaba, ba, baba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(1|0|(1+(0*1*)*1+)|(0+(1*0*)*0+))*,"positive example: [""1"", ""0"", ""10"", ""01"", ""110"", ""001"", ""1010"", ""0101"", ""111"", ""000"", ""11001"", ""00110"", ""101010"", ""010101"", ""1111"", ""0000"", ""110011"", ""001100"", ""1010101"", ""0101010""],  
+negative example: [""2"", ""a"", ""11a"", ""00b"", ""1a0"", ""0b1"", ""101a"", ""01b0"", ""110a1"", ""001b0"", ""1010a"", ""0101b"", ""111a"", ""000b"", ""11001a"", ""00110b"", ""101010a"", ""010101b"", ""1111a"", ""0000b""]"
+(ab|ba)*,((aa)*|(bb)*)(a|b)*,"positive example: [aa, bb, aaa, bbb, aab, bba, a, b, aabbb, bbaaa], negative example: [abab, baba, abba, baab, aba, bab, ab, ba]"
+0(0|1)*0,(0(0*1*)*0)*,"positive example: [0, 00, 010, 00100, 0001000], negative example: [1, 01, 10, 0110, 10101]"
+(a|b)*baa(a|b)*b,(a*b*)*(baa+|b)+,"positive example: [baa, baaa, abbaa, aabbaaa, bbaa], negative example: [ab, aab, b, aa, bb]"
+(a|b)(a|b)+aaa+,((a|b)*(a|b))aaa(a)*,"positive example: [baaaa, aabaaa, bbbaaaaa, abaaa, aaaaa], negative example: [aaa, baa, aabaa, bbba, aabba]"
+(ab|ba)*,(ab|ba)*(aa|bb|ab|ba)*,"positive example: [abab, baba, aabbaa, bbaabb, abba, baab, aabb, bbaa, ababab, babaab], negative example: [a, b, aaab, bbba, abbb, baaa, aabbb, bbaaa, ababba, babaabb]"
+a+b,(a*b)+,"positive example: [ab, aab, aaab, b, aaaab], negative example: [a, ba, aba, aaba, bba]"
+(0|1)(0|1)*,(0|1)|(0|1)*,"positive example: [0, 1, 01, 10, 000, 111, 0101], negative example: [2, 00a, 1b, 0112, abc]"
+(a*ba*b)*a*ba*,a*ba*(ba*b)*(a*b*)*,"positive example: [""b"", ""ab"", ""ba"", ""aab"", ""aba"", ""bba"", ""aaba"", ""abab"", ""baba"", ""aaabaa"", ""ababab""],  
+negative example: [""a"", ""aa"", ""aaa"", ""bab"", ""aabb"", ""abba"", ""baab"", ""bbaa"", ""aabba"", ""abbba""]"
+(a|b)*baa(a|b)*b,(a|b)*(baa)(a|b)*,"positive example: [baa, abaa, baaa, bbaa, aabaa, baaab], negative example: [a, b, ab, ba, aba, bab, aab, abb]"
+b*a*,(a|b*a*)+,"positive example: [a, b, aa, ab, ba, aaa, baa, aba, bba, aab, abba, baaa], negative example: [c, ac, bc, abc, bca, aac, bbc, abac, bbaaac]"
+(a|b)(a|b)+aaa+,(a+|b+)*aa(a+),"positive example: [aaa, bbaaa, aabaa, aaaaa, bbaaaaa], negative example: [a, b, ab, ba, aba]"
+(a|(b*bb))*,(a|b)*bb(a|bb)*|a*,"positive example: [bb, abb, bba, abba, aabba, bbb, abbb, aabbb], negative example: [a, b, ab, ba, aab, aba, baa, baba]"
+(a|(b*bb))*,(a*(bb*)*)*,"positive example: [a, aa, ab, abb, aab, aabb, aabbb, b, bb, bbb, abab, ababb], negative example: [c, ac, bc, abc, aac, bbc, abbc, aabc, abcc, abbbc]"
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*b)|(((a|b)a*ba)*))*)?,"positive example: [""a"", ""b"", ""aa"", ""ab"", ""ba"", ""aba"", ""aab"", ""bab"", ""aaba"", ""abab"", ""baab"", ""baba"", ""aabab"", ""ababa"", ""baaba"", ""babaab""],  
+negative example: ["""", ""c"", ""ac"", ""bc"", ""ca"", ""cb"", ""abc"", ""bac"", ""cba"", ""aac"", ""abbc"", ""baac"", ""babac""]"
+((a|b)a*ba)*(((a|b)a*b)?),((((a|b)a*b)+(a?))*)?,"positive example: [""a"", ""b"", ""aa"", ""ab"", ""ba"", ""aaa"", ""aab"", ""aba"", ""baa"", ""bab"", ""a"", ""b"", ""aaab"", ""baab"", ""aaba"", ""abaa"", ""baaab"", ""aabaa"", ""aabab"", ""baaba""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""bac"", ""aac"", ""bbc"", ""aabc"", ""abac"", ""baac"", ""bbac"", ""aaac"", ""aabbc"", ""ababc"", ""baabc"", ""aabac"", ""abaac"", ""baaac"", ""aababc"", ""abaabc""]"
+a+b,a*b{1},"positive example: [ab, aab, aaab, b], negative example: [abb, aabb, bb, a, ba]"
+(a|(b*bb))*,((a|b)|bb|(a|b))*,"positive example: [a, b, ab, ba, bb, aab, bba, abab, bbab], negative example: [c, aaac, bbbbc, abc, aabbc, abbc]"
+a+b,(a|b)*(a)*b,"positive example: [ab, aab, bbbab, aaaaab, bab], negative example: [bba, aaa, bbaa, abba, baba]"
+(a*ba*b)*a*ba*,(a*)b+((a*)|(b(a*)b))*,"positive example: [""ab"", ""aab"", ""abab"", ""aabbb"", ""abbaab"", ""aaabaaab""],  
+negative example: [""b"", ""ba"", ""aba"", ""aaba"", ""bab"", ""ababa""]"
+0(0|1)*0,0*|(0|1)*|0*,"positive example: ["""", ""0"", ""00"", ""000"", ""01"", ""10"", ""001"", ""110"", ""0000"", ""1010""], negative example: [""2"", ""a"", ""01a"", ""b0"", ""1b"", ""00c"", ""d"", ""e01"", ""f0f"", ""g1""]"
+0(0|1)*0,0*|0(1|0)*0?,"positive example: ["""", ""0"", ""00"", ""000"", ""01"", ""010"", ""0100"", ""0010"", ""00100""], negative example: [""1"", ""10"", ""101"", ""011"", ""1001"", ""1010"", ""110""]"
+(a|b)(a|b)+aaa+,(a*b*)*|b+aaa,"positive example: [ab, aab, bbb, baaa, aabb, bbaaa], negative example: [ba, aba, bbaa, aaab, baaaaa]"
+(a|b)(a|b)+aaa+,(a|b)+aaa+,"positive example: [baaaa, aaa, baaaaa, aaaaaa, bbaaaa], negative example: [ab, baa, aab, ba, aabaa]"
+(a|b)(a|b)+aaa+,((a|b)*(aaa+)),"positive example: [aaa, baaa, aaaaa, bbaaaa, abbaaa], negative example: [aa, ab, ba, bb, aab]"
+(a|(b*bb))*,(a|(b+(b)*))*,"positive example: [a, b, bb, ab, aab, bbb, abab, bba, aabb, abbb], negative example: [c, ac, bc, abc, aac, bbc, abbc, aabc, abcc, bbbc]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*(11*0*)*|1*(00*1*)*,"positive example: [""0"", ""1"", ""00"", ""11"", ""000"", ""111"", ""0110"", ""1001"", ""001100"", ""110011""],  
+negative example: [""01"", ""10"", ""001"", ""110"", ""0101"", ""1010"", ""00101"", ""11010"", ""01010"", ""10101""]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,0*|1*|(1+0*1*)*|(0+1*0*)*,"positive example: [""0"", ""1"", ""00"", ""11"", ""010"", ""101"", ""0000"", ""1111"", ""0101"", ""1010""],  
+negative example: [""2"", ""01a"", ""10b"", ""0012"", ""110a"", ""a01"", ""b10"", ""012"", ""210"", ""a0b1""]"
+(a|baa)*,a*((b+aa)*a*)*,"positive example: [""a"", ""aa"", ""b"", ""ab"", ""aab"", ""aaa"", ""ba"", ""bba"", ""aabaa"", ""abaa""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""baaac"", ""abac"", ""aabca"", ""abaca"", ""aabcc""]"
+(a|b)(a|b)+aaa+,(a+|b+)+aaa+,"positive example: [aaaa, baaaa, aabaaaa, bbaaaaa], negative example: [a, b, aa, bb, aab, bba, aaa, bbb]"
+(ab|ba)*,(ab|ba)*(aa|ab|ba|bb)*,"positive example: [ab, ba, aa, abba, baba, aabb, bbaa, ababab, babaab, abbaaa], negative example: [a, b, aba, bab, aab, bba, abab, baba, aaab, bbba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*1*)*0*|(1*0*)*1*,"positive example: [""0"", ""1"", ""01"", ""10"", ""0011"", ""1100"", ""000"", ""111"", ""0101"", ""1010""],  
+negative example: [""2"", ""012"", ""102"", ""0012"", ""1102"", ""0002"", ""1112"", ""0102"", ""1012"", ""2010""]"
+a+b,(a)*(b),"positive example: [ab, aab, aaab, b], negative example: [ba, aba, a, bb, aaa]"
+(a|baa)*,(((b*)(a)(a))*(a*))*,"positive example: [""baa"", ""baaaa"", ""baabaa"", ""aa"", ""a"", ""baaa"", ""baabaaa""],  
+negative example: [""b"", ""bb"", ""bab"", ""aba"", ""ba"", ""bba"", ""ab""]"
+(a|b)(a|b)+aaa+,(aa*|ab*|ba*|bb*)*aaaa*,"positive example: [""aaaa"", ""baaaa"", ""abbaaaa"", ""aabaaaa"", ""bbbaaaa""],  
+negative example: [""aaa"", ""aba"", ""bbab"", ""aab"", ""bba""]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|0+(1+0+)*|1+(0+1+)*,"positive example: [""0"", ""1"", ""00"", ""11"", ""000"", ""111"", ""010"", ""101"", ""0010"", ""1101"", ""000111"", ""111000""],  
+negative example: [""01"", ""10"", ""011"", ""100"", ""0101"", ""1010"", ""0011"", ""1100"", ""000011"", ""111100""]"
+a+b,((a*)b)*,"positive example: [ab, aab, aaab, b, abab, aabaab], negative example: [ba, aba, a, aa, aaa, aabba]"
+(ab|ba)*,(ab|ba)*(a|b)*,"positive example: [ab, ba, a, b, abba, baba, aab, baa, abab, babaab], negative example: [abaab, bba, aabb, ababab, bbaa, aaabbb, ababba, babaaba]"
+(ab|ba)*,(a(a|b)|b(a|b))*,"positive example: [aa, ab, ba, bb, aaaa, abab, baba, bbbb, aabbaa, bbaabb], negative example: [a, b, aab, bba, aaaab, bbbba, abaab, babba]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][01]*[10]*,"positive example: [00, 01, 10, 11, 001, 010, 100, 110, 011, 101, 111, 0001, 0010, 0100, 1000, 1100, 1010, 0110, 0011, 0101, 1001, 1101, 1011, 0111, 1110, 1111],  
+negative example: [0, 1, 000, 1111, 0000, 11111, 00000, 111111, 00111, 11000, 01010, 10101, 000011, 111100, 001100, 110011, 010101, 101010]"
+001|1010|110,0*1*0*1*0*,"positive example: [""01010"", ""000111000"", ""111"", ""000"", ""0101010""], negative example: [""10101"", ""001100"", ""1100"", ""0011"", ""101010""]"
+0*10*(10*10*)*,[0-1][0-1]*,"positive example: [0, 1, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111],  
+negative example: [2, 3, 12, 20, 21, 22, 123, 102, 120, 201, 210, 221]"
+(0(0*|1+0)*)|(1(1*|0+1)*),((0+1*)*0+)*|((1+0*)*1+)*,"positive example: [""0"", ""1"", ""00"", ""11"", ""010"", ""101"", ""0000"", ""1111"", ""01010"", ""10101""],  
+negative example: [""2"", ""01a"", ""10b"", ""0012"", ""110a"", ""abc"", ""123"", ""a0b1"", ""1a0b"", ""0a1b""]"
+(a|b)(a|b)+aaa+,(a|b)(a|b)*|aaa*,"positive example: [a, b, aa, ab, ba, bb, aaa, aab, aba, abb, baa, bab, bba, bbb, aaaa, aaab, aaba, aabb, abaa, abab, abba, abbb, baaa, baab, baba, babb, bbaa, bbab, bbba, bbbb],  
+negative example: [c, ac, bc, aac, abc, bac, bbc, aacc, abcc, bacc, bbcc, aaaaac, aaaabc, aaabcc, aabacc, aabbcc, abaccc, abbccc, baaccc, babccc, bbaccc, bbbccc]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b(a?))*|((a|b)a*ba)*,"positive example: [aba, baba, aabba, abbaa, babaa], negative example: [a, b, aa, bb, abab]"
+0*10*(10*10*)*,(0|1(11)*)+,"positive example: [0, 1, 111, 0111, 111111, 10111], negative example: [00, 01, 10, 011, 110, 1110]"
+(a|b)*baa(a|b)*b,[ab]*(baa)+[ab]*b[ab]*,"positive example: [baabaaab, abbaaab, baaab, bbaaab, abbaab], negative example: [abab, baaa, baba, aabab, bbaa]"
+(a|baa)*,(((b)*(a)(a))*(a*))*,"positive example: [""baa"", ""baaaa"", ""bbbaaa"", ""a"", ""aa"", ""aaa"", ""baaabaa""], negative example: [""b"", ""bb"", ""bbb"", ""ab"", ""bab"", ""baab"", ""baabab""]"
+1?(01)*0?,((0|1)|(1|0))*,"positive example: [""0"", ""1"", ""01"", ""10"", ""0011"", ""1100"", ""0101"", ""1010""],  
+negative example: ["""", ""2"", ""00a"", ""11b"", ""abc"", ""0112"", ""1001a""]"
+(a*ba*b)*a*ba*,a*(ba*(bb)*)(ba*(bb)*)*a*,"positive example: [""a"", ""ba"", ""bba"", ""babba"", ""abba"", ""baabba"", ""bbba"", ""bababba"", ""ababba"", ""baaabba""],  
+negative example: [""b"", ""bb"", ""bbb"", ""ab"", ""aab"", ""baa"", ""bab"", ""abab"", ""baaba"", ""bbaab""]"
+0*10*(10*10*)*,(0*(10*1)*0*10*)*|(0*10*10*),"positive example: [""0"", ""010"", ""01010"", ""00100"", ""010010"", ""000"", ""1010"", ""0010100""],  
+negative example: [""1"", ""11"", ""101"", ""1001"", ""0101"", ""110"", ""10101"", ""001001""]"
+(0*10*10*)*|0*,0*(1+0*1+0*)*,"positive example: [""0"", ""1"", ""01"", ""001"", ""101"", ""0001"", ""0101"", ""00101"", ""000101""],  
+negative example: ["""", ""2"", ""10"", ""11"", ""011"", ""110"", ""111"", ""0110"", ""1010""]"
+(a*ba*b)*a*ba*,(b|a+|a*ba*(ba*ba*)*a*),"positive example: [""a"", ""aa"", ""aaa"", ""ba"", ""aba"", ""ababa"", ""aabaa"", ""aababaa""], negative example: [""b"", ""bb"", ""bab"", ""abab"", ""baba"", ""ababab"", ""aab"", ""aabb""]"
+(a|b)*baa(a|b)*b,(b*a*)*|baa|(b*a*)*|b|b*,"positive example: [b, a, ba, baa, bbb, aaa, bbaa, ab, bba, baba], negative example: [bbaaab, abab, bbaab, aabba, bbaaa, abbaa, abab, bbbaa]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b)|((a|b)a*ba))*((a|b)a*b)?,"positive example: [""aab"", ""baab"", ""aabaab"", ""baabab"", ""aabab"", ""baaab"", ""aabaaab"", ""baabaaab"", ""aaab"", ""baaabab""],  
+negative example: [""abba"", ""baa"", ""a"", ""b"", ""aba"", ""bab"", ""aabba"", ""baaba"", ""abab"", ""bbaa""]"
+a+b,(a|a*b),"positive example: [a, ab, aab, aaab, b], negative example: [ba, aba, aaba, bb, aaa]"
+(a|(b*bb))*,(a|b+)*,"positive example: [a, b, ab, aab, bbb, aba, bbba, aaabbb], negative example: [c, ac, bc, abc, aabbc, ababababababc]"
+(a*ba*b)*a*ba*,(a)*b(a|(ba)*b)*,"positive example: [ab, aba, abab, aab, aaba, aabab, b, ba, bab, baba, baa, baaa, baab, babaab],  
+negative example: [aa, a, bb, bbb, abba, abbb, ababba, ababbb, bba, bbba, bbbaa, bbbab]"
+a+b,(a|b)a*b,"positive example: [aab, ab, bab, aaaaab, baaaab], negative example: [aa, bb, a, b, aba]"
+(b|(a*aa))*,(b*a*(aa)*b*)*,"positive example: ["""", ""b"", ""a"", ""aa"", ""ba"", ""ab"", ""bba"", ""aab"", ""baa"", ""baba"", ""aabb"", ""bbaa"", ""baab"", ""bbaabbaa""],  
+negative example: [""c"", ""ac"", ""bc"", ""abc"", ""aac"", ""bac"", ""bbac"", ""aabc"", ""baac"", ""bbaac"", ""aabbc"", ""bbaabc""]"
+a+b,aa*b+,"positive example: [aab, aaab, aaaaab, aabb, aaabbb], negative example: [ab, a, b, aaa, bb]"
+(a*ba*b)*a*ba*,(a|ba*)*ba*,"positive example: [ ""ba"", ""aba"", ""baa"", ""ababaa"", ""babaa"", ""aaba"" ], negative example: [ ""b"", ""aab"", ""bb"", ""a"", ""abab"", ""baba"" ]"
+a+b,(a*)(b),"positive example: [ab, aab, aaab, b], negative example: [ba, aba, a, bb, aaa]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*b+a)*((a|b)a*b+)?,"positive example: [abba, aabba, babaabba, aaabba, ababba], negative example: [a, b, aba, baa, abab]"
+((a|b)a*ba)*(((a|b)a*b)?),((aa*ba?)|(ba*ba?))*,"positive example: [aaab, baba, aabab, baaab, aabbaaab], negative example: [aaa, bbb, abab, baaa, aabba]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*ba)*|((a|b)a*b)?)*,"positive example: [abba, aabba, baba, ababba, aaabba], negative example: [aba, bba, aabb, baaa, abab]"
+((a|b)a*ba)*(((a|b)a*b)?),(((a|b)a*b(a?))?)*,"positive example: [ab, aab, bba, aabb, abab, aabba, aabbba, baba, aaaabbba], negative example: [c, ac, bc, abc, aac, bbc, aabbc, ababc, aabbaa, aabbbaa]"
+(a*ba*b)*a*ba*,a*b((ba*|a)*)a*,"positive example: [ab, aab, aabaa, aabbaa, aababaa], negative example: [b, ba, aba, aaba, aabba]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,(0*(01)*0|1*(10)*1)*,"positive example: [0, 1, 00, 11, 010, 101, 0010, 1101, 000, 111, 01010, 10101],  
+negative example: [01, 10, 011, 100, 0011, 1100, 0101, 1010, 0001, 1110, 0110, 1001]"
+0(0|1)*0,((1*|0*)(0*1*)*(0*|1*))*,"positive example: [""0"", ""1"", ""01"", ""10"", ""0011"", ""1100"", ""000111"", ""111000"", ""010101"", ""101010""],  
+negative example: [""2"", ""a"", ""01a"", ""1b0"", ""00112"", ""1100a"", ""000111b"", ""111000c"", ""010101d"", ""101010e""]"
+a+b,a*(b),"positive example: [""b"", ""ab"", ""aab"", ""aaab""], negative example: ["""", ""a"", ""ba"", ""aba"", ""aaba""]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),[0-1][0-1][0-1]*,"positive example:[00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111],  
+negative example:[0, 1, 2, 3, 12, 20, 21, 22, 23, 123, 321, 0000]"
+((0(0*|(1+0))*)|(1(1*|(0+1))*))?,((0|1)*(((01)(0|1)*(10))|((10)(0|1)*(01))|(010)*|(101)*)(0|1)*)|0*|1*,"positive example: [ ""010"", ""101"", ""00110"", ""11001"", ""010101"", ""101010"", ""0"", ""1"", ""000"", ""111"", ""001010"", ""110101"" ], negative example: [ ""011"", ""100"", ""0011"", ""1100"", ""0101"", ""1010"", ""0110"", ""1001"", ""00100"", ""11011"", ""0100"", ""1011"" ]"
+(a|baa)*,(a|b)*((b)*(aa))*,"positive example: [ab, baa, aabaa, bbaa, abbaa], negative example: [a, b, aba, aab, bba]"
+(a|b)*baa(a|b)*b,(a*b*(baa+)*a*b*)*b+,"positive example: [ ""abbaab"", ""bbbaaab"", ""aabbaaab"", ""abbb"", ""bbaabaaab"" ],  
+negative example: [ ""abab"", ""aabab"", ""baabab"", ""bbaabab"", ""abbaabab"" ]"
+(a|b)(a|b)+aaa+,(b*a*)*a*a*a,"positive example: [""aaa"", ""baaa"", ""bbbaaa"", ""baa"", ""a""], negative example: [""b"", ""bb"", ""bbb"", ""ab"", ""bba""]"
+(a|(b*bb))*,(a|b|ba|ab|aba)*,"positive example: [a, b, ba, ab, aba, aaba, baba, abab, abaaba, abababa], negative example: [aa, bb, aab, bba, aabba, bbaab, abba, babaab, ababba, abaabba]"
+(a|b)*(bab)(a|b)*,(a|b|bab)*,"positive example: [a, b, bab, abab, baba, aabab, babab, aa, bb, babaab], negative example: [c, ac, bc, abac, babaac, abca, babaac, abc, bac, abac]"
+(a|b)*(bab)(a|b)*,(a|b|bab)+,"positive example: [a, b, bab, abab, baba, aabab, babab, bbabab], negative example: [ab, ba, bba, aaba, abba, baaa, abbba]"
+(ab|ba)*,(ab|ba)*(aa+bb+ab+ba)*,"positive example: [ab, ba, aa, bb, abba, baaa, aabb, bbaa, abab, baba, abbaab, baabba],  
+negative example: [a, b, aba, bab, aab, bba, ababab, bababa, abbba, baaba]"
+a+b,(a|b)*(a)b,"positive example: [aab, baba, aaab, abab, bbaab], negative example: [abb, bba, aaa, bbb, abba]"
+(b|(a*aa))*,b*|(a|b)*aa(a|b)*,"positive example: [""b"", ""bb"", ""aaa"", ""baa"", ""aabaa"", ""abbaa""], negative example: [""a"", ""ab"", ""ba"", ""aba"", ""bab"", ""aab""]"
+(a|b)(a|b)+aaa+,(aa|ab|ba|bb|b)*(aaa)a*,"positive example: [aaa, baaa, abaaa, bbaaa, aaaaa, bbaaaaa], negative example: [a, b, aa, ab, ba, bb, aab, aba, abb, bba, bab, bbb]"
+a+b,a[ab]*b,"positive example: [ab, aab, aabb, aaab, aaaab], negative example: [a, b, aa, bb, aba]"
+0*10*(10*10*)*,(0*10*1*0*)*,"positive example: ["""", ""0"", ""1"", ""01"", ""10"", ""001"", ""100"", ""010"", ""101"", ""0001"", ""1000"", ""0101"", ""1010"", ""00100"", ""01010"", ""10101"", ""000100"", ""010101"", ""101010"", ""0010010""], negative example: [""2"", ""11"", ""00"", ""011"", ""110"", ""0011"", ""1100"", ""0110"", ""1001"", ""00011"", ""11000"", ""01101"", ""10010"", ""001100"", ""010110"", ""101001"", ""0001100"", ""0101101"", ""1010010""]"
+(ab|ba)*,((ab)*(ba)*)*|(aa|ab|ba|bb)*(a|b),"positive example: [ab, ba, abba, ababba, aabb, aaab, baba, abab, bbaa, aab],  
+negative example: [aba, baa, ababababab, bbb, aaa, abababab, bbaab, aabbaa, ababbaa, bbaabba]"
+(a|b)*baa(a|b)*b,(a|b)*baa*(a|b)*b*,"positive example: [baab, bbaaab, abaaab, baaaab, baaabb], negative example: [aab, bba, abab, baaa, baba]"
+(a|baa)*,(a|(b*aa+))*,"positive example: [""a"", ""baa"", ""baaaa"", ""aa"", ""abaa"", ""aabaa"", ""bbaa"", ""bbaaaa""],  
+negative example: [""b"", ""bb"", ""ba"", ""aba"", ""bba"", ""bab"", ""bbab"", ""baba""]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0(0|1)*0|1(0|1)*1|1*|0*,"positive example: [00, 11, 010, 101, 0, 1, 000, 111, 01010, 10101], negative example: [01, 10, 001, 110, 0110, 1001, 0011, 1100]"
+(a|b)(a|b)+aaa+,((a|b)*(a|b))+aaa+,"positive example: [baaa, aabaaa, bbaaaa, aaaaa, abbaaaa], negative example: [ab, ba, aab, bba, aabba]"
+0(0|1)*0,(0(0|1)*0)|(1(0|1)*1)?,"positive example: [00, 11, 010, 101, 0000, 1111, 0110, 1001], negative example: [0, 1, 01, 10, 001, 110, 0111, 1000]"
+(ab|ba)*,(ab|ba)*((a|b)(a|b))*,"positive example: [abab, baab, abba, aabb, baba, ababaa, bbaa, ababab, babaab, ababba], negative example: [a, b, aba, bab, aab, bba, abababab, babaaba, ababababab, babaabaa]"
+a+b,(a|b)*a(a|b)*b(a|b)*,"positive example: [aab, baba, aabab, aaab, baaab], negative example: [a, b, ab, ba, bbb]"
+(a|b)(a|b)+aaa+,(a|b)*aaa*,"positive example: [aaa, baaa, aabaa, bbaaa, aaaaa], negative example: [aa, ab, ba, bbb, aab]"
+(a|b)(a|b)+aaa+,(a|b)*aaa+,"positive example: [aaa, baaa, aaaaa, abaaa, bbaaaa], negative example: [aa, aab, aba, bba, abab]"
+(ab|ba)*,(aa|bb|ab|ba)*(aa|bb)*,"positive example: [aa, bb, abba, aabb, bbaa, aabbaa, bbaabb], negative example: [a, b, aba, bab, abab, baba, ababab]"
+a+b,(a*b|a),"positive example: [a, aa, aaa, ab, aab, aaab], negative example: [b, ba, aaba, aba, baa, baaa]"
+(a|(b*bb))*,(a|b|ba|ab)*,"positive example: [a, b, ba, ab, aab, bba, abab, baba, aabb, bbaa], negative example: [aaab, bbba, abaab, babba, aabbb, bbaaa]"
+0*10*(10*10*)*,[0-1]([0-1])?(([0-1])?)*,"positive example: [0, 1, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111],  
+negative example: [2, 3, 12, 20, 21, 22, 30, 31, 32, 33, 102, 120, 201, 210]"
+(0*10*10*)*|0*,(0|1)*,"positive example: [0, 1, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111], negative example: [2, 12, 20, 21, 22, 102, 120, 201, 210]"
+(0*10*10*)*|0*,(0|1)*1*,"positive example: [""1"", ""01"", ""11"", ""001"", ""101"", ""0001"", ""1111""], negative example: [""0"", ""00"", ""000"", ""010"", ""1000"", ""0010""]"
+(ab|ba)*,(ab|aabb|ba|bbaa)*,"positive example: [ab, aabb, ba, bbaa, abba, aabbba, bbaaab, ababab], negative example: [a, b, aa, bb, aba, bba, aab, baa, abbb, baaa]"
+(a|(b*bb))*,(a|b|ba|ab|aba)*(aba)*,"positive example: [aba, ababa, aaba, baba, abababa], negative example: [abba, baa, aabba, babab, ababba]"
+(a|b)(a|b)+aaa+,(a|b)*(aaa)a*,"positive example: [aaa, aaaaa, baaa, abaaa, bbaaa], negative example: [aa, ab, ba, bb, aab]"
+(ab|ba)*,(ab|ba)*(aabb+bbaa+ba+ab)*,"positive example: [abab, baba, aabb, bbaa, ababab, babaab, aabbaabb, bbaabbaa, abba, baab],  
+negative example: [aa, bb, aab, bba, abbaa, bbaab, ababba, babaabab, aabbb, bbaaab]"
+(ab|ba)*,(bb|aa|(ab|ba)*)*((aa)|(bb)|(ab)|(ba))*,"positive example: [bb, aa, abba, baba, aabb, bbaa, ababab, bbbbaa, aabbaa, ababba],  
+negative example: [a, b, aba, bab, abab, babaab, aaab, bbba, abababa, babaaba]"
+0(0|1)*0,0(0|1)*0|(00)*,"positive example: [00, 000, 010, 0000, 000000], negative example: [0, 1, 01, 10, 001]"
+b*a*,((a+)|b+a*)*,"positive example:[""a"", ""aa"", ""ba"", ""baa"", ""aba"", ""abaa"", ""b"", ""bb"", ""bba"", ""bbaa"", ""aab"", ""aaba""],  
+negative example:[""c"", ""ac"", ""ca"", ""abc"", ""bac"", ""bca"", ""abac"", ""abca""]"
+(ab|ba)*,((ab|ba)+(aa|bb|ba|ab)*)?,"positive example: [ab, ba, abab, baba, abba, baab, abaa, babb, ababaa, babaab], negative example: [a, b, aa, bb, aba, bab, aab, bba, abbb, baaa]"
+(a*ba*b)*a*ba*,a*b(ba+b)*|(a*|bb*)*,"positive example: [ab, aab, baba, aabab, bba, aaabbb, abba, aabba, bbb, aababab],  
+negative example: [ba, aba, bbaa, aaab, b, aaba, abab, baaa, a, bbab]"
+(ab|ba)*,((aa)*|(ab)*|(ba)*|(bb)*)*,"positive example: [aa, ab, ba, bb, aaaa, abab, baba, bbbb, aaabba, bbaaab],  
+negative example: [a, b, aba, bab, aab, bba, abba, bbaa, ababab, babaab]"
+(a|(b*bb))*,(a*b+a*)*|a*,"positive example: [a, aa, ab, aab, baa, aabbaa, aaa], negative example: [b, bb, aba, baba, abab, aababaa]"
+(0|1)(0|1)|(0|1)(0|1)(0|1),"(0|1|10|11){2,3}","positive example: [00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111, 0011, 0101, 1010, 1100],  
+negative example: [0, 1, 1111, 0000, 01011, 10101, 11100, 11011]"
+a+b,(a|a*)(b),"positive example: [ab, aab, b], negative example: [aa, ba, aaaa]"
+a+b,(a+b)*,"positive example: [a, b, aa, ab, ba, bb, aab, aba, baa, bbb], negative example: [c, ac, bc, abc, aac, bbc, abcd, aabbc]"
+a+b,(a+b)+,"positive example:[a, b, aa, ab, ba, bb, aab, aba, baa, bba], negative example:[c, ac, bc, abc, aac, bbc, ca, cb, cba]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba?)*,"positive example: [ab, aba, abab, aab, aaba, baba, baab, abba, aabab, babaab], negative example: [aa, bb, aabba, bba, abbb, aaa, bbb, abababab, baaab, ababba]"
+(0(0*|1+0)*)|(1(1*|0+1)*),(1+(0+1)*1*)*|(0+(1+0)*0*)*,"positive example: [ ""1"", ""0"", ""11"", ""00"", ""101"", ""010"", ""1101"", ""0010"", ""111"", ""000"", ""10101"", ""01010"", ""1111"", ""0000"", ""1010"", ""0101"" ],  
+negative example: [ ""2"", ""01a"", ""10b"", ""0112"", ""1001a"", ""abc"", ""1a0"", ""0b1"", ""1112"", ""000a"", ""101b"", ""010c"" ]"
+1?(01)*0?,((0|1)|(01|10))*,"positive example: [""0"", ""1"", ""01"", ""10"", ""001"", ""110"", ""0101"", ""1010"", ""0001"", ""1110""],  
+negative example: [""2"", ""00"", ""11"", ""0011"", ""1100"", ""010"", ""101"", ""000"", ""111"", ""0110""]"
+(a*ba*b)*a*ba*,a*b(bb*|a*)*,"positive example: [""ab"", ""aab"", ""abbb"", ""aaabbb"", ""abab"", ""aabbbaa""], negative example: [""b"", ""ba"", ""bba"", ""abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab"
+(ab|ba)*,(ab|ba)*(ab+ba)*,"positive example: [ab, ba, abab, baba, abba, baab, ababab, bababa, ababba, baabab],  
+negative example: [a, b, aa, bb, aba, bab, aab, bba, abaa, babb]"
+(a|b)(a|b)+aaa+,((a|b)*(a|b))(aaa)+,"positive example: [baaaa, aaaaa, bbaaaaaa], negative example: [aa, b, abab]"
+(a|b)*baa(a|b)*b,((a|b)*baa(a|b)*)*b,"positive example: [baa, bbaa, abaa, baaab, abbaa, baaabbaa], negative example: [a, b, ab, ba, aba, bab, abab, baba]"
+(0(0*|1+0)*)|(1(1*|0+1)*),1*|0*|1+(0*1*)*1+|0+(0*1*)*0+,"positive example: [""1"", ""0"", ""11"", ""00"", ""101"", ""010"", ""111"", ""000"", ""11011"", ""00100""],  
+negative example: ["""", ""01"", ""10"", ""0110"", ""1001"", ""0101"", ""1010"", ""0011"", ""1100""]"
+(a|b)*baa(a|b)*b,(a|b)*(a|b)*b,"positive example: [ab, aab, bbb, abab, bba], negative example: [aa, aba, aaa, abba, bab]"
+0(0|1)*0,0+|(0|1)*|0+,"positive example: [0, 00, 000, 1, 01, 10, 11, 0000, 0101],  
+negative example: [2, 3, 12, 21, 0012, 120, 1012]"
+(a|(b*bb))*,((a|b)*|bb|(a|b)*)*,"positive example: [""a"", ""b"", ""aa"", ""bb"", ""ab"", ""ba"", ""aab"", ""bba"", ""abab"", ""baba""],  
+negative example: ["""", ""c"", ""ac"", ""bc"", ""abc"", ""bac"", ""aac"", ""bbc""]"
+(a|baa)*,(a|b)*(baa)*,"positive example: [a, b, baa, abaa, bbaa, aabaa, bbaabaa], negative example: [ba, aba, baba, aaab, bba, aaba, bbaaba]"
+(0(0*|1+0)*)|(1(1*|0+1)*),1*(0+1+0*)*|0*(1+0+1*)*,"positive example: [ ""1"", ""0"", ""10"", ""01"", ""110"", ""001"", ""1001"", ""0110"", ""111"", ""000"" ],  
+negative example: [ ""2"", ""12"", ""20"", ""102"", ""012"", ""120"", ""210"", ""201"", ""121"", ""202"" ]"
+(ab|ba)*,((aa)|(ab)|(ba)|(bb))*,"positive example: [aa, ab, ba, bb, aaaa, abab, baba, bbbb, aabbaa, abbaab], negative example: [a, b, aab, bba, abaab, baaab, abbaa, bbaaa]"
+(a|baa)*,(a|(b|aa*))*,"positive example: [a, b, aa, ab, ba, aaa, aba, baa, aab, aaaa, aaba, abaa, abab, baaa, baab, bbaa],  
+negative example: [c, ac, bc, abc, aac, bac, bbc, ca, cb, cab, cac, cba, cbb, cc, aacc, bbcc]"
+(0(0*|1+0)*)|(1(1*|0+1)*),0*|1*|0+(1*0*)*|1+(0*1*)*,"positive example: [""0"", ""1"", ""00"", ""11"", ""01"", ""10"", ""000"", ""111"", ""001"", ""110"", ""010"", ""101""],  
+negative example: [""2"", ""01a"", ""10b"", ""abc"", ""0012"", ""110a"", ""010b"", ""101c""]"
+a(a|b)a(a|b)*,(aba|aaa|aab|abb|bba)(a|b)*,"positive example: [abaa, aaaa, aabbb, abba, bbaa], negative example: [abc, aaac, aabc, abbc, bbaac]"
+((a|b)a*ba)*(((a|b)a*b)?),((a|b)a*ba)*((a|b)a*b)?a?,"positive example: [""aba"", ""aabaa"", ""baababa"", ""aaabaa"", ""baaab""],  
+negative example: [""ab"", ""baa"", ""aab"", ""bab"", ""aaabbaa""]"
