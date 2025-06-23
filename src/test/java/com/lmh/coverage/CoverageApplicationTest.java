@@ -11,14 +11,12 @@ class CoverageApplicationTest {
     @Test
     void SCREG() {
         String regex = "a*|(a|bb)*";
-        edgePairCoverage edgePairCoverage = new edgePairCoverage();
-        edgePairCoverage.generate(regex);
-
-
+        SCREG SCREG = new SCREG();
+        SCREG.generate(regex);
 
         System.out.println("Regex: " + regex );
-        System.out.println("Positive Strings: " + edgePairCoverage.getPositiveStrings());
-        System.out.println("Negative Strings: " + edgePairCoverage.getNegativeStrings());
+        System.out.println("Positive Strings: " + SCREG.getPositiveStrings());
+        System.out.println("Negative Strings: " + SCREG.getNegativeStrings());
 
     }
 

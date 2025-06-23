@@ -11,7 +11,7 @@ import java.util.*;
 
 import static com.lmh.coverage.utils.myBasicOperations.*;
 
-public class edgePairCoverage{
+public class SCREG {
 
     private Automaton attemptAutomaton;
 
@@ -63,10 +63,10 @@ public class edgePairCoverage{
             this.setAttemptAutomaton(myComplement(this.getAttemptAutomaton()));
 
         if (!(this.getAttemptAutomaton().getStates().size() <= 1 && !this.getAttemptAutomaton().getInitialState().isAccept())) {
-            Map<State, LinkedList<edgePair>> form = edgePairCoverage.generateEdgePairsMap(this.getAttemptAutomaton());
+            Map<State, LinkedList<edgePair>> form = SCREG.generateEdgePairsMap(this.getAttemptAutomaton());
 
 
-            LinkedList<Path> EPC = edgePairCoverage.generatePath(this.getAttemptAutomaton(), form);
+            LinkedList<Path> EPC = SCREG.generatePath(this.getAttemptAutomaton(), form);
 
             State initialState = this.getAttemptAutomaton().getInitialState();
             Set<Transition> transitions = initialState.getTransitions();
