@@ -21,7 +21,7 @@ Lombok
 ## Installation & Execution
 1. Clone the repository:
 ```bash
-  git clone https://github.com/lmh1024-dev/Coverage
+  git clone https://github.com/lmh1024-dev/SCREG
 ```
 
 2. Build the project:
