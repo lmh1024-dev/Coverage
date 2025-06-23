@@ -3,6 +3,7 @@ package com.lmh.coverage;
 import com.lmh.coverage.entity.Path;
 import com.lmh.coverage.entity.edgePair;
 import dk.brics.automaton.Automaton;
+import dk.brics.automaton.RegExp;
 import dk.brics.automaton.State;
 import dk.brics.automaton.Transition;
 
@@ -10,8 +11,45 @@ import java.util.*;
 
 import static com.lmh.coverage.utils.myBasicOperations.*;
 
-public class edgePairCoverage extends Coverage{
-    public void generate(){
+public class edgePairCoverage{
+
+    private Automaton attemptAutomaton;
+
+    private String positiveStrings;
+
+    private String negativeStrings;
+
+    public Automaton getAttemptAutomaton() {
+        return attemptAutomaton;
+    }
+
+    public void setAttemptAutomaton(Automaton attemptAutomaton) {
+        this.attemptAutomaton = attemptAutomaton;
+    }
+
+    public String getPositiveStrings() {
+        return positiveStrings;
+    }
+
+    public void setPositiveStrings(String positiveStrings) {
+        this.positiveStrings = positiveStrings;
+    }
+
+    public String getNegativeStrings() {
+        return negativeStrings;
+    }
+
+    public void setNegativeStrings(String negativeStrings) {
+        this.negativeStrings = negativeStrings;
+    }
+
+    public void generate(String attemptRegex){
+        RegExp attemptRegexp = new RegExp(attemptRegex);
+        Automaton attemptAutomaton = attemptRegexp.toAutomaton();
+        attemptAutomaton.determinize();
+        attemptAutomaton.minimize();
+
+        this.setAttemptAutomaton(attemptAutomaton);
         //run positive
         run(true);
 
