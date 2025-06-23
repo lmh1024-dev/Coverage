@@ -53,4 +53,4 @@ Negative Strings:[baba, baaa, babb, bab, b, aab, bbb, baa, ba, bbab]
   mvn test
 ```
 ## License
-Coverage is released under the terms of the BSD license. Copyright (C) Lixiao Zheng, Minghuang Lin
+Coverage is released under the terms of the BSD license. 
