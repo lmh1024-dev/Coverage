@@ -5,8 +5,6 @@ This project is a Java based tool used to generate positive strings and negative
 
 We traverse the DFA and their complement DFA of regular expressions to ensure the generation of positive and negative strings. Strong edge-pair coverage criteria extending graph-based coverage metrics.
 
-## Data
-Experimental data and results are published in the file 'Data'.
 
 
 ## Requirements
