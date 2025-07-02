@@ -1,52 +1,52 @@
-attempt_description,question_description,correct_regex,user_id
-At most two a.,Contains less than three a’s.,b*a?b*a?b*,355
-At most 1 'a' in the string.,Every odd position is b.,(a?b)*,355
-irregular,At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,355
-At most 2 consecutive occurrences of the letter 'b' in a string.,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,355
-No more than 2 'a' can appear continuously in the string.,Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,355
-The string with only two consecutive 'a's.,Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,356
-"A string that starts with zero or more 'a's or 'ba's, followed by zero or more 'b's or 'ab's, and ends with zero or one 'a'.",At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,356
-"Starting with 0 or more a's or ba's, followed by 0 or 1 bb, and ending with 0 or more a's or ab's.",Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,356
-"Zero or more strings starting with 0 or 1 ""a"" and ending with ""b"".",Every odd position is b.,(a?b)*,356
-an ab string with the first character being b and the last character being a,Begins with b and ends with a.,b(a|b)*a,344
-The ab string with 'a' as the third character from the left to the right.,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,344
-"Any combination of zero or more instances of a string consisting of a single ""b"" or starting and ending with ""a"" with any number of ""b"" in between.",Even number of a’s.,(b|(ab*a))*,344
-"There must be at least one b after every a, and the number of a's in the ab string is even.",Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,344
-"A string consisting entirely of 'b's, or a string that starts with any number of 'b's, followed by zero or more 'a's, and ending with at least two 'b's, all repeating, and finally ending with an 'a' and followed by any number of 'b's.",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),344
-ab strings ending with ab,Ends with ab,(a|b)*ab,324
-"A string consisting of any number of ""a""s followed by any number of ""b""s or ""ba""s.",Does not contain baa as a substring.,a*(ba+b)*,324
-"An ""ab"" string of length at least 5 where the fifth to last character is 'b'.",The 5th symbol from the right end is b.,(a|b)*b(a|b)(a|b)(a|b)(a|b),324
-AB string containing ABAB,Contains the substring abab.,(a|b)*abab(a|b)*,324
-String ending with 'ab',Ends with ab,(a|b)*ab,421
-"Starting with 0 or more 'a's, there must be at least one 'b' before any subsequent 'a's.",Does not contain baa as a substring.,a*(ba+b)*,421
-"A string consisting of 'a' and 'b' with a length of at least 5, and the fifth character from the end must be 'b'.",The 5th symbol from the right end is b.,(a|b)*b(a|b)(a|b)(a|b)(a|b),421
-"A string that is at least 4 characters long and must contain the pattern ""abab"".",Contains the substring abab.,(a|b)*abab(a|b)*,421
-"Strings that start with ""a"" and have an odd length, or start with ""b"" and have a length 3 times a multiple of 1.",Start with a and have odd length or start with b and have even length.,(a(a|ba|b)*)|(ba|b(a|ba|b)*),421
-"Strings ending with ""ab"".",Ends with ab,(a|b)*ab,331
-"The string with ""b"" as the 5th character from the end.",Does not contain baa as a substring.,a*(ba+b)*,331
-"A string that must contain the pattern ""abab"".",Contains the substring abab.,(a|b)*abab(a|b)*,331
-"Strings that start with an ""a"" on odd positions or start with a ""b"" on even positions.",Start with a and have odd length or start with b and have even length.,(a(a|ba|b)*)|(ba|b(a|ba|b)*),331
-Strings with only one 'a' behind 'b'.,Does not contain baa as a substring.,a*(ba+b)*,331
-Strings ending with 'ab',Ends with ab,(a|b)*ab,325
-"Translate into English: A string consisting of any number of b's and up to two a's, with at least one b separating the two a's.",Contains less than three a’s.,b*a?b*a?b*,352
-"Translate into English: Match strings containing two consecutive ""a""s, and there can be any number of ""ab"" or ""b"" (before the two ""a""s) and ""ba"" or ""b"" (after the two ""a""s).",Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,352
-"The first half is made up of repetitions of a or ba, and the second half is made up of repetitions of b or ab.",At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,352
-"The first half consists of repetitions of 'a' or 'ba', with possibly one 'bb' in the middle, and the second half consists of repetitions of 'a' or 'ab'.",Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,352
-"Match strings consisting of repeated units of zero or more a's followed by a b, each b preceded by at most one a, and the whole string ending with b.",Every odd position is b.,(a?b)*,352
-Strings that start with 'b' and end with 'a',Begins with b and ends with a.,b(a|b)*a,342
-"String with the third character being ""a"".",Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,342
-astring that cannot appear alone,Even number of a’s.,(b|(ab*a))*,342
-a string must be followed by at least one b,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,342
-"Either match a pure b string or an empty string, or match a string composed of a and b, where a must appear at least once.",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),342
-"Strings that start with any number of ""a""s followed by any number of combinations of ""b"" or ""ba"", but cannot have ""a"" appear on its own unless it is at the beginning.",Does not contain baa as a substring.,a*(ba+b)*,325
-"A string containing at least 5 characters with the letter ""b"".",The 5th symbol from the right end is b.,(a|b)*b(a|b)(a|b)(a|b)(a|b),325
-"A string containing the substring ""abab"".",Contains the substring abab.,(a|b)*abab(a|b)*,325
-"A string starting with ""a"" has a minimum length of 2, while a string starting with ""b"" has a minimum length of 3.",Start with a and have odd length or start with b and have even length.,(a(a|ba|b)*)|(ba|b(a|ba|b)*),325
-"All strings starting with 'b', ending with 'a', and containing only 'a' or 'b' in between.",Begins with b and ends with a.,b(a|b)*a,335
-A string that starts with 'a' and ends with 'b'.,Begins with b and ends with a.,b(a|b)*a,339
-At least 3 in length.,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,335
-"All strings that can be formed by any combination of substrings containing ""b"" and ""ab*a"", including the empty string.",Even number of a’s.,(b|(ab*a))*,335
-"b*: any number of 'b' (including 0).
+regex_to_be_interpret,student_solution,correct_answer,user_id
+b*a?b*a?b*,At most two a.,Contains less than three a’s.,355
+(a?b)*,At most 1 'a' in the string.,Every odd position is b.,355
+(a|(ba))*(b|(ab))*a?,irregular,At most one pair of consecutive b’s.,355
+(a|(ba))*(bb)?(a|(ab))*,At most 2 consecutive occurrences of the letter 'b' in a string.,Each a is followed by at least one b.,355
+((ab)|b)*aa((ba)|b)*,No more than 2 'a' can appear continuously in the string.,Has exactly one pair of consecutive a’s,355
+((ab)|b)*aa((ba)|b)*,The string with only two consecutive 'a's.,Has exactly one pair of consecutive a’s,356
+(a|(ba))*(b|(ab))*a?,"A string that starts with zero or more 'a's or 'ba's, followed by zero or more 'b's or 'ab's, and ends with zero or one 'a'.",At most one pair of consecutive b’s.,356
+(a|(ba))*(bb)?(a|(ab))*,"Starting with 0 or more a's or ba's, followed by 0 or 1 bb, and ending with 0 or more a's or ab's.",Each a is followed by at least one b.,356
+(a?b)*,"Zero or more strings starting with 0 or 1 ""a"" and ending with ""b"".",Every odd position is b.,356
+b(a|b)*a,an ab string with the first character being b and the last character being a,Begins with b and ends with a.,344
+(a|b)(a|b)a(a|b)*,The ab string with 'a' as the third character from the left to the right.,Length is at least 3 and the 3rd symbol is a.,344
+(b|(ab*a))*,"Any combination of zero or more instances of a string consisting of a single ""b"" or starting and ending with ""a"" with any number of ""b"" in between.",Even number of a’s.,344
+b*(abb*abb*)*,"There must be at least one b after every a, and the number of a's in the ab string is even.",Even number of a’s and each a is followed by at least one b.,344
+(b*)|(b*(abbb*)*ab*),"A string consisting entirely of 'b's, or a string that starts with any number of 'b's, followed by zero or more 'a's, and ending with at least two 'b's, all repeating, and finally ending with an 'a' and followed by any number of 'b's.",At least two occurrences of b between any two occurrences of a.,344
+(a|b)*ab,ab strings ending with ab,Ends with ab,324
+a*(ba+b)*,"A string consisting of any number of ""a""s followed by any number of ""b""s or ""ba""s.",Does not contain baa as a substring.,324
+(a|b)*b(a|b)(a|b)(a|b)(a|b),"An ""ab"" string of length at least 5 where the fifth to last character is 'b'.",The 5th symbol from the right end is b.,324
+(a|b)*abab(a|b)*,AB string containing ABAB,Contains the substring abab.,324
+(a|b)*ab,String ending with 'ab',Ends with ab,421
+a*(ba+b)*,"Starting with 0 or more 'a's, there must be at least one 'b' before any subsequent 'a's.",Does not contain baa as a substring.,421
+(a|b)*b(a|b)(a|b)(a|b)(a|b),"A string consisting of 'a' and 'b' with a length of at least 5, and the fifth character from the end must be 'b'.",The 5th symbol from the right end is b.,421
+(a|b)*abab(a|b)*,"A string that is at least 4 characters long and must contain the pattern ""abab"".",Contains the substring abab.,421
+(a(a|ba|b)*)|(ba|b(a|ba|b)*),"Strings that start with ""a"" and have an odd length, or start with ""b"" and have a length 3 times a multiple of 1.",Start with a and have odd length or start with b and have even length.,421
+(a|b)*ab,"Strings ending with ""ab"".",Ends with ab,331
+a*(ba+b)*,"The string with ""b"" as the 5th character from the end.",Does not contain baa as a substring.,331
+(a|b)*abab(a|b)*,"A string that must contain the pattern ""abab"".",Contains the substring abab.,331
+(a(a|ba|b)*)|(ba|b(a|ba|b)*),"Strings that start with an ""a"" on odd positions or start with a ""b"" on even positions.",Start with a and have odd length or start with b and have even length.,331
+a*(ba+b)*,Strings with only one 'a' behind 'b'.,Does not contain baa as a substring.,331
+(a|b)*ab,Strings ending with 'ab',Ends with ab,325
+b*a?b*a?b*,"Translate into English: A string consisting of any number of b's and up to two a's, with at least one b separating the two a's.",Contains less than three a’s.,352
+((ab)|b)*aa((ba)|b)*,"Translate into English: Match strings containing two consecutive ""a""s, and there can be any number of ""ab"" or ""b"" (before the two ""a""s) and ""ba"" or ""b"" (after the two ""a""s).",Has exactly one pair of consecutive a’s,352
+(a|(ba))*(b|(ab))*a?,"The first half is made up of repetitions of a or ba, and the second half is made up of repetitions of b or ab.",At most one pair of consecutive b’s.,352
+(a|(ba))*(bb)?(a|(ab))*,"The first half consists of repetitions of 'a' or 'ba', with possibly one 'bb' in the middle, and the second half consists of repetitions of 'a' or 'ab'.",Each a is followed by at least one b.,352
+(a?b)*,"Match strings consisting of repeated units of zero or more a's followed by a b, each b preceded by at most one a, and the whole string ending with b.",Every odd position is b.,352
+b(a|b)*a,Strings that start with 'b' and end with 'a',Begins with b and ends with a.,342
+(a|b)(a|b)a(a|b)*,"String with the third character being ""a"".",Length is at least 3 and the 3rd symbol is a.,342
+(b|(ab*a))*,astring that cannot appear alone,Even number of a’s.,342
+b*(abb*abb*)*,a string must be followed by at least one b,Even number of a’s and each a is followed by at least one b.,342
+(b*)|(b*(abbb*)*ab*),"Either match a pure b string or an empty string, or match a string composed of a and b, where a must appear at least once.",At least two occurrences of b between any two occurrences of a.,342
+a*(ba+b)*,"Strings that start with any number of ""a""s followed by any number of combinations of ""b"" or ""ba"", but cannot have ""a"" appear on its own unless it is at the beginning.",Does not contain baa as a substring.,325
+(a|b)*b(a|b)(a|b)(a|b)(a|b),"A string containing at least 5 characters with the letter ""b"".",The 5th symbol from the right end is b.,325
+(a|b)*abab(a|b)*,"A string containing the substring ""abab"".",Contains the substring abab.,325
+(a(a|ba|b)*)|(ba|b(a|ba|b)*),"A string starting with ""a"" has a minimum length of 2, while a string starting with ""b"" has a minimum length of 3.",Start with a and have odd length or start with b and have even length.,325
+b(a|b)*a,"All strings starting with 'b', ending with 'a', and containing only 'a' or 'b' in between.",Begins with b and ends with a.,335
+b(a|b)*a,A string that starts with 'a' and ends with 'b'.,Begins with b and ends with a.,339
+(a|b)(a|b)a(a|b)*,At least 3 in length.,Length is at least 3 and the 3rd symbol is a.,335
+(b|(ab*a))*,"All strings that can be formed by any combination of substrings containing ""b"" and ""ab*a"", including the empty string.",Even number of a’s.,335
+b*a?b*a?b*,"b*: any number of 'b' (including 0).
 
 a?: 0 or 1 'a'.
 
@@ -54,16 +54,16 @@ b*: again, any number of 'b'.
 
 a?: 0 or 1 'a'.
 
-b*: finally, any number of 'b'.",Contains less than three a’s.,b*a?b*a?b*,354
-"The string described by this regular expression must:
+b*: finally, any number of 'b'.",Contains less than three a’s.,354
+((ab)|b)*aa((ba)|b)*,"The string described by this regular expression must:
 
 Contain at least one ""aa"".
 
 All 'a's must appear in pairs (""aa"") or be enclosed in ""ab"" / ""ba"" (cannot appear alone).
 
-Can contain any number of 'b's, but the appearance of 'a's is restricted.",Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,354
-"The regular expression matches strings that start with zero or more b's, followed by zero or more strings of the pattern abb*abb*.",Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,335
-"All 'a' must satisfy one of the following forms:
+Can contain any number of 'b's, but the appearance of 'a's is restricted.",Has exactly one pair of consecutive a’s,354
+b*(abb*abb*)*,"The regular expression matches strings that start with zero or more b's, followed by zero or more strings of the pattern abb*abb*.",Even number of a’s and each a is followed by at least one b.,335
+(a|(ba))*(b|(ab))*a?,"All 'a' must satisfy one of the following forms:
 
 - Standalone 'a' (such as ""a""),
 
@@ -73,9 +73,9 @@ Can contain any number of 'b's, but the appearance of 'a's is restricted.",Has e
 
 'b' can appear alone or in ""ab"".
 
-Finally, there may be an optional 'a' (a?).",At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,354
-"The regular expression matches strings that are either composed only of 'b', or have a specific pattern of 'b', 'a', and 'b' combination.",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),335
-"(a|(ba))* 
+Finally, there may be an optional 'a' (a?).",At most one pair of consecutive b’s.,354
+(b*)|(b*(abbb*)*ab*),"The regular expression matches strings that are either composed only of 'b', or have a specific pattern of 'b', 'a', and 'b' combination.",At least two occurrences of b between any two occurrences of a.,335
+(a|(ba))*(bb)?(a|(ab))*,"(a|(ba))* 
 
 Matches ""a"" or ""ba"", can be repeated any number of times (including 0 times).
 
@@ -89,59 +89,59 @@ Matches 0 or 1 occurrence of ""bb"" (meaning ""bb"" is optional).
 
 Matches ""a"" or ""ab"", can be repeated any number of times (including 0 times).
 
-For example: """", ""a"", ""ab"", ""aa"", ""aab"", ""aba"", ""abab""",Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,354
-"Composed of 'a' and 'b', with each 'b' being able to have 0 or 1 'a' in front of it.
+For example: """", ""a"", ""ab"", ""aa"", ""aab"", ""aba"", ""abab""",Each a is followed by at least one b.,354
+(a?b)*,"Composed of 'a' and 'b', with each 'b' being able to have 0 or 1 'a' in front of it.
 
 Continuous occurrence of 'b' is not allowed (due to a?b ensuring at most one 'a' in front of each 'b').
 
-Can match empty string (because * allows 0 repetitions).",Every odd position is b.,(a?b)*,354
-"Starting with 'b', any number of 'a' or 'b' in the middle, ending with 'a'.",Begins with b and ends with a.,b(a|b)*a,343
-"Overall, this regular expression matches a sequence that starts with any two characters (""a"" or ""b"") followed by an ""a"".",Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,339
-"The length must be at least 3;
+Can match empty string (because * allows 0 repetitions).",Every odd position is b.,354
+b(a|b)*a,"Starting with 'b', any number of 'a' or 'b' in the middle, ending with 'a'.",Begins with b and ends with a.,343
+(a|b)(a|b)a(a|b)*,"Overall, this regular expression matches a sequence that starts with any two characters (""a"" or ""b"") followed by an ""a"".",Length is at least 3 and the 3rd symbol is a.,339
+(a|b)(a|b)a(a|b)*,"The length must be at least 3;
 The third character must be a;
 The first two characters can be a or b;
-Any number of a or b can follow the third character.",Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,343
-"""Cannot appear continuously""",Even number of a’s.,(b|(ab*a))*,343
-"a must appear in pairs (cannot appear alone).
+Any number of a or b can follow the third character.",Length is at least 3 and the 3rd symbol is a.,343
+(b|(ab*a))*,"""Cannot appear continuously""",Even number of a’s.,343
+b*(abb*abb*)*,"a must appear in pairs (cannot appear alone).
 
 There must be at least one b between each pair of a (cannot have aa directly).
 
-b can appear anywhere (beginning, middle, end).",Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,343
-"All strings composed of 'b' (including an empty string), or containing 'a' and at least two 'b' after each 'a' (except for the last one).",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),343
-"A and B form, the maximum number of A is 2, 2 A cannot be adjacent, A must be separated by B, it can be a string consisting entirely of B.",Contains less than three a’s.,b*a?b*a?b*,353
-A string must contain 'aa' and be separated by 'b' in all places except for 'aa'.,Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,353
-All strings that can be formed by a and b.,At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,353
-"There can be a sub-string ""bb"" or not. If there is ""bb"", the part before ""bb"" can consist of ""a"" or ""ba"", and the part after ""bb"" can consist of ""a"" or ""ab"". If there is no ""bb"", the front and back are directly connected, with the same conditions as when there is ""bb"".",Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,353
-"There must be 0 or 1 ""a"" before each ""b"", and there cannot be consecutive ""b"" unless there is an ""a"" in between the them in the string.",Every odd position is b.,(a?b)*,353
-Start with b and end with a.,Begins with b and ends with a.,b(a|b)*a,336
-"aa - aaa
+b can appear anywhere (beginning, middle, end).",Even number of a’s and each a is followed by at least one b.,343
+(b*)|(b*(abbb*)*ab*),"All strings composed of 'b' (including an empty string), or containing 'a' and at least two 'b' after each 'a' (except for the last one).",At least two occurrences of b between any two occurrences of a.,343
+b*a?b*a?b*,"A and B form, the maximum number of A is 2, 2 A cannot be adjacent, A must be separated by B, it can be a string consisting entirely of B.",Contains less than three a’s.,353
+((ab)|b)*aa((ba)|b)*,A string must contain 'aa' and be separated by 'b' in all places except for 'aa'.,Has exactly one pair of consecutive a’s,353
+(a|(ba))*(b|(ab))*a?,All strings that can be formed by a and b.,At most one pair of consecutive b’s.,353
+(a|(ba))*(bb)?(a|(ab))*,"There can be a sub-string ""bb"" or not. If there is ""bb"", the part before ""bb"" can consist of ""a"" or ""ba"", and the part after ""bb"" can consist of ""a"" or ""ab"". If there is no ""bb"", the front and back are directly connected, with the same conditions as when there is ""bb"".",Each a is followed by at least one b.,353
+(a?b)*,"There must be 0 or 1 ""a"" before each ""b"", and there cannot be consecutive ""b"" unless there is an ""a"" in between the them in the string.",Every odd position is b.,353
+b(a|b)*a,Start with b and end with a.,Begins with b and ends with a.,336
+(a|b)(a|b)a(a|b)*,"aa - aaa
 ab - aba
 ba - baa
-bb - bba",Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,336
-"Match a string that contains 0 or more b's, followed by either 2 a's wrapping around 0 or more b's, or any number of b's straight after 2 a's.",Even number of a’s.,(b|(ab*a))*,336
-"The closure of the string that starts with 0 or more ""b""s, followed by an ""ab"" and 0 or more ""b""s, with this form repeated twice.",Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,336
-"A string with zero or more occurrences of 'b', or starting with zero or more occurrences of 'b' followed by zero or more occurrences of 'ab' and then zero or more occurrences of 'b' repeating, ending with zero or more occurrences of 'b'.",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),336
-"This regular expression matches strings of any length consisting of letters a and b, and the string must end with ab.",Ends with ab,(a|b)*ab,332
-"A string composed of characters 'a' and 'b', and must end with 'ab'. There can be zero or more combinations of 'a' or 'b' before 'ab'.",Ends with ab,(a|b)*ab,419
-"Starting with 0 or any number of ""a"", followed by 0 or any number of combinations of ""ba"" and ""b"".",Does not contain baa as a substring.,a*(ba+b)*,419
-"Starting with 0 or any number of combinations of a and b followed by a single b, ending with a combination of 4 a's and b's.",The 5th symbol from the right end is b.,(a|b)*b(a|b)(a|b)(a|b)(a|b),419
-"Starting with 0 or any number of combinations of ""a"" and ""b"", followed by ""abab"", and ending with 0 or any number of combinations of ""a"" and ""b"".",Contains the substring abab.,(a|b)*abab(a|b)*,419
-"Starting with ""a"" and having odd length, or starting with ""b"" and having even length.",Start with a and have odd length or start with b and have even length.,(a(a|ba|b)*)|(ba|b(a|ba|b)*),419
-"Strings starting with 'b', containing only 'a' or 'b' in between, and ending with 'a'.",Begins with b and ends with a.,b(a|b)*a,337
-"Words that start with either 'a' or 'b', with the second character being 'a' or 'b', the third character being 'a', and ending with a closure of 'a' or 'b'.",Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,337
-"The closure of regular expressions that start with character 'a' and are followed by 'b', or start with 'b' and end with 'a'.",Even number of a’s.,(b|(ab*a))*,337
-"Starting with the closure of b, followed by linking to an ab linked to the closure of b linked to ab linked to the closure of b.",Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,337
-"The closure of b or the closure link of b starting with abb, linking the closure of b with the character a and then linking the expression of the closure of b.",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),337
-"Starting with zero or more 'a' characters, followed by zero or more combinations of 'b' or 'ba'.",Does not contain baa as a substring.,a*(ba+b)*,329
-"Including zero or more 'a' or 'b', then followed by a 'b', and then followed by four characters, each of which can be 'a' or 'b'.",The 5th symbol from the right end is b.,(a|b)*b(a|b)(a|b)(a|b)(a|b),329
-"A string containing the substring ""abab"", with any number of 'a' or 'b' characters before and after ""abab"".",Contains the substring abab.,(a|b)*abab(a|b)*,329
-"Starting with 'a', followed by zero or more pairs of 'a' or 'b' characters.
+bb - bba",Length is at least 3 and the 3rd symbol is a.,336
+(b|(ab*a))*,"Match a string that contains 0 or more b's, followed by either 2 a's wrapping around 0 or more b's, or any number of b's straight after 2 a's.",Even number of a’s.,336
+b*(abb*abb*)*,"The closure of the string that starts with 0 or more ""b""s, followed by an ""ab"" and 0 or more ""b""s, with this form repeated twice.",Even number of a’s and each a is followed by at least one b.,336
+(b*)|(b*(abbb*)*ab*),"A string with zero or more occurrences of 'b', or starting with zero or more occurrences of 'b' followed by zero or more occurrences of 'ab' and then zero or more occurrences of 'b' repeating, ending with zero or more occurrences of 'b'.",At least two occurrences of b between any two occurrences of a.,336
+(a|b)*ab,"This regular expression matches strings of any length consisting of letters a and b, and the string must end with ab.",Ends with ab,332
+(a|b)*ab,"A string composed of characters 'a' and 'b', and must end with 'ab'. There can be zero or more combinations of 'a' or 'b' before 'ab'.",Ends with ab,419
+a*(ba+b)*,"Starting with 0 or any number of ""a"", followed by 0 or any number of combinations of ""ba"" and ""b"".",Does not contain baa as a substring.,419
+(a|b)*b(a|b)(a|b)(a|b)(a|b),"Starting with 0 or any number of combinations of a and b followed by a single b, ending with a combination of 4 a's and b's.",The 5th symbol from the right end is b.,419
+(a|b)*abab(a|b)*,"Starting with 0 or any number of combinations of ""a"" and ""b"", followed by ""abab"", and ending with 0 or any number of combinations of ""a"" and ""b"".",Contains the substring abab.,419
+(a(a|ba|b)*)|(ba|b(a|ba|b)*),"Starting with ""a"" and having odd length, or starting with ""b"" and having even length.",Start with a and have odd length or start with b and have even length.,419
+b(a|b)*a,"Strings starting with 'b', containing only 'a' or 'b' in between, and ending with 'a'.",Begins with b and ends with a.,337
+(a|b)(a|b)a(a|b)*,"Words that start with either 'a' or 'b', with the second character being 'a' or 'b', the third character being 'a', and ending with a closure of 'a' or 'b'.",Length is at least 3 and the 3rd symbol is a.,337
+(b|(ab*a))*,"The closure of regular expressions that start with character 'a' and are followed by 'b', or start with 'b' and end with 'a'.",Even number of a’s.,337
+b*(abb*abb*)*,"Starting with the closure of b, followed by linking to an ab linked to the closure of b linked to ab linked to the closure of b.",Even number of a’s and each a is followed by at least one b.,337
+(b*)|(b*(abbb*)*ab*),"The closure of b or the closure link of b starting with abb, linking the closure of b with the character a and then linking the expression of the closure of b.",At least two occurrences of b between any two occurrences of a.,337
+a*(ba+b)*,"Starting with zero or more 'a' characters, followed by zero or more combinations of 'b' or 'ba'.",Does not contain baa as a substring.,329
+(a|b)*b(a|b)(a|b)(a|b)(a|b),"Including zero or more 'a' or 'b', then followed by a 'b', and then followed by four characters, each of which can be 'a' or 'b'.",The 5th symbol from the right end is b.,329
+(a|b)*abab(a|b)*,"A string containing the substring ""abab"", with any number of 'a' or 'b' characters before and after ""abab"".",Contains the substring abab.,329
+(a(a|ba|b)*)|(ba|b(a|ba|b)*),"Starting with 'a', followed by zero or more pairs of 'a' or 'b' characters.
 
-Starting with 'b', followed by either 'a' or 'b', and then zero or more pairs of 'a' or 'b' characters.",Start with a and have odd length or start with b and have even length.,(a(a|ba|b)*)|(ba|b(a|ba|b)*),329
-Translate sentence into English: Match strings that start with any number of a's or b's and end with ab.,Ends with ab,(a|b)*ab,327
-Match any number of 'a' followed by either any number of 'ba' or a single 'b'.,Does not contain baa as a substring.,a*(ba+b)*,327
-"Match with any number of a or b characters in the beginning, followed by a b, and then followed by 4 arbitrary a or b characters. 
+Starting with 'b', followed by either 'a' or 'b', and then zero or more pairs of 'a' or 'b' characters.",Start with a and have odd length or start with b and have even length.,329
+(a|b)*ab,Translate sentence into English: Match strings that start with any number of a's or b's and end with ab.,Ends with ab,327
+a*(ba+b)*,Match any number of 'a' followed by either any number of 'ba' or a single 'b'.,Does not contain baa as a substring.,327
+(a|b)*b(a|b)(a|b)(a|b)(a|b),"Match with any number of a or b characters in the beginning, followed by a b, and then followed by 4 arbitrary a or b characters. 
 
-",The 5th symbol from the right end is b.,(a|b)*b(a|b)(a|b)(a|b)(a|b),327
-"Strings starting and ending with any number of a's or b's, with the substring ""abab"" in between.",Contains the substring abab.,(a|b)*abab(a|b)*,327
-"Match combinations of a and b with a specific number of occurrences, starting with either a or b.",Start with a and have odd length or start with b and have even length.,(a(a|ba|b)*)|(ba|b(a|ba|b)*),327
+",The 5th symbol from the right end is b.,327
+(a|b)*abab(a|b)*,"Strings starting and ending with any number of a's or b's, with the substring ""abab"" in between.",Contains the substring abab.,327
+(a(a|ba|b)*)|(ba|b(a|ba|b)*),"Match combinations of a and b with a specific number of occurrences, starting with either a or b.",Start with a and have odd length or start with b and have even length.,327

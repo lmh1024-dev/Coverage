@@ -1,103 +1,103 @@
-﻿attempt_regex,question_description,correct_regex,user_id
-^b.*a$,Begins with b and ends with a.,b(a|b)*a,100
-b(ab)*a,Begins with b and ends with a.,b(a|b)*a,107
-^(b[ab])*b?$,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,411
-(a|b){2}a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,411
-((a|b){3})+,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,411
-"^a{3,}(bb)+$",anbm where n ≥ 3 and m is even,aaaa*(bb)*,411
-^a+b?$,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),411
-b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,386
-aaa(a)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,386
-aa(b)*,Even number of a’s.,(b|(ab*a))*,386
-(abab)*,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,386
-(abba)*,At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),386
-b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,383
-(a|b)(a|b)a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,383
-(b*ab*a)*b*,Even number of a’s.,(b|(ab*a))*,383
-b*(abab)*b*,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,383
-"b*(a(b{2,})b*)*a?b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),383
-^(b(.)?)*b?$,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,410
-^b.*a$,Begins with b and ends with a.,b(a|b)*a,391
-^(b[^b]*)*$,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,414
-^(?!.*b.*b).*a.*$,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),414
-"^a{3,}(?:b{2})+$",anbm where n ≥ 3 and m is even,aaaa*(bb)*,414
-^(?:.{3})*$,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,414
-^.{2}a.*$,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,414
-b[ab]*a,Begins with b and ends with a.,b(a|b)*a,385
-[ab][ab]a[ab]*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,385
-(ab+a)*b+,Even number of a’s.,(b|(ab*a))*,385
-(b*(ab+ab+)*)*,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,385
-(abb+a)*b*,At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),385
-"b*(a(b{2,})b*)*a?b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),403
-(b*ab*a)*b*,Even number of a’s.,(b|(ab*a))*,403
-(b*ab*ab*)b*,Contains less than three a’s.,b*a?b*a?b*,403
-^(?!.*bb).*a.*$,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),403
-b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,389
-b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,388
-(a|b){2}a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,404
-"a{3,}(bb)*",anbm where n ≥ 3 and m is even,aaaa*(bb)*,404
-((a|b){3})+,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,404
-(a|b)*{2}a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,389
-(b*ab*ab*)*,Even number of a’s.,(b|(ab*a))*,389
-(b*(ab+b)*)*,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,389
-(a|b)(a|b)a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,388
-aa*,Even number of a’s.,(b|(ab*a))*,388
-"(b*(ab{2,}a)*b*)",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),389
-(b*(ab*ab)*)*,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,388
-"b*(ab{2,})*a?b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),388
-"b*(ab{2,})*a?b*",At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,397
-"b*(ab{2,})*a?b*",Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,397
-"b*(ab{2,})*a?b*",Contains less than three a’s.,b*a?b*a?b*,397
-"b*(ab{2,})*a?b*",Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,397
-"b*(ab{2,})*a?b*",Every odd position is b.,(a?b)*,397
-"^([^a]*a[^a]*){0,2}[^a]*$",Contains less than three a’s.,b*a?b*a?b*,393
-b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,384
-(a|b)(a|b)a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,384
-bb*a*a,Begins with b and ends with a.,b(a|b)*a,387
-(ab*a|b)*,Even number of a’s.,(b|(ab*a))*,384
-(abb*abb*|b)*,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,384
-"[a,b][a,b]a(a*b*)*",Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,387
-(b*|abb*)(b*|b*babb*)*(b*ba|b*),At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),384
-(b*ab*ab*)*,Even number of a’s.,(b|(ab*a))*,387
-(b*ab+ab+)*|b*,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,387
-b*aa(b*ab*)*,Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,393
-b(ab)*a,Begins with b and ends with a.,b(a|b)*a,390
-b(a|b)*a,Begins with b and ends with a.,b(a|b)*a,392
-a|ba|ba(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,392
-^b*(ab*ab*)*b*$,Even number of a’s.,(b|(ab*a))*,392
-^(b*(abbb*)*a?b*)$,At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),392
-^(?!.*a(?!b)).*,Every odd position is b.,(a?b)*,400
-^(b(a|b))*b?$,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,412
-^(?!.*b.*b)(?=.*a)[ab]+$,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),412
-"a{3,}(b{2})*",anbm where n ≥ 3 and m is even,aaaa*(bb)*,412
-([ab]{3})*,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,412
-[ab][ab]a([ab])*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,412
-baa*,Begins with b and ends with a.,b(a|b)*a,420
-b*(ab)*|b,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,408
-[ab]{2}a[ab]*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,420
-(aa)*,Even number of a’s.,(b|(ab*a))*,420
-b*(ab+b)*b*,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,420
-"b*(ab{2,})*b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),420
-a*ba*,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),408
-b*a{2}b*,Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,394
-(aaa|aab|aba|abb|baa|bab|bba|bbb)*,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,408
-(aaa|aba|baa|bba)(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,408
-aabaabb,At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,394
-(aaa)a*(bb)*,anbm where n ≥ 3 and m is even,aaaa*(bb)*,408
-^b([a-b]b)*[a-b]?$,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,409
-(b | ab+ab+)*,Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,392
-(a*b?a*)|a,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),409
-"b*(a (b{2,}) | (b{2,}) a)b*",At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),387
-"(a{3,})(bb)*",anbm where n ≥ 3 and m is even,aaaa*(bb)*,409
-((a|b)(a|b)(a|b))*,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,409
-(a|b)(a|b)a(a|b)*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,409
-^(b*ab*ab*)?$|^b*ab*$|^b*$,Contains less than three a’s.,b*a?b*a?b*,396
-^[^a]*(aa)[^a]*$,Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,396
-^(?!.*bb.*aa)[a-b]*$,At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,396
-^(?!.*bbb)(?!.*bb.*bb)[a-b]*$,Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,396
-^(b|ab)+a?$,Every odd position is b.,(a?b)*,396
-（ab）*,Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,406
-a*ab,Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),406
-aaa+b(bb)+,anbm where n ≥ 3 and m is even,aaaa*(bb)*,406
-([ab]{2})*,Length is a multiple of 3.,((a|b)(a|b)(a|b))*,406
-ab{2}aab*,Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,406
+﻿question_description,correct_regex,attempt_regex,user_id
+Begins with b and ends with a.,b(a|b)*a,^b.*a$,100
+Begins with b and ends with a.,b(a|b)*a,b(ab)*a,107
+Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,^(b[ab])*b?$,411
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,(a|b){2}a(a|b)*,411
+Length is a multiple of 3.,((a|b)(a|b)(a|b))*,((a|b){3})+,411
+anbm where n ≥ 3 and m is even,aaaa*(bb)*,"^a{3,}(bb)+$",411
+Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),^a+b?$,411
+Begins with b and ends with a.,b(a|b)*a,b(a|b)*a,386
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,aaa(a)*,386
+Even number of a’s.,(b|(ab*a))*,aa(b)*,386
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,(abab)*,386
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),(abba)*,386
+Begins with b and ends with a.,b(a|b)*a,b(a|b)*a,383
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,(a|b)(a|b)a(a|b)*,383
+Even number of a’s.,(b|(ab*a))*,(b*ab*a)*b*,383
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,b*(abab)*b*,383
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"b*(a(b{2,})b*)*a?b*",383
+Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,^(b(.)?)*b?$,410
+Begins with b and ends with a.,b(a|b)*a,^b.*a$,391
+Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,^(b[^b]*)*$,414
+Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),^(?!.*b.*b).*a.*$,414
+anbm where n ≥ 3 and m is even,aaaa*(bb)*,"^a{3,}(?:b{2})+$",414
+Length is a multiple of 3.,((a|b)(a|b)(a|b))*,^(?:.{3})*$,414
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,^.{2}a.*$,414
+Begins with b and ends with a.,b(a|b)*a,b[ab]*a,385
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,[ab][ab]a[ab]*,385
+Even number of a’s.,(b|(ab*a))*,(ab+a)*b+,385
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,(b*(ab+ab+)*)*,385
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),(abb+a)*b*,385
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"b*(a(b{2,})b*)*a?b*",403
+Even number of a’s.,(b|(ab*a))*,(b*ab*a)*b*,403
+Contains less than three a’s.,b*a?b*a?b*,(b*ab*ab*)b*,403
+Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),^(?!.*bb).*a.*$,403
+Begins with b and ends with a.,b(a|b)*a,b(a|b)*a,389
+Begins with b and ends with a.,b(a|b)*a,b(a|b)*a,388
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,(a|b){2}a(a|b)*,404
+anbm where n ≥ 3 and m is even,aaaa*(bb)*,"a{3,}(bb)*",404
+Length is a multiple of 3.,((a|b)(a|b)(a|b))*,((a|b){3})+,404
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,(a|b)*{2}a(a|b)*,389
+Even number of a’s.,(b|(ab*a))*,(b*ab*ab*)*,389
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,(b*(ab+b)*)*,389
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,(a|b)(a|b)a(a|b)*,388
+Even number of a’s.,(b|(ab*a))*,aa*,388
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"(b*(ab{2,}a)*b*)",389
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,(b*(ab*ab)*)*,388
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"b*(ab{2,})*a?b*",388
+At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,"b*(ab{2,})*a?b*",397
+Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,"b*(ab{2,})*a?b*",397
+Contains less than three a’s.,b*a?b*a?b*,"b*(ab{2,})*a?b*",397
+Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,"b*(ab{2,})*a?b*",397
+Every odd position is b.,(a?b)*,"b*(ab{2,})*a?b*",397
+Contains less than three a’s.,b*a?b*a?b*,"^([^a]*a[^a]*){0,2}[^a]*$",393
+Begins with b and ends with a.,b(a|b)*a,b(a|b)*a,384
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,(a|b)(a|b)a(a|b)*,384
+Begins with b and ends with a.,b(a|b)*a,bb*a*a,387
+Even number of a’s.,(b|(ab*a))*,(ab*a|b)*,384
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,(abb*abb*|b)*,384
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,"[a,b][a,b]a(a*b*)*",387
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),(b*|abb*)(b*|b*babb*)*(b*ba|b*),384
+Even number of a’s.,(b|(ab*a))*,(b*ab*ab*)*,387
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,(b*ab+ab+)*|b*,387
+Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,b*aa(b*ab*)*,393
+Begins with b and ends with a.,b(a|b)*a,b(ab)*a,390
+Begins with b and ends with a.,b(a|b)*a,b(a|b)*a,392
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,a|ba|ba(a|b)*,392
+Even number of a’s.,(b|(ab*a))*,^b*(ab*ab*)*b*$,392
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),^(b*(abbb*)*a?b*)$,392
+Every odd position is b.,(a?b)*,^(?!.*a(?!b)).*,400
+Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,^(b(a|b))*b?$,412
+Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),^(?!.*b.*b)(?=.*a)[ab]+$,412
+anbm where n ≥ 3 and m is even,aaaa*(bb)*,"a{3,}(b{2})*",412
+Length is a multiple of 3.,((a|b)(a|b)(a|b))*,([ab]{3})*,412
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,[ab][ab]a([ab])*,412
+Begins with b and ends with a.,b(a|b)*a,baa*,420
+Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,b*(ab)*|b,408
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,[ab]{2}a[ab]*,420
+Even number of a’s.,(b|(ab*a))*,(aa)*,420
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,b*(ab+b)*b*,420
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"b*(ab{2,})*b*",420
+Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),a*ba*,408
+Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,b*a{2}b*,394
+Length is a multiple of 3.,((a|b)(a|b)(a|b))*,(aaa|aab|aba|abb|baa|bab|bba|bbb)*,408
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,(aaa|aba|baa|bba)(a|b)*,408
+At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,aabaabb,394
+anbm where n ≥ 3 and m is even,aaaa*(bb)*,(aaa)a*(bb)*,408
+Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,^b([a-b]b)*[a-b]?$,409
+Even number of a’s and each a is followed by at least one b.,b*(abb*abb*)*,(b | ab+ab+)*,392
+Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),(a*b?a*)|a,409
+At least two occurrences of b between any two occurrences of a.,(b*)|(b*(abbb*)*ab*),"b*(a (b{2,}) | (b{2,}) a)b*",387
+anbm where n ≥ 3 and m is even,aaaa*(bb)*,"(a{3,})(bb)*",409
+Length is a multiple of 3.,((a|b)(a|b)(a|b))*,((a|b)(a|b)(a|b))*,409
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,(a|b)(a|b)a(a|b)*,409
+Contains less than three a’s.,b*a?b*a?b*,^(b*ab*ab*)?$|^b*ab*$|^b*$,396
+Has exactly one pair of consecutive a’s,((ab)|b)*aa((ba)|b)*,^[^a]*(aa)[^a]*$,396
+At most one pair of consecutive b’s.,(a|(ba))*(b|(ab))*a?,^(?!.*bb.*aa)[a-b]*$,396
+Each a is followed by at least one b.,(a|(ba))*(bb)?(a|(ab))*,^(?!.*bbb)(?!.*bb.*bb)[a-b]*$,396
+Every odd position is b.,(a?b)*,^(b|ab)+a?$,396
+Every b followed by two or more a's,(b((a|b)b)*(a|b)?)?,（ab）*,406
+Contains at least one a and at most one b.,(aa*)|(aa*ba)|(a*baa*),a*ab,406
+anbm where n ≥ 3 and m is even,aaaa*(bb)*,aaa+b(bb)+,406
+Length is a multiple of 3.,((a|b)(a|b)(a|b))*,([ab]{2})*,406
+Length is at least 3 and the 3rd symbol is a.,(a|b)(a|b)a(a|b)*,ab{2}aab*,406
